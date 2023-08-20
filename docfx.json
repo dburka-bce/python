@@ -18,28 +18,44 @@
       {
         "files": [
           "softec/**.yml",
-          "softec/**.md"
-        ]
-      },
-      {
-        "files": [
+          "softec/**.md",          
+          "softeng/**.yml",
+          "softeng/**.md",
           "adatb/**.md",
           "adatb/**/toc.yml",
+          "python_basic/**.yml",
+          "python_basic/**.md",
+          "python_psz/**.yml",
+          "python_psz/**.md",
+          "python_advanced/**.yml",
+          "python_advanced/**.md",
           "toc.yml",
           "*.md"
-        ]
-      },
-      {
-        "files": [
-          "softeng/**.yml",
-          "softeng/**.md"
         ]
       }
     ],
     "resource": [
       {
         "files": [
-          "images/**",
+          "images/**",          
+          "python_basic/**.zip",
+          "python_basic/**.docx",
+          "python_basic/**.txt",
+          "python_basic/**.png",
+          "python_basic/**.jpg",
+          "python_basic/**.csv",          
+          "python_psz/**.zip",
+          "python_psz/**.docx",
+          "python_psz/**.txt",
+          "python_psz/**.png",
+          "python_psz/**.jpg",
+          "python_psz/**.csv",
+          "python_advanced/**.zip",
+          "python_advanced/**.docx",
+          "python_advanced/**.txt",
+          "python_advanced/**.png",
+          "python_advanced/**.jpg",
+          "python_advanced/**.csv",          
           "softec/**.zip",
           "softec/**.docx",
           "softec/**.txt",
