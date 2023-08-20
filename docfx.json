@@ -91,18 +91,16 @@
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
-    "markdownEngineProperties": {
-      "markdigExtensions": [ "mathematics", "emoji" ]
-    },
+    //"markdownEngineProperties": {
+    //  "markdigExtensions": [ "mathematics", "emoji" ]
+    //},
     "noLangKeyword": false,
     "keepFileLink": false,
     "cleanupCacheHistory": false,
-    "disableGitFeatures": false,
-    "markdown": {
-      "extensions": [ "Markdig.Mathematics" ]
-    }
-    
-
+    "disableGitFeatures": false
+    //"markdown": {
+    //  "extensions": [ "Markdig.Mathematics" ]
+    //}
   }
 
 }

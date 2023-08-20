@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/work/szamtud_docfx/szamtud_docfx",
+  "source_base_path": "c:/Users/BurkaDávid/source/repos/python",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -11,11 +11,9 @@
       "source_relative_path": "adatb/adatelemzo01/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/adatelemzo01/index.html",
-          "hash": "YprMxq1i2gHrW9gBXnnXxsDQi07hs6JA5MghHthHDsg="
+          "relative_path": "adatb/adatelemzo01/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -26,11 +24,9 @@
       "source_relative_path": "adatb/gyak1/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/gyak1/index.html",
-          "hash": "tFfJtdmp9+vs8tn8TzOFZ6vfpQUBJHLRUbhyxxXflxQ="
+          "relative_path": "adatb/gyak1/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -41,11 +37,9 @@
       "source_relative_path": "adatb/gyak10/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/gyak10/index.html",
-          "hash": "Go5/RekKKVOUjuGLZSnIVziPhiBvqbhZzZ+djFd35AA="
+          "relative_path": "adatb/gyak10/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -56,11 +50,9 @@
       "source_relative_path": "adatb/gyak11/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/gyak11/index.html",
-          "hash": "xEE5aQ23hqNdLNB+GWsQrMWHuDTaDdKsPzRCzRtpQpA="
+          "relative_path": "adatb/gyak11/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -71,11 +63,9 @@
       "source_relative_path": "adatb/gyak2/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/gyak2/index.html",
-          "hash": "BO7I6CNmhPXy6aWvYB5nLBBLxGovaohVXqThA9x0bNQ="
+          "relative_path": "adatb/gyak2/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -86,11 +76,9 @@
       "source_relative_path": "adatb/gyak3/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/gyak3/index.html",
-          "hash": "GAHbyEMU38nv6yGM88j2qO7IeCK1Y+RKR6+lVbaYNIY="
+          "relative_path": "adatb/gyak3/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -101,11 +89,9 @@
       "source_relative_path": "adatb/gyak4/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/gyak4/index.html",
-          "hash": "+TMD1scERb90qlpjRrPZmF1YoWh2so657hw7/qEIUmQ="
+          "relative_path": "adatb/gyak4/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -116,11 +102,9 @@
       "source_relative_path": "adatb/gyak5/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/gyak5/index.html",
-          "hash": "tmucoIAoGC7WFtyNXtYih2my2bbSuJ4pHAJ2v5F/BeM="
+          "relative_path": "adatb/gyak5/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -131,11 +115,9 @@
       "source_relative_path": "adatb/gyak6/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/gyak6/index.html",
-          "hash": "Ic87GtjRIX0XK9HIoXcDR0NAxY17zchLF1PtS7dHyzw="
+          "relative_path": "adatb/gyak6/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -146,11 +128,9 @@
       "source_relative_path": "adatb/gyak7/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/gyak7/index.html",
-          "hash": "59e1wOCfyAES5H/5fG+sti+QkvlQ2BObkJ8c1+Uuroc="
+          "relative_path": "adatb/gyak7/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -161,11 +141,9 @@
       "source_relative_path": "adatb/gyak8/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/gyak8/index.html",
-          "hash": "J9d9/A+8dWVSPwB2UHC/yIIjbR9j0AjTggNyl7ECOMM="
+          "relative_path": "adatb/gyak8/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -176,11 +154,9 @@
       "source_relative_path": "adatb/gyak9/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/gyak9/index.html",
-          "hash": "59hUIVwDbZFshS37MPHZfh681iGXjv2HSE6yaCb9CNI="
+          "relative_path": "adatb/gyak9/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -188,11 +164,9 @@
       "source_relative_path": "adatb/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/index.html",
-          "hash": "Gkw9H1vClxVfU61ODIbjAGfhn4s4OI5ivn98fnQWBxA="
+          "relative_path": "adatb/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -200,11 +174,9 @@
       "source_relative_path": "adatb/kovetelmenyek/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/kovetelmenyek/index.html",
-          "hash": "89GmoBjPTOjqoNrw46zrMCpMu1afmkFxj2+Mfogkksg="
+          "relative_path": "adatb/kovetelmenyek/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -212,11 +184,9 @@
       "source_relative_path": "adatb/kovetelmenyek_INSA007NMBB/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/kovetelmenyek_INSA007NMBB/index.html",
-          "hash": "Hob0M/G0uyiUNGcPtw/TlQpmzdWuo9/7ddnu6rmo1Q8="
+          "relative_path": "adatb/kovetelmenyek_INSA007NMBB/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -224,11 +194,9 @@
       "source_relative_path": "adatb/kovetelmenyek_levelezo/index.md",
       "output": {
         ".html": {
-          "relative_path": "adatb/kovetelmenyek_levelezo/index.html",
-          "hash": "LTMD+/gup9Py7g9vjnQaasRIO3IJbGnUpj4JZi2i074="
+          "relative_path": "adatb/kovetelmenyek_levelezo/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -236,11 +204,9 @@
       "source_relative_path": "adatb/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "adatb/toc.html",
-          "hash": "6xPw6DcLU9vbETlTKWI+BTTxTNDvlP1Gzm1xJr40DGA="
+          "relative_path": "adatb/toc.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -251,7 +217,6 @@
           "relative_path": "images/1585069392831.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -262,7 +227,6 @@
           "relative_path": "images/1585724543414.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -273,7 +237,6 @@
           "relative_path": "images/1585726196537.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -284,7 +247,6 @@
           "relative_path": "images/1600005026998.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -295,7 +257,6 @@
           "relative_path": "images/1600007423489.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -306,7 +267,6 @@
           "relative_path": "images/1600008026941.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -317,7 +277,6 @@
           "relative_path": "images/1610903788811.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -328,7 +287,6 @@
           "relative_path": "images/1614698473871.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -339,7 +297,6 @@
           "relative_path": "images/1614699641758.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -350,7 +307,6 @@
           "relative_path": "images/1614699890414.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -361,7 +317,6 @@
           "relative_path": "images/1614699994470.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -372,7 +327,6 @@
           "relative_path": "images/1615051267868.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -383,7 +337,6 @@
           "relative_path": "images/1615051616183.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -394,7 +347,6 @@
           "relative_path": "images/1615051851465.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -405,7 +357,6 @@
           "relative_path": "images/1615368531680.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -416,7 +367,6 @@
           "relative_path": "images/1619343517825.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -427,7 +377,6 @@
           "relative_path": "images/1619343711506.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -438,7 +387,6 @@
           "relative_path": "images/1619343810349.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -449,7 +397,6 @@
           "relative_path": "images/AddNewDatasource.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -460,7 +407,6 @@
           "relative_path": "images/InstructorsRaw.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -471,7 +417,6 @@
           "relative_path": "images/InstructorsWithComboBoxes.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -482,7 +427,6 @@
           "relative_path": "images/StatusBindingSource.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -493,7 +437,6 @@
           "relative_path": "images/add_connection.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -504,7 +447,6 @@
           "relative_path": "images/add_data_source.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -515,7 +457,6 @@
           "relative_path": "images/add_service_based_database.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -526,7 +467,6 @@
           "relative_path": "images/add_textbox_binding.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -537,7 +477,6 @@
           "relative_path": "images/create_a_new_project.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -548,7 +487,6 @@
           "relative_path": "images/create_a_new_project_60.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -559,7 +497,6 @@
           "relative_path": "images/datasource_in_solutionexplorer.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -570,7 +507,6 @@
           "relative_path": "images/edmx.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -581,7 +517,6 @@
           "relative_path": "images/error.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -592,7 +527,6 @@
           "relative_path": "images/hallgato2.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -603,7 +537,6 @@
           "relative_path": "images/image-20220827150347600.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -614,7 +547,6 @@
           "relative_path": "images/in-memory-db-1.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -625,7 +557,6 @@
           "relative_path": "images/in-memory-db-2.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -636,7 +567,6 @@
           "relative_path": "images/input_form.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -647,7 +577,6 @@
           "relative_path": "images/linq_advanced.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -658,7 +587,6 @@
           "relative_path": "images/linq_studies.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -669,7 +597,6 @@
           "relative_path": "images/local-connection-1.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -680,7 +607,6 @@
           "relative_path": "images/local-connection-2.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -691,7 +617,6 @@
           "relative_path": "images/local-connection-3.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -702,7 +627,6 @@
           "relative_path": "images/nuget.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -713,7 +637,6 @@
           "relative_path": "images/nuget_packages.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -724,7 +647,6 @@
           "relative_path": "images/orm_classes.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -735,7 +657,6 @@
           "relative_path": "images/orm_files.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -746,7 +667,6 @@
           "relative_path": "images/osztaly.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -757,7 +677,6 @@
           "relative_path": "images/schema.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -768,7 +687,6 @@
           "relative_path": "images/server_explorer_with_db.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -779,7 +697,6 @@
           "relative_path": "images/service-based-db-1.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -790,7 +707,6 @@
           "relative_path": "images/service-based-db-2.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -801,7 +717,6 @@
           "relative_path": "images/service-based-db-files.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -812,7 +727,6 @@
           "relative_path": "images/show_table_data.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -823,7 +737,6 @@
           "relative_path": "images/sqlexp01.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -834,7 +747,6 @@
           "relative_path": "images/sqlexp02.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -845,7 +757,6 @@
           "relative_path": "images/sqlexp03.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -856,7 +767,6 @@
           "relative_path": "images/sqlexp04.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -867,7 +777,6 @@
           "relative_path": "images/sqlexp05.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -878,7 +787,6 @@
           "relative_path": "images/sqlexp06.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -889,7 +797,6 @@
           "relative_path": "images/sqlexp07.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -900,7 +807,6 @@
           "relative_path": "images/sqlexp08.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -911,7 +817,6 @@
           "relative_path": "images/sqlexp09.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -922,7 +827,6 @@
           "relative_path": "images/sqlexp10.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -933,7 +837,6 @@
           "relative_path": "images/sqlexp11.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -944,7 +847,6 @@
           "relative_path": "images/sqlexp12.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -955,7 +857,6 @@
           "relative_path": "images/sqlexp13.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -966,7 +867,6 @@
           "relative_path": "images/sqlexp14.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -977,7 +877,6 @@
           "relative_path": "images/sqlexp15.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -988,7 +887,6 @@
           "relative_path": "images/sqlexp16.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -999,7 +897,6 @@
           "relative_path": "images/vs_install.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1007,11 +904,964 @@
       "source_relative_path": "index.md",
       "output": {
         ".html": {
-          "relative_path": "index.html",
-          "hash": "/UyM1mtEaJD+VWqyj8QQ+VCLjRnkq1jG/qS0fyv4b34="
+          "relative_path": "index.html"
         }
       },
-      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/01/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/01/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/03/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/03/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/04/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/04/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/bubble_sort/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/bubble_sort/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/classes/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/classes/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/datetime/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/datetime/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/environment/1588682145398.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/environment/1588682145398.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/environment/1588682381726.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/environment/1588682381726.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/environment/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/environment/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/error_handling/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/error_handling/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/function/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/function/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/heap_sort/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/heap_sort/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/help/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/help/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/index/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/index/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/insertion_sort/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/insertion_sort/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/introduction/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/introduction/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/math/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/math/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/matplotlib/Hisztogram.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/matplotlib/Hisztogram.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/matplotlib/Kor.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/matplotlib/Kor.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/matplotlib/Legend.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/matplotlib/Legend.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/matplotlib/Oszlop.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/matplotlib/Oszlop.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/matplotlib/Subplot1.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/matplotlib/Subplot1.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/matplotlib/Subplot2.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/matplotlib/Subplot2.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/matplotlib/Subplot3.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/matplotlib/Subplot3.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/matplotlib/Vonaldiagram.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/matplotlib/Vonaldiagram.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/matplotlib/Vonaldiagram2.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/matplotlib/Vonaldiagram2.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/matplotlib/Vonaldiagram3.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/matplotlib/Vonaldiagram3.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/matplotlib/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/matplotlib/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/merge_sort/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/merge_sort/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/mintazh1/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/mintazh1/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/mintazh3/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/mintazh3/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/modul/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/modul/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/modul_create/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/modul_create/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/numpy/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/numpy/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/oop/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/oop/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/pandas_1/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/pandas_1/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/pandas_1/pandas_data_structures.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/pandas_1/pandas_data_structures.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/pandas_1/pandas_dataframe.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/pandas_1/pandas_dataframe.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/pandas_1/pandas_dataseries.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/pandas_1/pandas_dataseries.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/pandas_2/how.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/pandas_2/how.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/pandas_2/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/pandas_2/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/pandas_2/index.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/pandas_2/index.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/pandas_2/regex.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/pandas_2/regex.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/pandas_practice/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/pandas_practice/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/pandas_practice/matches_1930_2018.csv",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/pandas_practice/matches_1930_2018.csv"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/pandas_practice/matches_2022.csv",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/pandas_practice/matches_2022.csv"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/pandas_practice/matchs-schudule.csv",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/pandas_practice/matchs-schudule.csv"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_advanced/pandas_practice/missingcountries.csv",
+      "output": {
+        "resource": {
+          "relative_path": "python_advanced/pandas_practice/missingcountries.csv"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/plotly/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/plotly/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/search_algorithms/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/search_algorithms/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/sorting/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/sorting/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/sympy/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/sympy/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_advanced/text_file_write/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_advanced/text_file_write/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/general/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/general/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/if_statement/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/if_statement/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/input/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/input/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/introduction/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/introduction/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_basic/jupyter/hw_jupyter.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_basic/jupyter/hw_jupyter.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/jupyter/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/jupyter/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_basic/jupyter/jupyter_cell_controls.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_basic/jupyter/jupyter_cell_controls.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_basic/jupyter/jupyter_files.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_basic/jupyter/jupyter_files.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_basic/jupyter/jupyter_icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_basic/jupyter/jupyter_icon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_basic/jupyter/k%25c3%25a9p.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_basic/jupyter/k%25c3%25a9p.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/jupyter_lab/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/jupyter_lab/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/jupyter_online/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/jupyter_online/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_basic/jupyter_online/jupyter_cell_controls.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_basic/jupyter_online/jupyter_cell_controls.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_basic/jupyter_online/jupyter_files.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_basic/jupyter_online/jupyter_files.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_basic/jupyter_online/jupyter_icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_basic/jupyter_online/jupyter_icon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_basic/jupyter_online/k%25c3%25a9p.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_basic/jupyter_online/k%25c3%25a9p.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/list/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/list/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/loops/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/loops/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/practice/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/practice/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/range/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/range/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/sequence_types/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/sequence_types/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/test/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/test/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/text_file/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/text_file/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/tuple/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/tuple/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/type_conversion/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/type_conversion/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/variables/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/variables/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/variables_bool/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/variables_bool/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/variables_numeric/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/variables_numeric/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_basic/variables_text/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/variables_text/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_psz/class/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_psz/class/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "python_psz/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_psz/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_psz/introduction/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_psz/introduction/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_psz/mintazh1/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_psz/mintazh1/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_psz/mintazh3/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_psz/mintazh3/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_psz/mintazh3/megoldas.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_psz/mintazh3/megoldas.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_psz/pandas/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_psz/pandas/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_psz/pandas/pandas_data_structures.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_psz/pandas/pandas_data_structures.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_psz/pandas/pandas_dataframe.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_psz/pandas/pandas_dataframe.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "python_psz/pandas/pandas_dataseries.png",
+      "output": {
+        "resource": {
+          "relative_path": "python_psz/pandas/pandas_dataseries.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "python_psz/practice/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "python_psz/practice/index.html"
+        }
+      },
       "version": ""
     },
     {
@@ -1019,11 +1869,9 @@
       "source_relative_path": "softec/2021/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/2021/index.html",
-          "hash": "v76DhgQKqovQctaC7AmYxMmeDBQMCQ3L96NFMJn1/8s="
+          "relative_path": "softec/2021/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1034,7 +1882,6 @@
           "relative_path": "softec/SeleniumDemo/FormDesigner.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1045,7 +1892,6 @@
           "relative_path": "softec/SeleniumDemo/FormRunning.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1056,29 +1902,86 @@
           "relative_path": "softec/SeleniumDemo/Packages.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
       "type": "Resource",
-      "source_relative_path": "softec/SeleniumDemo/SeleniumTest/SeleniumTest/obj/Debug/net6.0-windows/SeleniumTest.csproj.FileListAbsolute.txt",
+      "source_relative_path": "softec/SeleniumDemo/ZH3/Quiz/bin/Debug/net6.0-windows/multichoice.csv",
       "output": {
         "resource": {
-          "relative_path": "softec/SeleniumDemo/SeleniumTest/SeleniumTest/obj/Debug/net6.0-windows/SeleniumTest.csproj.FileListAbsolute.txt"
+          "relative_path": "softec/SeleniumDemo/ZH3/Quiz/bin/Debug/net6.0-windows/multichoice.csv"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
       "type": "Resource",
-      "source_relative_path": "softec/SeleniumDemo/UseCourseScraper/UseCourseScraper/obj/Debug/net6.0-windows/UseCourseScraper.csproj.FileListAbsolute.txt",
+      "source_relative_path": "softec/SeleniumDemo/ZH3/Quiz/multichoice.csv",
       "output": {
         "resource": {
-          "relative_path": "softec/SeleniumDemo/UseCourseScraper/UseCourseScraper/obj/Debug/net6.0-windows/UseCourseScraper.csproj.FileListAbsolute.txt"
+          "relative_path": "softec/SeleniumDemo/ZH3/Quiz/multichoice.csv"
         }
       },
-      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "softec/SeleniumDemo/ZH3/Szoparoztatos/bin/Debug/net6.0-windows/words.csv",
+      "output": {
+        "resource": {
+          "relative_path": "softec/SeleniumDemo/ZH3/Szoparoztatos/bin/Debug/net6.0-windows/words.csv"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "softec/SeleniumDemo/ZH3/Szoparoztatos/words.csv",
+      "output": {
+        "resource": {
+          "relative_path": "softec/SeleniumDemo/ZH3/Szoparoztatos/words.csv"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "softec/SeleniumDemo/ZH3/SzoperoztatosOszlopos/bin/Debug/net6.0-windows/words.csv",
+      "output": {
+        "resource": {
+          "relative_path": "softec/SeleniumDemo/ZH3/SzoperoztatosOszlopos/bin/Debug/net6.0-windows/words.csv"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "softec/SeleniumDemo/ZH3/SzoperoztatosOszlopos/words.csv",
+      "output": {
+        "resource": {
+          "relative_path": "softec/SeleniumDemo/ZH3/SzoperoztatosOszlopos/words.csv"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "softec/SeleniumDemo/ZH3/Trivia/bin/Debug/net6.0-windows/trivia.csv",
+      "output": {
+        "resource": {
+          "relative_path": "softec/SeleniumDemo/ZH3/Trivia/bin/Debug/net6.0-windows/trivia.csv"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "softec/SeleniumDemo/ZH3/Trivia/trivia.csv",
+      "output": {
+        "resource": {
+          "relative_path": "softec/SeleniumDemo/ZH3/Trivia/trivia.csv"
+        }
+      },
       "version": ""
     },
     {
@@ -1086,11 +1989,9 @@
       "source_relative_path": "softec/SeleniumDemo/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/SeleniumDemo/index.html",
-          "hash": "fyIhx/KinYIl2/E9lNvzTk7pdrLjUNhkbN2wgtG2VSU="
+          "relative_path": "softec/SeleniumDemo/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1098,11 +1999,9 @@
       "source_relative_path": "softec/SeleniumDemo/index2.md",
       "output": {
         ".html": {
-          "relative_path": "softec/SeleniumDemo/index2.html",
-          "hash": "5gLLCQ89IsqL84737jWfYizy4DIlN6SmG4UbelHMAQI="
+          "relative_path": "softec/SeleniumDemo/index2.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1110,11 +2009,9 @@
       "source_relative_path": "softec/amoba/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/amoba/index.html",
-          "hash": "Uj3dBYI+1lQVpBLN10m5lr2T23HTLLD8QY2b0oV+FXE="
+          "relative_path": "softec/amoba/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1125,7 +2022,6 @@
           "relative_path": "softec/amoba/kbd_hun.txt"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1133,11 +2029,9 @@
       "source_relative_path": "softec/bantumi/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/bantumi/index.html",
-          "hash": "qAo2xPj3dBbzXD6LaFb47bVINl4FsAEI/cU9K1jqEXQ="
+          "relative_path": "softec/bantumi/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1145,11 +2039,19 @@
       "source_relative_path": "softec/beadando/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/beadando/index.html",
-          "hash": "sBf1ntWTTs5XdTxChfBQgJ04zqB6QiACOHWGSuJ4m+w="
+          "relative_path": "softec/beadando/index.html"
         }
       },
-      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "softec/beadando/projekt_zh_ertekeles.md",
+      "output": {
+        ".html": {
+          "relative_path": "softec/beadando/projekt_zh_ertekeles.html"
+        }
+      },
       "version": ""
     },
     {
@@ -1157,26 +2059,29 @@
       "source_relative_path": "softec/beadando_game_of_life/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/beadando_game_of_life/index.html",
-          "hash": "25BJbkxN1SBydnodzT4T8KcUOlrsqRv/4t13OPxVLqw="
+          "relative_path": "softec/beadando_game_of_life/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
+      "type": "Resource",
+      "source_relative_path": "softec/beadando_hajos/2018_11_22_Hajozasi_szabalyzat.zip",
+      "output": {
+        "resource": {
+          "relative_path": "softec/beadando_hajos/2018_11_22_Hajozasi_szabalyzat.zip"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "softec/beadando_hajos/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/beadando_hajos/index.html",
-          "hash": "PT5DRR5JiwvLD4C/fjmJqDrudii1FR+omtnuLWsFx0M="
+          "relative_path": "softec/beadando_hajos/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1184,11 +2089,9 @@
       "source_relative_path": "softec/beadando_hangman/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/beadando_hangman/index.html",
-          "hash": "YRLGMxnUxaj64NsKNzZ3b96KetjF0MpVZMO9Md0aQg4="
+          "relative_path": "softec/beadando_hangman/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1196,11 +2099,9 @@
       "source_relative_path": "softec/beadando_maze/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/beadando_maze/index.html",
-          "hash": "8M+1RRMU63fg+K6i9KR5ElhDJdfm8g3pqgULRtpmnQQ="
+          "relative_path": "softec/beadando_maze/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1208,11 +2109,9 @@
       "source_relative_path": "softec/beadando_quiz_numerikus/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/beadando_quiz_numerikus/index.html",
-          "hash": "AIHlzb8kY/R3tA4vdZ1j2W27JU2T2xnDOG8QbdpENEU="
+          "relative_path": "softec/beadando_quiz_numerikus/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1220,11 +2119,9 @@
       "source_relative_path": "softec/beadando_snake/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/beadando_snake/index.html",
-          "hash": "XZfCQiz5xyauP2jvX1V6a8o7KnlsKwoLzBFaXjES+IY="
+          "relative_path": "softec/beadando_snake/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1232,11 +2129,9 @@
       "source_relative_path": "softec/beadando_spot_the_difference/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/beadando_spot_the_difference/index.html",
-          "hash": "coBK39EB2EyVzMMO2x8bWwlU8tLv5v+s6oXxltilSuI="
+          "relative_path": "softec/beadando_spot_the_difference/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1244,11 +2139,9 @@
       "source_relative_path": "softec/beadando_szotanito/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/beadando_szotanito/index.html",
-          "hash": "RvwlwkTf/OYSkzHqfPtBYUfgVMHo4XDvFhmhhaLxujI="
+          "relative_path": "softec/beadando_szotanito/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1259,7 +2152,6 @@
           "relative_path": "softec/emory/Kepek.zip"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1267,11 +2159,9 @@
       "source_relative_path": "softec/emory/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/emory/index.html",
-          "hash": "2pKQbynn5T9VFLeVU4qVjTjc4J6hYKpB7cA00CXSYNY="
+          "relative_path": "softec/emory/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1279,11 +2169,9 @@
       "source_relative_path": "softec/eredmenyek/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/eredmenyek/index.html",
-          "hash": "FnAm387o0vLA8OmHqv0Pmqouq0SSNoOOWHvrZF+G0dg="
+          "relative_path": "softec/eredmenyek/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1294,7 +2182,6 @@
           "relative_path": "softec/feleletvalasztos/handout.docx"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1302,11 +2189,9 @@
       "source_relative_path": "softec/feleletvalasztos/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/feleletvalasztos/index.html",
-          "hash": "mWJaXgqblrfkyFY/3wqcIl6EctlTu6FZAmq38BaUNJg="
+          "relative_path": "softec/feleletvalasztos/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1317,7 +2202,6 @@
           "relative_path": "softec/feleletvalasztos/jatek.csv"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1328,7 +2212,6 @@
           "relative_path": "softec/feleletvalasztos/jatek2.txt"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1336,22 +2219,9 @@
       "source_relative_path": "softec/fuggvenyek/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/fuggvenyek/index.html",
-          "hash": "pTpCVE7dYOFD6SbW11oIj9Il9me8MTwKIe/RzjQxngA="
+          "relative_path": "softec/fuggvenyek/index.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "softec/grafika_ifs_reszletes/IFS/Fraktal/obj/x86/Debug/Fraktal.csproj.FileListAbsolute.txt",
-      "output": {
-        "resource": {
-          "relative_path": "softec/grafika_ifs_reszletes/IFS/Fraktal/obj/x86/Debug/Fraktal.csproj.FileListAbsolute.txt"
-        }
-      },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1362,7 +2232,6 @@
           "relative_path": "softec/grafika_ifs_reszletes/fern.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1370,11 +2239,9 @@
       "source_relative_path": "softec/grafika_ifs_reszletes/grafika.md",
       "output": {
         ".html": {
-          "relative_path": "softec/grafika_ifs_reszletes/grafika.html",
-          "hash": "hiQNWy0tQ3+rnfrflVQD3QCBfxTD2v/8tsFtlWfZBYw="
+          "relative_path": "softec/grafika_ifs_reszletes/grafika.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1382,22 +2249,9 @@
       "source_relative_path": "softec/grafika_ifs_reszletes/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/grafika_ifs_reszletes/index.html",
-          "hash": "7ySFcacEmH9fdA+xwo1c77nY3Rf+2oXyTzDdfwotdqg="
+          "relative_path": "softec/grafika_ifs_reszletes/index.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "softec/grafika_ifs_reszletes/koch/koch/obj/Debug/koch.csproj.FileListAbsolute.txt",
-      "output": {
-        "resource": {
-          "relative_path": "softec/grafika_ifs_reszletes/koch/koch/obj/Debug/koch.csproj.FileListAbsolute.txt"
-        }
-      },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1405,11 +2259,9 @@
       "source_relative_path": "softec/grafika_ifs_reszletes/koch_gorbe.md",
       "output": {
         ".html": {
-          "relative_path": "softec/grafika_ifs_reszletes/koch_gorbe.html",
-          "hash": "ncy6CMPO5CjiXlFp6VSZm6RQkyKqqgcVjMEcE3gQ5xU="
+          "relative_path": "softec/grafika_ifs_reszletes/koch_gorbe.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1420,7 +2272,6 @@
           "relative_path": "softec/grafika_ifs_reszletes/sin_cos.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1431,7 +2282,6 @@
           "relative_path": "softec/images/1599902337797.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1442,7 +2292,6 @@
           "relative_path": "softec/images/1599921619453.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1453,7 +2302,6 @@
           "relative_path": "softec/images/1600005026998.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1464,7 +2312,6 @@
           "relative_path": "softec/images/1600007423489.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1475,7 +2322,6 @@
           "relative_path": "softec/images/1600008026941.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1486,7 +2332,6 @@
           "relative_path": "softec/images/1602072975369.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1497,7 +2342,6 @@
           "relative_path": "softec/images/fern.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1508,7 +2352,6 @@
           "relative_path": "softec/images/vs_install.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1516,11 +2359,9 @@
       "source_relative_path": "softec/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/index.html",
-          "hash": "anFjCuSa4qeJFeFJWyovkFzv/nQjjJVdZFdvs9HdCyw="
+          "relative_path": "softec/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1531,7 +2372,6 @@
           "relative_path": "softec/kepkirakos/Pascel_es_lo.docx"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1539,11 +2379,9 @@
       "source_relative_path": "softec/kepkirakos/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/kepkirakos/index.html",
-          "hash": "UGzR98NQEr4OQso7XCpXTi2UggJeUCuXpiwIZ7JFiqQ="
+          "relative_path": "softec/kepkirakos/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1554,7 +2392,6 @@
           "relative_path": "softec/kepkirakos/lo.zip"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1562,11 +2399,9 @@
       "source_relative_path": "softec/kigyos/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/kigyos/index.html",
-          "hash": "ZAbt/oBCiBGrIC3StXPXkmPEfPxJhVxi+KVGMj8NY3Q="
+          "relative_path": "softec/kigyos/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1574,11 +2409,9 @@
       "source_relative_path": "softec/kovetelmenyek/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/kovetelmenyek/index.html",
-          "hash": "d3LvPor31AxiQdgI5k0Lld5W74Npdi68NOpCLcKDorQ="
+          "relative_path": "softec/kovetelmenyek/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1586,11 +2419,9 @@
       "source_relative_path": "softec/kovetelmenyek_levelezo/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/kovetelmenyek_levelezo/index.html",
-          "hash": "RyDwt81bcghPnGecSaTDMzblLYgMZhyb+Pj7tw1Cplo="
+          "relative_path": "softec/kovetelmenyek_levelezo/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1598,11 +2429,9 @@
       "source_relative_path": "softec/levelezo_beadando/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/levelezo_beadando/index.html",
-          "hash": "5G7OVE8pvqvO4WixOiNyXq2KSnG1CjoREQ0jc67aHQY="
+          "relative_path": "softec/levelezo_beadando/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1610,11 +2439,9 @@
       "source_relative_path": "softec/masodfoku/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/masodfoku/index.html",
-          "hash": "yCnrFGNs6nAG9Tq1hqevZ8/4nt9ATjzgq+Xq3Br3wwc="
+          "relative_path": "softec/masodfoku/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1622,11 +2449,9 @@
       "source_relative_path": "softec/megoldasok/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/megoldasok/index.html",
-          "hash": "pZrLLNVy2w5EeD8JKp3+ySXBjiwGIMeeq87LkbqpXdo="
+          "relative_path": "softec/megoldasok/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1634,11 +2459,9 @@
       "source_relative_path": "softec/osszefoglalo_levelezo/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/osszefoglalo_levelezo/index.html",
-          "hash": "Ydpq3qM+TZWvXJGvpYRtcqn1NbONsvIEmNTl2292Si4="
+          "relative_path": "softec/osszefoglalo_levelezo/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1646,11 +2469,9 @@
       "source_relative_path": "softec/osztalyok/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/osztalyok/index.html",
-          "hash": "YVdVlG+qWfryNTFR7JKfneK1OJX9yhggG45ojUUxDhM="
+          "relative_path": "softec/osztalyok/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1658,11 +2479,9 @@
       "source_relative_path": "softec/osztalyok/overview.md",
       "output": {
         ".html": {
-          "relative_path": "softec/osztalyok/overview.html",
-          "hash": "GKEzqGP+WSZjjKjOiyavW+QWLp06oP+zC0DLlO5fh/o="
+          "relative_path": "softec/osztalyok/overview.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1673,11 +2492,9 @@
       "source_relative_path": "softec/pixelart/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/pixelart/index.html",
-          "hash": "tsGfs7C4tKkXfiTqqRk0epM3CkHOwsLS2iU222TfuHo="
+          "relative_path": "softec/pixelart/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1688,11 +2505,9 @@
       "source_relative_path": "softec/projektfeltoltes/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/projektfeltoltes/index.html",
-          "hash": "xCOCdIBANYcP0G3xmrzVLw3A7lD6aKccKHHuuFIOs/s="
+          "relative_path": "softec/projektfeltoltes/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1700,22 +2515,9 @@
       "source_relative_path": "softec/quiz2/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/quiz2/index.html",
-          "hash": "BbYhE63i3Xc2hDuFOhlqR2tUvjEKauy/oUfHaf1Yv44="
+          "relative_path": "softec/quiz2/index.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "softec/slide_puzzle/SlidePuzzle/SlidePuzzle/obj/Debug/net6.0-windows/SlidePuzzle.csproj.FileListAbsolute.txt",
-      "output": {
-        "resource": {
-          "relative_path": "softec/slide_puzzle/SlidePuzzle/SlidePuzzle/obj/Debug/net6.0-windows/SlidePuzzle.csproj.FileListAbsolute.txt"
-        }
-      },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1723,11 +2525,9 @@
       "source_relative_path": "softec/slide_puzzle/slide_puzzle.md",
       "output": {
         ".html": {
-          "relative_path": "softec/slide_puzzle/slide_puzzle.html",
-          "hash": "08zdwcr7qsxFHpfpkCTN4eYFBzBUaiU+4rFP9fPWbs8="
+          "relative_path": "softec/slide_puzzle/slide_puzzle.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1735,11 +2535,9 @@
       "source_relative_path": "softec/szoparoztatos/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/szoparoztatos/index.html",
-          "hash": "D6GCWUETBTFQSgAiMfgnXLWKwnorCmE2fETcYc5Mqyg="
+          "relative_path": "softec/szoparoztatos/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1747,11 +2545,9 @@
       "source_relative_path": "softec/teamsbeszamolok/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/teamsbeszamolok/index.html",
-          "hash": "alg4Jkd/ZR3EsAn6DkRg+bryNLYP07bo0HmGPdgQyUQ="
+          "relative_path": "softec/teamsbeszamolok/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1759,11 +2555,9 @@
       "source_relative_path": "softec/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "softec/toc.html",
-          "hash": "vZp4HMPs6LNrlIBT+8l/x6c+F0YPmzcVkcpaO0M0BRg="
+          "relative_path": "softec/toc.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1774,11 +2568,9 @@
       "source_relative_path": "softec/villamkerdesek/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/villamkerdesek/index.html",
-          "hash": "10GKMPKNmM8+IPdW7atmLWx81IGJmIIUNedCZSbPD4A="
+          "relative_path": "softec/villamkerdesek/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1786,11 +2578,9 @@
       "source_relative_path": "softec/vsinstall/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/vsinstall/index.html",
-          "hash": "BBpg/tFlMJ/s9Zl5nBFWNSGaOEfzJB0iAuFodDy6D98="
+          "relative_path": "softec/vsinstall/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1798,11 +2588,9 @@
       "source_relative_path": "softec/zh1checklist/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/zh1checklist/index.html",
-          "hash": "buqNbPqENjWBkuGaF4T3USwyeIU31bdHpfJma48mX2E="
+          "relative_path": "softec/zh1checklist/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1813,7 +2601,6 @@
           "relative_path": "softec/zh2checklist/clip_image001.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1824,7 +2611,6 @@
           "relative_path": "softec/zh2checklist/colors.csv"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1835,7 +2621,6 @@
           "relative_path": "softec/zh2checklist/fa.csv"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1843,11 +2628,9 @@
       "source_relative_path": "softec/zh2checklist/index.md",
       "output": {
         ".html": {
-          "relative_path": "softec/zh2checklist/index.html",
-          "hash": "JL5Ay9zh5WF48Tc0WnizKNKAvWtXU5mLu/WnoM8pDFY="
+          "relative_path": "softec/zh2checklist/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1858,7 +2641,6 @@
           "relative_path": "softec/zh2checklist/kbd_hun.txt"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1869,7 +2651,6 @@
           "relative_path": "softec/zh2checklist/lany.csv"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1880,7 +2661,6 @@
           "relative_path": "softec/zh2checklist/quiz.txt"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1891,7 +2671,6 @@
           "relative_path": "softec/zh2checklist/srac.csv"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1902,7 +2681,86 @@
           "relative_path": "softec/zh2checklist/szavak.csv"
         }
       },
-      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "softec/zh3_gyakorlas/dilbert.csv",
+      "output": {
+        "resource": {
+          "relative_path": "softec/zh3_gyakorlas/dilbert.csv"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "softec/zh3_gyakorlas/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "softec/zh3_gyakorlas/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "softec/zh3_gyakorlas/lany.csv",
+      "output": {
+        "resource": {
+          "relative_path": "softec/zh3_gyakorlas/lany.csv"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "softec/zh3_gyakorlas/multichoice.csv",
+      "output": {
+        "resource": {
+          "relative_path": "softec/zh3_gyakorlas/multichoice.csv"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "softec/zh3_gyakorlas/srac.csv",
+      "output": {
+        "resource": {
+          "relative_path": "softec/zh3_gyakorlas/srac.csv"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "softec/zh3_gyakorlas/szavak2.txt",
+      "output": {
+        "resource": {
+          "relative_path": "softec/zh3_gyakorlas/szavak2.txt"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "softec/zh3_gyakorlas/trivia.csv",
+      "output": {
+        "resource": {
+          "relative_path": "softec/zh3_gyakorlas/trivia.csv"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "softec/zh3_gyakorlas/words.csv",
+      "output": {
+        "resource": {
+          "relative_path": "softec/zh3_gyakorlas/words.csv"
+        }
+      },
       "version": ""
     },
     {
@@ -1913,7 +2771,6 @@
           "relative_path": "softeng/LevelezoVK/IN_MEMORY/in-memory-db-1.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1924,7 +2781,6 @@
           "relative_path": "softeng/LevelezoVK/IN_MEMORY/in-memory-db-2.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1932,22 +2788,9 @@
       "source_relative_path": "softeng/LevelezoVK/IN_MEMORY/in_memory_db.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/IN_MEMORY/in_memory_db.html",
-          "hash": "RkVCy2z1swpdyNzTocw6gPp5VWGaaXXjY/hUIs/AwjI="
+          "relative_path": "softeng/LevelezoVK/IN_MEMORY/in_memory_db.html"
         }
       },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "softeng/LevelezoVK/IN_MEMORY/project/InMemory/obj/Debug/net6.0-windows/InMemory.csproj.FileListAbsolute.txt",
-      "output": {
-        "resource": {
-          "relative_path": "softeng/LevelezoVK/IN_MEMORY/project/InMemory/obj/Debug/net6.0-windows/InMemory.csproj.FileListAbsolute.txt"
-        }
-      },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1955,11 +2798,9 @@
       "source_relative_path": "softeng/LevelezoVK/KNOWHOW/azure_koltsegek.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_koltsegek.html",
-          "hash": "j6i5HTyGylWW6Mc0jbucciG2rMl6i5ZHjI9vDRQoiFk="
+          "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_koltsegek.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -1967,11 +2808,9 @@
       "source_relative_path": "softeng/LevelezoVK/KNOWHOW/azure_regisztracio.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_regisztracio.html",
-          "hash": "czVp37mk3nM/jmMV7+JLn676p0pFbaGkTvDuxlctZno="
+          "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_regisztracio.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -1982,7 +2821,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/Azure_2022_Create.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1993,7 +2831,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/Azure_2022_Finished.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2004,7 +2841,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/Azure_2022_Firewall.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2015,7 +2851,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/Azure_2022_configdb.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2026,7 +2861,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/Azure_2022_dtu.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2037,7 +2871,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/Azure_2022_home.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2048,7 +2881,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/Azure_2022_newHost.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2059,7 +2891,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/Azure_2022_newdb.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2070,7 +2901,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/Azure_See_on_ControlPanel.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2081,7 +2911,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/Azure_work_in_progress.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2092,7 +2921,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/azure-firewall.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2103,7 +2931,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/azure-properties.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2114,7 +2941,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/azure-settings.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2122,11 +2948,9 @@
       "source_relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/index.html",
-          "hash": "yISQ9R2nRtXPGjSygITQuMkb3AGMr09Kor6dBQfG5G0="
+          "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -2137,7 +2961,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_adatbazis_letrehozasa_2022/kep4_4_mehet2_2022.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2148,11 +2971,9 @@
       "source_relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_szerver.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_szerver.html",
-          "hash": "BreA7WiUOAwr6UGP0Ay5tSpIavtsD0KOJfwb90o2byE="
+          "relative_path": "softeng/LevelezoVK/KNOWHOW/azure_sql_szerver.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -2163,7 +2984,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/local-connection-1.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2174,7 +2994,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/local-connection-2.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2185,7 +3004,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/local-connection-3.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2193,11 +3011,9 @@
       "source_relative_path": "softeng/LevelezoVK/KNOWHOW/lokalis_adatbazis_visual_studioban.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/KNOWHOW/lokalis_adatbazis_visual_studioban.html",
-          "hash": "r9q0PXYaFH89iI/DpBo8UgdHBuUH78fwaX5nT4n7Iks="
+          "relative_path": "softeng/LevelezoVK/KNOWHOW/lokalis_adatbazis_visual_studioban.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -2208,7 +3024,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/service-based-db-1.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2219,7 +3034,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/service-based-db-2.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2230,7 +3044,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/service-based-db-files.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2238,11 +3051,9 @@
       "source_relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/index.html",
-          "hash": "KHzv09S5O/0lXdvqUlTB0mL8ezyKHEd7wtP/shSSc2Q="
+          "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -2253,7 +3064,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp01.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2264,7 +3074,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp02.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2275,7 +3084,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp03.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2286,7 +3094,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp04.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2297,7 +3104,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp05.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2308,7 +3114,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp06.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2319,7 +3124,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp07.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2330,7 +3134,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp08.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2341,7 +3144,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp09.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2352,7 +3154,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp10.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2363,7 +3164,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp11.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2374,7 +3174,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp12.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2385,7 +3184,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp13.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2396,7 +3194,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp14.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2407,7 +3204,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp15.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2418,7 +3214,6 @@
           "relative_path": "softeng/LevelezoVK/KNOWHOW/sql_express_sajat_gepre/sqlexp16.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2426,11 +3221,9 @@
       "source_relative_path": "softeng/LevelezoVK/KNOWHOW/visual_studio_telepites.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/KNOWHOW/visual_studio_telepites.html",
-          "hash": "gVc2cjYWQSa1/pzTdh7r6YO+DqtLiNORa/0wbvwuYrQ="
+          "relative_path": "softeng/LevelezoVK/KNOWHOW/visual_studio_telepites.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -2441,7 +3234,6 @@
           "relative_path": "softeng/LevelezoVK/LINQ/1585069392831.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2452,11 +3244,9 @@
       "source_relative_path": "softeng/LevelezoVK/LINQ/linq_lekerdezesek_-_studies_adatb.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/LINQ/linq_lekerdezesek_-_studies_adatb.html",
-          "hash": "gdXx4ALKAovKm6LW1RSIZ3jZLqiuvoNP3pRXBD1nxvM="
+          "relative_path": "softeng/LevelezoVK/LINQ/linq_lekerdezesek_-_studies_adatb.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -2464,11 +3254,9 @@
       "source_relative_path": "softeng/LevelezoVK/LINQ/linq_osszefoglalo.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/LINQ/linq_osszefoglalo.html",
-          "hash": "z4JmFzWA8YNdXH9eI3JSQxPMDO7hWAcyP+tJaBhxQJI="
+          "relative_path": "softeng/LevelezoVK/LINQ/linq_osszefoglalo.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -2479,7 +3267,6 @@
           "relative_path": "softeng/LevelezoVK/LINQ/linq_studies.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2490,7 +3277,6 @@
           "relative_path": "softeng/LevelezoVK/REMOTE_DB/add_connection.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2501,7 +3287,6 @@
           "relative_path": "softeng/LevelezoVK/REMOTE_DB/add_data_source.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2512,7 +3297,6 @@
           "relative_path": "softeng/LevelezoVK/REMOTE_DB/add_service_based_database.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2520,11 +3304,9 @@
       "source_relative_path": "softeng/LevelezoVK/REMOTE_DB/concurrency.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/REMOTE_DB/concurrency.html",
-          "hash": "1OHeJhob1R92vqZ5GHG6Gj9impUG1Ac7r12VAg9da5I="
+          "relative_path": "softeng/LevelezoVK/REMOTE_DB/concurrency.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -2535,7 +3317,6 @@
           "relative_path": "softeng/LevelezoVK/REMOTE_DB/create_a_new_project.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2546,7 +3327,6 @@
           "relative_path": "softeng/LevelezoVK/REMOTE_DB/create_a_new_project_60.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2557,7 +3337,6 @@
           "relative_path": "softeng/LevelezoVK/REMOTE_DB/datasource_in_solutionexplorer.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2568,7 +3347,6 @@
           "relative_path": "softeng/LevelezoVK/REMOTE_DB/error.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2576,11 +3354,9 @@
       "source_relative_path": "softeng/LevelezoVK/REMOTE_DB/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/REMOTE_DB/index.html",
-          "hash": "QJ+6XSMq2/Cj3ugJR8SYRvTRpbuXLM8t599j2wkvgbo="
+          "relative_path": "softeng/LevelezoVK/REMOTE_DB/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -2591,7 +3367,6 @@
           "relative_path": "softeng/LevelezoVK/REMOTE_DB/nuget.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2602,7 +3377,6 @@
           "relative_path": "softeng/LevelezoVK/REMOTE_DB/nuget_packages.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2613,18 +3387,6 @@
           "relative_path": "softeng/LevelezoVK/REMOTE_DB/orm_files.png"
         }
       },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "softeng/LevelezoVK/REMOTE_DB/project/RemoteDBTest/obj/Debug/net6.0-windows/RemoteDBTest.csproj.FileListAbsolute.txt",
-      "output": {
-        "resource": {
-          "relative_path": "softeng/LevelezoVK/REMOTE_DB/project/RemoteDBTest/obj/Debug/net6.0-windows/RemoteDBTest.csproj.FileListAbsolute.txt"
-        }
-      },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2635,7 +3397,6 @@
           "relative_path": "softeng/LevelezoVK/REMOTE_DB/schema.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2646,7 +3407,6 @@
           "relative_path": "softeng/LevelezoVK/REMOTE_DB/server_explorer_with_db.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2657,7 +3417,6 @@
           "relative_path": "softeng/LevelezoVK/REMOTE_DB/service-based-db-files.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2668,18 +3427,6 @@
           "relative_path": "softeng/LevelezoVK/REMOTE_DB/show_table_data.png"
         }
       },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "softeng/LevelezoVK/UI/project/Többablakos/obj/Debug/net6.0-windows/Többablakos.csproj.FileListAbsolute.txt",
-      "output": {
-        "resource": {
-          "relative_path": "softeng/LevelezoVK/UI/project/Többablakos/obj/Debug/net6.0-windows/Többablakos.csproj.FileListAbsolute.txt"
-        }
-      },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2687,11 +3434,9 @@
       "source_relative_path": "softeng/LevelezoVK/UI/ui_design.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/UI/ui_design.html",
-          "hash": "RaFeoc+T1+5VzjDPdOLntYfrkyepGitX6O4vifXU74U="
+          "relative_path": "softeng/LevelezoVK/UI/ui_design.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -2699,11 +3444,9 @@
       "source_relative_path": "softeng/LevelezoVK/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/index.html",
-          "hash": "lBajIy/xASWy2f5svnztYY3zIiCkxSCae2QKOA/ATlY="
+          "relative_path": "softeng/LevelezoVK/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -2714,11 +3457,9 @@
       "source_relative_path": "softeng/LevelezoVK/tobbtablas_db/TAO_adatbazis_UI.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/tobbtablas_db/TAO_adatbazis_UI.html",
-          "hash": "8UX5sCZi82xe6ZMCmWhZ/p7783U7cOp1ZYzzH//szC0="
+          "relative_path": "softeng/LevelezoVK/tobbtablas_db/TAO_adatbazis_UI.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -2729,11 +3470,9 @@
       "source_relative_path": "softeng/LevelezoVK/tobbtablas_db/TAO_adatbazis_felepitese.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/LevelezoVK/tobbtablas_db/TAO_adatbazis_felepitese.html",
-          "hash": "F332diAPK5SgdpM9nku4I+jbHRshz7fU+iS26xe7XTo="
+          "relative_path": "softeng/LevelezoVK/tobbtablas_db/TAO_adatbazis_felepitese.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -2741,11 +3480,9 @@
       "source_relative_path": "softeng/ZH1/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/ZH1/index.html",
-          "hash": "Jd/H6HTqER6qVUw6EW0hmF3gUWPXexq/A4RTaeTfXlI="
+          "relative_path": "softeng/ZH1/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -2756,7 +3493,6 @@
           "relative_path": "softeng/images/1585069392831.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2767,7 +3503,6 @@
           "relative_path": "softeng/images/1585724543414.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2778,7 +3513,6 @@
           "relative_path": "softeng/images/1585726196537.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2789,7 +3523,6 @@
           "relative_path": "softeng/images/1610903788811.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2800,7 +3533,6 @@
           "relative_path": "softeng/images/1614698473871.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2811,7 +3543,6 @@
           "relative_path": "softeng/images/1614699641758.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2822,7 +3553,6 @@
           "relative_path": "softeng/images/1614699890414.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2833,7 +3563,6 @@
           "relative_path": "softeng/images/1614699994470.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2844,7 +3573,6 @@
           "relative_path": "softeng/images/1615051267868.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2855,7 +3583,6 @@
           "relative_path": "softeng/images/1615051616183.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2866,7 +3593,6 @@
           "relative_path": "softeng/images/1615051851465.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2877,7 +3603,6 @@
           "relative_path": "softeng/images/1615368531680.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2888,7 +3613,6 @@
           "relative_path": "softeng/images/1619343517825.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2899,7 +3623,6 @@
           "relative_path": "softeng/images/1619343711506.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2910,7 +3633,6 @@
           "relative_path": "softeng/images/1619343810349.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2921,7 +3643,6 @@
           "relative_path": "softeng/images/AddNewDatasource.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2932,7 +3653,6 @@
           "relative_path": "softeng/images/InstructorsRaw.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2943,7 +3663,6 @@
           "relative_path": "softeng/images/InstructorsWithComboBoxes.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2954,7 +3673,6 @@
           "relative_path": "softeng/images/StatusBindingSource.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2965,7 +3683,6 @@
           "relative_path": "softeng/images/add_connection.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2976,7 +3693,6 @@
           "relative_path": "softeng/images/add_data_source.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2987,7 +3703,6 @@
           "relative_path": "softeng/images/add_service_based_database.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -2998,7 +3713,6 @@
           "relative_path": "softeng/images/add_textbox_binding.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3009,7 +3723,6 @@
           "relative_path": "softeng/images/create_a_new_project.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3020,7 +3733,6 @@
           "relative_path": "softeng/images/create_a_new_project_60.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3031,7 +3743,6 @@
           "relative_path": "softeng/images/datasource_in_solutionexplorer.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3042,7 +3753,6 @@
           "relative_path": "softeng/images/edmx.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3053,7 +3763,6 @@
           "relative_path": "softeng/images/error.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3064,7 +3773,6 @@
           "relative_path": "softeng/images/hallgato2.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3075,7 +3783,6 @@
           "relative_path": "softeng/images/image-20220827150347600.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3086,7 +3793,6 @@
           "relative_path": "softeng/images/in-memory-db-1.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3097,7 +3803,6 @@
           "relative_path": "softeng/images/in-memory-db-2.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3108,7 +3813,6 @@
           "relative_path": "softeng/images/input_form.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3119,7 +3823,6 @@
           "relative_path": "softeng/images/linq_advanced.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3130,7 +3833,6 @@
           "relative_path": "softeng/images/linq_studies.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3141,7 +3843,6 @@
           "relative_path": "softeng/images/local-connection-1.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3152,7 +3853,6 @@
           "relative_path": "softeng/images/local-connection-2.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3163,7 +3863,6 @@
           "relative_path": "softeng/images/local-connection-3.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3174,7 +3873,6 @@
           "relative_path": "softeng/images/nuget.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3185,7 +3883,6 @@
           "relative_path": "softeng/images/nuget_packages.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3196,7 +3893,6 @@
           "relative_path": "softeng/images/orm_classes.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3207,7 +3903,6 @@
           "relative_path": "softeng/images/orm_files.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3218,7 +3913,6 @@
           "relative_path": "softeng/images/osztaly.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3229,7 +3923,6 @@
           "relative_path": "softeng/images/schema.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3240,7 +3933,6 @@
           "relative_path": "softeng/images/server_explorer_with_db.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3251,7 +3943,6 @@
           "relative_path": "softeng/images/service-based-db-1.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3262,7 +3953,6 @@
           "relative_path": "softeng/images/service-based-db-2.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3273,7 +3963,6 @@
           "relative_path": "softeng/images/service-based-db-files.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3284,7 +3973,6 @@
           "relative_path": "softeng/images/show_table_data.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3295,7 +3983,6 @@
           "relative_path": "softeng/images/sqlexp01.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3306,7 +3993,6 @@
           "relative_path": "softeng/images/sqlexp02.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3317,7 +4003,6 @@
           "relative_path": "softeng/images/sqlexp03.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3328,7 +4013,6 @@
           "relative_path": "softeng/images/sqlexp04.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3339,7 +4023,6 @@
           "relative_path": "softeng/images/sqlexp05.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3350,7 +4033,6 @@
           "relative_path": "softeng/images/sqlexp06.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3361,7 +4043,6 @@
           "relative_path": "softeng/images/sqlexp07.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3372,7 +4053,6 @@
           "relative_path": "softeng/images/sqlexp08.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3383,7 +4063,6 @@
           "relative_path": "softeng/images/sqlexp09.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3394,7 +4073,6 @@
           "relative_path": "softeng/images/sqlexp10.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3405,7 +4083,6 @@
           "relative_path": "softeng/images/sqlexp11.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3416,7 +4093,6 @@
           "relative_path": "softeng/images/sqlexp12.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3427,7 +4103,6 @@
           "relative_path": "softeng/images/sqlexp13.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3438,7 +4113,6 @@
           "relative_path": "softeng/images/sqlexp14.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3449,7 +4123,6 @@
           "relative_path": "softeng/images/sqlexp15.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3460,7 +4133,6 @@
           "relative_path": "softeng/images/sqlexp16.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3471,7 +4143,6 @@
           "relative_path": "softeng/images/vs_install.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3482,11 +4153,9 @@
       "source_relative_path": "softeng/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/index.html",
-          "hash": "Ti3PGMxFeA++8z3VWfouOYT6ddTQyDHR5tB9nsQDRDE="
+          "relative_path": "softeng/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -3494,11 +4163,9 @@
       "source_relative_path": "softeng/knowledge_base/azure_costs/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/knowledge_base/azure_costs/index.html",
-          "hash": "eU+rZ0NMXtvHiubbNwzSRRAlJhj4sReQeFk56KwzYqo="
+          "relative_path": "softeng/knowledge_base/azure_costs/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -3509,11 +4176,9 @@
       "source_relative_path": "softeng/knowledge_base/azure_sql_adatbazis_letrehozasa_2022/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/knowledge_base/azure_sql_adatbazis_letrehozasa_2022/index.html",
-          "hash": "hY69n+thAmM1KOlqtXGkQW4YbyVGi2DXKa7E5mUzdRk="
+          "relative_path": "softeng/knowledge_base/azure_sql_adatbazis_letrehozasa_2022/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -3521,11 +4186,9 @@
       "source_relative_path": "softeng/knowledge_base/honnet_lesz_sql_szerverem/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/knowledge_base/honnet_lesz_sql_szerverem/index.html",
-          "hash": "7Pn2oyrTYj8ACE1Z2hBZYyS4biHeGd5CLQ0Yde0Z9vo="
+          "relative_path": "softeng/knowledge_base/honnet_lesz_sql_szerverem/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -3533,11 +4196,9 @@
       "source_relative_path": "softeng/knowledge_base/ingyenes_hallgatoi_azure_fiok_regisztralasa/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/knowledge_base/ingyenes_hallgatoi_azure_fiok_regisztralasa/index.html",
-          "hash": "wisKmoR5/fiRgIl6tcHVfDMN/mXz94lo7UrQW/cSaJ4="
+          "relative_path": "softeng/knowledge_base/ingyenes_hallgatoi_azure_fiok_regisztralasa/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -3548,11 +4209,9 @@
       "source_relative_path": "softeng/knowledge_base/lokalis_adatbazis_visual_studioban/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/knowledge_base/lokalis_adatbazis_visual_studioban/index.html",
-          "hash": "Yk2bzEqk1Eh7OV44HDWH6LTqI9tfC0aRj155ChEm0Wc="
+          "relative_path": "softeng/knowledge_base/lokalis_adatbazis_visual_studioban/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -3560,11 +4219,9 @@
       "source_relative_path": "softeng/knowledge_base/sql_generalasa_ssms-bol_adatbazis_letrehozasara/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/knowledge_base/sql_generalasa_ssms-bol_adatbazis_letrehozasara/index.html",
-          "hash": "7Xn8Q3oBadUDQe7h0oW/CUKxdOdIwsci94hQYIxwJWw="
+          "relative_path": "softeng/knowledge_base/sql_generalasa_ssms-bol_adatbazis_letrehozasara/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -3572,11 +4229,9 @@
       "source_relative_path": "softeng/knowledge_base/sql_server_sajat_gepre/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/knowledge_base/sql_server_sajat_gepre/index.html",
-          "hash": "FrazPQHxm2hpf/0EC3sa9PoxjYCyQasbQ9X1o5Y/wFU="
+          "relative_path": "softeng/knowledge_base/sql_server_sajat_gepre/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -3584,11 +4239,9 @@
       "source_relative_path": "softeng/tantargyi_informaciok/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/tantargyi_informaciok/index.html",
-          "hash": "E2yvAhrjMeHgG07KS1FrnMO7dwOBuZTMLMeS1HcgXRA="
+          "relative_path": "softeng/tantargyi_informaciok/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -3599,11 +4252,9 @@
       "source_relative_path": "softeng/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "softeng/toc.html",
-          "hash": "O1j9dc/G5weVCICuqohYpeSp1rDC7XPH1Q4MKsDoB/U="
+          "relative_path": "softeng/toc.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -3611,11 +4262,9 @@
       "source_relative_path": "softeng/vsinstall/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/vsinstall/index.html",
-          "hash": "8Gjf2XOV97/x2KGM3AxquzwdKZtN18xUdHj6T4EFHNo="
+          "relative_path": "softeng/vsinstall/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -3623,11 +4272,9 @@
       "source_relative_path": "softeng/zh_ertekeles_szabalyai/index.md",
       "output": {
         ".html": {
-          "relative_path": "softeng/zh_ertekeles_szabalyai/index.html",
-          "hash": "FZKggmd/qYyxbGePh6salTW9r3avAdYoQ4GFdCNk/us="
+          "relative_path": "softeng/zh_ertekeles_szabalyai/index.html"
         }
       },
-      "is_incremental": true,
       "version": ""
     },
     {
@@ -3638,54 +4285,10 @@
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
-          "relative_path": "toc.html",
-          "hash": "nmndDVXmWORzGmgtLCI3dPcet2125/ffdBeSOqHx7XM="
+          "relative_path": "toc.html"
         }
       },
-      "is_incremental": false,
       "version": ""
-    }
-  ],
-  "incremental_info": [
-    {
-      "status": {
-        "can_incremental": true,
-        "incrementalPhase": "build",
-        "total_file_count": 0,
-        "skipped_file_count": 0
-      },
-      "processors": {
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 87,
-          "skipped_file_count": 87
-        },
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        }
-      }
-    },
-    {
-      "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
-        "incrementalPhase": "postProcessing",
-        "total_file_count": 0,
-        "skipped_file_count": 0
-      },
-      "processors": {}
     }
   ],
   "version_info": {},
