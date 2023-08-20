@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Adatkezel&#233;s feladat </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Adatkezel&#233;s feladat ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="adatkezelés-feladat">Adatkezelés feladat</h1>
+
+<p>Ebben a feladatban a korábban tanultakat egyesítve megvalósítunk egy számsorozat tárolására és szerkesztésére szolgáló szoftvert. Az elkészült program egy fájlban tárolja a számainkat, és induláskor betölti azokat. A felhasználónak az alábbi lehetőségei vannak:</p>
+<ol>
+<li>A szám indexének megadása után átírhatja annak értékét.</li>
+<li>Egy szám érték alapján megkeresheti annak indexét.
+<ul>
+<li>Ha nem található a keresett érték, akkor a hozzá legközelebbi indexet adja vissza.</li>
+</ul>
+</li>
+<li>Bezárhatja a programot</li>
+</ol>
+<h2 id="fájl-beolvasása">Fájl beolvasása</h2>
+<ol>
+<li>Töltsd le a &quot;szamok.txt&quot; állományt a Moodle rendszerből, és helyezd el a kódodat tartalmazó fájl mellé.</li>
+<li>Hozz létre egy konstans változót a kód elején, és tárold benne a fájlnevet.</li>
+<li>Hozz létre egy függvényt, aminek a bemenete a fájlnév, a kimenete pedig egy számokból álló lista.
+<ol>
+<li>Olvasd be a fájl sorait egy listába.</li>
+<li>Hozz létre egy üres listát.</li>
+<li>Menj végig a lista sorain. A sortörések eltávolítása után konvertáld a sorokat számmá, és add őket a listához. (Nem kell kezelni a konverziós hibákat, feltételezheted, hogy a fájl tartalma helyes.)</li>
+<li>Add vissza a listát a függvényből.</li>
+</ol>
+</li>
+<li>Hívd meg fájl olvasó függvényt a korábban létrehozott változót használva bemenetként. A kimenetet mentsd egy <code>numbers</code> nevű változóba. (Tesztelés céljából ideiglenesen írd ki a változó értékét.)</li>
+</ol>
+<h2 id="főmenü">Főmenü</h2>
+<ol start="5">
+<li>A főprogramban induláskor az alábbi szöveg látszódjon.
+<pre><code> 100 SZÁM ALKALMAZÁS
+
+ Válassza ki a kívánt funkciót:
+ 	M - Szám módosítása
+ 	K - Szám index keresése
+ 	Q - Mentés és kilépés
+</code></pre>
+</li>
+<li>A szöveg után kérj be egy értéket a felhasználótól, és írd meg az értékeknek megfelelő elágazást.
+<ol>
+<li>Ideiglenesen <code>pass</code>-t írj az egyes ágakba, vagy egy <code>print</code> üzenetet, hogy tudj tesztelni.</li>
+<li>Kisbetűt is fogadj el megfelelőnek.</li>
+<li>Helytelen érték esetén írj ki egy hibaüzenetet.</li>
+<li>A fenti szöveg alsó felének megjelenítését és az adatbekérést addig ismételd, míg &quot;Q&quot;-t nem választ a felhasználó.</li>
+</ol>
+</li>
+</ol>
+<h2 id="mentés-q">Mentés (Q)</h2>
+<ol start="7">
+<li>Írj egy függvényt, aminek egyik bemenő paramétere egy fájlnév, a másik egy számokból álló lista. (A bemenetek helyességét feltételezheted, nem kell ellenőrizni.)
+<ol>
+<li>Hozz létre egy üres listát a szöveges értékek tárolására.</li>
+<li>Menj végig a bemeneti listán, és add hozzá az elemeit szöveggé konvertálva az előbb létrehozott listához.</li>
+<li>Fűzd össze a szöveges lista értékeit sortörések segítségével.</li>
+<li>Az eredményül kapott szöveget írd ki a bemenetként kapott fájlba. (Írd felül a fájlt, ha már létezik.)</li>
+</ol>
+</li>
+<li>Amennyiben a főmenüben a felhasználó &quot;Q&quot;-t választott, hívd meg a fájlba író függvényt értelemszerű argumentumokkal. Ezután írd ki a felhasználónak, hogy sikeres a mentés, majd állítsd le a program futását.</li>
+</ol>
+<h2 id="keresés-k">Keresés (K)</h2>
+<p>A továbbiakban újabb ciklusok alkalmazásával kell majd kérdéseket adatbekéréseket megjeleníteni a felhasználó számára. Annak érdekében, hogy ne kelljen fél tucat behúzást alkalmaznunk a kódban, ezeket az adatbekéréseket függvénybe érdemes szervezni. A mostani példában olyan függvényeket fogunk írni, amik bekérik az aktuális adatot, és hiba esetén a hibaüzenet szövegével térnek vissza. Ha a kódban nem történt hiba, akkor pedig egyszerűen lefutnak, tehát a visszatérési értékük <code>None</code> lesz. Így az alábbi kódhoz hasonló megoldással lesz érdemes meghívni az adatbekérő függvényeinket:</p>
+<pre><code class="lang-python">while True:
+    result = function_name()        
+    if(result == None):
+        break
+    else:
+        print(result)
+</code></pre>
+<p>Ahol a <code>function_name</code> az éppen meghívott függvényünk neve. Látható, hogy hiba esetén megjelenik a visszakapott üzenet, és addig ismétlődik az adatbekérés, amíg minden rendben nem volt.</p>
+<ol start="9">
+<li>Hozz létre egy bemeneti paraméter nélküli függvényt a keresés funkció megvalósítására, és a &quot;K&quot; ágban, a fenti szerkezet használatával hívd meg a függvényt.
+<ol>
+<li>A függvényben kérj be egy értéket a felhasználótól.</li>
+<li>Ha az érték üres, akkor térj vissza <code>None</code> értékkel. (Ezzel végeredményben a főmenübe léphet vissza a felhasználó.)</li>
+<li>Ha az érték nem szám, akkor térjen vissza a függvény egy ennek megfelelő hibaüzenet szöveggel.</li>
+<li>Ha az érték valóban szám, akkor keresd meg az értékhez tartozó indexet a listában.</li>
+<li>Ha megtalálható az index, akkor írd ki a felhasználónak, és térj vissza <code>None</code> értékkel.</li>
+<li>Ha nem található az index, akkor térj vissza egy erről szóló üzenettel.</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p><code>None</code>-al való visszatéréshez elég annyit írni, hogy <code>return</code>, nem kell kiírni, hogy <code>return None</code>.</p>
+</blockquote>
+<h2 id="módosítás-m">Módosítás (M)</h2>
+<p>A módosítás funkció a kereséshez hasonlóan függvényként valósul meg, de mivel az indexre és a módosított értékre is rá kell kérdezni, két egymásba ágyazott <code>while</code> ciklusra van szükség. Ehhez is a korábbi konstrukciót fogjuk használni, de most az első függvény végén hívjuk majd meg ciklus segítségével a másodikat.</p>
+<ol start="10">
+<li>Hozz létre egy bemeneti paraméter nélküli függvényt a módosítás funkció megvalósítására, és az &quot;M&quot; ágban, a korábbi szerkezet használatával hívd meg a függvényt.
+<ol>
+<li>A függvényben kérj be egy indexet a felhasználótól.</li>
+<li>Ha az index üres, akkor térj vissza <code>None</code> értékkel. (Ezzel végeredményben a főmenübe léphet vissza a felhasználó.)</li>
+<li>Ha az index nem szám, akkor térjen vissza a függvény egy ennek megfelelő hibaüzenet szöveggel.</li>
+<li>Ha az index szám, akkor ellenőrizd, hogy kisebb-e, mint száz. Ha nem, akkor térj vissza megfelelő hibaüzenettel.</li>
+<li>A függvény végén kell majd a következő függvényt meghívni</li>
+</ol>
+</li>
+<li>Hozz létre egy új függvényt, aminek az index a bemenő paramétere, és ezt hívd meg az előző függvény végén a korábbi <code>while</code> szerkezet segítségével.
+<ol>
+<li>A függvényben kérj be egy értéket a felhasználótól.</li>
+<li>Ha az érték üres, akkor térj vissza <code>None</code> értékkel. (Ezzel végeredményben a főmenübe léphet vissza a felhasználó.)</li>
+<li>Ha az érték nem szám, akkor térjen vissza a függvény egy ennek megfelelő hibaüzenet szöveggel.</li>
+<li>Ha az érték szám, akkor a megfelelő konverzió után írd felül az indexhez tartozó szám értékét a <code>numbers</code> listában az újonnan megadott értékkel.</li>
+<li>Írd ki a felhasználónak, hogy a módosítás sikeres, és térj vissza a függvényből <code>None</code> értékkel.</li>
+</ol>
+</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/03/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

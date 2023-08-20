@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Oszt&#225;lyok </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Oszt&#225;lyok ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="osztályok">Osztályok</h1>
+
+<p>Az <em>Objektum Orientált Programozás</em> (OOP) a szoftver fejlesztés egyik leghatékonyabb megközelítése. A legtöbb modern programozási nyelv ezen az elven épül fel, többek között azért, mert átláthatóbbá teszi a kód struktúráját, és ezzel nagyban megkönnyíti a fejlesztők közötti kommunikációt és csapatmunkát.</p>
+<p>Az OOP alapját az objektumok és az őket leíró osztályok alkotják. Egy <strong>osztály</strong> egy adott típusú objektum általános viselkedését írja le, míg az objektumnak magának lehetnek ezen felül saját egyedi tulajdonságai. Az osztály intuitíve egyformának ítélt objektumokat foglal egységbe. Számos valós analógiát lehet találni erre a felépítésre. Vegyük például az állatok osztályozását (a név egyezőség nem véletlen). Tekintsünk el a pontos terminológiától, és mondjuk azt, hogy a <em>Macska</em>, mint fogalom egy osztály, és a bele tartozó állatoknak (objektumoknak) számos olyan tulajdonsága van, ami mindegyikükre igaz. Például mind emlősök, négylábúak, ragadozók és igazi rohadékok tudnak lenni... Egy háziállatként tartott macskának általában van neve is, így ez is egy közös tulajdonság, ám egy konkrét macska neve már viszonylag egyedi, például: Cirmi.</p>
+<p>Az objektumok az őket leíró osztály minden tulajdonságával rendelkeznek, de ezen tulajdonságok konkrét értékei már az adott objektumhoz tartoznak. Egy adott osztálynak megfelelő objektum létrehozását <strong>példányosításnak</strong>, a létrehozott objektumot pedig az osztály egy <strong>példányának</strong> nevezzük.</p>
+<p>Az objektum orientált programozás lényege, hogy a kód a különböző objektumok interakcióiból épül fel. Az osztályok által leírt objektumoknak vannak különböző adattípusú változók által meghatározott tulajdonságai, saját függvényei és lehetséges eseményei, melyek bekövetkezése alkalmával futnak le az egyes kódrészletek. Az objektumok kiválthatják más objektumok eseményeit, vagy meghívhatják a függvényeiket, így folytatva a program futását.</p>
+<h2 id="példa">Példa</h2>
+<p>Az alábbi példában a <code>Macska</code> osztályt definiáltuk a <code>class</code> utasítás segítségével. Az utasítás hatóköre a feltételeknél és ciklusoknál megszokott módon működik.</p>
+<pre><code class="lang-python">class Macska:
+    def __init__(self):
+        self.név = &quot;Cic&quot;
+        self.szín = &quot;Fekete&quot;
+        self.életek = 9
+        
+    def nem_talpra_esett(self):
+        self.életek -= 1
+        
+cica = Macska()
+cica.név = &quot;Cirmi&quot;
+cica.szín = &quot;Tarka&quot;
+cica.nem_talpra_esett()
+
+print(cica)
+print(cica.név)
+print(cica.szín)
+print(cica.életek)
+</code></pre>
+<pre><code>&lt;__main__.Macska object at 0x000002452CE88AF0&gt;
+Cirmi
+Tarka
+8
+</code></pre>
+<p>A példában sok az újdonság. A <code>Macska</code> osztály leírásában két függvény található.  Az első <code>__init__</code> nevű függvény speciális. Ez az osztály <strong>konstruktora</strong>. Az ezen belül írt kód minden osztály példányosítás során lefut. Tipikusan a kezdő értékek beállítására szokás használni.</p>
+<p>Ebben a példában az osztálynak három tulajdonsága van: Név, Szín és az Életek száma. Az osztály minden függvényének van egy speciális első paramétere, ami mindig az osztály aktuális példányát jelöli. A paraméterváltozót általában <code>self</code>-nek szokás nevezni, de bármilyen név adható neki. A ponttal való összefűzéssel tudunk az osztály példány egyes elemeire (tulajdonság, függvény, esemény) hivatkozni. A példában definiáljuk a három tulajdonságot és kezdő értéket adunk nekik. (Pythonban nem lehet kezdőérték nélküli tulajdonságot létrehozni.) A <code>self.név</code> ugyanúgy működik, mint egy hagyományos változó. Értéket lehet neki adni, használni lehet, de a lényeg, hogy az osztály hivatkozás birtokában bármikor könnyen elérhető.</p>
+<p>A második függvény egy az osztályhoz tartozó függvény, ami csak az osztály példányai számára érhető el. Ilyen például a karakterlánc adattípus (osztály) számára elérhető <code>isnumeric()</code> függvény is. Ebben az esetben a <code>nem_talpra_esett()</code> függvény meghívásával azt jelezzük, hogy a konkrét <code>Macska</code> példányunkat baleset érte, ezért eggyel lecsökkent a megmaradt életeinek száma.</p>
+<p>Az osztály definíció alatt van egy példa az osztály használatáról. A <code>Macska()</code> utasítással létrehozunk egy példányt a <code>Macska</code> osztályból, és a <code>cica</code> változóval hivatkozunk rá a továbbiakban. A <code>cica</code>-ban található példány neve ezen a ponton az alapértelmezett &quot;Cic&quot;, &quot;Fekete&quot; a színe, és újszülöttként 9 élete van.</p>
+<p>A <code>cic.Név = &quot;Cirmi&quot;</code> sorral nevet adunk az aktuális cicánknak, de egy újabb példány létrehozásakor az új cicának továbbra is &quot;Cic&quot; marad az első neve. A <code>cica.nem_talpra_esett()</code> függvényt meghívva lefut annak tartalma, ezért a cicánk életeinek száma lecsökken.  Az egyes értékeket kiíratva látszódnak a változások.</p>
+<p>Az osztályok segítségével egységben kezelhetjük az egybe tartozó adatokat, és a velük végzett műveleteket is a releváns adattípusokra korlátozhatjuk. Az itt bemutatott példa csak ízelítő, és töredékét nem mutatja meg az objektum orientált programozás lehetőségeinek. De remélhetőleg segít jobban megérteni a Python kódok felépítését.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/classes/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

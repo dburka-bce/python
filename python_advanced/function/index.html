@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>F&#252;ggv&#233;nyek </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="F&#252;ggv&#233;nyek ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="függvények">Függvények</h1>
+
+<p>A <em>függvények</em> nevesített kódrészletek, melyeknek egy konkrét feladata van. Ha ezt a feladatot többször kell megoldani a futtatás során, akkor a kódrészlet megismétlése helyett elég <em>meghívni</em> a megfelelő függvényt. A függvények segítségével nem csak a kód írása könnyebb, de javul az olvashatósága, valamint egyszerűbb a tesztelése és a javítása is.</p>
+<p>A függvényeknek információt adhatunk át bemeneti <strong>paraméterek</strong> formájában, és a kimenetként kapott <strong>visszatérési értéket</strong> felhasználhatjuk a kód további részeiben. A terminológia okkal hasonlít a matematikában használt függvényekéhez. Vegyük az alábbi példát:</p>
+<p>$f(x) = x^2 + 3x$</p>
+<p>Az $f$ függvény bementi paramétere az $x$ változó értéke, a visszatérési értéke -- amit tipikusan az $y$ tengelyen ábrázolunk -- pedig az egyenlőség jobb oldalán található egyenlet eredménye adott $x$ érték esetén. Persze a matematikai függvények lehetnek többdimenziósak, azaz rendelkezhetnek több bemeneti paraméterrel, viszont ebben az esetben is csak egy értéket adnak eredményül, pont, ahogy a programokban szereplő függvények:
+$$f(x, y) = \dfrac{x^2 + 3y}{y^3-2x}$$</p>
+<p>A programozás területén a különbség annyi, hogy egyenletek helyett komplex működési logika szerepelhet az egyes függvényekben, beleértve több másik függvény meghívását is.</p>
+<h2 id="függvény-definiálása">Függvény definiálása</h2>
+<p>Egy függvény létrehozásához meg kell adni a nevét, majd a megszokott módon, behúzással kell meghatározni a hatókörébe tartozó kódrészleteket.</p>
+<pre><code class="lang-python">def udvozles():
+    print(&quot;Üdvözöllek!&quot;)
+    
+udvozles()
+</code></pre>
+<pre><code>Üdvözöllek!
+</code></pre>
+<p>A kódrészlet első két sora a <strong>függvény definíció</strong> (meghatározás). Ez a rész határozza meg, hogy pontosan mit csinál a függvény. Az első sorban a <code>def</code> szó után szereplő megnevezés a függvény neve, ezzel lehet rá hivatkozni. A negyedik sorban történik a <strong>függvény hívása</strong>, melynek hatására lefut a meghívott függvényhez tartozó kódrészlet.</p>
+<p>A Python egy <a href="/python_basic/general/">interpreteres nyelv</a>, tehát sorról sorra történik a kód futtatása. Ezért a függvény definícióknak mindig az adott függvény hívása előtt kell szerepelniük. Ellenkező esetben a rendszer számára még ismeretlen függvényt próbálunk meghívni, ami hibához vezet.</p>
+<blockquote>
+<p>A Python a memóriában tartja a korábban létrehozott változókat és függvényeket még akkor is, ha az eredeti programkódot már töröltük. Ezért, ha a fenti helyes példát futtatjuk, és csak utána próbáljuk ki az alábbit, akkor az nem fog hibát dobni, hiszen korábban a memóriában már létrejött az <code>udvozles()</code> függvény. Viszont a függvény definíciót a meghívást követő két sor felül fogja írni. Az alábbi példa tesztelése előtt ezért érdemes újraindítani a Pythont. (Jupyterben elég a kernelt újraindítani.)</p>
+</blockquote>
+<pre><code class="lang-python">udvozles()
+
+def udvozles():
+    print(&quot;Üdvözöllek!&quot;)
+</code></pre>
+<pre><code>NameError                                 Traceback (most recent call last)
+&lt;ipython-input-1-750d3e18889e&gt; in &lt;module&gt;
+----&gt; 1  udvozles()
+ 2 
+ 3 def udvozles():
+ 4     print(&quot;Üdvözöllek!&quot;)
+
+NameError: name 'udvozles' is not defined
+</code></pre>
+<h2 id="paraméterek-és-argumentumok">Paraméterek és argumentumok</h2>
+<p>A függvényeknek átadhatunk információt egy vagy több paraméteren keresztül. Az információ átadás helye a függvény neve után található zárójel, melyet a Python nyelv esetében akkor is mindig ki kell írni a függvények után, ha nem történik adat átadás.</p>
+<pre><code class="lang-python">def udvozles(felhasznalo_nev):
+    print(f&quot;Üdvözöllek {felhasznalo_nev.title()}!&quot;)
+    
+udvozles(&quot;eszter&quot;)
+</code></pre>
+<pre><code>Üdvözöllek Eszter!
+</code></pre>
+<p>A példában a függvénynek egy név adható meg, mely alapján az egy megfelelően formázott üdvözlő üzenetet jelenít meg. A hivatalos terminológia szerint a <code>felhasznalo_nev</code> a függvény egy <strong>paramétere</strong>, mely egy a kapott információt tároló változó. A függvény híváskor átadott &quot;eszter&quot; literál a függvény egy <strong>argumentuma</strong>.</p>
+<blockquote>
+<p>A gyakorlatban a két kifejezést szinte szinonimaként használják és cserélgetik a fejlesztők. Nyugodtan lehet használni bármelyiket. Csak azért hangsúlyoztuk ki a különbséget, hogy segítsünk megérteni a függvények működését. Ebben az anyagban a könnyebb értelmezés érdekében még követjük a precíz megnevezéseket, de a továbbiakban ne okozzon meglepetést, ha az anyagban szabadabban használjuk ezeket a megnevezéseket.</p>
+</blockquote>
+<p>Egy függvénynek tetszőleges számú paramétere lehet. Ezeket egyszerűen vesszővel kell elválasztani, és a függvény híváskor az argumentumok esetén is hasonlóan kell eljárni.</p>
+<pre><code class="lang-python">def udvozles(kereszt_nev, vezetek_nev):
+    print(f&quot;Üdvözöllek {vezetek_nev.title()} {kereszt_nev.title()}!&quot;)
+    
+udvozles(&quot;eszter&quot;, &quot;winch&quot;)
+</code></pre>
+<pre><code>Üdvözöllek Winch Eszter!
+</code></pre>
+<p>A fenti példában a híváskor megadott értékek a sorrendjük alapján kerülnek az egyes paraméter változókba. Az így megfeleltetett értékeket hívják <strong>pozícionális argumentumoknak</strong>.  A sorrend követése helyett azonban használhatunk úgynevezett <strong>kulcsszavas argumentumokat</strong> is.</p>
+<pre><code class="lang-python">def udvozles(kereszt_nev, vezetek_nev):
+    print(f&quot;Üdvözöllek {vezetek_nev.title()} {kereszt_nev.title()}!&quot;)
+    
+udvozles(vezetek_nev=&quot;winch&quot;, kereszt_nev=&quot;eszter&quot;)
+</code></pre>
+<pre><code>Üdvözöllek Winch Eszter!
+</code></pre>
+<p>A kettő argumentum típust keverni is lehet, de a pozícionális argumentumok helye fix, ezért a kulcsszavasak csak utánuk következhetnek. Ellenkező esetben hibaüzenetet kapunk.</p>
+<pre><code class="lang-python">def udvozles(kereszt_nev, vezetek_nev):
+    print(f&quot;Üdvözöllek {vezetek_nev.title()} {kereszt_nev.title()}!&quot;)
+    
+udvozles(vezetek_nev=&quot;winch&quot;, &quot;eszter&quot;)
+</code></pre>
+<pre><code> File &quot;&lt;ipython-input-7-71d4c7fb934f&gt;&quot;, line 4
+ udvozles(vezetek_nev=&quot;winch&quot;, &quot;eszter&quot;)
+ ^
+SyntaxError: positional argument follows keyword argument
+</code></pre>
+<h3 id="alapértelmezett-érték">Alapértelmezett érték</h3>
+<p>A korábbi tanulmányok során feltűnhetett, hogy vannak függvények, amelyek bizonyos funkciójú paramétereit nem mindig kell megadni. Van lehetőség arra, hogy <strong>alapértelmezett értékkel</strong> lássuk el a függvényünk egyes -- vagy akár összes -- paramétereit. Ezeket szokás <strong>opcionális paraméternek</strong> is nevezni. Ilyenkor az alapértelmezett értékkel rendelkező paraméterek argumentumai egyszerűen elhagyhatók a függvény hívás során, és a paraméterváltozó a megadott alapértéket kapja majd. Ha viszont meg van adva a megfelelő argumentum, akkor a híváskor a paraméter változó értéke a megadott értékkel felülíródik.</p>
+<pre><code class="lang-python">def udvozles(kereszt_nev, vezetek_nev=&quot;anonymus&quot;):
+    print(f&quot;Üdvözöllek {vezetek_nev.title()} {kereszt_nev.title()}!&quot;)
+    
+udvozles(&quot;eszter&quot;)
+udvozles(&quot;eszter&quot;, &quot;winch&quot;)
+</code></pre>
+<pre><code>Üdvözöllek Anonymus Eszter!
+Üdvözöllek Winch Eszter!
+</code></pre>
+<p>Az alapértelmezett paraméterek csak a normál paraméterek után helyezkedhetnek el. Ellenkező esetben ugyanis az argumentumok pozícionális megadása esetén a Python nem tudná eldönteni, hogy éppen kihagyásra került egy argumentum vagy nem.</p>
+<p>Amennyiben több opcionális paraméter tartozik egy függvényhez, akkor pozícionális argumentum megadás esetén érthetően csak sorban kaphatnak értéket, de kulcsszavas megadás esetén kihagyhatók argumentumok a sorból.</p>
+<h3 id="korlátlan-számú-paraméter">Korlátlan számú paraméter</h3>
+<p>Előfordulhat, hogy nem tudjuk előre, hány bemeneti paraméterre lesz szükségünk, és lehetőséget akarunk adni arra, hogy a felhasználó tetszőleges számú paramétert adjon meg. Tipikus példa erre a <code>min</code> és a <code>max</code> függvény. Mindkettő esetén, vesszővel elválasztva bármennyi értéket megadhatunk, és eredményként a legkisebb / legnagyobb értéket kapjuk vissza.</p>
+<pre><code class="lang-python">print(min(2, 5, 1))
+</code></pre>
+<pre><code>1
+</code></pre>
+<p>A saját függvényünkben is meg tudjuk valósítani ezt a funkcionalitást egy speciális paraméter segítségével. Ez a fajta paraméter keverhető hagyományos paraméterekkel, de mindig csak egy lehet belőle, és az utolsó kell, hogy legyen a sorban. Létezik a pozícionális és kulcsszavas változata is. A paramétert tipikusan <code>args</code> (argumentumok röviden) néven szokás létrehozni, de a neve tetszőleges.</p>
+<p>A <strong>pozícionális</strong> változat esetén egy <code>*</code> jelet kell a paraméter neve elé tenni. A paraméter változó egy <a href="/content/python_basic/tuple">tuple</a> lesz. Ez egy szekvenciális adattípus, ami lényegében a lista immutábilis változata, tehát csak kiolvasni lehet belőle adatokat, módosításra nincs lehetőség.</p>
+<pre><code class="lang-python">def avg(*args):
+    sum = 0
+    for a in args:
+        sum += a
+    avg = sum / len(args)
+    print(avg)
+
+avg(2, 5, 1)
+</code></pre>
+<pre><code>2.6666666666666665
+</code></pre>
+<p>A példában az átlag (average) függvényt valósítottuk meg. A <code>*args</code> jelöléssel létrehozott paraméterre egyszerűen <code>args</code> néven tudunk hivatkozni, és a listáknál megszokott módon érhetjük el az értékeit. Egy ciklus segítségével összeadjuk a számokat (függetlenül attól, hány lett megadva), végül pedig a darabszámukkal osztjuk az eredményt, és ezt jelenítjük meg.</p>
+<p>A példa átláthatósága érdekében nem írtunk bele ellenőrzéseket, de könnyen látható, hogy helytelen adatok megadása esetén hamar hibába fogunk ütközni. A függvények egyik előnye, hogy ha a belsejükben kezeljük a potenciális hibákat, akkor a többszöri felhasználásuk során nem kell minden alkalommal ezzel bajlódni.</p>
+<p>A függvénynek beadott paraméterek az értéknek megfelelő adattípust veszik fel szemben például az <a href="/content/python_basic/input">input</a> függvénnyel, ami mindig szöveges értéket kap. Ezért a szokásos, karakterláncok során használt <code>isnumeric</code> metódus nem fog működni, hiszen az <code>integer</code> típusnak nincs ilyen metódusa. Helyette az <code>isinstance(object, type)</code> függvényt kell használnunk.</p>
+<pre><code class="lang-python">a = 5
+is_number = isinstance(a, (int, float))
+print(is_number)
+</code></pre>
+<pre><code>True
+</code></pre>
+<p>A függvény első paramétere az ellenőrzött változó / érték, a második pedig a típus, amivel az egyezőséget vizsgáljuk. Vizsgálhatunk egyszerre több típussal való egyezést is, ha a típusokat egy tuple-ként adjuk át (a tuple deklarálás ugyanúgy működik, mint a lista esetén, csak szögletes zárójel helyett hagyományosat kell használni). Ebben az esetben akkor kapunk igaz eredményt, ha a felsorolt típusok közül bármelyikkel egyezik a megadott érték.</p>
+<p>Ezt felhasználva írhatunk egy jól biztosított átlag függvényt:</p>
+<pre><code class="lang-python">def avg( *args ):
+    sum = 0
+    count = 0
+    for a in args:
+        if not(isinstance(a, (int, float))):
+            continue
+        sum += a
+        count += 1
+    if count == 0:
+        print(&quot;Nem szerepelt szám a megadott értékek között!&quot;)
+    else:
+        avg = sum / count
+        print(avg)
+
+avg(2, 5, 1)
+avg(2, &quot;tíz&quot;, 5, [], 1)
+avg()
+</code></pre>
+<pre><code>2.6666666666666665
+2.6666666666666665
+Nem szerepelt szám a megadott értékek között!
+</code></pre>
+<p>A <strong>kulcsszavas</strong> változat alkalmazásához egyszerűen dupla csillagot (<code>**</code>) kell tenni a paraméter neve elé. Egy ilyen paraméter alkalmazása esetén a híváskor bármilyen nevesített argumentum megadható, és a függvényben kell kezelni annak a felhasználását. Ebben az esetben tuple helyett, egy úgynevezett szótár (dictionary) objektumot kapunk, aminek az elemeire nem a sorszámukkal, hanem a nevükkel lehet hivatkozni.</p>
+<pre><code class="lang-python">def meret( **args ):
+    if &quot;szelesseg&quot; in args and &quot;hosszusag&quot; in args and &quot;magassag&quot; in args:
+        V = args[&quot;szelesseg&quot;] * args[&quot;hosszusag&quot;] * args[&quot;magassag&quot;]
+        print(f&quot;A térfogat: {V}&quot;)
+    elif &quot;szelesseg&quot; in args and &quot;hosszusag&quot; in args:
+        A = args[&quot;szelesseg&quot;] * args[&quot;hosszusag&quot;]
+        print(f&quot;A felület: {A}&quot;)
+    else:
+        print(&quot;Nem megfelelő argumentumok!&quot;)
+        
+    
+meret(szelesseg=10, hosszusag=20, magassag=30)
+meret(szelesseg=10, hosszusag=20)
+meret(szelesseg=10, magassag=30)
+</code></pre>
+<pre><code>A térfogat: 6000
+A felület: 200
+Nem megfelelő argumentumok!
+</code></pre>
+<p>Ezt a lehetőséget csak speciális esetekben érdemes használni, és legtöbbször helyettesíthető a funkcionalitása opcionális paraméterekkel. Csak a teljesség kedvéért mutatjuk meg, nem fogjuk számonkérni.</p>
+<h2 id="visszatérési-érték">Visszatérési érték</h2>
+<p>A paraméterek segítségével információt tudunk átadni a függvényünknek, de a legtöbb esetben valamit vissza is szeretnénk kapni. A függvény lefutását követen a <code>return</code> utasítás után írt értéket adja vissza a függvény. A korábbi átlag példát módosítva:</p>
+<pre><code class="lang-python">def avg(*args):
+    sum = 0
+    for a in args:
+        sum += a
+    avg = sum / len(args)
+    return avg
+
+atlag = avg(2, 5, 1)
+print(atlag)
+</code></pre>
+<pre><code>2.6666666666666665
+</code></pre>
+<p>A visszaadott érték lementhető egy változóba, vagy közvetlenül is felhasználható. Függvény írása során a legtöbb programnyelv semmilyen módon nem köti meg a függvény funkcionalitását, de alapvetően érdemes odafigyelni arra, hogy egy függvény csak egy funkciót valósítson meg. A számítások elvégzése és a megjelenítés két külön funkció, ezért az, hogy ebben a példában visszaadjuk az értéket, és csak aztán írjuk ki, sokkal jobban megfelel ennek az elvnek.</p>
+<p>A <code>return</code> utasítás nem csak a függvény végére írható, bár általában oda szokás tenni. Ugyanis nem a csak a visszatérési értéket határozza meg, de a függvény további futását is megállítja. Az utána következő lépések már nem hajtódnak végre.</p>
+<pre><code class="lang-python">def parity(x):
+    if x % 2 == 0:
+        return &quot;páros&quot;
+    else:
+        return &quot;páratlan&quot;
+    print(&quot;Ez már nem fut le&quot;)
+
+a = 5
+print(f&quot;A megadott szám {parity(a)}&quot;)
+</code></pre>
+<pre><code>A megadott szám páratlan
+</code></pre>
+<p>A példában függetlenül attól, hogy az elágazás melyik ágába megyünk bele, a függvény futása megáll, ezért soha nem íródik ki az utána következő <code>print</code> utasítás tartalma. Ebből adódóan, ha a <code>return</code>-t például egy ciklus törzsében hívjuk meg, akkor hasonló funkcionalitással bír, mint a <code>break</code> parancs.</p>
+<p>A <code>return</code> segítségével bármilyen típusú adat visszaadható, például egy lista vagy egy tuple is.</p>
+<pre><code class="lang-python">def paros_szamok(x):
+    szamok = []
+    for i in range(1, x + 1):
+        if i % 2 == 0:
+            szamok.append(i)
+    return szamok
+
+a = 20
+print(paros_szamok(a))
+</code></pre>
+<pre><code>[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+</code></pre>
+<p>A különböző <code>return</code> ágakban különböző típusú értékek is visszaadhatók, de ilyenkor bonyolult lehet a kimenetek kezelése, ezért ezt érdemes elkerülni. Ha pedig valamelyik ágon nem adunk <code>return</code> utasítást, vagy esetleg egy visszatérési érték nélküli függvény kimenetét próbáljuk kiolvasni, akkor az eredmény a <code>None</code>, azaz &quot;semmi&quot; érték lesz. Ez egy valid érték a Pythonban, amire rá tuduk ellenőrizni az <code>is</code> utasítással.</p>
+<pre><code class="lang-python">def parity(x):
+    if x % 2 == 0:
+        return &quot;páros&quot;    
+
+a = 5
+p = parity(a)
+if p is None:
+    print(&quot;Nem érkezett válasz&quot;)
+else:
+    print(f&quot;A megadott szám {p}&quot;)
+</code></pre>
+<pre><code>Nem érkezett válasz
+</code></pre>
+<p>Az előző példában jó lenne egyszerre megmutatni a két ág működését, de akkor kétszer kellene megírni a feltételt is. Szerencsére pont az ilyen esetekben érdemes függvényeket használni:</p>
+<pre><code class="lang-python">def parity(x):
+    if x % 2 == 0:
+        return &quot;páros&quot;    
+
+def display_result(p):
+    if p is None:
+        print(&quot;Nem érkezett válasz&quot;)
+    else:
+        print(f&quot;A megadott szám {p}&quot;)
+    
+display_result(parity(5))
+display_result(parity(6))
+</code></pre>
+<pre><code>Nem érkezett válasz
+A megadott szám páros
+</code></pre>
+<h2 id="változók-kezelése">Változók kezelése</h2>
+<p>A függvények használata során könnyű belekeveredni a felhasznált változók, átadott argumentumok és paraméterek tömegébe. Ezért érdemes tudni, hogyan viselkednek a változók a függvényekkel. (Ez a leírás felületes és csak az alapvető megértést segíti, ha valakit mélyebben is érdekel a változók működése és a memóriakezelés, akkor a neten <a href="https://www.geeksforgeeks.org/pass-by-reference-vs-value-in-python/">számos anyagot</a> talál, melyek alaposan kifejtik ezeket.)</p>
+<pre><code class="lang-python">def test():
+    a = 5
+
+test()
+print(a)
+</code></pre>
+<pre><code>NameError                                 Traceback (most recent call last)
+~\AppData\Local\Temp/ipykernel_15336/2993042665.py in &lt;module&gt;
+ 3 
+ 4 test()
+----&gt; 5  print(a)
+
+NameError: name 'a' is not defined
+</code></pre>
+<p>A Python függvényeken belül létrehozott változók csak a függvényen belül léteznek, és az értékük is csak ott érhető el. Még függvényt is lehet létrehozni függvényen belül, ilyenkor a belső függvény csak az eredeti függvényen belül lesz használható. (Bár erre a funkcióra elég ritkán van szükség a gyakorlatban.)</p>
+<p>Fordított esetben viszont, ha a függvényen kívül hozunk létre egy változót, akkor azt a függvényen belül is elérjük, és használni tudjuk az értékét.</p>
+<pre><code class="lang-python">a = 5
+
+def test():
+    print(a)
+
+test()
+</code></pre>
+<pre><code>5
+</code></pre>
+<p>Viszont, ha a függvényen belül megpróbáljuk felülírni egy külső változó értékét, akkor egyszerűen csak egy új változó jön létre, ami független a külsőtől. Ezt szemlélteti az alábbi példa:</p>
+<pre><code class="lang-python">a = 5
+
+def test():
+    a = 6
+    print(a)
+
+test()
+print(a)
+</code></pre>
+<pre><code>6
+5
+</code></pre>
+<p>Hasonló a helyzet az argumentumként átadott változókkal is. Alapvetően, ha változó értékét felülírjuk a függvényben, akkor új változó jön létre, ami nem befolyásolja az eredeti változót. De, ha csak lekérdezzük vagy módosítjuk az értékét, akkor nem jön létre új változó, ezért az eredeti változó értéke is megváltozik. Olyan egyszerű adattípusnál, mint egy szám nincs igazán értelmezve a módosítás, de egy listával már jól érzékeltethető a dolog:</p>
+<pre><code class="lang-python">a = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]
+b = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]
+
+def modify1(x):
+    x = [&quot;D&quot;, &quot;E&quot;, &quot;F&quot;]
+    
+def modify2(x):
+    x[1] = &quot;E&quot;
+    x.append(&quot;D&quot;)
+
+modify1(a)
+modify2(b)
+
+print(a)
+print(b)
+</code></pre>
+<pre><code>['A', 'B', 'C']
+['A', 'E', 'C', 'D']
+</code></pre>
+<p>Csak, hogy ne legyen egyszerű a dolog, léteznek még úgynevezett globális változók, melyeket <code>global</code> előtag megadásával lehet deklarálni. Ezeket a program bármelyik részén el lehet érni, még akkor is, ha több fájlra bontjuk szét az alkalmazást. A normál használatukat rossz gyakorlatnak tartják, mert különösen több felhasználós vagy többszálú alkalmazások esetén könnyen összeakadhatnak a rajtuk végzett változtatások. Viszont kiválóan alkalmasak konstans értékek tárolására. Mi nem fogunk globális változókat használni a programjainkban.</p>
+<p>Python nyelven nem lehet kikényszeríteni, hogy egy változó értéke konstans maradjon és ne lehessen változtatni, de a konstans változók elfogadott jelölése, hogy a nevük csupa nagybetűből áll. Az ilyen változóról egy másik fejlesztő is tudni fogja, hogy annak nem szabad módosítani az értékét.</p>
+<h2 id="rekurzív-függvények">Rekurzív függvények</h2>
+<p>Egy komplex kódban számos függvény szerepelhet, melyek gyakran egymásra hivatkoznak. Könnyen lehet, egy egyszerűnek tűnő utasítás valójában tucatnyi függvényhívás láncolatát indítja el. Ezeket a hívásokat gyakran nehéz lehet követni, főleg egy kevésbé tapasztalt programozó számára. A <a href="https://pythontutor.com/">pythontutor.com</a> oldal egy hasznos eszközzel segítheti a komplexebb kódrészletek megértését. Az oldal lépésről lépésre, vizuális segítséggel kiegészítve engedi futtatni a Python kódokat, így könnyen követhetővé válnak az egyes lépések.</p>
+<p>Az összetett függvényhívások egy speciális este a <strong>rekurzív függvény</strong>. Egy rekurzív függvény lényege, hogy valahol a függvény kódjában saját magát hívja meg. Ez értelemszerűen könnyen vezethet a végtelenségig tartó függvényhíváshoz, ezért az ilyen függvények megvalósítása során körültekintően kell eljárni.</p>
+<p>Az egyik tipikus példa a rekurzió alkalmazására a faktoriális értékének kiszámítása:</p>
+<pre><code class="lang-python">def factor(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factor(n - 1)
+
+print(factor(5))
+</code></pre>
+<pre><code>120
+</code></pre>
+<p>Persze ez az érték egy ciklussal is meghatározható, de jól szemlélteti a lehetőségeket. A pythontutor-ban kipróbálva ezt a kódot látható, hogy sorra hívódik meg a <code>factor</code> függvény egyre kisebb értékekkel egészen addig, míg fixen egy nem lesz a bemenete. Ekkor a hívás 1-et ad eredményül, amit visszakap a 2 bemenetű hívás utolsó sora, és a 2-vel szorozva, szintén 2-t ad, egészen addig míg vissza nem jutunk az első hívásig, ami pedig végül az 5 x 24 eredményét adja vissza.</p>
+<p>Az összetett rekurzív függvények átlátása és felépítése még gyakorlott programozóknak is kihívást jelenthet, de vannak olyan problémák, amiket határozottan ezzel a megoldással érdemes megközelíteni (pl.: termék összetevők feltérképezése, HTML dokumentum tagek bejárása).</p>
+<h1 id="feladatok">Feladatok</h1>
+<ol>
+<li>Készíts függvényt, ami megállapítja hogy hány nagybetű van egy karakterláncban! (<code>isupper</code> függvény használható)</li>
+<li>Készíts függvényt, amely egy megadott karakterláncot megfordít!</li>
+<li>Készíts függvényt, amely egy adott bemenetről megállapítja, hogy <a href="https://hu.wikiquote.org/wiki/Magyar_nyelv%C5%B1_palindromok_list%C3%A1ja">palindróma</a>-e vagy sem!</li>
+<li>Készíts függvényt, amely egy adott bemenetről megállapítja, hogy (magyar nyelvű) <a href="https://hu.wikipedia.org/wiki/Pangramma">Pangramma</a>-e vagy sem! (Ehhez neked kell felsorolni a magyar betűket a kódban!)</li>
+<li>Készíts függvényt amely tetszőleges számú bemenetből kiszámolja a megadott számok <a href="https://hu.wikipedia.org/wiki/Harmonikus_k%C3%B6z%C3%A9p">harmonikus közepét</a>! (Kezeld a potenciális hibás bemeneteket is!)</li>
+<li>Készíts függvényt amely meghatározza két szám legnagyobb közös osztóját az euklideszi algoritmus segítségével!</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/function/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

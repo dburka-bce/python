@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Ciklusok </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Ciklusok ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="ciklusok">Ciklusok</h1>
+
+<p>A ciklusok olyan vezérlési szerkezetek, melyek lehetővé teszik, hogy a kód egyes részleteit az adott feltételeknek megfelelően egymás után többször futtassuk a kód duplikálása nélkül.</p>
+<h2 id="for-ciklus"><code>for</code> ciklus</h2>
+<p>A <code>for</code> ciklus (számlálós ciklus) egy adott <a href="/python_basic/sequence_types/">szekvencia típusú</a> változó elemein halad végig, és minden elem esetén, azaz minden iteráció során futtatja a hatáskörébe tartozó kódrészletet.  A hatáskört az <a href="/python_basic/if_statement/">elágazásokhoz</a>  hasonlóan a behúzás határozza meg.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+for lista_elem in lista:
+    print(lista_elem)
+print(&quot;\nEzek a gyümölcsök vannak a listámon&quot;)
+</code></pre>
+<pre><code>alma
+banán
+cseresznye
+dinnye
+
+Ezek a gyümölcsök vannak a listámon
+</code></pre>
+<p>A <code>lista_elem</code> az úgynevezett &quot;ciklusváltozó&quot;. Tetszőlegesen elnevezhetjük, de érdemes odafigyelni rá, nehogy egy már létező változó nevét adjuk meg.</p>
+<p>A futtatás során a következő történik:</p>
+<ol>
+<li>Létrejön a <code>lista</code></li>
+<li>A <code>lista</code> első eleme (<code>lista[0]</code>) bekerül a <code>lista_elem</code> változóba</li>
+<li>Lefut a ciklus hatókörében, más néven ciklustörzsben található <code>print</code> metódus, ami kiírja <code>lista_elem</code> változó aktuális tartalmát, ami jelen példában az &quot;alma&quot;</li>
+<li>A ciklus a következő iterációba lép és most a <code>lista</code> második eleme (<code>lista[1]</code>) kerül be a <code>lista_elem</code> változóba, majd ezzel az új értékkel újra meghívódik a <code>print</code> metódus</li>
+<li>A 4. lépés megismétlődik a harmadik és a negyedik lista elemmel is</li>
+<li>A negyedik lista elem megjelenítése után újabb iteráció kezdődne, de elértük a lista végét, ezért nincs mivel felülírni a <code>lista_elem</code> változót, ezért kilépünk a ciklusból</li>
+<li>A ciklust követő sortól folytatjuk a kód futtatását, és kiírásra kerül a záró üzenet</li>
+</ol>
+<p>A jelenlegi vagy a későbbi példák követését megkönnyítheti, ha lépésről lépésre látjuk az egyes változók tartalmának alakulását. A <a href="live.html">pythontutor.com</a> eszköz segítségével a példákat ilyen formában is át lehet tekinteni. Ha valakinek még nincs rutinja a programkódok értelmezésében, akkor sokat segíthet a használata.</p>
+<p>A <a href="/python_basic/range/">range</a> metódus alkalmazásával számsorozatokon is végigmehetünk a <code>for</code> ciklus segítségével.</p>
+<pre><code class="lang-python">print(&quot;Az első tíz négyzetszám:&quot;)
+for i in range(1, 11):
+    print(i ** 2)
+</code></pre>
+<pre><code>Az első tíz négyzetszám:
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+</code></pre>
+<p>Gyakran szükség van annak azonosítására, hogy a lista éppen hányadik eleménél tart a ciklus. Ezért érdemes lehet a lista elemei helyett annak indexein végigmenni, és a ciklus belsejében lekérdezni a lista megfelelő elemét.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+for lista_index in range(len(lista)):
+    print(f&quot;{lista_index + 1}. {lista[lista_index]}&quot;)
+print(&quot;\nEzek a gyümölcsök vannak a listámon&quot;)
+</code></pre>
+<pre><code>1. alma
+2. banán
+3. cseresznye
+4. dinnye
+
+Ezek a gyümölcsök vannak a listámon
+</code></pre>
+<p>Természetesen egynél több utasítás is szerepelhet a ciklustörzsben, és a <code>range</code> metódust is tetszőlegesen paraméterezhetjük. A következő példában a névsorban szereplő minden második hallgatót kihívunk felelni, és felszólítjuk a sorszámával megegyező számú feladat megoldására. A neveket kisbetűsen tároljuk, ezért a ciklustörzsben a megfelelő megjelenítésről is gondoskodnunk kell.</p>
+<pre><code class="lang-python">lista = [&quot;andris&quot;,&quot;betti&quot;,&quot;csilla&quot;,&quot;dani&quot;]
+for lista_index in range(0, len(lista), 2):
+    print(f&quot;{lista[lista_index].title()}, gyere ki a táblához felelni!&quot;)
+    print(f&quot;Kérlek old meg a(z) {lista_index + 1}. feladatot!\n&quot;)    
+print(&quot;Mára nincs több felelő ...&quot;)
+</code></pre>
+<pre><code>Andris, gyere ki a táblához felelni!
+Kérlek old meg a(z) 1. feladatot!
+
+Csilla, gyere ki a táblához felelni!
+Kérlek old meg a(z) 3. feladatot!
+
+Mára nincs több felelő ...
+</code></pre>
+<h2 id="while-ciklus"><code>while</code> ciklus</h2>
+<p>A <code>while</code> ciklus nem egy szekvencián halad végig, hanem egy adott feltétel teljesüléséig ismétlődik. A szintaxisa nagyon hasonlít az egyszerű elágazáshoz. Ha a <a href="/content/python_basic/if_statement">logikai változó</a> értéke az érték <code>True</code> akkor egyszer lefut a ciklustörzs, majd újra ellenőrzés és futtatás egészen addig, míg egyszer <code>False</code> lesz az érték.</p>
+<pre><code class="lang-python">szamlalo = 0
+while szamlalo &lt; 5:
+    print(szamlalo)
+    szamlalo = szamlalo + 1
+print(&quot;Kész&quot;)
+</code></pre>
+<pre><code>0
+1
+2
+3
+4
+Kész
+</code></pre>
+<p>A futtatás során a következő történik:</p>
+<ol>
+<li>Létrehozunk egy <code>int</code> típusú változót <code>szamlalo</code> néven 0 értékkel.</li>
+<li>Megvizsgáljuk a <code>szamlalo &lt; 5</code> állítás értékét.</li>
+<li>Mivel az állítás igaz (<code>True</code>) belépünk a ciklustörzsbe, és végrehajtjuk az utasításokat.</li>
+<li>Kiírjuk a <code>szamlalo</code> aktuális értékét, ami ezen a ponton még 0.</li>
+<li>Megnöveljük eggyel a <code>szamlalo</code> értékét.</li>
+<li>Megismételjük a 2-5. pontokat még 4-szer, addig, amíg a <code>szamlalo</code> értéke eléri az 5-öt. Ekkor a <code>szamlalo &lt; 5</code> állítás értéke már hamis (<code>False</code>), ezért hatodik alkalommal már nem lépünk be a ciklustörzsbe.</li>
+<li>A ciklus utáni sorral folytatjuk a futtatást, és megjelenítjük a &quot;Kész&quot; üzenetet.</li>
+</ol>
+<p>Hamar látható, hogy némi probléma merülhet fel abban az esetben, ha a ciklus feltételben szereplő értéket helytelenül vagy egyáltalán nem módosítjuk. Ebben az esetben egy végtelen ciklusba kerülünk. A <code>for</code> ciklus esetén is előfordulhat hasonló, ha a ciklustörzsben kezdjük el módosítani a listát, amin éppen végigmegyünk.</p>
+<p>Szerencsére a legtöbb futtatókörnyezet képes jelezni az ilyen hibákat, és nem hagyja, hogy a programunk feleslegesen óriási erőforrásokat pazaroljon el. Ennek ellenére ajánlott odafigyelni ennek a problémának az elkerülésére.</p>
+<p>A <code>while</code> ciklus egy úgynevezett elöltesztelős ciklus, azaz a ciklustörzs futtatása előtt ellenőrzi a feltételt, így lehet, hogy a tartalma egyszer sem fut le. Más nyelvekkel ellentétben a Pythonban nincs egy ennek megfelelő hátultesztelős szintaxis, de ettől még megvalósítható ez a funkció.</p>
+<pre><code class="lang-python">feltetel = True # Alapértelmezetten igaz logikai változó
+while feltetel:
+    print(&quot;Ciklustörzs&quot;) # Ennek a helyére jön a ciklustörzs   
+    feltetel = 0 &gt; 5
+</code></pre>
+<pre><code>Ciklustörzs
+</code></pre>
+<p>A példa utolsó sorában most egy mindig hamis állítás kerül a <code>feltetel</code>, hogy a struktúra átlátható legyen, de értelemszerűen, egy a ciklustörzsben állított változó alapján érdemes meghatározni az értékét. Látható azonban, hogy egy fixen hamis állítás esetén is lefutott a ciklustörzs legalább egyszer.</p>
+<h2 id="break-continue"><code>break</code>, <code>continue</code></h2>
+<p>A ciklusok általában nem csak egy szöveg kiíratására szolgálnak, ennél sokkal komplexebb feladataik vannak. Gyakori, hogy nem akarunk minden iterációban műveleteket végrehajtani, vagy esetleg csak azok egy részére van szükségünk. Ilyenkor a ciklustörzsbe írt elágazásokkal kezelhetjük a különböző eseteket.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+for lista_elem in lista:
+    if len(lista_elem) &gt; 5:
+        print(lista_elem)
+</code></pre>
+<pre><code>cseresznye
+dinnye
+</code></pre>
+<p>A fenti példában az 5 karakternél hosszabb szavakat írtuk ki a listából. Látható, hogy már egy ilyen rövid kódban is kétszeres behúzást kellett alkalmaznunk. Ha a <code>print</code> helyére egy több száz soros kódrészlet kerülne, akkor annak minden sorát feleslegesen kellene behúzni. Ez elkerülhető abban az esetben ha megfordítjuk a feltételt, és azt mondjuk a programnak, hogy a rövidebb szavak esetén ne csináljon semmit.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+for lista_elem in lista:
+    if len(lista_elem) &lt;= 5:
+        continue
+    print(lista_elem)
+</code></pre>
+<pre><code>cseresznye
+dinnye
+</code></pre>
+<p>A <code>continue</code> parancs ciklustörzsekben használható. A parancs kiadásakor azonnal megkezdjük a következő iterációt és ignoráljuk a ciklustörzs hátralevő részét. A példában ezzel azt értük el, hogy a <code>print</code> helyére tervezett több száz sor eggyel kevésbé lesz behúzva.</p>
+<p>A ciklusokat gyakran használják listákban való keresésre (erről majd részletesebben is lesz szó). Ha kereséssel kapcsolatos feladatot kell megoldani, akkor találat esetén nincs értelme tovább iterálni. Például, ha az <strong>első</strong> 5 karakteres szöveget akarom kiíratni:</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+for lista_elem in lista:
+    if len(lista_elem) == 5:
+        print(f&quot;Megvan az 5 hosszú: {lista_elem}&quot;)
+        break
+    else:
+        print(&quot;Ez nem az&quot;)
+</code></pre>
+<pre><code>Ez nem az
+Megvan az 5 hosszú: banán
+</code></pre>
+<p>A <code>break</code> kulcsszó alkalmazásával <em>kiugorhatunk</em> az aktuális ciklusból, és a ciklus utáni kódsorral folytathatjuk a futtatást. Az előző példából a <code>break</code>-et elhagyva feleslegesen átnézzük következő két elemet is, és még kétszer megjelenítjük az &quot;Ez nem az&quot; üzenetet. Milliós listák esetén ez rengeteg erőforrás pazarlást jelentene.</p>
+<p>A <code>continue</code>-val kapcsolatos példa alapján itt is javíthatunk a kódon:</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+for lista_elem in lista:
+    if len(lista_elem) != 5:
+        print(&quot;Ez nem az&quot;)
+        continue
+    print(f&quot;Megvan az 5 hosszú: {lista_elem}&quot;)
+    break
+</code></pre>
+<pre><code>Ez nem az
+Megvan az 5 hosszú: banán
+</code></pre>
+<h2 id="folyamatos-adatbekérés">Folyamatos adatbekérés</h2>
+<p><a href="/content/python_basic/input">Adatbekérés</a> során zavaró lehet, ha egy hibás bemenet esetén azonnal megáll a program, pedig ilyenkor a felhasználó nem kapott megoldást a problémájára. Egy <code>while</code> ciklus segítségével viszont addig ismételhetjük számára a kérdést, amíg nem sikerül elfogadható bemenetet megadnia.</p>
+<pre><code class="lang-python">while True:
+    x = input(&quot;Mondj egy számot és megmondom a négyzetét: &quot;)
+    if x.isnumeric():
+        x = int(x)
+        print(x ** 2)
+        break
+    else:
+        print(&quot;Nem megfelelő bemenet!\nCsak numerikus érték adható meg.\n&quot;)
+</code></pre>
+<pre><code>Mondj egy számot és megmondom a négyzetét: [tíz]
+Nem megfelelő bemenet!
+Csak numerikus érték adható meg.
+
+Mondj egy számot és megmondom a négyzetét: [kilenc]
+Nem megfelelő bemenet!
+Csak numerikus érték adható meg.
+
+Mondj egy számot és megmondom a négyzetét: [10]
+100
+</code></pre>
+<h1 id="ellenőrző-kérdések-feladatok">Ellenőrző kérdések, feladatok</h1>
+<ol>
+<li>Módosítsd az előző (&quot;Folyamatos adatbekérés&quot;) példát úgy, hogy bemenetként a &quot;quit&quot; szót írva kilépjen a program!</li>
+<li>Készítsünk függvénytáblát, amely 1-től 10-ig megjeleníti a számokat, négyzetüket és köbüket! A megjelenítés 3 oszlopos legyen.</li>
+<li>Kérjük be egy tanuló jegyeit addig, amíg 0-t nem üt, majd számítsuk ki és jelenítsük meg a jegyek átlagát! Ha mindjárt az elején 0-t üt, akkor jelenjen meg egy üzenet: &quot;Nincs rögzített osztályzat&quot;</li>
+<li>Készítsünk programot, amely addig kér be egy egész számot, amíg az 1 és 90 közé nem esik (a határokat is beleértve)
+<ul>
+<li>ha a szám nem megfelelő, akkor kérjük be újra</li>
+<li>számoljuk és jelenítsük meg a próbálkozások számát is</li>
+<li>ha 5-nél többször helytelen számot ad meg, akkor írjuk ki, hogy &quot;Nincs több próbálkozási lehetőség!&quot;</li>
+<li>ha 1-5 lehetőség alatt jó számot ad meg, akkor írjuk ki: &quot;Sikeres adatbevitel!&quot;</li>
+</ul>
+</li>
+<li>Kérj be a felhasználótól egy karakterláncot, majd írd ki megfordítva ciklus segítségével! (Ne használd a <em>slice</em> indexelést a kettőspontokkal!)</li>
+<li>Kérj be számokat a felhasználótól mindaddig, amíg nem a 42-t adja meg. 5 próbálkozásra van lehetősége, ha nem sikerül, írd ki, hogy sajnos nem sikerült. Ha eltalálja, írd ki, hogy „Gratulálok”.</li>
+<li>Kérj be két számot a felhasználótól. Kérdezd meg tőle a szorzatukat. 3 próbálkozásra van lehetőség, ezután írd ki az eredményt. Ha eltalálja, írd ki, hogy „jó megoldás”, majd a program lépjen ki. Feltételezzük, hogy a felhasználó egész számokat ad meg.</li>
+<li>Kérj be a felhasználótól egy n számot, majd írd ki a Fibonacci számsor első n elemét.</li>
+<li>Kérj be a felhasználótól egy számot. Ciklus segítségével számítsd ki a faktoriálisát, majd írd ki a kimenetre!</li>
+<li>Készítsünk programot, amely megadja az $a_n = (1+1/n)^n$ sorozat első 100 elemét!</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_basic/loops/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Python fejleszt&#337;i k&#246;rnyezet </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Python fejleszt&#337;i k&#246;rnyezet ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../python_basic/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="python-fejlesztői-környezet">Python fejlesztői környezet</h1>
+
+<h2 id="python-fordító-és-csomagkezelő">Python fordító és csomagkezelő</h2>
+<p>A <strong>Python</strong> egy általános célú magas szintű programozási nyelv melyet Guido van Rossum holland programozó kezdett el fejleszteni és hozott nyilvánosságra 1991-ben. Interpreteres nyelv, tehát a kódok használatához szükség van egy interpreter (magyarul: fordító) telepítésére, ami képes lefordítani a kódsorokat futtatható formára.</p>
+<p>A Python fordító két telepítőkészletben is elérhető:</p>
+<h3 id="python-org">python. org</h3>
+<p>A Python hivatalos oldaláról letölthető telepítőkészlet Windowsra és MacOs-re is. A telepítőkészlet jelenleg a 3.9.x verziónál jár. A legutóbbi verziók között számunkra nincsenek lényeges különbségek, ezért bármelyik használható.</p>
+<p>Fontos azonban megemlíteni, hogy a Python 2.7.x-es verziókat követően a 3.x verzióra a telepítőkészlet és nyelv alapfunkcióiban is bekövetkeztek olyan változások, melyek bizonyos esetekben a korábbi programok teljes újraírását igényelték volna. Ezért számos fejlesztő továbbra is a 2.7.x-es verzióban tartja karban az alkalmazásait. Az elérhető modulok kapcsán ezért gyakran előfordul, hogy csak a két változat valamelyikét támogatják.</p>
+<p>Letölthető: <a href="https://www.python.org/">https://www.python.org/</a></p>
+<h3 id="anaconda">Anaconda</h3>
+<p>Az oldal írásának pillanatában 232 000 modul volt elérhető a Python modulokat gyűjtő <a href="https://pypi.org/">https://pypi.org/</a> oldalon. A csomagok egy része aktív fejlesztés alatt áll, különböző verzió érhetők el belőlük. A csomagok közti egymásra épülés miatt az eltérő verziók okozhatnak problémát. A csomagok különböző verziói között a visszafelé kompatibilitás nem feltétlenül megoldott. Ha egy projektben olyan csomagokat akarunk használni, amik egy másik csomag különböző verziójára építenek, nehézségbe ütközhetünk. Többek közt az ilyen típusú konfliktusok feloldására jött létre az Anaconda. Kutatóknak diákoknak és egyéni kísérletezőknek ingyenes, üzleti felhasználásra fizetős.</p>
+<p>Letölthető: <a href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a></p>
+<h2 id="fejlesztőkörnyezetek">Fejlesztőkörnyezetek</h2>
+<p>Tucatnyi különböző fejlesztőkörnyezet érhető el a Python nyelvhez. Az alábbiakban a teljesség igénye nélkül mutatunk be néhányat a leggyakrabban használtak közül.</p>
+<h3 id="jupyter">Jupyter</h3>
+<p>A Jupyter -- régebbi nevén IPython Notebook -- egy interaktív számítási környezet. A szerkesztőfelületen egymás alatt lévő cellákba felváltva helyezhetők el programkód részletek, formázott szövegek, képek és interaktív diagramok. Ez az elrendezés kiválóan alkalmas levezetések és számítások dokumentációjára, mivel a számítások hátteréül szolgáló szöveg, képletek és ábrák, valamint a számítást elvégző kódrészletek és futási eredmények egy dokumentumban kezelhetők.</p>
+<p><img src="1588682381726.png" alt="1588682381726.png">
+A Jupyter Notebook eredeti formájában, vagy a legújabb JupyterLab részeként is elérhető. Fejlesztéshez az utóbbi telepítését ajánljuk.</p>
+<p>Elérhető: <a href="https://jupyter.org/">https://jupyter.org/</a></p>
+<h3 id="visual-studio-code">Visual Studio Code</h3>
+<p>Nem összekeverendő a Visual Studio Community / Enterprise / Professional termékvonallal. A VS Code egy teljesen nyílt forráskódú kódszerkesztő, mely elérhető Windows-ra, Mac-re és Linux-ra is. A VS Code egy általános kódszerkesztő, melyhez számtalan bővítmény telepíthető néhány kattintással saját piacteréről. A piactéren elérhető egy Microsoft által gondozott bővítmény a A Python alapú fejlesztéshez is.</p>
+<p>A <a href="https://code.visualstudio.com/docs/python/python-tutorial">Getting Started with Python in VS Code</a> útmutató a részletes leírást tartalmaz VS-Code fejlesztőkörnyezet telepítéséről és használatáról Windows és Mac környezetben.</p>
+<p>Letölthető: <a href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></p>
+<p>Szükséges Extension-ök:</p>
+<ul>
+<li>Python extension for Visual Studio Code (ms-python.python)</li>
+<li>Live Share Extension Packms-vsliveshare.vsliveshare-packPreview (ms-vsliveshare.vsliveshare-pack)</li>
+</ul>
+<h3 id="pycharm">PyCharm</h3>
+<p>A PyCharm egy kifejezetten a Python nyelvhez klészült integrált fejlesztő környezet (IDE), amelyet cseh JetBrains cég fejlesztette ki.  Kódelemzést, grafikus hibakeresőt, integrált egység tesztelőt tartalmaz, és támogatja a webfejlesztést a Django, valamint az Data Science és az Anaconda segítségével. A PyCharm szintén cross platform Windows, macOS és Linux verziókkal. A közösségi kiadás az Apache licenc érhető el, de kereskedelmi licenc alatt elérhető változati is vannak kibővített funkciókészlettel.</p>
+<p>Letölthető: <a href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a></p>
+<p><img src="1588682145398.png" alt="1588682145398.png"></p>
+<h3 id="online-kódszerkesztők">Online kódszerkesztők</h3>
+<p>Ha valaki csak néhány egyszerű számítást szeretne elvégezni, vagy olyan gépen szeretné gyakorolni az alapokat, amire nincs telepítve a Python fordító és fejlesztőkörnyezet, használhat online szerkesztőket.</p>
+<p>A nagyon egyszerű megoldások (pl.: <a href="https://www.programiz.com/python-programming/online-compiler/">programiz.com</a>, <a href="https://www.online-python.com/">online-python.com</a>) gyakran hirdetésekkel tarkítottak, és nem képesek a modulok vagy forrásfájlok kezelésére. De néhány kódsor leellenőrzésére, vagy az alapok gyakorlására tökéletesen alkalmasak.</p>
+<p>A <a href="https://jupyter.org/try"><strong>jupyter</strong></a> online változata lehetőséget ad modulok betöltésére és a fájlok kezelésére egyaránt. Minden számunkra szükséges eszköz elérhető benne. Egyetlen jelentős hátránya, hogy nincs benne szintaxis ellenőrzés és kódkiegészítés, de a tanulás első fázisában még egyébként is hasznos, ha ezeket nem a gép végzi helyettünk.</p>
+<p>A <a href="https://repl.it/@enaard/Python-3"><strong>repl.it</strong></a> abban tűnik ki más megoldásoktól, hogy kódszerkesztés közben rendelkezésre áll az automatikus szintaxis ellenőrzés és kódkiegészítés. Kezdőként ezek nélkül a gyakorlás elég fapados élményt nyújt. Apró kényelmetlenség, hogy néhány éve már csak regisztrációt követően érhetők el a funkciói.</p>
+<p>A tanulás során érdekes lehet még a <a href="https://pythontutor.com/">pythonturor.com</a>. Ez az oldal úgy enged egyszerű python kódokat futtatni, hogy közben megmutatja a változók értékeinek vizuális reprezentációját. A program lépéseit lekövetve, jól átlátható formában tekinthetjük meg, pontosan mit is csinál a program. Ha valakinek nehezére esik az órai példaprogramok működésének követése, akkor érdemes ezzel az eszközzel is megnézni.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/environment/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

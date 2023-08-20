@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Kupac rendez&#233;s </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Kupac rendez&#233;s ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="kupac-rendezés">Kupac rendezés</h1>
+
+<p>A kupac rendezés során egy úgynevezett kvázi teljes bináris fában helyezzük el és mozgatjuk az értékeinket. Egy bináris fa gyökerében egy érték van. A második szintjén tartozik ez alá (mivel lefelé építve szokás ábrázolni) két másik érték. A harmadik szinten az előző szint minden értéke alá tartozik 2-2 érték, tehát itt összesen 4 érték szerepel. A többi szint ehhez hasonlóan épül fel. Egy lista értékeit úgy tárolhatjuk egy ilyen fában, hogy szintről szintre, balról jobbra haladva, sorban beírjuk az értékeket a lehetséges helyekre. Így előfordulhat -- ha az elemeink száma nem kettő hatvány --, hogy az utolsó sort nem tudjuk végig kitölteni. Ilyenkor bár a bináris fa nem teljes, de &quot;hézagok&quot; sincsenek benne, ezért a &quot;kvázi teljes&quot; megnevezés.</p>
+<p>Egy kupac egy olyan olyan kvázi teljes bináris fa, amiben bármelyik érték nagyobb, mint az alatta található két érték (és persze az azokból induló teljes ágak értékei). Érdekes módon egy kupac előállításának leggyorsabb módja nem az, hogy a megfelelő értékekből felépítjük. Gyorsabb, ha rendezetlenül beszórjuk az értékeket egy kvázi teljes bináris fába, majd felülről indulva a kisebb értékeket kicseréljük a náluk nagyobb, alattuk levő -- a kettő közül a nagyobbik --  értékkel. Ezt a műveletet szokás &quot;süllyesztésnek&quot; nevezni.</p>
+<p>Sorban az összes érték esetén végrehajtva a süllyesztést az eredmény egy kupac, amiben biztosan tudjuk, hogy a legfelső gyökérelem a legnagyobb érték. A kupac rendezés során a listánkat kupaccá alakítjuk, majd a legfelső értéket kicseréljük a legalsó, legjobboldalibb elemmel. Ezt követően újra végrehajtjuk a süllyesztéseket, de már egy az eredetinél eggyel kisebb kvázi teljes bináris fán, tehát a már megtalált legnagyobb értéket figyelmen kívül hagyjuk. Így egy kisebb részfeladat megoldásával megkapjuk a második legnagyobb elemet. Ezt folytatva annyiszor, amennyi a listánk elemszáma, a végeredmény egy olyan fa, amiből az értékeket az eredeti beírás sorrendjében kiolvasva, az eredeti lista rendezett változatát kapjuk.</p>
+<p>A kupac rendezés a leghatékonyabb rendező algoritmusok egyike. A megvalósítása során érdemes külön kezelni egy a süllyesztésről gondoskodó függvényt, amit rekurzívan is meg kell hívni. Ezen felül az első kupacba rendezés valamennyire eltér a későbbi iterációktól, hiszen az első körben a fa teljesen rendezetlen, míg a későbbi lépések során csak a legfelső érték van rossz helyen, így elég egyetlen ág mentén azt az egy értéket süllyeszteni, amíg szükséges. Nem kell minden elemen végigmenni.</p>
+<h3 id="süllyeszt">Süllyeszt</h3>
+<ol>
+<li>Hozz létre egy függvényt a &quot;süllyesztés&quot; implementálására.</li>
+<li>A függvénynek legyen három bemeneti paramétere. Az első a teljes eredeti lista, a második az éppen süllyesztendő érték indexe (<code>i</code>), a harmadik pedig az az index, ami után már ignoráljuk a már helyére került értékeket (továbbiakban <code>r</code>).</li>
+<li>Egy-egy változóban határozd meg az <code>i</code> index alatt balra és jobbra levő indexeket. A legfelső gyökér index a nulla, ebből kiindulva gondold át, hogyan számolhatsz. Gondolj arra, hogy a bináris fa utolsó sora mindig eggyel több elemet tartalmaz, mint az összes előtte szereplő sor együtt véve.</li>
+<li>Ha a bal index nagyobb, mint <code>r</code>, akkor a vizsgált tartományban nem szerepel az <code>i</code> alatt található érték, tehát befejezhetjük a függvény futását.</li>
+<li>Ha a bal index értéke egyezik <code>r</code>-el, akkor az azt jelenti, hogy ez az utolsó elem a tartományban, tehát a jobb index nincs a tartományban. Ilyenkor biztos, hogy a bal indexen szereplő értékkel kell összehasonlítani az <code>i</code> helyen levő értéket. A későbbi felhasználás érdekében mentsd le a bal indexet egy <code>j</code> változóba.</li>
+<li>Ha a bal index kisebb, mint <code>r</code>, akkor meg kell vizsgálni, hogy a bal vagy a jobb indexhez tartozó érték a nagyobb. A nagyobbhoz tartozó indexet mentsd le a <code>j</code> változóba.</li>
+<li>Hasonlítsd össze a lista <code>i</code>-edik és <code>j</code>-edik elemének értékét. Ha a <code>j</code>-edik nagyobb, akkor cseréld fel a kért értéket, majd hívd meg rekurzívan a &quot;süllyesztés&quot; függvényt, a <code>j</code> indexel (a lista és az <code>r</code> argumentum változatlan). Ez utóbbival a már lejjebb süllyesztett értéket fogod a következő szinten is ellenőrizni.</li>
+</ol>
+<h3 id="induló-kupac">Induló kupac</h3>
+<ol start="8">
+<li>Hozz létre egy függvényt, ami az induló kupacot építi fel a listából. A függvény bemenet a lista legyen.</li>
+<li>Keresd meg a lista középső indexét (lefele kerekíts az <code>int</code> függvénnyel).</li>
+<li>Egy ciklussal menj végig csökkenő sorrendben a lehetséges indexeken a középsőtől az elsőig. (A többi index az utolsó sorra esne, ahol nem lenne értelme süllyeszteni, ezért kell kihagyni.)</li>
+<li>A ciklustörzsben hívd meg a &quot;süllyesztés&quot; függvényt. Argumentumként add át a listát, az aktuális indexet és a lista utolsó indexét (hossz - 1).</li>
+</ol>
+<h3 id="kupac-rendezés-1">Kupac rendezés</h3>
+<ol start="12">
+<li>Hívd meg az induló kupac függvényt.</li>
+<li>Mentsd le az utolsó elem indexét egy változóba (továbbiakban <code>r</code>).</li>
+<li>Ezen a ponton a lista első eleme a legnagyobb érték, ezért cseréld ki az első és az utolsó elem értékét.</li>
+<li>Egy ciklussal folyamatosan csökkentsd az <code>r</code> értékét. (A ciklustörzsben első alkalommal a hossz - 2 értéket kell felhasználni.)</li>
+<li>A ciklustörzsben hívd meg a &quot;süllyesztés&quot; függvényt úgy, hogy az első argumentum a lista legyen, a második fixen nulla, a harmadik pedig az <code>r</code> aktuális értéke. (Így a függvény rekurzív jellege miatt az aktuális hibás legfelső érték lesz lesüllyesztve a megfelelő pozícióba.)</li>
+<li>A süllyesztés után az első pozícióban megint a legnagyobb érték van, ezért cseréld ki, az <code>r</code>-edik helyen levő értékkel.</li>
+<li>A ciklus lefutását követően az értékek sorba lesznek rendezve, tehát vissza lehet térni a listával.</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/heap_sort/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

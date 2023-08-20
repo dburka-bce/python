@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Jupyter online </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Jupyter online ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="jupyter-online">Jupyter online</h1>
+
+<p>Számos fejlesztőkörnyezet és -eszköz érhető el a Python nyelven történő programozáshoz. A választás többnyire preferencia kérdése. A desktop megoldások konfigurációja és kezelése azonban nem triviális, és egy a programozást éppen megismerő személy számára elrettentő és nehezen átlátható lehet. Ezért az alapok elsajátításához érdemes valamilyen online interpretert használni.</p>
+<p>Az egyik legelterjedtebb Python környezet a <a href="https://jupyter.org/try">Jupyter Notebook</a>. Az <a href="https://mybinder.org/v2/gh/ipython/ipython-in-depth/master?filepath=binder/Index.ipynb">online</a> változatának előnyei közé tartozik, hogy regisztráció nélkül is enged fájlokat kezelni. A kurzus során használható az online és a desktop változat is, de a példákban az online változat funkcióit emlegetjük majd, de minden megtalálható a desktop változatban is.</p>
+<p>A Jupyter <strong>.ipynb</strong> kiterjesztésű állományokkal dolgozik, és különlegessége, hogy ezekben egymás mellett képes formázott szöveges elemeket (<a href="https://www.markdownguide.org/basic-syntax/">Markdown</a>) és futtatható Python kódrészleteket kezelni. Mi alapvetően csak kódok futtatására fogjuk használni, de a jellegéből adódóan kiválóan alkalmas jegyzetelésre.</p>
+<p>A Jupyter Notebook elindítását követően a kezdőoldal négy Markdown nyelven írodott szöveges elemből áll, úgynevezett cellákból áll. Ezek a jobb felső sarokban levő gombokkal tetszőlegesen módosíthatók.</p>
+<p><img src="jupyter_cell_controls.png" alt="jupyter_cell_controls.png">
+A középső legördülő menüben a <em>Markdown</em> feliratot <em>Code</em>-ra váltva a cella Python kód futtatására alkalmassá változik. Első indításkor érdemes kivágni a felesleges szöveges elemeket és egy új, üres kód cellával indulni. Egy &quot;Hello World!&quot; szöveget megjelenítő példakód megvalósítása így néz ki:
+<img src="k%25c3%25a9p.png" alt="k%25c3%25a9p.png">
+A példában megírtuk a kódunkat és a <em>Run</em> gombra kattintva futtattuk. Ekkor az alatta levő sortól kezdődően megjelent a program kimenete, valamint nyílt egy új cella, ahová a következő kódrészletünket írhatjuk.</p>
+<h2 id="online-fájlkezelés">Online fájlkezelés</h2>
+<p>A <img src="jupyter_icon.png" alt="jupyter_icon.png"> ikonra kattintva megnyitható az online fájlkezelő. Itt számos segédanyag és technikai fájl található. A saját fájljaink az ideiglenes <code>binder</code> mappában találhatók.
+<img src="jupyter_files.png" alt="jupyter_files.png">
+Számunkra csak az .ipynb kiterjesztésű fájlok érdekesek, ezekben tárolhatók futtatható kódrészletek. Alapértelmezésben csak egy <em>Index.ipynb</em> fájl található itt. Ez az a fájl, amibe eredetileg dolgoztunk. A jobb oldali <em>New</em> gombbal létrehozhatunk újabb fájlokat, de fel is tölthetünk sajátokat az <em>Upload</em> gomb segítségével. A kurzus példa feladatainak megoldásait .ipynb kiterjesztésű állományokban töltöttük fel az egyes anyagok végére. Ezeket például érdemes lesz ilyen módon betölteni.</p>
+<p>Amennyiben valaki regisztrált az oldalra, vagy a desktop változatot használja, akkor a fájljai bármikor elérhetők. Regisztráció nélküli felhasználás esetén azonban a <code>binder</code> csak ideiglenes, és a tartalma kilépés után elveszik. Szerencsére a megnyitást követően a <em>Download</em> gomb megnyomásával letölthetők az egyes fájlok, így regisztráció nélkül sem veszik el a munkánk.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_basic/jupyter_online/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

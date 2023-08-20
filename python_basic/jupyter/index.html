@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Jupyter </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Jupyter ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="jupyter">Jupyter</h1>
+
+<p>Számos <a href="/python_advanced/environment/">fejlesztőkörnyezet</a> és -eszköz érhető el a Python nyelven történő programozáshoz. Az egyik legelterjedtebb Python környezet a <a href="https://jupyter.org">Jupyter Notebook</a>. Az <a href="https://mybinder.org/v2/gh/ipython/ipython-in-depth/master?filepath=binder/Index.ipynb">online</a> változatának előnyei közé tartozik, hogy regisztráció nélkül is enged fájlokat kezelni. A kurzus során használható az online és a desktop változat is, de érdemes a desktop változatot telepíteni, mert a szerverek terheltségétől függően az online változat néha csak sokadik próbálkozásra indul el.</p>
+<p>A Jupyter <strong>.ipynb</strong> kiterjesztésű állományokkal dolgozik, és különlegessége, hogy ezekben egymás mellett képes formázott szöveges elemeket (<a href="https://www.markdownguide.org/basic-syntax/">Markdown</a>) és futtatható Python kódrészleteket kezelni. Mi alapvetően csak kódok futtatására fogjuk használni, de a jellegéből adódóan kiválóan alkalmas jegyzetelésre is.</p>
+<h2 id="telepítés">Telepítés</h2>
+<p>A Jupyter Notebook többféle módon telepíthető. A hasonló JupyterLab több funkcióval bír, és kicsit eltérően néz ki, de a tantárgy szempontjából nincs jelentős különbség. Bármelyik megfelel.</p>
+<p>Első körben mindenképp szükség van a Python környezet telepítésére. A <a href="https://www.python.org/">python.org</a> oldalról letölthető az operációs rendszerünknek megfelelő változat. Érdemes a legújabb stabil telepítőkészletet választani (nehogy valaki a 'soruce code'-al próbáljon meg szenvedni).</p>
+<p>A <a href="https://jupyter.org/install">jupyter.org</a> oldalon található útmutató a különböző telepítési módokhoz. Ha valaki a csomagok kezeléséhez <a href="https://www.anaconda.com">Anaconda</a>-t is telepített, akkor nem érdemes leírást követni, mert a legújabb változatok alapértelmezésben automatikusan telepítik a Jupyter Notebook-ot.</p>
+<p>Első telepítéskor talán a <strong>pip</strong> installálás a legegyszerűbb. Az alábbi parancsot kell kiadni a konzolban (Windows - Command Prompt, MacOS - Terminal).</p>
+<pre><code>pip install notebook
+</code></pre>
+<p>Ha a telepítés sikeres, akkor pedig ugyanonnan ezzel a paranccsal indítható a Jupyter Notebook:</p>
+<pre><code>jupyter notebook
+</code></pre>
+<p>Induláskor a konzolban elindul a kapcsolódó szerver, és az alapértelmezett böngészőben megnyílik a Jupyter Notebook. A konzol ablakot alap beállítások mellett nem lehet munka közben bezárni, mert leállnak a kód futtatásához szükséges funkciók.</p>
+<p>Ha valaki írásvédett mappába (tipikusan <em>Program Files</em>) telepítette a Pythont, vagy már volt korábbi verziója, akkor könnyen előfordulhat, hogy a <em>PATH</em> környezeti változó nem jól lesz beállítva, és ezért nem működik az indító parancs. Ilyenkor alternatívaként érdemes a Python-on keresztüli hívással is próbálkozni. Ez általában megoldja a problémát.</p>
+<pre><code>python -m notebook
+</code></pre>
+<p>Ilyenkor a böngészős kliens nem indul el magától, de a konzolon megjelenő linkkel elérhető.</p>
+<h2 id="használat">Használat</h2>
+<p>A Jupyter Notebook az elindítását követően a böngészőben indul el. Az offline változatban először létre kell hoznunk egy üres <em>.ipynb</em> fájlt valahol a gépen. Az online változatban egy előre elkészített fájl nyílik meg mely négy Markdown nyelven írodott szöveges elemből, úgynevezett cellákból áll. Ezek a jobb felső sarokban levő gombokkal tetszőlegesen módosíthatók. Ilyen cellákat kezelve fogunk dolgozni.</p>
+<p><img src="jupyter_cell_controls.png" alt="jupyter_cell_controls.png">
+A középső legördülő menüben a <em>Markdown</em> feliratot <em>Code</em>-ra váltva a cella Python kód futtatására alkalmassá változik. Első indításkor érdemes kivágni a felesleges szöveges elemeket és egy új, üres kód cellával indulni. Egy &quot;Hello World!&quot; szöveget megjelenítő példakód megvalósítása így néz ki:</p>
+<p><img src="hw_jupyter.png" alt="hw_jupyter.png"></p>
+<p>A példában megírtuk a kódunkat és a <em>Run</em> gombra kattintva futtattuk. Ekkor az alatta levő sortól kezdődően megjelent a program kimenete, valamint nyílt egy új cella, ahová a következő kódrészletünket írhatjuk.</p>
+<h2 id="fájlkezelés">Fájlkezelés</h2>
+<p>A <img src="jupyter_icon.png" alt="jupyter_icon.png"> ikonra kattintva megnyitható a fájlkezelő. Offline változatban ez alapértelmezetten a felhasználónk gyökérkönyvtárára mutat.</p>
+<p>Az online változatban itt számos segédanyag és technikai fájl is található. A saját fájljaink pedig az ideiglenes <code>binder</code> mappában vannak.
+<img src="jupyter_files.png" alt="jupyter_files.png">
+Számunkra csak az .ipynb kiterjesztésű fájlok érdekesek, ezekben tárolhatók futtatható kódrészletek. Alapértelmezésben csak egy <em>Index.ipynb</em> fájl található itt. Ez az a fájl, amibe eredetileg dolgoztunk. A jobb oldali <em>New</em> gombbal létrehozhatunk újabb fájlokat, de fel is tölthetünk sajátokat az <em>Upload</em> gomb segítségével. Desktop változatban egyszerűen a mappába is másolhatjuk a megfelelő kiterjesztésű szövegfájlt. A kurzus példa feladatainak megoldásait .ipynb kiterjesztésű állományokban töltöttük fel a Moodle rendszerbe. Ezeket például érdemes lesz ilyen módon betölteni.</p>
+<p>Amennyiben valaki regisztrált az oldalra, vagy a desktop változatot használja, akkor a fájljai bármikor elérhetők. Regisztráció nélküli felhasználás esetén azonban a <code>binder</code> csak ideiglenes, és a tartalma kilépés után elveszik. Szerencsére a megnyitást követően a <em>Download</em> gomb megnyomásával letölthetők az egyes fájlok, így regisztráció nélkül sem veszik el a munkánk.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_basic/jupyter/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

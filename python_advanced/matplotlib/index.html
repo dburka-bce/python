@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Adatvizualiz&#225;ci&#243; </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Adatvizualiz&#225;ci&#243; ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="adatvizualizáció">Adatvizualizáció</h1>
+
+<p>A nagy adatsorok elemzése során nehéz megtalálni a lényeges információkat. Az adatok megfelelő formában történő megjelenítésével azonban pillanatok alatt láthatóvá válnak a kiugró értékek, trendek vagy egyéb releváns mutatók.</p>
+<p>A <code>matplotlib</code> egyike a számos adatvizualizációra alkalmas Python modulnak. Kiválóan alkalmas statikus, animált vagy éppen interaktív ábrák és grafikonok megjelenítésére. A kevés előfeltétele (más modulok) miatt előszeretettel alkalmazzák egyszerűbb projektekben. Bár rendkívül széles az eszközkészlete, komolyabb adatelemzéshez inkább komplexebb modulokat érdemes alkalmazni. De látni fogjuk, hogy a legtöbb feladatra a <code>matplotlib</code> is bőven elegendő.</p>
+<p>Telepíteni a szokásos <code>pip</code> utasítással lehet:</p>
+<pre><code class="lang-python">pip install matplotlib
+</code></pre>
+<p>Ebben az anyagban csak a modul leggyakrabban használt funkcióit mutatjuk be a teljesség igénye nélkül. A bővebb, hivatalos leírás elérhető az alábbi linken: <a href="https://realpython.com/python-matplotlib-guide">Python Matplotlib Guide</a>.</p>
+<h2 id="vonaldiagram">Vonaldiagram</h2>
+<p>A <code>matplotlib.pyplot</code> osztály <code>plot</code> metódusával vonaldiagramon ábrázolhatók a megadott értékek.</p>
+<pre><code class="lang-python">import matplotlib.pyplot as plt
+
+y = [1, 4, 9, 16, 25, 36]
+plt.plot(y)
+</code></pre>
+<p><img src="Vonaldiagram.PNG" alt="Vonaldiagram.PNG"></p>
+<p>Alapértelmezetten a nullától induló x tengelyen jelennek meg az értékek, de egy, az értékekkel megegyező méretű listával megadhatók az x tengely megfelelő értékei is.</p>
+<pre><code class="lang-python">import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5, 6]
+y = [1, 4, 9, 16, 25, 36]
+plt.plot(x, y)
+</code></pre>
+<p>Az x tengely értékeinek nem kell folytonosnak lennie, és a növekvő sorrend sem elvárás, de a pontok összekötése az x tengely értékei alapján kerülnek meghatározásra.</p>
+<p>Számos lehetőség van az ábra formázására.</p>
+<pre><code class="lang-python">import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5, 6]
+y = [1, 4, 9, 16, 25, 36]
+
+#Az ábra mérete inch-ben
+plt.figure(figsize=(15, 5))
+plt.plot(x, y)
+# Ábra címe
+plt.title('Vonaldiagram')
+
+# X tengely felirata
+plt.xlabel('X tengely')
+# Y tengely felirata
+plt.ylabel('Y tengely')
+# Megjeleníti a definiált ábrákat
+plt.show()
+</code></pre>
+<p><img src="Vonaldiagram2.PNG" alt="Vonaldiagram2.PNG">
+A példában az utolsó <code>show</code> függvény hívás nélkül is megjelenik az ábra. A fő funkciója az, hogy lezárja a formázást, mielőtt a következő ábra megjelenítésére térnénk rá. (A <code>show</code> ennél többet is csinál, de nekünk most ennyit elég róla tudni.) Az átméretezés magára a megjelenítési felületre vonatkozik, ezért ezt még a <code>plot</code> hívás előtt kell beállítani, különben nem jut érvényre.</p>
+<p>A <code>plot</code> függvény harmadik paraméterének a neve <code>fmt</code> azaz &quot;format&quot;. A segítségével egy rövid karakterkóddal megadhatjuk a vonaldiagram megjelenését. Például elhagyhatjuk az összekötő vonalakat és a pontokat piros körökre cserélhetjük az &quot;ro&quot; argumentummal.</p>
+<pre><code class="lang-python">import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5, 6]
+y = [1, 4, 9, 16, 25, 36]
+
+plt.plot(x, y, &quot;ro&quot;)
+plt.show()
+</code></pre>
+<p><img src="Vonaldiagram3.PNG" alt="Vonaldiagram3.PNG"></p>
+<p>Az <code>fmt</code> paraméter leírása <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">ezen</a> az oldalon a <em>Notes</em> szekció alatt érhető el.</p>
+<h2 id="több-adatsor">Több adatsor</h2>
+<p>Több adatsor megjelenítéséhez egyszerűen újra meg kell hívni a <code>plot</code> függvényt az ábra lezárása (<code>show</code>) nélkül.</p>
+<pre><code class="lang-python">import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.arange(1, 7)
+
+plt.plot(x, x, label=&quot;Normál&quot;)
+plt.plot(x, x**2, label=&quot;Négyzet&quot;)
+plt.plot(x, x**3, label=&quot;Köb&quot;)
+
+plt.legend()
+
+plt.show()
+</code></pre>
+<p><img src="Legend.PNG" alt="Legend.PNG"></p>
+<p>A példában a NumPy modul segítségével hoztunk létre egy kiinduló vektort, és ebből a hatványozás segítségével állítottuk elő az adatsorokat. (Ez hagyományos Python lista esetén nem működne.)</p>
+<p>Egy további újdonság, hogy <code>label</code> nevű paraméterrel elneveztük az egyes adatsorokat, a jelmagyarázatot, pedig a <code>legend</code> segítségével jelenítettük meg. A <code>legend</code> lehetséges beállításairól az <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html">online útmutatóból</a> lehet tájékozódni.</p>
+<h2 id="subplot">Subplot</h2>
+<p>Gyakran előfordul, hogy hely szűkében vagyunk vagy könnyen összehasonlítható grafikonokra van szükségünk. Ilyenkor egy ábrára több grafikont is szeretnénk elhelyezni. Az alábrák (<code>subplot</code>) lehetőséget adnak erre.</p>
+<pre><code class="lang-python">import matplotlib.pyplot as plt
+
+plt.subplot(1, 2, 1)
+plt.plot([1, 4, 9, 16, 25, 36], &quot;g^&quot;)
+plt.title(&quot;Első&quot;)
+
+plt.subplot(1, 2, 2)
+plt.plot([10, 8, 6, 4, 2, 0], &quot;rx&quot;)
+plt.title(&quot;Második&quot;)
+
+plt.suptitle(&quot;Főábra&quot;)
+plt.show()
+</code></pre>
+<p><img src="Subplot1.PNG" alt="Subplot1.PNG"></p>
+<p>A <code>subplot</code> függvény létrehoz egy felületet, amire a következő <code>plot</code>-ot elhelyezhetjük.  A <code>subplot</code> első két paramétere egy mátrixot határoz meg (sor és oszlopszám), amiben el lehet helyezni az aktuális ábrát. A harmadik paraméter azt mondja meg, hogy a mátrixon belül melyik indexű helyre kerüljön az ábránk. A számozás 1-től indul és balról jobbra, soronként haladva növekszik. A példában a <code>plt.subplot(1, 2, 2)</code> egy egysoros és két oszlopos elrendezés jobb oldali részét jelöli ki.</p>
+<p>A funkció használata során általában oda kell figyelni, hogy mindig egyforma méretű mátrixot adjunk meg (egészen addig, míg egy <code>show</code> utasítással le nem zártuk az adott ábrát). Lehetőség van azonban arra is, hogy egynél több indexet összevonjunk egy nagyobb <code>subplot</code>-ba. Ebben az esetben eltérő méretű, de az eredetinek megfelelő elrendezésű mátrix segítségével nagyobb alábrákat is létrehozhatunk.</p>
+<pre><code class="lang-python">import matplotlib.pyplot as plt
+
+plt.subplot(2, 2, 1)
+plt.plot([1, 4, 9, 16, 25, 36], &quot;g^&quot;)
+plt.title(&quot;Első&quot;)
+
+plt.subplot(1, 2, 2)
+plt.plot([10, 8, 6, 4, 2, 0], &quot;rx&quot;)
+plt.title(&quot;Második&quot;)
+
+plt.suptitle(&quot;Főábra&quot;)
+plt.show()
+</code></pre>
+<p><img src="Subplot2.PNG" alt="Subplot2.PNG"></p>
+<p>Ebben a példában az előzőhöz képest csak az első <code>subplot</code> első paraméterét módosítottuk 1-ről 2-re. Így egy 2x2-es mátrix első helyére próbáltuk meg elhelyezni az első ábrát. A második ábra egy 1x2-es mátrix második helyére kerülne, ami megfelel az eredeti 2x2-es mátrix 2. és 4. helyének. Utóbbiak még üresek az eredeti mátrixban, ezért elhelyezhető oda a nagyobb ábra. A példában az is jól látszik, hogy akár üresen is hagyhatunk helyeket az ábrán.</p>
+<p>Számos olyan elrendezést lehet találni, amit a fenti megoldással nem lehet előállítani. Ezekhez már a <code>matplotlib</code> <a href="https://matplotlib.org/stable/tutorials/intermediate/gridspec.html"><code>gridspec</code></a> osztályát kell használni. Ilyen komplex ábrákat a gyakorlatok során nem kell majd előállítani.</p>
+<p>Amennyiben sok alábrával vagy ábrával dolgozunk, zavaró lehet, hogy a kódban egy helyen kell szerepelnie az egyes <code>plot</code>-okhoz. Gyakran jobb, ha például az egyes ábra feliratokat egy helyen tudjuk kezelni. Ehhez szükség van arra, hogy a kódban később is hivatkozni tudjunk az egyes ábráinkra.</p>
+<pre><code class="lang-python">import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5, 6]
+y = [[1, 2, 3, 4, 5, 6],
+     [1, 4, 9, 16, 25, 36],
+     [1, 8, 27, 64, 125, 196],
+     [-1, -2, -3, -4, -5, -6]]
+
+fig = plt.figure(figsize=(8, 8))
+
+ax_1 = fig.add_subplot(2, 2, 1)
+ax_1.plot(x, y[0], &quot;g--&quot;)
+
+ax_2 = fig.add_subplot(2, 2, 2)
+ax_2.plot(x, y[1], &quot;r:&quot;)
+
+ax_3 = fig.add_subplot(2, 2, 3)
+ax_3.plot(x, y[2], &quot;r-&quot;)
+
+ax_4 = fig.add_subplot(2, 2, 4)
+ax_4.plot(x, y[3], &quot;g-.&quot;)
+
+ax_1.set_title(&quot;Számok&quot;)
+ax_2.set_title(&quot;Nyégzetek&quot;)
+ax_3.set_title(&quot;Köbök&quot;)
+ax_4.set_title(&quot;Negatív számok&quot;)
+fig.suptitle(&quot;Subplot&quot;)
+
+plt.show()
+</code></pre>
+<p><img src="Subplot3.PNG" alt="Subplot3.PNG"></p>
+<p>Az ábra méretét meghatározó függvény visszatérési értéke egy <code>Figure</code> objektum. A <code>pyplot</code> segítségével közvetlenül hívott utasítások (pl.: <code>plt.suptitle</code>) a háttérben gyakran az éppen aktuális <code>Figure</code> objektum megfelelő metódusait hívják meg. Amennyiben ezt lementjük egy változóba, később közvetlenül is elérhetjük.</p>
+<blockquote>
+<p>Érdekesség: Ha egy visszatérési értékkel rendelkező függvény eredményét nem mentjük változóba vagy használjuk fel, akkor azt a Python automatikusan kiírja az <code>Output</code>-ra, kivéve akkor, ha egyébként <code>print</code>-el jelenítünk meg eredményt. Ezért, ha a <code>Figure</code>-t nem tesszük változóba, futtatáskor megjelenik egy az osztálypéldányt jelölő sor a kimeneten. Ha szebb megjelenítés érdekében ezt el akarjuk kerülni, akkor érdemes az ilyen függvények eredményét akkor is változóba tenni, ha nem tervezzük később használni.</p>
+</blockquote>
+<p>A <code>plt</code> hívás helyett, közvetlenül a <code>Figure</code>-höz is adhatunk <code>subplot</code>-ot, de ilyenkor az <code>add_suplot</code> függvényt kell használni (a háttérben ez ugyanazt a kódot hívja, mint a <code>plt.subplot</code>). Mindegyik megoldás esetén a visszatérési érték egy <code>Axes</code> objektum (pontosabban az <code>Axes</code>-ből származó <code>AxesSubPlot</code>).</p>
+<p>Az <code>Axes</code> objektumokat változóba mentve közvetlenül rajzolhatunk rájuk (<code>plot</code>) és a megfelelő függvényhívásokkal bármikor beállíthatók a paramétereik. A legtöbb függvényük a <code>plt</code>-n keresztül történő hívással megegyezik, csak egy <code>set_</code> előtaggal kell kiegészíteni a függvény nevét.</p>
+<p>A fenti példában az objektumok létrehozása jelentősen egyszerűsíthető a <code>plt.subplots</code> utasítás segítségével.</p>
+<pre><code class="lang-python">import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5, 6]
+y = [[1, 2, 3, 4, 5, 6],
+     [1, 4, 9, 16, 25, 36],
+     [1, 8, 27, 64, 125, 196],
+     [-1, -2, -3, -4, -5, -6]]
+fmt = [&quot;g--&quot;, &quot;r:&quot;, &quot;r-&quot;, &quot;g-.&quot;]
+
+fig, ax = plt.subplots(2, 2, figsize=(8, 8))
+
+c = 0
+for i in range(2):
+    for j in range(2):
+        ax[i, j].plot(x, y[c], fmt[c])
+        c += 1
+
+ax[0, 0].set_title(&quot;Számok&quot;)
+ax[0, 1].set_title(&quot;Nyégzetek&quot;)
+ax[1, 0].set_title(&quot;Köbök&quot;)
+ax[1, 1].set_title(&quot;Negatív számok&quot;)
+fig.suptitle(&quot;Subplot&quot;)
+
+plt.show()
+</code></pre>
+<p>A <code>plt.subplots</code> egyszerre több alábra helyét alakítja ki, és <code>tuple</code> visszatérési értékkel visszaadja a megfelelő <code>Figure</code> objektumot és egy a létrehozott <code>Axes</code> objektumokból álló tömböt. Innentől ciklus segítségével is kezelhető az egyes alábrák megjelenítése. (A fenti kódrészlet az előzővel teljesen megegyező ábrát eredményez.)</p>
+<h2 id="diagramtípusok">Diagramtípusok</h2>
+<p>A <code>matplotlib</code> nem csak vonaldiagramok megjelenítésére alkalmas. A teljesség igénye nélkül nézzünk meg néhány másik típust.</p>
+<h3 id="kördiagram">Kördiagram</h3>
+<p>A <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html">kördiagram</a> az eloszlások megjelenítésének legegyszerűbb formája.</p>
+<pre><code class="lang-python">import matplotlib.pyplot as plt
+
+cegek = ['A', 'B', 'C', 'D', 'E']
+reszesedes = [20, 25, 15, 10, 20]
+explode = [0, 0.1, 0, 0, 0]
+
+pie = plt.pie(reszesedes, explode=explode, labels=cegek)
+</code></pre>
+<p><img src="Kor.PNG" alt="Kor.PNG"></p>
+<p>A létrehozáshoz szükséges a címkék és a kapcsolódó értékek listája. Az alapvető beállítások megtalálhatók online. Egy különleges lehetőség az <code>explode</code> nevesített paraméter, melynek segítségével a megfelelő elem (akár az összes) kiemelhető a körből, ezzel hangsúlyozva az értéket.</p>
+<h3 id="oszlopdiagram">Oszlopdiagram</h3>
+<p>Az <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html">oszlopdiagram</a> egy alapvető ábrázolási forma, de több adatsor kombinálásával viszonylag összetett ábrák előállítására is alkalmas.</p>
+<pre><code class="lang-python">import matplotlib.pyplot as plt
+import numpy as np
+
+x = ['A', 'B', 'C', 'D', 'E']
+y = list(np.random.randint(51, 100, size=5))
+
+plt.bar(x, y, color=&quot;green&quot;)
+
+plt.title(&quot;Oszlopdiagram&quot;)
+plt.xlabel(&quot;Osztályok&quot;)
+plt.ylabel(&quot;Átlag pontszámok&quot;)
+
+plt.show()
+</code></pre>
+<p><img src="Oszlop.PNG" alt="Oszlop.PNG">
+A példában a NumPy csomag véletlen generátorát felhasználva, az 51-99 intervallumon generált véletlen értékeket jelenítettünk meg.</p>
+<h3 id="hisztogram">Hisztogram</h3>
+<p>A <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html">hisztogram</a> az értelmezési tartományt egyforma méretű intervallumokra bontja, majd megszámolja az egyes intervallumokba eső értékeket, és az így kapott darabszámokat jeleníti meg egy &quot;sűrű&quot; oszlopdiagramon.</p>
+<pre><code class="lang-python">import matplotlib.pyplot as plt
+import numpy as np
+
+# A Python lehetőséget ad arra, hogy alul vonással elválasztva olvashatóbbá tegyük a beégetett számértékeket.
+# Az alábbi sorban az argumentum a 100000-es érték.
+x = np.random.randn(100_000)
+
+plt.title(&quot;Histogram&quot;)
+plt.xlabel(&quot;Érték&quot;)
+plt.ylabel(&quot;Gyakoriság&quot;)
+
+plt.hist(x, 100)
+plt.show()
+</code></pre>
+<p><img src="Hisztogram.PNG" alt="Hisztogram.PNG">
+A példában a NumPy <code>randn</code> függvényét felhasználva normális eloszlás mentén generáltunk 100.000 véletlen értéket. (A megszokott véletlen szám generátor egyenletes eloszlás mentén ad értékeket.) Jól látható, hogy a hisztogram kirajzolja a normális eloszlás görbéjét.</p>
+<p>A <code>hist</code> függvény második paramétere (<code>bins</code>) adja meg, hogy hány intervallumra osztja fel a függvény az értelmezési tartományt. A paraméter elhagyható, alapértelmezett értéke 10.</p>
+<h2 id="feladatok">Feladatok</h2>
+<ol>
+<li>Jelenítsd meg egy vonaldiagramon a sinus függvény értékét az 1-20 tartományon!</li>
+<li>Készíts egy 2x2 vonaldiagramból álló ábrát. Mindegyik x-tengelyen a számok 1-6-ig terjedjenek. Az értékek pedig rendre $x^2$, $x^3$, $x+2$ és $x+3$ legyenek. Minden alábrán más színű és megjelenésű vonal szerepeljen.</li>
+<li>Hozz létre egy öt elemű vektort 1-100 közé eső véletlen értékekkel. Jelenítsd meg az értékeket egy kördiagramon, és emeld ki a legnagyobb értékkel rendelkező szeletet. (A legnagyobb érték indexét legkönnyebben a <code>numpy.argmax</code> függvénnyel találhatod meg.) A címkék legyenek az értékek sorszámai.</li>
+<li>Jeleníts meg az előző feladatban szereplő kördiagramból kettőt (eltérő véletlen értékekkel) egymás mellett, alattuk pedig egy kétszer olyan széles alábrán egy oszlopdiagramot, amiben a két kör értékeinek összegei látszódjanak.</li>
+<li>Jelenítsd meg egymás alatt a $sin(x)$ és $cos(x)$ függvényeket, valamint ezek 4-szeres frekvenciájú változatukat a $[0, \pi]$ intervallumon 0.1-es lépésközzel. Így összesen 4 alábrád lesz ugyanazon az értelmezési tartományon. Ezért legyen a teljes ábrának egy közös X tengely felirata, és minden alábra Y tengelyén pedig a függvény neve jelenjen meg.</li>
+<li>Hozz létre egy függvényt, aminek a bemenete egy szám, és egy 5 elemű vektort ad eredményül, aminek az értékei 0 és a paraméter közti véletlen egész számok. A felhasználótól kérj be két egész számot (kezeld a hibákat), mindkét értékkel hívd meg a függvényt, és az eredményeket jelenítsd meg egy ábrán csoportosított oszlopdiagramként (5x2 oszlopnak kell látszódnia). Az oszlopok alapértelmezésben egybe esnek, ezért be kell állítani a diagram <code>width</code> tulajdonságát 0.5-nél kisebbre (pl.: 0.4), és az X tengely vektorát el kell tolni a <code>width</code> felével (az első diagramnál negatív, a másodiknál pozitív irányba).</li>
+<li>A korábbi hisztogram példát bővítsd ki úgy, hogy jelenjen meg rajta egy piros színű, a <a href="https://hu.wikipedia.org/wiki/Norm%C3%A1lis_eloszl%C3%A1s">normális eloszlást</a> reprezentáló vonal. Ehhez normalizáld a hisztogramot (<code>density=True</code>), hozz létre egy vektort -4 és 4 között 0.1-es lépésközzel (ez lesz az értelmezési tartomány), majd számold ki a normális eloszlás értékét erre a tartományra ($m=0$, $\sigma=1$). Az így kapott eloszlásnak nagyjából illeszkednie kell a hisztogramhoz.</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/matplotlib/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Input </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Input ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="input">Input</h1>
+
+<p>A legtöbb program célja, hogy megoldást nyújtson a végfelhasználó valamilyen problémájára. Ehhez azonban elengedhetetlen, hogy a felhasználó információt tudjon továbbadni a programnak. Az <code>input</code> parancs segítségével lehetőségünk van adatot bekérni a felhasználótól a konzolon keresztül.</p>
+<pre><code class="lang-python">uzenet = input(&quot;Mondj valamit és én megismétlem: &quot;)
+print(uzenet)
+</code></pre>
+<pre><code>Mondj valamit és én megismétlem: [                 ]
+</code></pre>
+<p>A fenti példa során a következő történik:</p>
+<ol>
+<li>A program indítása után megjelenik az <code>input</code> függvénybe paraméterként átadott szöveg. Mellette pedig egy szövegdoboz, amibe szöveget tud írni a felhasználó. (Érdemes megfigyelni, hogy a szöveg végére egy szóközt tettünk, hogy a bemeneti mező ne érjen össze szöveggel.)</li>
+<li>Ekkor a felhasználó bármilyen szöveget írhat a mezőbe. A beírt szöveget az <em>Enter</em> lenyomásával hagyja jóvá. Amíg nem nyomja meg az <em>Enter</em>-t addig nem fut tovább a program.</li>
+<li>A jóváhagyás után a beírt szöveg bekerül az <code>uzenet</code> változóba.</li>
+<li>Végül megjelenítjük az üzenet tartalmát.</li>
+</ol>
+<p>Ha a beírt szöveg például &quot;Hello World!&quot; (az idézőjelet nem kell kiírni), akkor a program futása végén az output így fog kinézni:</p>
+<pre><code>Mondj valamit és én megismétlem: [Hello World!]
+Hello World!
+</code></pre>
+<p>A továbbiakban az outputban szögletes zárójelekkel jelöljük majd a bemeneti mező helyét!</p>
+<h2 id="bemenet-konvertálása">Bemenet konvertálása</h2>
+<p>Az <code>input</code> függvény használata során a Python szövegként fogja kezelni a bemenetet, függetlenül annak tartalmától. Ez tipikusan számértékek megadása során jelent problémát.</p>
+<pre><code class="lang-python">x = input(&quot;Mondj egy számot és megmondom a négyzetét: &quot;)
+print(x ** 2)
+</code></pre>
+<pre><code>Mondj egy számot és megmondom a négyzetét: [10]
+
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+&lt;ipython-input-8-9274696a4539&gt; in &lt;module&gt;
+ 1 x = input(&quot;Mondj egy számot és megmondom a négyzetét: &quot;)
+----&gt; 2  print(x ** 2)
+
+TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'int'
+</code></pre>
+<p>Látható, hogy a szám megadása után, amint egy szöveggel nem értelmezhető műveletet próbálunk végezni, azonnal egy hibaüzenet fogad minket. Ezért, ha nem szöveg típusú adattal akarunk dolgozni,  akkor át kell <a href="/python_basic/type_conversion/">konvertálnunk</a> a bemenetet.</p>
+<pre><code class="lang-python">x = input(&quot;Mondj egy számot és megmondom a négyzetét: &quot;)
+x = int(x)
+print(x ** 2)
+</code></pre>
+<pre><code>Mondj egy számot és megmondom a négyzetét: [10]
+100
+</code></pre>
+<h1 id="ellenőrző-kérdések-feladatok">Ellenőrző kérdések, feladatok:</h1>
+<ol>
+<li>Kérd be a felhasználótól a nevét, majd üdvözöld a kimeneten a teljes nevén!</li>
+<li>Kérd be a felhasználótól a nevét, majd üdvözöld a kimeneten a keresztnevén!</li>
+<li>Kérd be a felhasználótól egy kör sugarát, és írd ki a területét. Ezúttal nem kell foglalkoznod azzal, ha a felhasználó nem számmá konvertálható értéket ad meg.</li>
+<li>Kérj be a felhasználótól egy lebegőpontos számot, majd írd ki a kimenetre egész számmá konvertálva.</li>
+<li>Kérj be a felhasználótól egy karakterláncot, majd írd ki megfordítva!</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_basic/input/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

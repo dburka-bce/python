@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Range </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Range ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="range">Range</h1>
+
+<p>A <code>range</code> adattípus egész számok rendezett gyűjteménye. Leggyakrabban a <a href="/content/python_basic/loops">ciklus iterációk</a> kapcsán szokás használni</p>
+<h2 id="range-létrehozása">Range létrehozása</h2>
+<p>A <code>range</code>-eknek nincs a listához és a <code>tuple</code>-höz hasonló szintakszisa. A létrehozásához a <code>range()</code> függvényt kell használni.  A függvénynek három paramétere van, és az alábbi struktúrát követi:</p>
+<pre><code class="lang-python">range(start, stop, step)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>paraméter</th>
+<th>leírás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td>Opcionális. Egész szám, amely meghatározza a kezdő pozíciót. Alapértelmezett értéke 0.</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>Kötelező. Egész szám, amely meghatározza a számsorozat utolsó elemét. Ez az elem már nem kerül bele!!! Másképpen: felülről nyílt az intervallum.</td>
+</tr>
+<tr>
+<td>step</td>
+<td>Opcionális. Egész szám, amely meghatározza a növekményt. Alapértelmezett értéke 1.</td>
+</tr>
+</tbody>
+</table>
+<p>A <code>range()</code> függvény a kezdőértéktől indulva a megadott lépésközzel növekvő számsorozatot ad vissza, és egy megadott számmal ér véget.</p>
+<pre><code class="lang-python">x = range(3, 23, 4)
+print(x)
+print(list(x))
+</code></pre>
+<pre><code>range(3, 20, 4)
+[3, 7, 11, 15, 19]
+</code></pre>
+<p>Érdemes megfigyelni, hogy a <code>range()</code> argumentumaként megadott intervallum felülről nyitott, a példában a 23-as már nem kerül kiírásra. A <code>print</code> metódus hatására csak a <code>range</code> eredeti struktúrája jelenik meg. Ha kíváncsiak vagyunk a tartalmára, akkor a kiírás előtt át kell konvertálnunk listává.  Az egyes elemek azonban a hagyományos módon kérdezhetők le.</p>
+<pre><code class="lang-python">x = range(3, 23, 4)
+print(x[2])
+</code></pre>
+<pre><code>11
+</code></pre>
+<p>Amennyiben csak egyszerű számsorozatra van szükségünk, az opcionális paraméterek elhagyhatók.</p>
+<pre><code class="lang-python">x = range(8)
+print(list(x))
+</code></pre>
+<pre><code>[0, 1, 2, 3, 4, 5, 6, 7]
+</code></pre>
+<h2 id="range-műveletek">Range műveletek</h2>
+<p>Más szekvencia típusokkal ellentétben a <code>range</code> szerkezete rendkívül kötött, hiszen egymástól adott &quot;távolságra&quot; eső elemei vannak, amik minden esetben érték sorrendben kell legyenek. Ezért értelemszerűen nem értelmezhető rá a <code>sort</code> metódus, és az esetek döntő többségében <code>+</code> jellel történő összefűzés eredménye sem felelne meg a <code>range</code> definíciójának, így ez a művelet sem érhető el.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_basic/range/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

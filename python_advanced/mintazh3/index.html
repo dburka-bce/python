@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>3. Minta ZH </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="3. Minta ZH ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="3-minta-zh">3. Minta ZH</h1>
+
+<p><strong>A 4 fő blokkot külön cellába dolgozd ki (a mintában és a valódi ZH-n is), hogy átláthatóbb legyen a megoldás!!!</strong> Figyelj oda, hogy ebben az esetben érdemes az egész munkalapot újrafuttatni teszteléskor (forward gomb), pusztán az aktuális cella futtatása helyett (play gomb).</p>
+<ol>
+<li><p>Blokk (10 pont)</p>
+<ol>
+<li>Importáld és adj rövid nevet a mai nap során használt csomagoknak: <code>numpy</code>, <code>pandas</code>, <code>plotly_express</code>, <code>plotly.figure_factory</code> és <code>plotly.graph_objects</code></li>
+<li>Olvasd be a pokemons.csv fájlt.</li>
+<li>Nézd meg az adattábla első 10 és utolsó 5 sorát.</li>
+<li>Irasd ki a leíró statisztikákat és oszlopok közti korrelációt.</li>
+<li>Melyik oszlopnak legnagyobb az átlaga? Melyik oszlop korrelál a leginkább fordítva a Speed oszloppal?</li>
+</ol>
+</li>
+<li><p>Blokk (10 pont)</p>
+<ol>
+<li>Alakítsd át az adattáblát úgy, hogy a # oszlop legyen az index és minden oszlopnév kisbetű legyen.</li>
+<li>Alakíts át a generation oszlopot kategórikus formátummá.</li>
+<li>Keresd ki, hogy a Dragon tipusú (bármelyik type) pokemonok közül melyik a leggyorsabb.</li>
+<li>Írd ki egy listaként azkat első generációs második típussal nem rendelkező pokemonokat, amelyeknek a speciális támadása és védelme összesen kevesebb mint 50 és a nevükben nincs benne, hogy 'Mega'.</li>
+</ol>
+</li>
+<li><p>Blokk (15 pont)</p>
+<ol>
+<li>Csoportosítsd az első tipus oszlop alapján a pokemonokat. Számold ki a total átlagát, majd alakísd adattáblává a kapott eredményt és rendezt növekvő sorrendbe az átlagok szerint.</li>
+<li>Szűrd le az adattáblát az első tipus szerint növény pokemonokra. Csoportosítsd generáció szerint, majd aggregált a hp oszlopot minimum és maximum szerint, az attack oszlopot medián és a defense oszlopot mean szerint.</li>
+<li>Készítsünk egy csoportosítást az első tipus és a generáció alapján ahol a legnagyobb total értéket vesszük. Mentsük el ezt egy generacio_tipus_max adattáblába. Használjuk a merge funkciót, hogy egyberakjuk az új adattáblát az eredetivel. A nagy tábla értékeihez illesszük a kisebb táblát az első tipus és a generáció oszlopokon. A duplikátum oszlopokra a nagy táblánál semmi a kiseb tábla esetén meg a '_max' utótag kerüljön.</li>
+<li>Szűrd le az adattáblát az első 9 pokemonra, amelyek nevében nem szerepel, hogy 'Mega'. Készíts egy oszlopdiagramot, amely az x tengelyen a pokemonokat az y tengelyen pedig a hp attack és defense oszlopokat mutatja. Frissítsd az ábrát egy Kezdőpokémonok címmel, amely középen található.</li>
+<li>Az adattábla hp és speed közötti oszlopaiból csinálj sorokat a type 1 oszlop megtartása mellett. Az ezen oszlopneveket tartalmazó oszlop neve legyen stats_type az egykori értékeiket tartalmazó oszlop pedig legyen stats. Az eredményt csoportosítsd type 1 és stats_type alapján és vedd a stats oszlop átlagát, majd az eredményt alakítsd adattáblává. Vegyél le az így kapott stats oszlop értékeiből 40-et (a jobb ábrázolhatóság érdekében). A kapott adattáblából csinálj egy buborékdiagramot ahol az x tengelyen a type 1 az y tengelyen a stats type található, a buborékok mérete a stats oszloptól függjön és a színezés pedig a stats_type alapján történjen.</li>
+</ol>
+</li>
+<li><p>Blokk (15 pont)</p>
+<ol>
+<li>Készíts egy bekérő ciklust. Írja ki, hogy meg kell adni a generációt, vagy a típus szó megadásával elérhető az összes generáció. Ellenőrizze, hogy a kapott generáció benne van-e az adattábla generation oszlopában. Ha igen, akkor a generációval szűrje lesz az adattáblát és lépjen ki a ciklusból. Sikertelen bekérés esetén induljon újra ciklus a generáció szó megadásával meg írja ki az elérhető generációkat.</li>
+<li>Készíts egy második ciklust az első típusra (type 1). Ugyanazt tudja mint az első ciklus csak másik oszlopra vonatkozik és csak az előző ciklusban leszűrt adattáblán belül keressen.</li>
+<li>Készíts egy harmadik ciklust a második típusra (type 2). Ugyanazt tudja mint az második ciklus csak másik oszlopra vonatkozik és csak az előző ciklusban leszűrt adattáblán belül keressen. Figyelj arra, hogy a 'type 2' üres is lehet: A kiválaszható értékek közül szűrd ki az üres értéket, és amennyiben csak üres 'type 2' volt a listában, akkor hagyd ki ezt a szűrési opciót.</li>
+<li>Készíts egy utolsó ciklust a pokemonok neveire. Ugyanazt tudja mint az második ciklus csak másik oszlopra vonatkozik és csak az előző ciklusban leszűrt adattáblán belül keressen.</li>
+<li>Az eredményül kapott pokemon adatait alakítsd adattáblává, oly módon, hogy a 'hp', 'attack', 'defense', 'sp. atk', 'sp. def', 'speed' oszlopokból sorok lesznek. Az oszlopnevekből stats_type oszlop az értékeikből stats oszlop keletkezik. Vizualizáld egy oszlopdiagramon. Az x tengelyen a stats_type, az y tengelyen a stats legyen a színezés pedig megint csak a stats_type alapján. Az ábra címe a kiválasztott '{pokémon neve} adatai' legyen és középre legyen igazítva.</li>
+</ol>
+</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/mintazh3/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

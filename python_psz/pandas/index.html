@@ -1,0 +1,670 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Pandas </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Pandas ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="pandas">Pandas</h1>
+
+<p>A Pandas egy Python adatkezelő csomag, amely a korábban megismert <a href="/content/python_advanced/numpy">NumPy</a> csomagra épül.</p>
+<p>Telepítés:
+<code>pip install pandas</code>
+vagy
+<code>conda install pandas</code></p>
+<p>Szerencsére erre nem lesz szükségünk mivel az Anaconda kiterjesztés már tartalmazza. Az aktuális telepítés verziószáma lekérdezhető a Python-on keresztül.</p>
+<pre><code class="lang-python">import pandas as pd
+print(pd.__version__)
+</code></pre>
+<pre><code>1.3.3
+</code></pre>
+<p>A <a href="https://pandas.pydata.org/">Pandas weboldalán</a> számos hasznos leírás érhető el, de érdemes megnézni a beépített dokumentációt is (<code>pd?</code>).</p>
+<h2 id="adatstruktúrák">Adatstruktúrák</h2>
+<p>A Pandas két általunk is sokat használt adatstuktúrája a dataframe (adattábla) és a series (adatsor).</p>
+<p><img src="pandas_data_structures.png" alt="pandas_data_structures.png"></p>
+<blockquote>
+<p>Érdemes lekérdezni mindkettő dokumentációját (<code>pd.DataFrame</code>, <code>pd.Series</code>)</p>
+</blockquote>
+<h3 id="adatsor">Adatsor</h3>
+<p>A pandas adatsort (<code>Series</code>) egydimenziós adatstruktúrák tárolására találták ki, de belőlük épülnek fel a komplexebb adatstruktúrák is.
+<img src="pandas_dataseries.png" alt="pandas_dataseries.png"></p>
+<p>A létrehozásuk hagyományos Python listákból kiindulva történik.</p>
+<pre><code class="lang-python">import pandas as pd
+egy_lista = ['alma', 'körte', 'citrom']
+ds = pd.Series(egy_lista)
+
+print(f&quot;Lista:\n{ds}\n&quot;)
+print(f&quot;Indexek(kulcsok):\n{ds.index}\n&quot;)
+print(f&quot;Értékek:\n{ds.values}\n&quot;)
+</code></pre>
+<pre><code>Lista:
+0      alma
+1     körte
+2    citrom
+dtype: object
+
+Indexek(kulcsok):
+RangeIndex(start=0, stop=3, step=1)
+
+Értékek:
+['alma' 'körte' 'citrom']
+</code></pre>
+<p>A Pandas <code>index</code> olyan mint egy háznak a címe (nem csak <code>Series</code> esetén). Segítségével tudunk kiválasztani adatpontokat a teljes adatbázisból vagy egy oszlopból. A soroknak és az oszlopoknak is van indexük: a sorok indexe az index, míg az oszlopok indexét az oszlop neve jelenti. Egy jó index csak eltérő értékeket tartalmaz. Ez a legtöbb esetben egy egyesével növekvő számsor, sokszor használnak idősoros indexet is, de tetszőleges értékekkel is felülírhatók.</p>
+<pre><code class="lang-python">import pandas as pd
+egy_lista = ['alma', 'körte', 'citrom']
+index_lista = ['x', 'y', 'z']
+ds = pd.Series(egy_lista, index=index_lista)
+
+print(f&quot;Lista:\n{ds}\n&quot;)
+print(f&quot;Értékek lekérdezése:\n{ds[0]}\n{ds['y']}\n&quot;)
+</code></pre>
+<pre><code>Lista:
+x      alma
+y     körte
+z    citrom
+dtype: object
+
+Értékek lekérdezése:
+alma
+körte
+</code></pre>
+<h3 id="adattábla">Adattábla</h3>
+<p>A pandas adattáblák (<code>DataFrame</code>) nevesített oszlopokban tárolják az adatokat.</p>
+<p><img src="pandas_dataframe.png" alt="pandas_dataframe.png">
+A struktúrából adódóan az adattáblák létrehozásához egy az egyszerű listánál komplexebb adatszerkezetre van szükség. Az adattábla bemenete egy Python szótár, amiben a megnevezések lesznek az oszlopok nevei, az értékek pedig a megfelelő oszlopok értékeit tartalmazó listák. Fontos kikötés, hogy a listák hossza nem térhet el egymástól.</p>
+<pre><code class="lang-python">import pandas as pd
+
+data = {
+    'alma': [3, 2, 0, 1], 
+    'narancs': [0, 3, 7, 2]
+}
+df = pd.DataFrame(data)
+
+print(f&quot;Adattábla:\n{df}\n&quot;)
+print(f&quot;Indexek(kulcsok):\n{df.index}\n&quot;)
+print(f&quot;Oszlopnevek(mezők):\n{df.columns}\n&quot;)
+print(f&quot;Értékek:\n{df.values}\n&quot;)
+print(f&quot;Oszlop lekérdezése:\n{df['alma']}\n&quot;)
+print(f&quot;Értékek lekérdezése:\n{df['narancs'][2]}\n&quot;)
+</code></pre>
+<pre><code>Adattábla:
+   alma  narancs
+0     3        0
+1     2        3
+2     0        7
+3     1        2
+
+Indexek(kulcsok):
+RangeIndex(start=0, stop=4, step=1)
+
+Oszlopnevek(mezők):
+Index(['alma', 'narancs'], dtype='object')
+
+Értékek:
+[[3 0]
+ [2 3]
+ [0 7]
+ [1 2]]
+
+Oszlop lekérdezése:
+0    3
+1    2
+2    0
+3    1
+Name: alma, dtype: int64
+
+Értékek lekérdezése:
+7
+​```
+A fenti példában látható, hogyan lehet lekérdezni az adattábla egyes értékeit. A szerkezetből talán látszik az is, hogy az adattáblákat lényegében nevesített adatsorok alkotják. Bármelyik (akár üres) adattáblához hozzáfűzhetünk egy újabb oszlopot az oszlopnév és az adatsor megadásával.
+
+
+```python
+import pandas as pd
+
+df = pd.DataFrame()
+df['alma'] = pd.Series([3, 2, 0, 1])
+df['narancs'] = pd.Series([0, 3, 7, 2])
+df.index = ['Anna', 'Béla', 'Cecil', 'Dávid']
+
+print(df)
+print('\n')
+print(df['narancs'])
+</code></pre>
+<pre><code>       alma  narancs
+Anna      3        0
+Béla      2        3
+Cecil     0        7
+Dávid     1        2
+
+
+Anna     0
+Béla     3
+Cecil    7
+Dávid    2
+Name: narancs, dtype: int64
+</code></pre>
+<p>A példából látható az is, hogy az adattábla egy közös <code>index</code>-et kezel, ami minden benne szereplő adatsor indexét állítja. Egy már a standardtól eltérően indexelt adatsor felülírhatja az eredeti indexelést. Az új sima számokat tartalmazó indexet a reset_index() függvénnyel tudunk létrehozni. Ilyenkor, hacsak egy paraméterben máshogy nem rendelkezünk a régi index oszloppá válik.</p>
+<pre><code class="lang-python">import pandas as pd
+
+df = pd.DataFrame()
+df['alma'] = pd.Series([3, 2, 0, 1])
+df['narancs'] = pd.Series([0, 3, 7, 2])
+df.index = ['Anna', 'Béla', 'Cecil', 'Dávid']
+
+print(df)
+df = df.reset_index()
+print()
+print(df)
+</code></pre>
+<pre><code>       alma  narancs
+Anna      3        0
+Béla      2        3
+Cecil     0        7
+Dávid     1        2
+
+   index  alma  narancs
+0   Anna     3        0
+1   Béla     2        3
+2  Cecil     0        7
+3  Dávid     1        2
+</code></pre>
+<p>Gyakran előfordul az is, hogy egy adattábla egy teljes sorát (adatbázis terminológiával élve: egy rekordját) akarjuk lekérdezni. Ezt a <code>loc</code> utasítást használva tehetjük meg. Az <code>iloc</code> segítségével akkor is használhatjuk az eredeti sorszám indexet, ha az felül lett írva.</p>
+<pre><code class="lang-python">import pandas as pd
+
+df = pd.DataFrame()
+df['alma'] = pd.Series([3, 2, 0, 1])
+df['narancs'] = pd.Series([0, 3, 7, 2])
+print(df.loc[1])
+
+print()
+df.index = ['Anna', 'Béla', 'Cecil', 'Dávid']
+print(df.loc['Cecil'])
+print()
+print(df.iloc[1])
+print()
+print(df.loc['Béla':'Dávid'])
+</code></pre>
+<pre><code>alma       2
+narancs    3
+Name: 1, dtype: int64
+
+alma       0
+narancs    7
+Name: Cecil, dtype: int64
+
+alma       2
+narancs    3
+Name: Béla, dtype: int64
+
+       alma  narancs
+Béla      2        3
+Cecil     0        7
+Dávid     1        2
+</code></pre>
+<p>Mint látható, a sorok lekérdezése során használhatók a listáknál megszokott többszörös kiválasztási lehetőségek is, de itt eltér az intervallumok végének kezelése.</p>
+<p>Adattábla létrehozható még a NumPy több dimenziós tömbjei alapján is, de ebben az esetben a táblázatot soronként (rekordonként) és nem oszloponként kell megadnunk.</p>
+<pre><code class="lang-python">import pandas as pd
+import numpy as np
+
+egy_array = np.array([['Péter', 25, 10, 45], ['Anna', 32, 45, 39], ['Barnabás', 50, 50, 50]])
+oszlopok = ['név', 'zh1', 'zh2', 'zh3']
+
+df = pd.DataFrame(egy_array, columns=oszlopok)
+print(df)
+</code></pre>
+<pre><code>        név zh1 zh2 zh3
+0     Péter  25  10  45
+1      Anna  32  45  39
+2  Barnabás  50  50  50
+</code></pre>
+<h2 id="adattábla-létrehozása-fájlból">Adattábla létrehozása fájlból</h2>
+<p>A pandas egyik legnagyobb előnye, hogy képes néhány egyszerű utasítással feldolgozni több különböző táblázatok kezelésére alkalmas forrásállomány tartalmát. Az eredmény minden esetben egy adattábla.</p>
+<p>A következő példákhoz a Moodle-ben találhatók a példafájlok. A példák azt feltételezik, hogy a letölthető állományok egy programfájl mellett található <code>source</code> nevű mappában találhatók.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/kosar.csv')
+print(df)
+</code></pre>
+<pre><code>  Unnamed: 0  alma  narancs
+0       Anna     3        0
+1       Béla     2        3
+2      Cecil     0        7
+3      Dávid     1        2
+</code></pre>
+<p>Az állományok gyakran tartalmaznak kulcs mezőket. A pandas a megfelelő paraméter megadásával képes ezeket kezelni.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/kosar.csv', index_col=0)
+print(df)
+</code></pre>
+<pre><code>       alma  narancs
+Anna      3        0
+Béla      2        3
+Cecil     0        7
+Dávid     1        2
+</code></pre>
+<p>Hasonlóan működik a <a href="https://hu.wikipedia.org/wiki/JSON">JSON</a> állományok feldolgozása is. De ebben az esetben, ha van index oszlop, akkor azt az oszlop neve alapján kell meghatározni.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_json('source/kosar.json')
+df = df.set_index('index')
+print(df)
+</code></pre>
+<pre><code>       alma  narancs
+Anna      3        0
+Béla      2        3
+Cecil     0        7
+Dávid     1        2
+</code></pre>
+<h2 id="adattábla-fájlba-írása">Adattábla fájlba írása</h2>
+<p>Az előző példák tartalma ugyanilyen egyszerűen ki is írható a megfelelő típusú állományokba. Így akár a fájlok konvertálása is egyszerűen megoldható.</p>
+<blockquote>
+<p>A példákban az eredményeket egy <code>target</code> mappába írjuk, de nem ellenőrizzük, hogy létezik-e. A mappa hiányában az írás hibára fog futni.</p>
+</blockquote>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_json('source/kosar.json')
+df = df.set_index('index')
+df.to_csv('target/uj_kosar.csv')
+</code></pre>
+<p>Természetesen a másik irány is működik.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/kosar.csv', index_col=0)
+df.to_json('target/uj_kosar.json')
+</code></pre>
+<h2 id="adattábla-műveletek">Adattábla műveletek</h2>
+<p>A továbbiakban egy IMDB adatbázis, CSV-ben tárolt adatainak felhasználásával mutatjuk be a pandas modul műveleteit.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+df
+</code></pre>
+<p>Pusztán output-ra írva egy DataFrame-t egy formázott táblát kapunk eredményül. Ha nem csak egy táblázatot akarunk megjeleníteni, akkor a szokásos <code>print</code> helyett a <code>display</code> függvényt érdemes alkalmazni, melynek hatására ugyanez lesz az eredmény.</p>
+<h3 id="adattábla-alapműveletek">Adattábla alapműveletek</h3>
+<p>A <code>head</code> függvény segítségével könnyen ránézhetünk az adatszerkezetre.  A tábla paraméterként átadott számú sorát adja vissza. (Argumentum hiányában az alapértelmezett érték 5.)</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+df.head()
+</code></pre>
+<blockquote>
+<p>Ez nagy adattáblák áttekintése esetén hasznos, mert nem próbálja meg a Python feleslegesen vizualizálni az összes adatsort.</p>
+</blockquote>
+<p>Ugyanígy működik a <code>tail</code> függvény, de ez az utolsó sorokat adja vissza.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+df.tail()
+</code></pre>
+<p>A <code>shape</code> tulajdonság tartalmazza a tábla dimenzióinak méretét.
+Az <code>info</code> függvény a táblázat adatstruktúrájáról ad egy összegzést.
+A <code>describe</code> pedig a numerikus változók különböző statisztikai mutatóit írja le.
+A <code>corr</code> függvény a numerikus értékek egymás közötti korrelációjat mutatja meg.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+print('SHAPE')
+print(df.shape)
+print('\nINFO')
+print(df.info())
+print('\nDESCRIBE')
+print(df.describe())
+print('\nCORRELATION')
+print(df.corr())
+</code></pre>
+<pre><code>SHAPE
+(1000, 11)
+
+INFO
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 1000 entries, Guardians of the Galaxy to Nine Lives
+Data columns (total 11 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   Rank                1000 non-null   int64  
+ 1   Genre               1000 non-null   object 
+ 2   Description         1000 non-null   object 
+ 3   Director            1000 non-null   object 
+ 4   Actors              1000 non-null   object 
+ 5   Year                1000 non-null   int64  
+ 6   Runtime (Minutes)   1000 non-null   int64  
+ 7   Rating              1000 non-null   float64
+ 8   Votes               1000 non-null   int64  
+ 9   Revenue (Millions)  987 non-null    float64
+ 10  Metascore           977 non-null    float64
+dtypes: float64(3), int64(4), object(4)
+memory usage: 93.8+ KB
+None
+
+DESCRIBE
+          Rank     Year  Runtime (Minutes)   Rating        Votes  \
+count 1,000.00 1,000.00           1,000.00 1,000.00     1,000.00   
+mean    500.50 2,012.78             113.17     6.72   169,808.26   
+std     288.82     3.21              18.81     0.95   188,762.65   
+min       1.00 2,006.00              66.00     1.90        61.00   
+25%     250.75 2,010.00             100.00     6.20    36,309.00   
+50%     500.50 2,014.00             111.00     6.80   110,799.00   
+75%     750.25 2,016.00             123.00     7.40   239,909.75   
+max   1,000.00 2,016.00             191.00     9.00 1,791,916.00   
+
+       Revenue (Millions)  Metascore  
+count              987.00     977.00  
+mean                72.89      58.85  
+std                100.75      17.15  
+min                  0.00      11.00  
+25%                  3.40      47.00  
+50%                 37.43      59.00  
+75%                100.10      72.00  
+max                936.63     100.00  
+
+CORRELATION
+                    Rank  Year  Runtime (Minutes)  Rating  Votes  \
+Rank                1.00 -0.26              -0.22   -0.22  -0.28   
+Year               -0.26  1.00              -0.16   -0.21  -0.41   
+Runtime (Minutes)  -0.22 -0.16               1.00    0.39   0.41   
+Rating             -0.22 -0.21               0.39    1.00   0.51   
+Votes              -0.28 -0.41               0.41    0.51   1.00   
+Revenue (Millions) -0.26 -0.18               0.30    0.25   0.67   
+Metascore          -0.17 -0.09               0.21    0.61   0.33   
+
+                    Revenue (Millions)  Metascore  
+Rank                             -0.26      -0.17  
+Year                             -0.18      -0.09  
+Runtime (Minutes)                 0.30       0.21  
+Rating                            0.25       0.61  
+Votes                             0.67       0.33  
+Revenue (Millions)                1.00       0.16  
+Metascore                         0.16       1.00
+</code></pre>
+<p>Lehetőség van továbbá arra, hogy egyszerűen eltávolítsuk a felesleges, ismétlődő sorokat.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+teszt_df = df.drop_duplicates()
+teszt_df.shape
+</code></pre>
+<pre><code>(1000, 11)
+</code></pre>
+<h3 id="adattábla-paraméteres-függvényei">Adattábla paraméteres függvényei</h3>
+<p>Az előző példában nem történt semmi mert nem voltak egyező sorok. A továbbiakban lemásoljuk az adattáblánkat a <code>copy</code> függvény segítségével. Ezen túl a <code>drop_duplicates</code> függvény lehetővé teszi különböző paraméterek használatát. Ezen függvény esetében ilyen:</p>
+<ul>
+<li><code>subset</code>, amely azt jelenti, hogy csak egy bizonyos oszlopra vonatkozik a duplikáció keresés</li>
+<li><code>keep</code>, amellyel specifikálni lehet, hogy melyik értéket tartsa meg</li>
+<li><code>inplace</code>, amely nagyon sok függvényben elérhető és változó deklarálás nélkül az eltárolt objektumot módosítja</li>
+</ul>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+
+teszt_df = df.copy()
+teszt_df.drop_duplicates(inplace=True, keep='last', subset=['Year'])
+print(teszt_df.shape)
+teszt_df
+</code></pre>
+<p>A <code>sort_values</code> függvény sorbarendezi az adattábla sorait (alapesetben az index alapján). Újdonság még a lentebbi kódban, hogy a különböző függvényeket egymásra lehet fűzni, ahol balról jobbra haladva minden függvény bemeneti változója az előző függvény eredménye.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+
+df.sort_values(by='Rating', ascending=False).head(5)
+</code></pre>
+<p>Oszlopok átnevezése és kisbetűssé tétele.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+
+df.rename(columns={'Runtime (Minutes)': 'Runtime', 
+                    'Revenue (Millions)': 'Revenue_millions'}, 
+           inplace=True)
+df.columns = df.columns.str.lower()
+print(df.columns)
+</code></pre>
+<pre><code>Index(['rank', 'genre', 'description', 'director', 'actors', 'year', 'runtime',
+       'rating', 'votes', 'revenue_millions', 'metascore'],
+      dtype='object')
+</code></pre>
+<h3 id="oszlopok-törlése">Oszlopok törlése</h3>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+
+print(df.columns)
+df = df.drop(columns=['Rank'])
+print(df.columns)
+</code></pre>
+<pre><code>Index(['Rank', 'Genre', 'Description', 'Director', 'Actors', 'Year',
+       'Runtime (Minutes)', 'Rating', 'Votes', 'Revenue (Millions)',
+       'Metascore'],
+      dtype='object')
+Index(['Genre', 'Description', 'Director', 'Actors', 'Year',
+       'Runtime (Minutes)', 'Rating', 'Votes', 'Revenue (Millions)',
+       'Metascore'],
+      dtype='object')
+</code></pre>
+<h3 id="üres-értékek-listázása">Üres értékek listázása</h3>
+<p>Az <code>isnull</code> függvény megmutatja, hogy melyik érték hiányos.
+A <code>sum</code> függvény összeszámolja az előbbiekben kimutatott adathiányokat: a False = 0 és True = 1.
+A <code>dropna</code> függvénnyel eldobjuk azokat a sorok, ahol üres érték van.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+
+display(df.isnull())
+display(df.isnull().sum())
+display(df.dropna().isnull().sum())
+</code></pre>
+<h2 id="oszlopokadatsorok-műveletei">Oszlopok/adatsorok műveletei</h2>
+<p>A <code>dataframe['oszlopnév']</code> szintaktikával tudunk kijelölni egy oszlopot. Így egy Pandas adatsort kapunk. Ezzel szemben a <code>dataframe[['oszlopnév']]</code> szintaktikával egy (vagy több oszlopra) szűkítjük le az adattáblát, de a formátuma adattábla marad.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+
+display(df['Rating'])
+display(df[['Rating']])
+</code></pre>
+<p>A <code>unique</code> függvény kilistázza a adott oszlop értékkészletét.
+A <code>max</code> és <code>min</code> függvény a legnagyobb és a legkisebb értéket mutatja meg.
+Az <code>idxmax</code> és <code>idxmin</code> függvény pedig az ezen értékekhez tartozó indexet mutatja meg.
+A <code>sum</code>, <code>median</code>, <code>mean</code> és stb. függvények értelemszerűen listázzák a megfelelő értéket
+A <code>quantile</code> függvény a q paraméternél megadott százalékos kvantilist mutatja meg. Pl. q=.2 -&gt; 20%</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+
+print(df['Rating'].unique())
+print(df['Rating'].max())
+print(df['Rating'].min())
+print(df['Rating'].idxmax())
+print(df['Rating'].idxmin())
+print(df['Revenue (Millions)'].sum())
+print(df['Year'].median())
+print(df['Year'].mean())
+print(df['Year'].quantile(q=.2))
+</code></pre>
+<pre><code>[8.1 7.  7.3 7.2 6.2 6.1 8.3 6.4 7.1 7.5 7.8 7.9 7.7 6.6 8.2 6.7 8.  6.5
+ 5.3 6.8 4.7 5.9 6.3 5.6 8.6 7.6 6.9 2.7 3.7 5.8 9.  7.4 4.1 8.5 8.8 5.4
+ 6.  5.7 8.4 5.2 5.5 4.8 3.9 4.9 5.1 5.  4.3 4.6 4.2 4.  3.2 4.5 1.9 3.5
+ 4.4]
+9.0
+1.9
+The Dark Knight
+Disaster Movie
+71938.31999999999
+2014.0
+2012.783
+2009.8
+</code></pre>
+<p>Az alábbi kód a bevétel átlagát helyettesíti be a <code>fillna</code> függvény segítségével a hiányzó értékek helyett.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+
+bevetel = df['Revenue (Millions)']
+bevetel_atlag = bevetel.mean()
+print(bevetel_atlag)
+bevetel.fillna(bevetel_atlag, inplace=True)
+display(bevetel)
+</code></pre>
+<pre><code>72.88583586626139
+
+Title
+Guardians of the Galaxy   333.13
+Prometheus                126.46
+Split                     138.12
+Sing                      270.32
+Suicide Squad             325.02
+                           ...  
+Secret in Their Eyes        0.00
+Hostel: Part II            17.54
+Step Up 2: The Streets     58.01
+Search Party                0.00
+Nine Lives                 19.64
+Name: Revenue (Millions), Length: 1000, dtype: float64
+</code></pre>
+<p>Míg a korábbi függvények csak numerikus oszlopokra vonatkoztak, addig a <code>value_counts</code> bármilyen oszlop esetében listázza leggyakoribb értékeket.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+display(df['Genre'].value_counts().head(3))
+</code></pre>
+<pre><code>Action,Adventure,Sci-Fi    50
+Drama                      48
+Comedy,Drama,Romance       35
+Name: Genre, dtype: int64
+</code></pre>
+<p>Oszlopokkal különböző műveleteket lehet végezni. Itt pl. kiszámoljuk, hogy mennyi bevétel jutott a filmek egy percére. De numerikus oszlopokhoz hasonlóan a szöveges oszlopokat is lehet kombinálni.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+display(df['Revenue (Millions)'] / df['Runtime (Minutes)'])
+</code></pre>
+<pre><code>Title
+Guardians of the Galaxy   2.75
+Prometheus                1.02
+Split                     1.18
+Sing                      2.50
+Suicide Squad             2.64
+                          ... 
+Secret in Their Eyes      0.00
+Hostel: Part II           0.19
+Step Up 2: The Streets    0.59
+Search Party              0.00
+Nine Lives                0.23
+Length: 1000, dtype: float64
+</code></pre>
+<h2 id="értékek-kiválasztása-feltételekkel">Értékek kiválasztása feltételekkel</h2>
+<p>Bizonyos feltételek/kondiciók alapján leszűrhetjük az adatunkat. A feltétel a háttérben minden adatra megnézi, hogy igaz, vagy hamis az állítás. A <code>loc</code> tulajdonsággal kombinálva pedig leszűrhetjük az adattáblát.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+kondicio = (df['Director'] == 'James Gunn')
+display(kondicio.head())
+
+display(df.loc[kondicio])
+</code></pre>
+<pre><code>Title
+Guardians of the Galaxy     True
+Prometheus                 False
+Split                      False
+Sing                       False
+Suicide Squad              False
+Name: Director, dtype: bool
+</code></pre>
+<p>A feltétel lehet numerikus és kisebb/nagyobb is, de összefűzhetünk több feltételt a VAGY (<code>|</code>) és ÉS (<code>&amp;</code>) operátorokkal, valamint megfelelő zárójelezéssel. A <code>df['oszlopnév'].isin(egy_lista)</code> függvényével szűrhetünk azokra az értékekre, amelyek szerepelnek az <code>egy_lista</code>-ban. Alább egy többszörösen összetett feltételrendszert látni. A formázás segít megmutatni, hogy melyik zárójel hova tartozik.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/imdb.csv', index_col='Title')
+df.loc[((df['Year'] &gt;= 2010) &amp; 
+        (df['Year'] &lt;= 2015)) &amp; 
+        (df['Rating'] &gt; 8.0) &amp; 
+        (df['Revenue (Millions)'] &lt; df['Revenue (Millions)'].quantile(0.25))]
+</code></pre>
+<h2 id="feladatok">Feladatok</h2>
+<ol>
+<li>Olvasd be a szeged.csv fájlt. Nézd meg az első pár sorát, a teljes adatbázis méretét, írasd ki a leíró statisztikákat és a korrelációt az oszlopok között.</li>
+<li>Töröld a &quot;Loud Cover&quot; és &quot;Daily Summary&quot; oszlopokat. Nevezd át a maradék oszlopokat úgy, hogy mindegyik kisbetűs és _-al legyenek elválasztva szavak</li>
+<li>Nézd meg melyik napon volt a legnagyobb a láthatóság? Mi volt az átlagos páratartalom? Melyik nap volt a legnagyobb különbség a hőmérséklet és a hőérzet között?</li>
+<li>Hány olyan sor van ahol hó esett, a leírás alapján ködös idő volt és vagy 0 és 20 méter között volt a láthatóság vagy 3.2 km felett volt a láthatóság, de a páratartalom 0.9 alatt volt?</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_psz/pandas/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

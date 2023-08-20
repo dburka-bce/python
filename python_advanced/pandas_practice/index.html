@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Gyakorl&#243; feladat - Qatar 2022 </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Gyakorl&#243; feladat - Qatar 2022 ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="gyakorló-feladat---qatar-2022">Gyakorló feladat - Qatar 2022</h1>
+
+<p>Ennek a feladatnak az a célja, hogy egy nagy példába sűrítve segítsen gyakorolni a numpy, pandas és adatvizualizációs ismereteket.</p>
+<p>A feladathoz ezúttal is a  <a href="https://www.kaggle.com/"><em>Kaggle</em></a> weboldaláról választottunk adatállományokat a 2022-es Qatarban rendezett futball-világbajnoksághoz kapcsolódóan.
+Az állományok:</p>
+<ul>
+<li><a href="https://www.kaggle.com/datasets/piterfm/fifa-football-world-cup?select=matches_1930_2018.csv">Világbajnokságon játszott mérkőzések 1930-2018</a> Letöltés:  <a href="matches_1930_2018.csv">matches_1930_2018.csv</a>.</li>
+<li><a href="https://www.kaggle.com/datasets/piterfm/fifa-football-world-cup?select=matches_2022.csv">Világbajnokságon játszott mérkőzések 2022</a> Letöltés:  <a href="matches_2022.csv">matches_2022.csv</a>.</li>
+<li><a href="https://www.kaggle.com/datasets/amineteffal/qatar2022worldcupschudule?select=matchs-schudule.csv">Mérkőzések beosztása</a> Letöltés:  <a href="matchs-schudule.csv">matchs-schudule.csv</a>.</li>
+</ul>
+<p>A fájlok pontos tartalmával kapcsolatban ezúttal is az eredeti weboldalon lehet tájékozódni.
+Az alábbi feladatsor tartalmaz olyan jellegű kérdéseket, amire a választ a notebook kimenete szolgáltassa formázott stringek formájában.
+Például (feltételezve, hogy a legeredmenyebb változóban a legeredményesebb labdarúgó neve szerepel a korábbi kódnak köszönhetően):</p>
+<pre><code class="lang-python">print(f'A legeredményesebb labdarúgó: {legeredmenyesebb}')
+</code></pre>
+<h2 id="1-adatok-betöltése">1. Adatok betöltése</h2>
+<ol>
+<li>Töltsd be megadott csv-ket egy-egy dataframe-be, és konvertáld az oszlopok neveit kisbetűssé!</li>
+<li>Ellenőrizd, hogy 1930-2018 közötti és a 2022-es meccseket leíró állományok azonos oszlopokkal és adattípussal rendelkeznek-e, és ha igen, egyesítsd a két dataframe-et.</li>
+<li>A betöltött állományok hány sorral és hány oszloppal rendelkeznek? Van valamilyen probléma a mérkőzésbeosztás táblázatával? Ha igen, korrigáld.</li>
+<li>Az egyesített tábla milyen típusú indexekkel rendelkezik? Az index egyedi értékeket tartalmaz? Ha nem, korrigáld. Tipp: az index tulajdonság rendelkezik egy is_unique tulajdonsággal, amely erre felhasználható. A művelet után a dataframe oszlopainak száma egyezzen meg a művelet előttivel.</li>
+<li>Nézzük meg milyen adatokat tartalmaznak a dataframe-ek: kérdezzük le az első és utolsó néhány sort, valamint a 10-19. sorokat többféleképpen.</li>
+</ol>
+<h2 id="2-előfeldolgozás-mérkőzések-dataframe">2. Előfeldolgozás, mérkőzések dataframe</h2>
+<ol>
+<li>Vizsgáljuk meg mindkét dataframe-et olyan szempontból, hogy mely oszlopok tartalmaznak nullértékeket.</li>
+<li>Dobjuk el a home_xg és az away_xg oszlopokat a mérkőzéseket tartalmazó dataframe-ből: az eXpected Goals érték csak igen kevés mérkőzés esetében áll rendelkezésre.</li>
+<li>Vizsgáljuk meg a mérkőzéseket tartalmazó dataframe utolsó 20 sorát. Mit állapíthatunk meg? Csak azokat a sorokat tartsuk meg, amelyek tartalmaznak tényleges eredményadatot.</li>
+<li>A maradék oszlopok közül a karakterláncot tartalmazók esetében a null értékeket helyettesítsük üres karakterlánccal.</li>
+<li>Kérdezzük le, hogy van-e olyan eset, amikor a home_goals/away_goals értéke null, de a megfelelő pontszám (home_score, away_score) értéke nem 0. Az olyan soroknál, amelyeknél a home_goals/away_goals null, és a megfelelő score 0, helyettesítsük be null értéket az oszlop típusához illő üres értékkel.</li>
+<li>Szintén helyettesítsük be a megfelelő adattípusú értékkel a home_penalty és az away_penalty oszlopok null értékeit. Ezt követően újból ellenőrizzük a null értékek jelenlétét. Ha mindent jól csináltunk, a mérkőzéseket tartalmató dataframe 948 sort és 22 oszlopot tartalmaz.</li>
+<li>Irasd ki a numerikus oszlopok közötti korrelációt. Melyik két oszlop között található erős korreláció?</li>
+</ol>
+<h2 id="3-gólok-dataframe">3. Gólok dataframe</h2>
+<ol>
+<li>Képezzünk egy új dataframe-et amely a csapatot, az ellenfelet és a rúgott gólokat fogja tartalmazni. Ehhez vegyük először a year, home_team, a home_goals és az away_goals oszlopokat egy új dataframe-ként, majd tegyük ugyanezt a másik adatforrásunkból a year, round, away_team, az away_goals és a home_goals oszlopokkal. Végül egyesítsük a két dataframe-et úgy, hogy az eredménynek öt oszlopa legyen: year, round, team, opponent és goals.</li>
+<li>Az előző művelet eredményeképpen az index oszlop duplkált értékeket tartalmaz. Képezzünk az új dataframe részére egy új indexet, úgy, hogy a régit is megtartjuk.</li>
+<li>A goals oszlop jelenleg ömlesztve tartalmazza a két csapat részéről szerzett gólokat &quot;|&quot; határolókarakterrel. Hozzunk létre egy új dataframe-et, amely a rúgott gólokat soronként tartalmazza. Először nem baj, ha a formátum &quot;1	Eden Hazard · 82&quot; formájú, a későbbi lépésekben fogjuk ezt a problémát kezelni.
+A kívánatos végeredmény a következő. Tipp: split használata.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>goals</th>
+<th>goal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mario Mandžukić (OG) · 18|Antoine Griezmann (P) · 38|Paul Pogba · 59|Kylian Mbappé · 65</td>
+<td>Mario Mandžukić (OG) · 18</td>
+</tr>
+<tr>
+<td>Mario Mandžukić (OG) · 18|Antoine Griezmann (P) · 38|Paul Pogba · 59|Kylian Mbappé · 65</td>
+<td>Antoine Griezmann (P) · 38</td>
+</tr>
+<tr>
+<td>Mario Mandžukić (OG) · 18|Antoine Griezmann (P) · 38|Paul Pogba · 59|Kylian Mbappé · 65</td>
+<td>Paul Pogba · 59</td>
+</tr>
+<tr>
+<td>Mario Mandžukić (OG) · 18|Antoine Griezmann (P) · 38|Paul Pogba · 59|Kylian Mbappé · 65</td>
+<td>Kylian Mbappé · 65</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>A feladat végrehajtásához hasznos segédeszköz a DataFrame explode metódusa, amely a dataframe egyes sorait egy listát tartalmazó cella mentén megtöbbszörözi úgy, hogy a lista megfelelő elemeit szébontja.</p>
+</blockquote>
+<pre><code class="lang-python">df = pd.DataFrame({'letters': ['A','B','C'], 'numbers':[[1,2,3],[1,2],[1]]})
+display(df)
+display(df.explode('numbers'))
+</code></pre>
+<pre><code class="lang-python">  letters    numbers
+0       A  [1, 2, 3]
+1       B     [1, 2]
+2       C        [1]
+  letters numbers
+0       A       1
+0       A       2
+0       A       3
+1       B       1
+1       B       2
+2       C       1
+</code></pre>
+<ol start="4">
+<li>Új dataframe-ünk egyelőre egy oszlopban tartalmazza a labdarúgó nevét és a gól időpontját. Bontsuk ezt fel két oszlopra!</li>
+<li>A gól időpontját tartalmazó oszlop jelenleg tartalmazza a hosszabbításban lőtt gólok esetében az extra játékidő perceit. Készítsünk egy egyszerű függvényt, ami képes a kapott karakterláncot pluszjel mentén kettévágni, majd a két részt összeadni. A függvény kezelje, ha null értéket kap, ebben az esetben adjon vissza nullt, illetve azt is, ha nem összeget kap. Apply segítségével alkalmazzuk ezt a perceket tartalmazó oszlopra és az eredményt tároljuk.</li>
+<li>Konvertáljuk a függvényünk segítségével immár kizárólag számokat és null értékeket tartalmazó oszlopot számmá.</li>
+<li>Képezzünk két új logikai oszlopot, amelyekben az öngól és a büntetőgól tényét tároljuk. Ezek jelölése (OG) illetve (P)</li>
+<li>A plotly_express gapminder csomagját használva képezzünk egy continent oszlopot is a rúgott gólok mellé. Hány ország esetében nem találtunk megfelelő kontinenst, és ezek hány meccset érintenek? Pótoljuk a hiányzó országokat az alábbi fájl segítségével: <a href="missingcountries.csv">missingcountries.csv</a>. Gondoskodjunk arról, hogy a végén csak egyetlen &quot;continent&quot; oszlop maradjon.</li>
+</ol>
+<h2 id="4-lekérdezések-és-vizualizáció">4. Lekérdezések és vizualizáció</h2>
+<ol>
+<li>Melyik öt labdarúgó lőtte a legtöbb gólt a VB-k történetében az adatkészlet szerint?</li>
+<li>Melyik európai nemzeti válogatott lőtte a legtöbb büntetőt?</li>
+<li>Ábrázold oszlopdiagramon, hogy az egyesek kontinensek összesen hány gólt szereztek a vb-k történetében!</li>
+<li>Ábrázold vonaldiagramon évről-évre a büntetők és az öngólok alakulását! Az ábrának legyen címe és jelmagyarázata is.</li>
+<li>Készíts egy három subplotból álló ábrát. A diagramterület két soros, két oszlopos legyen, a bal felső cellában az öngólök, a jobb felső cellában a büntetők, az alsó bal és jobb cella egyesítve minden gólt tartalmazzon hisztogramon. Minden ábrának legyen címe és tengelyfelirata.</li>
+</ol>
+<h2 id="5-melt">5. Melt</h2>
+<ol>
+<li>Képezz egy új dataframe-et a gólok alapján: tartalmazza az évet, játékos nevét, a percet,  büntető és öngólt jelölő oszlopokat. Csak azok a sorok kerüljenek be, amelyek ténylegesen rúgott gólokat tartalmaznak.</li>
+<li>Képezzünk egy harmadik logikai típusú oszlopot, amelynek akkor igaz az értéke, ha sem nem öngól, sem nem büntető az adott gól.</li>
+<li>Az előállt háromoszlopos táblát alakítsuk át úgy, hogy a következő oszlopokat tartalmazza: Év, Játékos, Góltípus, Perc</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/pandas_practice/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

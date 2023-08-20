@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Numerikus t&#237;pusok </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Numerikus t&#237;pusok ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="numerikus-típusok">Numerikus típusok</h1>
+
+<p>A Pythonban három beépített numerikus típus létezik:</p>
+<ul>
+<li><code>int</code> egész értékek tárolására</li>
+<li><code>float</code> lebegőpontos számok tárolására</li>
+<li><code>complex</code> kompex számok tárolására</li>
+</ul>
+<p>A változó típusa akkor dől el amikor értéket kap. A típus a <code>type()</code> függvénnyel bármikor lekérdezhető.</p>
+<pre><code class="lang-python">a = 1  # int
+b = 3.14  # float
+c = 1 + 1j  # complex
+
+print(type(a))
+print(type(b))
+print(type(c))
+</code></pre>
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'complex'&gt;
+</code></pre>
+<p>Amennyiben egy változó értéke már adott, de más típusú adatként van rá szükségünk, akkor <a href="/python_basic/type_conversion/">típuskonverziót</a> kell alkalmazni.</p>
+<h2 id="int----egész-számok"><code>int</code> -- egész számok</h2>
+<p>Az <code>int</code> egész számot tárol, értéke lehet pozitív vagy negatív, tizedesjegy nélkül. Gyakorlatilag korlátlan hosszúságú.  (A dupla csillag a hatványozás jele.)</p>
+<pre><code class="lang-python">hosszú_szám = 6 * 10 ** 23 + 1
+print(hosszú_szám)
+</code></pre>
+<pre><code>600000000000000000000001
+</code></pre>
+<p>De lehetünk merészebbek is:</p>
+<pre><code class="lang-python">nagyon_hosszú_szám =  6  *  10  **  230  +  1
+print(nagyon_hosszú_szám)
+</code></pre>
+<pre><code>600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001
+</code></pre>
+<h2 id="float----lebegőpontos-számok"><code>float</code> -- lebegőpontos számok</h2>
+<p>A tizedes pontot tartalmazó szám literálokat a Python <code>float</code> típusúnak tekinti. (Az angol nyelv pontot használ szemben a magyar tizedesvesszővel.)  A tudományos formátumban megadott számokat szintén <code>float</code>-ként értelmezi a Python -- annak ellenére hogy a példában szereplő értékek mind egészek.</p>
+<pre><code class="lang-python">f1 = 1.0
+f2 = 6e23
+f3 = 6E23
+
+print(type(f1))
+print(type(f2))
+print(type(f3))
+</code></pre>
+<pre><code>&lt;class 'float'&gt;
+&lt;class 'float'&gt;
+&lt;class 'float'&gt;
+</code></pre>
+<p>Fontos megjegyezni, hogy a lebegőpontos számok tárolására a Python 8 byte-ot használ -- a szám kettes számrendszerbeli normálalakja kerül tárolásra a memóriában. Ennek megfelelően fel kell készülni a számábrázolásból fakadó hibákra. Lebegőpontos számok mellett ez a gyakorlatban a 15-16 tizedesjegy körül jelentkezik. Az alábbi mintaprogramban, amikor egyszerűen kiíratjuk változó értékét, a hiba nem tűnik fel, hiszen a Python alapértelmezetten csak a szám releváns részét jeleníti meg. Ha viszont a megfelelő formázási paraméterrel kikényszerítjük a 30 tizedesig történő kiíratást, rögtön szembetűnik a számábrázolás hibája.</p>
+<pre><code class="lang-python">x = 1 / 10
+print(x)
+s = format(x,&quot;.30f&quot;)
+print(s)
+</code></pre>
+<pre><code>0.1
+0.100000000000000005551115123126
+</code></pre>
+<p>A számábrázolási hibák általában csak komplex számítási problémák során merülnek fel. Sokat segít a probléma orvoslásában, ha a kód írása során odafigyelünk, hogy az osztási műveleteket csak a lehető legkésőbb végezzük el. De szükség esetén a <code>decimal</code> modul is használható, de ezzel majd később foglalkozunk.</p>
+<h2 id="műveletek">Műveletek</h2>
+<p>Természetesen az összes alapművelet (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>) alkalmazható a számokkal kapcsolatban. Az osztás kivételével a műveletek mindig a leginkább összetett adattípust adják eredményül. Egy <code>int</code> és egy <code>float</code> összege tehát mindig <code>float</code> lesz. Osztás esetén viszont automatikusan <code>float</code> az eredmény még akkor is, ha két <code>int</code> értéket osztottunk egymással.</p>
+<pre><code class="lang-python">a = 1
+b = 2
+c = 3.0
+
+print(type(a + b))
+print(type(a / b))
+print(type(a - c))
+</code></pre>
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'float'&gt;
+</code></pre>
+<p>Gyakran használt operátor még a hatványozás (<code>**</code>) és modulo (<code>%</code>).</p>
+<pre><code class="lang-python">print(3 ** 2)
+print(10 % 3)
+</code></pre>
+<pre><code>9
+1
+</code></pre>
+<h1 id="ellenőrző-kérdések-feladatok">Ellenőrző kérdések, feladatok:</h1>
+<ol>
+<li>Készítsen programot, amely kiszámolja és megjeleníti, hogy 20 ezer Ft mennyit ér euróban és dollárban!
+<ul>
+<li>az euró árfolyama legyen 352.5 Ft, a dolláré pedig 295.5 Ft</li>
+<li>a számításhoz használjon változókat!</li>
+<li>az eredményt egészre kerekítve adja meg!</li>
+</ul>
+</li>
+<li>Készítsen programot, amely megoldja a ax+b=0 elsőfokú egyenletet, majd megjeleníti a megoldást 2 tizedesjegy pontossággal!
+<ul>
+<li>legyen a=3 és b=1</li>
+<li>az eredmény a következő formában jelenjen meg: &quot;Az egyenlet megoldása: {megoldás értéke}&quot;</li>
+</ul>
+</li>
+<li>Számítsuk ki és jelenítsük meg a téglatest térfogatának és felszínének nagyságát, ha élei a=3, b=4 és c=5 egység hosszúak
+<ul>
+<li>A térfogat: V=abc, a felszín: A=2(ab+ac+bc)</li>
+<li>A választ esztétikus formában, 1 sorban adjuk meg!</li>
+</ul>
+</li>
+<li>Készíts programot, amely megadja egy 8 sugarú kör kerületét, majd két tizedesjegyre formázva kiírja az outputra!</li>
+<li>Készíts programot, amely megadja 9 tizedik hatványát!</li>
+<li>Készíts programot, amely megadja két adott szám osztási maradékát.</li>
+<li>Készíts programot, megadja két adott szám egész osztási eredményét!</li>
+<li>Készíts programot, amely megadja egy derékszögű háromszög két befogójából az átfogó hosszát. Tipp: hatványozás operátor használata.</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_basic/variables_numeric/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

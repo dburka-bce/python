@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>V&#225;ltoz&#243;k </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="V&#225;ltoz&#243;k ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="változók">Változók</h1>
+
+<p>A változók a programok adattárolásra alkalmas egységei. Tekinthetünk rájuk egyfajta tároló dobozként, melybe bármikor beletehetjük az adatainkat, és szükség esetén vissza is tudjuk nyerni azokat eredeti formájukban.  Az adatok valójában a számítógép memóriájában vannak, és a változók csak a megfelelő memóriacímre mutatnak.</p>
+<h2 id="python-változók">Python változók</h2>
+<p>Más programozási nyelvektől eltérően a Python nem rendelkezik paranccsal a változók deklarálására. A változó akkor jön létre, amikor első alkalommal rendelünk hozzá értéket.</p>
+<pre><code class="lang-python">x = 1
+x = &quot;Corvinus&quot;
+print(x)
+</code></pre>
+<pre><code>Corvinus
+</code></pre>
+<p>A karakterláncokat aposztróffal vagy dupla idézőjelekkel határolva deklarálhatjuk. A kettő között nincs különbség.</p>
+<pre><code class="lang-python">x = &quot;Corvinus&quot;
+y = 'Corvinus'
+</code></pre>
+<p>Értékadás során felhasználhatjuk más változók értékét, sőt még magát az aktuális változót is.</p>
+<pre><code class="lang-python">x = 1
+y = 2
+x = x + y + 1
+print(x)
+</code></pre>
+<pre><code>4
+</code></pre>
+<p>A változó önmagával való összefűzése rövidítve is írható a += operátor segítségével:</p>
+<pre><code class="lang-python">uzenet = &quot;Hello &quot;
+uzenet += &quot;World!&quot;
+print(uzenet)
+</code></pre>
+<pre><code>Hello World!
+</code></pre>
+<h2 id="változónevek">Változónevek</h2>
+<p>A változónak lehet rövid neve (például x és y) vagy leíróbb neve (életkor, autónév, teljes_tömeg). A Python változókra vonatkozó szabályok:</p>
+<ul>
+<li>A változó nevének betűvel vagy az _ karakterrel kell kezdődnie</li>
+<li>A változó neve nem kezdődhet számmal</li>
+<li>A változó neve csak alfanumerikus karaktereket és aláhúzást tartalmazhat ([A-z], [0-9] és [_])</li>
+<li>A változónevek <strong>kis- és nagybetűkre érzékenyek</strong> (az <code>életkor</code>, az <code>Életkor</code> és az <code>eletkor</code> három különféle változó)</li>
+<li>A Python 3 lehetővé teszi számos <em>unicode</em> szimbólum használatát a változónevekben.</li>
+<li>A változónév nem lehet a programnyelv számára fenntartott kifejezés (pl.: létező metódus vagy osztály neve)</li>
+</ul>
+<pre><code class="lang-python">π = 3.14159
+jalapeño = &quot;Hot pepper&quot;
+</code></pre>
+<p>Az egyik leggyakoribb hiba, amit a fejlesztők elkövetnek, az egyes változónevek elgépelése. Ha emiatt futtatáskor egy nem létező változóra hivatkozunk, akkor megakad a program futása és értesítést kapunk a kimeneten.</p>
+<pre><code class="lang-python">message = &quot;Hello World!&quot;
+print(mesage)
+</code></pre>
+<pre><code>NameError                                 Traceback (most recent call last)
+&lt;ipython-input-2-3d312a569420&gt; in &lt;module&gt;
+ 1 message = &quot;Hello World!&quot;
+----&gt; 2  print(mesage)
+
+NameError: name 'mesage' is not defined
+</code></pre>
+<p>A kimenetből jól látható, hogy a probléma a <code>mesage</code> változó hiánya, és a program a 2. kódsor futtatása során akadt meg.
+A <code>&lt;ipython-input-2-3d312a569420&gt;in&lt;module&gt;</code> szövegrész a <a href="https://mybinder.org/v2/gh/ipython/ipython-in-depth/master?filepath=binder/Index.ipynb">Jupyter</a> online eszközének egyedi azonosítója. Nincs jelentősége a hibaüzenet szempontjából.</p>
+<p>Ilyen esetben könnyű javítani a hibát, de ha az elgépelés miatt véletlenül egy másik, létező változó nevét adjuk meg, akkor igen hosszú ideig is eltarthat, mire megtaláljuk a hiba forrását egy hosszabb kódrészletben. Ezért érdemes mindig körültekintően kezelni a változóneveket.</p>
+<h2 id="változóelnevezési-konvenciók">Változóelnevezési konvenciók</h2>
+<p>Az elnevezési konvenciók szintaktikailag nem kötelező érvényűek, de érdemes betartani őket.</p>
+<ul>
+<li>A globális változóknak mind kisbetűsnek kell lenniük (egyenlőre csak globális változókkal dolgozunk)</li>
+<li>A globális változó nevében szereplő szavakat aláhúzással kell elválasztani</li>
+</ul>
+<p>Általános érvényű szabályok:</p>
+<ul>
+<li>Kerüld a túl általános vagy túl összetett szavak használatát. Meg kell találni az egyensúlyt.</li>
+<li>Rossz: adat_szerkezet, my_list, info_map, dictionary_for_the_purpose_of_storing_data_representing_word_definitions</li>
+<li>A CamelCase nevek használatakor nagybetűket kell használni egy rövidítésben (pl. HTTPServer)</li>
+</ul>
+<h1 id="a-python-beépített-adattípusai">A Python beépített adattípusai</h1>
+<p>A változók különféle típusú adatokat tárolhatnak, a különféle típusokkal pedig különféle műveletek végezhetők.
+A Python alapértelmezés szerint a következő beépített adattípusokkal rendelkezik ezekben a kategóriákban:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/python_basic/variables_text/">Karakterlánc (szöveg)</a></td>
+<td>str</td>
+</tr>
+<tr>
+<td><a href="/python_basic/variables_numeric/">Numerikus típusok</a></td>
+<td>int, float, complex</td>
+</tr>
+<tr>
+<td><a href="/python_basic/variables_bool/">Logikai típus</a></td>
+<td>bool</td>
+</tr>
+<tr>
+<td><a href="/python_basic/sequence_types/">Szekvencia típusok</a></td>
+<td><a href="/python_basic/list/">list</a>, <a href="/python_basic/tuple/">tuple</a>, <a href="/python_basic/range">range</a></td>
+</tr>
+<tr>
+<td>Szótár</td>
+<td>dict</td>
+</tr>
+<tr>
+<td>Halmaz</td>
+<td>set,frozenset</td>
+</tr>
+<tr>
+<td>Bináris típusok</td>
+<td>bytes, bytearray, memoryview</td>
+</tr>
+</tbody>
+</table>
+<p>A változók típusát nem kell megadni, sőt még meg is változtathatjuk - a deklarációt követően is -a típust. A <code>type</code> függvény segítségével lekérhető egy adott változó aktuális adattípusa.</p>
+<pre><code class="lang-python">x = 1
+print(type(x))
+print(x)
+
+x = &quot;Corvinus&quot;
+print(type(x))
+print(x)
+</code></pre>
+<pre><code>&lt;class 'int'&gt;
+1
+&lt;class 'str'&gt;
+Corvinus
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_basic/variables/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

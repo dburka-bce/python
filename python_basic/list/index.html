@@ -1,0 +1,356 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>List </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="List ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="list">List</h1>
+
+<p>A lista a legáltalánosabb módosítható szekvencia típus. Az elemei megváltoztathatók, felcserélhetők, bővíthetők vagy akár törölhetők is. Egy lista lehet például egy névjegyzék, egy számsorozat, de akár további listák gyűjteménye is.</p>
+<h2 id="listák-létrehozása">Listák létrehozása</h2>
+<p>Lista létrehozható egyszerű értékadással, az elemek szögletes zárójelben, vesszővel elválasztva történő felsorolásával.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+print(lista)
+</code></pre>
+<pre><code>['alma', 'banán', 'cseresznye', 'dinnye']
+</code></pre>
+<p>Üres listát kétféleképp is létre lehet hozni:</p>
+<pre><code class="lang-python">l1 = []
+l2 = list()
+print(type(l1))
+print(type(l2))
+</code></pre>
+<pre><code>&lt;class 'list'&gt; 
+&lt;class 'list'&gt;
+</code></pre>
+<p>A lista tetszőleges típusú elemekből állhat, és a típusok vegyíthetők is.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,13, False, 3.14]
+</code></pre>
+<p>Ennek megfelelően a listák egymásba is ágyazhatóak. Egy 3x3-as mátrix -- mint egy BKK jegy -- a következőképpen ábrázolható:</p>
+<pre><code class="lang-python">jegy = [[1,2,3],[4,5,6],[7,8,9]]
+print(jegy)
+</code></pre>
+<pre><code>[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+</code></pre>
+<h2 id="immutábilis-műveletek">Immutábilis műveletek</h2>
+<p>Az immutábilis műveletek szempontjából nincs lényeges különbség a szekvencia típusok között, ezért az alábbi fejezetek minden más típus esetén is ugyanígy működnek (beleértve ebbe a <a href="/python_basic/variables_text/">karakterláncokat</a> is).</p>
+<h3 id="lista-elemek-lekérdezése">Lista elemek lekérdezése</h3>
+<p>A lista egyes elemeit a sorrendben betöltött indexük (sorszámuk) segítségével tudjuk lekérdezni. A legtöbb programnyelvhez hasonlóan a listák Pythonban is nullától indexelnek. Tehát egy lista első elemét az alábbi módon lehet lekérdezni.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+print(lista[0])
+</code></pre>
+<pre><code>alma
+</code></pre>
+<p>A <code>lista[0]</code> kódrészlet ebben a kontextusban úgy viselkedik, mint egy változó, ami a lista első elemét tartalmazza. Tehát elvégezhetők vele mindazon műveletek, amik az adott típusú változó esetén elérhetők. Az eredmény például nagybetűssé tehető a <code>lista[0].upper()</code> utasítással.</p>
+<p>A lekérdezés során megadható tartomány is, de vigyázni kell arra, hogy a Python a tartományokat jobbról nyitottnak tekinti, ezért az utolsó elem nem fog belekerülni az eredménybe.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+print(lista[1:3])
+</code></pre>
+<pre><code>['banán', 'cseresznye']
+</code></pre>
+<p>A lekérdezett tartomány bármelyik végét üresen hagyhatjuk. Ebben az esetben a megfelelő oldal végéig kérdezzük le az elemeket.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+print(lista[:3])
+</code></pre>
+<pre><code>['alma', 'banán', 'cseresznye']
+</code></pre>
+<p>Amennyiben a tartomány mindkét végét elhagyjuk és egyszerűen csak egy kettőspontot adunk meg, akkor a lista összes elemét kérdezzük le. Fontos megjegyezni, hogy a lekérdezett tartományokban szereplő értékék a memóriában valójában az eredeti értékek másolatai. Ez azt jelenti, hogy ha a kettősponttal kérdezzük le a lista elemeit, és az eredményt egy változóba írjuk, akkor egy a lista másolatát kapjuk. Ezt szemlélteti az alábbi példa, melyben az eredeti lista egyik elemét megváltoztatva a korábban készített másolat tartalma nem változik.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+lista2 = lista[:]
+lista[0] = &quot;körte&quot;
+
+print(lista)
+print(lista2)
+</code></pre>
+<pre><code>['körte', 'banán', 'cseresznye', 'dinnye']
+['alma', 'banán', 'cseresznye', 'dinnye']
+</code></pre>
+<p>A tömbök indexálására általánosan igaz, hogy ha negatív számot adunk meg, tömb végétől számolja az elemeket. A -1 az utolsó elemre hivatkozik, a -2 az utolsó előttire, és így tovább.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+print(lista[-1])
+</code></pre>
+<pre><code>dinnye
+</code></pre>
+<p>Az <code>index</code> függvény segítségével pedig megtudható egy elem pozíciója a listában.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+print(lista.index(&quot;banán&quot;))
+</code></pre>
+<pre><code>1
+</code></pre>
+<p>A visszakapott számérték csak az elem első előfordulásának helyét adja meg. Tehát, ha több &quot;banán&quot; is szerepelne még a listában, akkor is 1 lenne az eredmény. Amennyiben viszont egyszer sem szerepel az elem a listában, hibaüzenetet kapunk.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+print(lista.index(&quot;körte&quot;))
+</code></pre>
+<pre><code>ValueError                                Traceback (most recent call last)
+&lt;ipython-input-1-be05b5c32494&gt; in &lt;module&gt;
+ 1 lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+----&gt; 2  print(lista.index(&quot;körte&quot;))
+
+ValueError: 'körte' is not in list
+</code></pre>
+<h3 id="lista-elemeinek-száma">Lista elemeinek száma</h3>
+<p>A lista elemeinek száma a <code>len()</code> függvénnyel olvasható ki.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+print(len(lista))
+</code></pre>
+<pre><code>4
+</code></pre>
+<h3 id="listák-összefűzése">Listák összefűzése</h3>
+<p>A <code>+</code> operátor listákra alkalmazva összefűzésként értelmezendő.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;] + [&quot;cseresznye&quot;,&quot;dinnye&quot;]
+print(lista)
+</code></pre>
+<pre><code>['alma', 'banán', 'cseresznye', 'dinnye']
+</code></pre>
+<p>Az összefűzés során lényegében egy új, harmadik lista jön létre. Ezért működik ez a művelet immutábilis típusok esetén is.</p>
+<h3 id="keresés-a-listában">Keresés a listában</h3>
+<p>Az <code>in</code> kulcsszó segítségével leellenőrizhető, hogy egy lista tartalmazza-e a megadott értékét. A kulcsszó eredménye egy <a href="/python_basic/variables_bool/">logikai típusú érték</a>, így felhasználható például egy <a href="/python_basic/if_statement/">elágazásban</a>.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+if &quot;banán&quot; in lista:
+    print(&quot;Van banán&quot;)
+else:
+    print(&quot;Nincs banán&quot;)
+</code></pre>
+<pre><code>Van banán
+</code></pre>
+<h3 id="lista-tartalom-ellenőrzése">Lista tartalom ellenőrzése</h3>
+<p>Az elágazás feltételébe egyszerűen a listát írva, arra tudunk ellenőrizni, hogy van-e elem a listában.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+if lista:
+    print(&quot;Van elem a listában&quot;)
+else:
+    print(&quot;A lista üres&quot;)
+</code></pre>
+<pre><code>Van elem a listában
+</code></pre>
+<h2 id="mutábilis-műveletek">Mutábilis műveletek</h2>
+<p>Az ebben a részben leírt műveletek nem végezhetők el immutábilis típusok esetén, mert az elemek értékének vagy halmazának megváltozását eredményezik.</p>
+<h3 id="lista-elemeinek-módosítása">Lista elemeinek módosítása</h3>
+<p>A lista egy módosítható szekvencia típus, ezért az egyes elemein értéke megváltoztatható. A lekérdezéshez hasonlóan hivatkozhatunk az egyes elemekre, és értéket adhatunk nekik.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+lista[2] = &quot;körte&quot;
+print(lista)
+</code></pre>
+<pre><code>['alma', 'banán', 'körte', 'dinnye']
+</code></pre>
+<p>Egyszerre több elemnek is lehet értéket adni, de ilyenkor az új érték is szekvencia típusú kell, hogy legyen.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+lista[1:3] = [&quot;körte&quot;, &quot;narancs&quot;]
+print(lista)
+</code></pre>
+<pre><code>['alma', 'körte', 'narancs', 'dinnye']
+</code></pre>
+<h3 id="új-elem-beszúrása">Új elem beszúrása</h3>
+<p>Nem csak az elemek értékét, hanem azok halmazát is lehet módosítani. Az <code>append()</code> függvény a lista végére szúr be új elemet.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;]
+lista.append(&quot;cseresznye&quot;)
+lista.append(&quot;dinnye&quot;)
+print(lista)
+</code></pre>
+<pre><code>['alma', 'banán', 'cseresznye', 'dinnye']
+</code></pre>
+<p>Az <code>insert()</code> függvény segítségével pedig az adott pozícióba szúrható be egy elem.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+lista.insert(1, &quot;*BANÁN*&quot;)
+print(lista)
+</code></pre>
+<pre><code>['alma', '*BANÁN*', 'cseresznye', 'dinnye']
+</code></pre>
+<h3 id="elem-törlése">Elem törlése</h3>
+<p>A <code>del</code> kulcsszó a megadott indexen szereplő elemet távolítja el a listából.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+del lista[1]
+print(lista)
+</code></pre>
+<pre><code>['alma', 'cseresznye', 'dinnye']
+</code></pre>
+<p>A <code>pop()</code> metódus eltávolítja a megadott indexet -- vagy az utolsó elemet, ha az index nincs megadva.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+lista.pop()
+print(lista)
+</code></pre>
+<pre><code>['alma', 'banán', 'cseresznye']
+</code></pre>
+<p>A <code>pop</code> metódus nem csak szintaktikájában különbözik a <code>del</code>-től. Utóbbi a memóriából is törli az eltávolított értékét, a <code>pop</code> használata esetén azonban még eltárolható a törölt elem.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+torolt_elem = lista.pop(1)
+print(f&quot;A törölt elem a(z) \&quot;{torolt_elem}\&quot;&quot;)
+</code></pre>
+<pre><code>A törölt elem a &quot;banán&quot;
+</code></pre>
+<p>A <code>remove</code> metódus segítségével pedig érték alapján törölhetők az elemek. Csak az érték legelső előfordulása törlődik a listából.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+lista.remove(&quot;cseresznye&quot;)
+print(lista)
+</code></pre>
+<pre><code>['alma', 'banán', 'dinnye']
+</code></pre>
+<p>A <code>del</code> függvénnyel a teljes lista is törölhető a memóriából:</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+del lista
+print(lista)
+</code></pre>
+<pre><code>NameError                                 Traceback (most recent call last)
+&lt;ipython-input-2-5d9055aab6ba&gt; in &lt;module&gt;
+ 1 lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+ 2 del lista
+----&gt; 3  print(lista)
+
+NameError: name 'lista' is not defined
+</code></pre>
+<p>A <code>clear()</code> függvény viszont csak kiüríti a listát.</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+lista.clear()
+print(lista)
+</code></pre>
+<pre><code>[]
+</code></pre>
+<h3 id="listák-sorbarendezése">Listák sorbarendezése</h3>
+<p>A <code>sort()</code> metódus segítségével az adott változótípus természetes sorrendjébe rendezhetjük a listánk értékeit. Ez a természetes sorrend például szövegek esetén az ABC sorrend.</p>
+<pre><code class="lang-python">cars = ['Ford', 'Mitsubishi', 'BMW', 'VW']
+cars.sort()
+print(cars)
+</code></pre>
+<pre><code>['BMW', 'Ford', 'Mitsubishi', 'VW']
+</code></pre>
+<p>A <code>reverse</code> logikai paraméter alkalmazásával a sorrend megfordítható.</p>
+<pre><code class="lang-python">cars = ['Ford', 'Mitsubishi', 'BMW', 'VW']
+cars.sort(reverse=True)
+print(cars)
+</code></pre>
+<pre><code>['VW', 'Mitsubishi', 'Ford', 'BMW']
+</code></pre>
+<p>Abban az esetben, ha nincs alapértelmezett sorrendje az elemeinknek -- például, ha különböző adattípusú elemeket vegyítettünk a listában, akkor a <code>key</code> paraméter segítségével megadható egy függvény, ami az aktuális elemhez egy sorba rendezhető értéket rendel, és ekkor a <code>sort</code> ennek az értéknek megfelelően rendez.</p>
+<p>A függvényekről azonban később lesz szó, csak a teljesség kedvéért került ide ez a kódrészlet!</p>
+<p>Az alábbi példában a szöveg hossza szerint szeretnénk sorba rendezni, ABC sorrend helyett. Ehhez első lépésben létrehozunk egy függvényt <code>MyFunc</code> néven, ami visszaadja a paraméterként kapott érték hosszát. A lista <code>sort()</code>metódusa a lista minden elemére végrehajtja a <code>MyFunc</code> függvényt, és a függvény által visszaadott érték alapján rendezi sorba az elemeket.</p>
+<pre><code class="lang-python"># A function that returns the length of the value:
+def  myFunc(e):
+	return  len(e)
+
+cars = ['Ford', 'Mitsubishi', 'BMW', 'VW']
+
+cars.sort(reverse=True, key=myFunc)
+print(cars)
+</code></pre>
+<pre><code>['Mitsubishi', 'Ford', 'BMW', 'VW']
+</code></pre>
+<h1 id="feladatok">Feladatok</h1>
+<p>Adott az alábbi lista:</p>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+</code></pre>
+<ol>
+<li>Írasd ki a lista elemeinek számát!</li>
+<li>Írasd ki utolsó elemét!</li>
+<li>Írasd ki első három elemét!</li>
+<li>Szúrd be a lista végére az &quot;egres&quot;-t!</li>
+<li>Szúrd be a lista elejére az &quot;ananászt&quot;-t!</li>
+<li>Töröld a listából a &quot;banán&quot;-t! Először keresd meg a &quot;banán&quot; pozícióját a listában, majd hajtsd végre a törlést!</li>
+<li>Írasd ki a lista elemeit fordított sorrendben!</li>
+<li>Mi történik, ha a lista egy még nem létező indexű elemének próbálunk értéket adni?</li>
+</ol>
+<pre><code class="lang-python">lista = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+lista[100] = &quot;avokádó&quot;
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_basic/list/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

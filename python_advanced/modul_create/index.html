@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Modul l&#233;trehoz&#225;sa </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Modul l&#233;trehoz&#225;sa ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="modul-létrehozása">Modul létrehozása</h1>
+
+<p>Pythonban az alábbi módokon lehetséges modulokat írni:</p>
+<ul>
+<li><strong>Python nyelven</strong></li>
+<li><strong>C nyelven</strong> megírni, majd futásidőben betölteni (pl: regex modul)</li>
+<li><strong>Beépített</strong> modulok, amelyeket az interpreter értelmez (pl: itertools)</li>
+</ul>
+<p>Mindhárom esetben az import paranccsal importáljuk a modulokat.</p>
+<p>Ha saját modult szeretnénk írni nincs másra szükségünk, mint egy .py kiterjesztésű file-ra, amely érvényes Python kódot tartalmaz.</p>
+<p><strong>Elnevezési konvenciók</strong></p>
+<ul>
+<li>A csomagneveknek kisbetűsnek kell lenniük</li>
+<li>Ha több szóra van szükség, az aláhúzásnak elválasztania kell őket</li>
+<li>Általában inkább egy szóból álló nevet illik adni</li>
+</ul>
+<pre><code class="lang-python"># module.py
+a = &quot;Not great, not terrible&quot;
+b = [1, 2, 3]
+
+def c(p):
+    print('A kapott paraméter: {:}'.format(p))
+
+class d:
+    pass
+</code></pre>
+<p>Ennek a modulnak a használata egy másik fájlban:</p>
+<pre><code class="lang-python">import module
+module.a, module.b
+module.c('hello')
+module.d
+</code></pre>
+<pre><code>('Not great, not terrible', [1, 2, 3])
+A kapott paraméter: hello
+module.d
+</code></pre>
+<h3 id="a-modul-elemei">A modul elemei</h3>
+<pre><code class="lang-python">dir(module)
+</code></pre>
+<pre><code>['__builtins__',
+ '__cached__',
+ '__doc__',
+ '__file__',
+ '__loader__',
+ '__name__',
+ '__package__',
+ '__spec__',
+ 'a',
+ 'b',
+ 'c',
+ 'd']
+</code></pre>
+<p>A <code>__name__</code> változó tartalmazza az aktuális modul nevét, de az adott modult közvetlenül a fájljából indítva (azaz nem modulként betöltve futtatjuk), akkor az értéke <code>__main__</code> lesz.</p>
+<pre><code class="lang-python"># fact.py tartalma
+# Futtatható standaloneként és modulként is.
+def fact(n):
+    return 1 if n == 1 else n * fact(n-1)
+
+if (__name__ == '__main__'):
+    import sys
+    if len(sys.argv) &gt; 1  and isinstance(sys.argv[1], (int)):
+        print(fact(int(sys.argv[1])))
+</code></pre>
+<pre><code class="lang-python">from fact import fact
+fact(6)
+</code></pre>
+<h2 id="importálás-útvonala">Importálás útvonala</h2>
+<p>Az interpreter a betöltendő modulokat az alábbi sorrendben keresi:</p>
+<ul>
+<li>az aktuális könyvtárban</li>
+<li>A PYTHONPATH környezeti változóban megadott könyvtárakban (import os;os.getenv('PYTHONPATH'))</li>
+<li>A Python telepítésekor beállított könyvtárak (import sys;sys.path)</li>
+</ul>
+<p>Tehát saját modul használata esetén, érdemes ugyanabban a könyvtárban tárolni a moduljainkat, mint ahol a kódunk van.</p>
+<h2 id="modulok-használata">Modulok használata</h2>
+<p>Tegyük fel, hogy van két modulunk <code>egyik_modul.py</code> és <code>masik_modul.py</code> néven, az alábbi kódokkal:</p>
+<p>egyik_modul.py:</p>
+<pre><code class="lang-python">def  udvozles(szoveg):
+	print (&quot;Hello %s&quot; % szoveg)
+
+udvozles(&quot;én vagyok az egyik modul&quot;)
+</code></pre>
+<p>masik_modul.py:</p>
+<pre><code class="lang-python">import egyik_modul
+
+egyik_modul.udvozles(&quot;szép napot&quot;)
+</code></pre>
+<pre><code>Hello, én vagyok az egyik modul
+Hello, szép napot
+</code></pre>
+<ul>
+<li>Az <code>masik_modul.py</code>-t futtatva megjelenik az &quot;Helló, én vagyok a másik modul&quot; üdvözlő szöveg. A <code>masik_modul.py</code>-ben használni szeretnénk az <code>egyik_modul.py</code>-ben definiált <code>udvozles()</code> függvényt.</li>
+<li>Az <code>egyik_modul.py</code>-t futtatva megjelenik mind a két üdvözlő szöveg, hiszen a <code>masik_modul.py</code>-ben lévő programkód is lefut.</li>
+<li>Érdemes megfigyelni, hogy az importált modulban lévő függvényeket és változókat csak úgy lehet elérni, ha a függvény- vagy változónév elé ponttal elválasztva odaírjuk a modul nevét.</li>
+</ul>
+<p>Ha nem akarjuk minden alkalommal kiírni a teljes modulnevet, az <code>as</code> kulcsszó segítségével adhatunk rövidítést:</p>
+<pre><code class="lang-python">import egyik_modul as em
+
+em.udvozles(&quot;Szép napot&quot;)
+</code></pre>
+<p>A gyakorlatban modulokban szereplő függvényekhez és osztályokhoz illik készíteni teszteseteket, azaz olyan programrészletet, amin keresztül ellenőrizhető, hogy a függvények és osztályok a kívánt módon működnek-e. A fenti egyszerű példában is kipróbáljuk, hogy működik-e az <code>udvozles()</code> függvény. Miközben a modult fejlesztjük, a modul futtatásakor azt szeretnénk, ha lefutnának ezek az ellenőrző kódok. Ha viszont a modult külső modulként importálja egy másik modul, az ellenőrző kódok lefutása zavaró. Az alábbi egyszerű trükkel dönthető el egy modulban, hogy az adott modullal indult-e a fordító:</p>
+<pre><code class="lang-python">def  udvozles(szoveg):
+	print (&quot;Hello, %s&quot; % szoveg)
+
+if  __name__ == &quot;__main__&quot;:
+	udvozles(&quot;én vagyok a másik modul&quot;)
+</code></pre>
+<h2 id="feladatok">Feladatok</h2>
+<blockquote>
+<p>Jupyter notebookból .py állományt menteni a <code>File/Download as/Python (.py)</code> menüpontban lehet. A megjelenő szabványos dialógusablakban azt a mappát érdemes választani, ahonnan majd a modult ki akarjuk próbálni. Itt majd létrehozunk egy új <code>ipynb</code> állományt, amelyben az <code>import sajatmodul</code> utasítás működni fog (ahol &quot;sajatmodul&quot; a mentett <code>.py</code> file neve).</p>
+</blockquote>
+<ol>
+<li>Készíts egy modult <code>maximum.py</code> néven elmentve, mely tartalmaz egy <code>maximum</code> nevű függvényt. A függvénynek legyen három kötelező argumentuma: <code>maximum(a,b,c)</code> A függvény visszatérési értéke legyen az argumentumban megadott számok közül a legnagyobb!</li>
+<li><code>maximum.py</code>-ben Készíts teszteseteket, megyek igazolják, hogy a függvény megfelelően működik. A tesztesetek csak akkor fussanak le, ha a <code>maximum.py</code> került futtatása.</li>
+<li>Készíts egy másik modult is, melyben hivatkozol a <code>maximum.py</code> modulra, és meghívod a benne lévő függvényt.</li>
+<li>Írj egy modult, amely egy <code>Datumkezelo</code> osztályt tartalmaz. Az osztály konstruktorának 1 string paramétere van. A dátumot yyyy-mm-dd formátumban kell megadni. Legyen egy <code>megjelenit</code> függvénye, amely kiírja a példányhoz tartozó dátumot és legyen egy <code>hozzaad_nap</code> függvénye, amely paraméterként kapott napok számát hozzáadja a példányváltozóhoz. Példányosítsd az osztályt, add át neki a mai napot a kívánt formátumban, irasd ki példányváltozó tartalmát, adj hozzá 5 napot és ismételten irasd ki a példányváltozó tartalmát! Extra feladatként valósíts meg <a href="/python_advanced/error_handling">hibakezelést</a>: A konstruktor kezelje, ha nem megfelelő formátumban érkezik a dátum: ilyenkor dobjon hibát. Továbbá minden függvényben alkalmazz hibakezelést!</li>
+<li>Ez az extra feladat a Python <a href="/python_advanced/oop/">objetum-orientált képességeit</a> használja ki. Készíts egy <code>Person</code> osztályt, amely a konstruktorában átadott <code>name</code> változót betölti egy példányváltozóba. Származtass belőle egy <code>Student</code> osztályt, amelynek legyen egy <code>add_grade</code> függvénye, amely a paraméterként kapott jegyet hozzáadja egy példányváltozó listához. Készíts egy <code>mean</code> függvényt, amely a beírt jegyekből átlagot számol. Kezeld le azt az esetet, amikor a <code>mean</code> függvényt a jegyek beírása előtt hívjuk meg!</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/modul_create/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

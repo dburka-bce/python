@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Math modul </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Math modul ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="math-modul">Math modul</h1>
+
+<p>Beépített modul matematikai számításokra.</p>
+<pre><code class="lang-python">import math
+</code></pre>
+<h2 id="konstansok">Konstansok</h2>
+<pre><code class="lang-python">import math
+
+print(math.e) # Euler szám értéke
+print(math.pi) # PI értéke radiánban
+print(math.inf) # Végtelen érték jelölése
+print(math.nan) # Hiányzó adat jelölése
+</code></pre>
+<pre><code>2.718281828459045
+3.141592653589793
+inf
+nan
+</code></pre>
+<h2 id="trigonometrikus-függvények">Trigonometrikus függvények</h2>
+<p>Átváltás fokból radiánba és vissza.</p>
+<pre><code class="lang-python">import math
+
+print(math.radians(90))
+print(math.degrees(3.14))
+print(math.degrees(math.pi))
+</code></pre>
+<pre><code>1.5707963267948966
+179.9087476710785
+180.0
+</code></pre>
+<p>A beépített trigonometrikus függvények radiánnal számolnak.</p>
+<pre><code class="lang-python">import math
+
+print(math.sin(1))
+print(math.cos(1))
+print(math.tan(1))
+</code></pre>
+<pre><code>0.8414709848078965
+0.5403023058681398
+1.5574077246549023
+</code></pre>
+<p>Elérhetők még az egyes trigonometrikus függvények inverzei (latinul <em>arcus</em>) is.</p>
+<pre><code class="lang-python">import math
+
+print(math.acos(1))
+print(math.degrees(math.asin(1)))
+</code></pre>
+<pre><code>0.0
+90.0
+</code></pre>
+<h2 id="kombinatorikai-függvények">Kombinatorikai függvények</h2>
+<p>Faktoriális</p>
+<pre><code class="lang-python">import math
+
+print(math.factorial(5))
+</code></pre>
+<pre><code>120
+</code></pre>
+<p>Permutáció
+$$\dfrac {n!}{(n-k)!}$$</p>
+<pre><code class="lang-python">import math
+
+print(math.perm(3, 2))
+print(math.factorial(3)/math.factorial(3-2))
+</code></pre>
+<pre><code>6
+6.0
+</code></pre>
+<p>Kombináció
+$${n \choose k} = \dfrac {n!}{k!(n-k)!}$$</p>
+<pre><code class="lang-python">import math
+
+print(math.comb(7, 5))
+print(math.factorial(7)/(math.factorial(5)*math.factorial(7-5)))
+</code></pre>
+<pre><code>21
+21.0
+</code></pre>
+<h2 id="egyéb-funkciók">Egyéb funkciók</h2>
+<p>Összeg</p>
+<pre><code class="lang-python">import math
+
+print(math.fsum([1, 2, 3, 4]))
+</code></pre>
+<pre><code>10.0
+</code></pre>
+<p>Abszolút érték</p>
+<pre><code class="lang-python">import math
+
+print(math.fabs(8))
+print(math.fabs(-8))
+</code></pre>
+<pre><code>8.0
+8.0
+</code></pre>
+<p>ceil = plafon (egy számot a legközelebbi nála nagyobb egészre kerekít)
+floor = padló (egy számot a legközelebb nála kisebb egészre kerekít)</p>
+<pre><code class="lang-python">import math
+
+print(math.ceil(7.6))
+print(math.floor(-7.6))
+</code></pre>
+<pre><code>8
+-8
+</code></pre>
+<p>Euklideszi távolság kiszámítása. A bemenő paraméterek olyan számokból álló listák, melyek két egyforma dimenziójú vektort reprezentálnak.</p>
+<pre><code class="lang-python">import math
+
+print(math.dist([1, 0], [0, 0]))
+</code></pre>
+<pre><code>1.0
+</code></pre>
+<p>Hatványozás és gyökvonás. Utóbbi csak a négyzetgyök esetén működik, másfajta gyökvonás esetén a negatív kitevőjű hatványozást kell alkalmazni.
+Az Euler szám hatványát egyszerűsített módon is lehet számolni.</p>
+<pre><code class="lang-python">import math
+
+print(math.pow(2, 3))
+print(math.sqrt(4))
+
+print(math.exp(2))
+print(math.pow(math.e, 2))
+</code></pre>
+<pre><code>8.0
+2.0
+7.38905609893065
+7.3890560989306495
+</code></pre>
+<p>A logaritmus függvények terén limitáltabbak a lehetőségek. Az alábbi természetes, kettes és tízes alapú logaritmus függvények érhetők el. Tetszőleges alapú logaritmus függvény használatához már komplexebb modul betöltésére van szükség.</p>
+<pre><code class="lang-python">import math
+
+print(math.log(math.e))
+print(math.log2(4))
+print(math.log10(1000))
+</code></pre>
+<pre><code>1.0
+2.0
+3.0
+</code></pre>
+<p>Osztási maradék</p>
+<pre><code class="lang-python">import math
+
+print(math.fmod(3, 2))
+print(3 % 2)
+</code></pre>
+<pre><code>1.0
+1
+</code></pre>
+<p>Legnagyobb közös osztó (lnko) = Greatest Common Divisor (gcd)</p>
+<pre><code class="lang-python">import math
+
+print(math.gcd(39, 99))
+</code></pre>
+<pre><code>3
+</code></pre>
+<p>Végtelen érték ellenőrzése: <code>True</code>, ha a paraméterként átadott érték végtelen, egyébként <code>False</code></p>
+<pre><code class="lang-python">import math
+
+print(math.isinf(5))
+print(math.isinf(math.inf))
+</code></pre>
+<pre><code>False
+True
+</code></pre>
+<h2 id="random">Random</h2>
+<p>Véletlenszerű számok generálására használt modul. Egész szám pszeudo-véletlen generálása <em>randint(a, b)</em> függvénnyel történik, ahol az <em>a</em> az alsó korlát, a <em>b</em> a felső.</p>
+<pre><code class="lang-python">import random
+
+random.randint(0, 10)
+</code></pre>
+<p>Pszeudo-véletlen tört szám generálása, ahol az x output: 0&lt;= x &lt; 1
+<a href="https://www.youtube.com/watch?v=1cUUfMeOijg">Itt egy érdekes példa a témához</a></p>
+<pre><code class="lang-python">import random
+
+random.random()
+</code></pre>
+<p>Amennyiben reprodukálni szeretnénk a random függvények által generált output-ot, a <em>seed(x)</em> parancsot kell egy tetszőleges egész számmal meghívni.</p>
+<pre><code class="lang-python">import random
+random.seed(0)
+random.random()
+</code></pre>
+<h1 id="feladatok">Feladatok</h1>
+<ol>
+<li>Írj egy függvényt, amely paraméterként megkapja egy derékszögű háromszög 2 befogóját és egy listában visszaadja az átfogójának hosszát, valamint a maradék 2 szögének nagyságát! <a href="https://www.mathsisfun.com/sine-cosine-tangent.html">https://www.mathsisfun.com/sine-cosine-tangent.html</a></li>
+<li>Írj egy függvényt, amelynek bejövő paramétere egy tetszőleges hosszúságú egész számokból álló lista. A függvény a kapott list növekvő sorba rendezi, majd generál egy 0 és 1 közötti véletlen számot, amelynek a százszorosa szerinti percentilis értékig adja vissza a tömböt. Példa: a paraméterként átadott lista: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], a generált véletlen szám: 0,33, akkor a visszaadott lista [1, 2, 3, 4] <a href="https://en.wikipedia.org/wiki/Percentile">https://en.wikipedia.org/wiki/Percentile</a></li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/math/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

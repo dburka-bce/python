@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Gyakorl&#243; feladatsor </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Gyakorl&#243; feladatsor ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="gyakorló-feladatsor">Gyakorló feladatsor</h1>
+
+<p>A feladat a rendelkezésre álló adatok alapján a legboldogabb Európai országok, és azok alkoholfogyasztási mutatójának megjelenítése.</p>
+<h2 id="adatok-beolvasása">Adatok beolvasása</h2>
+<ol>
+<li>Hozz létre egy függvényt, aminek a bemeneti paramétere egy fájlnév, a kimenete pedig egy lista lesz.</li>
+<li>A függvényben olvasd be a megadott nevű fájlt, és töltsd be a sorait egy listába.</li>
+<li>A fájl bezárását követően töröld az első sorban levő fejlécet.</li>
+<li>Végül a függvény térjen vissza az újonnan feltöltött listával.</li>
+<li>Töltsd le a “HappinessAlcoholConsumption.csv” fájlt, és másold a kódod mellé. Hívd meg a függvényt a fájl nevével, és a visszatérési értéket írd egy változóba.</li>
+</ol>
+<h2 id="adatfeldolgozás">Adatfeldolgozás</h2>
+<ol>
+<li>Hozz létre egy függvényt, aminek a bemenete és kimenete is egy lista, és dolgozd fel az előző blokkban beolvasott adatokat.</li>
+<li>A függvényben hozz létre egy üres listát, és ebbe töltsd majd bele a módosított sorokat.</li>
+<li>Menj végig a bemeneti lista sorain. Töröld le a sorok végéről a sortörést, és darabold fel a sorokat a határoló karakterek mentén.</li>
+<li>Minden sorhoz hozz létre egy új listát, és ez eredeti sor alapján az alábbi értékekkel töltsd fel.
+<ul>
+<li>Ország (Country_Name) - Szövegként</li>
+<li>Régió (Region) - Szövegként</li>
+<li>Boldogság pont (HappinessScore) - Tört számként</li>
+<li>Sörfogyasztás (Beer_PerCapita) - Egész számként</li>
+<li>Rövidital fogyasztás (Spirit_PerCapita) - Egész számként</li>
+<li>Borfogyasztás (Wine_PerCapita) - Egész számként</li>
+</ul>
+</li>
+<li>Az így kapott listát add hozzá az első üres lista elemeihez, majd végül a függvény ennek az összevont listának a tartalmával térjen vissza.</li>
+<li>Hívd meg a függvényt az előző blokkban a fájlból beolvasott listával, és az eredményt mentsd egy változóba.
+ </li>
+</ol>
+<h2 id="régió-szűrés">Régió szűrés</h2>
+<ol>
+<li>Kérj be egy értéket a felhasználótól, amivel szűrhet a régió oszlopra.</li>
+<li>Az adatbekérés után hívd meg a következő pontban létrehozandó függvényt és a kimenetét mentsd el egy változóba. Ha a kimenet egy üres lista, akkor figyelmeztesd a felhasználót és kérd be újra a szűrő értéket mindaddig, amíg létező régiót nem ad meg.</li>
+<li>Hozz létre egy függvényt, aminek a bemenete az előző feladat eredményeképp előállt lista és a bekért szűrő szöveg, a kimenete pedig egy szűrt lista lesz.</li>
+<li>A függvényben hozz létre egy új, üres listát, amibe a sorokat gyűjtöd majd.</li>
+<li>Egy ciklussal menj végig a bemeneti lista elemein. A sorokban a „Region” oszlopban levő értéket darabold fel a szóközök mentén. Csak akkor add hozzá a lista aktuális sorát az új listához, ha a szűrő érték szerepel a „Region” alapján előállt listában.</li>
+</ol>
+<blockquote>
+<p>Ezzel a lépéssel elérhetjük, hogy a &quot;Europe&quot; szűrőparaméterrel az összes európai országot elérjük az eredmények között.
+6.	A függvény térjen vissza a szűrt listával.
+7.	Hívd meg a függvényt paraméterként átadva a feldolgozott listát és a megadott régiót. Mentsd ez eredményt egy változóba.</p>
+</blockquote>
+<h2 id="számítások--és-vizualizációk">Számítások  és vizualizációk</h2>
+<ol>
+<li>Alakítsd át a szűrt lista oszlopait numpy tömbökké.</li>
+<li>Számítsd át a sör, tömény és bor értékeket literré (a fogyasztott sör 250ml, a tömény 25ml, a bor 87,5ml-es alcohol unitban van megadva), tárold ezeket új tömbökben.</li>
+<li>Számítsd ki az összegzett alkoholfogyasztást egy új tömbbe: a sör 4%, a tömény 40%, a bor 8% alkoholt tartalmaz.</li>
+<li>Jelenítsd meg a különféle tiszta alkoholfogyasztásokat hisztogramon.</li>
+<li>Jelenítsd meg a választott régió országainak tiszta  alkoholfogyasztását egy kördiagrammon.</li>
+<li>Hozz létre egy három subplotból álló ábrát, ami három külön oszlopdiagramon mutatja a választott régi országainak literben számított sör-bor-töményfogyasztását. Nézd meg a plt.xticks() metódus súgóját, és próbáld elérni, hogy a felső két ábrán ne látszódjon az x tengelyen felirat, illetve hogy az alsó ábrán a címkék 90 fokkal elforgatva jelenjenek meg.</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_psz/practice/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

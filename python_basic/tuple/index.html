@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Tuple </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Tuple ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tuple">Tuple</h1>
+
+<p>A <code>tuple</code> egy rendezett immutábilis gyűjtemény. Az immutabilitás azt jelenti, hogy a gyűjtemény elemeit a létrehozás után nem lehet megváltoztatni. Ha például a gyűjteményhez új elemet akarunk hozzáadni, a memóriában egy új <code>tuple</code> jön létre.</p>
+<h2 id="tuple-létrehozása">Tuple létrehozása</h2>
+<p><code>tuple</code> létrehozható a benne szereplő értékeket kerek zárójelben történő felsorolásával. Emlékeztetőül: a <a href="/content/python_basic/list">lista</a> elemeit szögletes zárójelben kellett felsorolni.</p>
+<pre><code class="lang-python">t = (&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;)
+l = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+
+print(type(t))
+print(type(l))
+</code></pre>
+<pre><code>&lt;class 'tuple'&gt; 
+&lt;class 'list'&gt;
+</code></pre>
+<p>A <code>tuple</code> rendezett típus (ordered), a benne szereplő értékek sorrendje számít. A <code>tulpe</code>-ben szereplő értékek könnyen ki olvashatók változóba.</p>
+<pre><code class="lang-python">t = (&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;)
+a, b, c, d = t
+print(a)
+print(b)
+print(c)
+print(d)
+</code></pre>
+<pre><code>alma 
+banán 
+cseresznye 
+dinnye
+</code></pre>
+<p>Azonban, ha a változók száma nem egyezik meg a <code>tuple</code> elemeinek számával, hibára fut a program.</p>
+<h2 id="típuskonverzió">Típuskonverzió</h2>
+<p>Lista könnyedén <code>tuple</code>-lé alakítható -- és vissza:</p>
+<pre><code class="lang-python">l = [&quot;alma&quot;,&quot;banán&quot;,&quot;cseresznye&quot;,&quot;dinnye&quot;]
+t =  tuple(l)
+print(type(t))
+l2 =  list(t)
+print(type(l2))
+</code></pre>
+<pre><code>&lt;class 'tuple'&gt; 
+&lt;class 'list'&gt;
+</code></pre>
+<h2 id="sorted">Sorted</h2>
+<p>A <code>tuple</code> immutábilis, ezért nem érhető el hozzá a <code>sort</code> metódus hívás.  A <code>sorted</code> parancs azonban hasonló funkcionalitással rendelkezik, és bármelyik szekvencia típussal használható. Abban tér el a <code>sort</code>-tól, hogy a sorba rendezést nem az eredeti gyűjteményen végzi, hanem egy új gyűjteményt hoz létre, aminek az elemei a megfelelő sorrendben vannak.</p>
+<pre><code class="lang-python">cars = ('Ford', 'Mitsubishi', 'BMW', 'VW')
+print(sorted(cars))
+print(cars)
+</code></pre>
+<pre><code>['BMW', 'Ford', 'Mitsubishi', 'VW']
+('Ford', 'Mitsubishi', 'BMW', 'VW')
+</code></pre>
+<p>Az előző példa kimenetéből már látszik, hogy a <code>sorted</code> metódus eredménye nem egy tuple, hanem egy rendezett lista. De a típuskonverzió segítségével az eredmény átalakítható a megfelelő típusra.</p>
+<pre><code class="lang-python">cars = ('Ford', 'Mitsubishi', 'BMW', 'VW')
+cars_sorted = sorted(cars)
+cars_sorted_tuple = tuple(cars_sorted)
+
+print(type(cars))
+print(type(cars_sorted))
+print(type(cars_sorted_tuple))
+</code></pre>
+<pre><code>&lt;class 'tuple'&gt;
+&lt;class 'list'&gt;
+&lt;class 'tuple'&gt;
+</code></pre>
+<p>De persze ugyanezt lehet rövidebben is írni, illetve nincs szükség új változóra, az eredeti is felülírható.</p>
+<pre><code class="lang-python">cars = ('Ford', 'Mitsubishi', 'BMW', 'VW')
+print(type(cars))
+
+cars = tuple(sorted(cars))
+print(type(cars))
+
+print(cars)
+</code></pre>
+<pre><code>&lt;class 'tuple'&gt;
+&lt;class 'tuple'&gt;
+('BMW', 'Ford', 'Mitsubishi', 'VW')
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_basic/tuple/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>1. Minta ZH </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="1. Minta ZH ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="1-minta-zh">1. Minta ZH</h1>
+
+<p>A feladat egy adott ország olimpiai éremtáblázatának lekérdezése, de csak azokban az években, amik 0-ra végződnek.</p>
+<ol>
+<li><p>Fájlból olvasás (15 pont)</p>
+<ol>
+<li>Hozz létre egy függvényt <code>load_data</code> néven. A függvénynek legyen egy bemenő paramétere, amiben a beolvasandó fájl nevét adod át. Hívd meg a függvényt a korábbi komplex feladathoz tartozó &quot;Summer_olympic_Medals.csv&quot; fájl nevével, és persze gondoskodj róla, hogy elérhető legyen a fájl a kód számára.</li>
+<li>A függvényben olvasd be a megadott nevű fájl sorait sorait egy listába. (Jegyzettömbbel megnyithatod magadnak a fájlt, hogy lásd a tartalmát.)</li>
+<li>A fájl bezárását követően töröld az első sorban levő fejlécet.</li>
+<li>Menj végig a lista sorain. Töröld le a sorok végéről a sortörést, és darabold fel a sorokat a határoló karakterek mentén. A sorokból ilyen módon kapott listákat töltsd bele egy újonnan létrehozott üres listába. Ez legyen a függvény visszatérési értéke.</li>
+<li>Módosítsd úgy a függvényhívást, hogy visszatérési értékét lementsd egy változóba. A további részek során az így lementett listával dolgozz.</li>
+</ol>
+</li>
+<li><p>Ország adatainak kiírása (20 pont)</p>
+<ol>
+<li>Hozz létre egy függvényt <code>get_country_data</code> néven. Hívd meg az előző pont lista beolvasása után, és bemenő értékként add át neki az adatokat tartalmazó listát.</li>
+<li>A függvényben kérd be a felhasználótól az általa választott ország nevét. A bevitt adaton nem kell ellenőrzést végezni!</li>
+<li>A függvényen belül hozz létre egy üres listát <code>filtered_list</code>, amibe majd felgyűjtheted a paraméterként kapott listából kiválogatott sorokat.</li>
+<li>Egy ciklussal menj végig a listád sorain, és add hozzá azoknak a soroknak a tartalmát a <code>filtered_list</code>-hez, amelyekben az ország neve (Country_Name-re ellenőrizz, ne a Host_country-ra) egyezik a felhasználó által bevitt névvel.</li>
+<li>A függvény visszatérési értéke a <code>filtered_list</code> legyen, és a függvény hívást követően mentsd le az értékét egy változóba.</li>
+<li>Ha a visszakapott lista elemszáma nem nagyobb, nullánál (tehát, ha nem jó értéket adott meg a felhasználó), akkor írd ki számára, hogy &quot;Nincs találat&quot;.</li>
+<li>Módosítsd az eddigi kódot úgy, hogy addig kérdezze újra az országnevet, amíg nincs találat. (Segítség: Ehhez egyik függvény belsejében sem kell módosítást végezni!)</li>
+</ol>
+</li>
+<li><p>Éremtáblázat (15 pont)</p>
+<ol>
+<li>Sikeres adatbekérést követően menj végig az előző feladatban létrehozott szűrt lista sorain és írd ki őket úgy, hogy tabulátorokkal elválasztva látszódjon rendre az év (Year), az arany (Gold), az ezüst (Silver) és a bronz (Bronze) érmek száma.</li>
+<li>Módosítsd úgy a megjelenítést, hogy az eredményül kapott táblázatnak fejléce is legyen, amiben rendre az &quot;ÉV&quot;, &quot;ARANY&quot;, &quot;EZÜST&quot; és &quot;BRONZ&quot; szavak szerepelnek.</li>
+<li>A kiíratást bővítsd ki egy olyan feltétellel, hogy csak a nullára végződő évek sorai jelenjenek meg.</li>
+</ol>
+</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_psz/mintazh1/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

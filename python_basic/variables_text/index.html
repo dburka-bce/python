@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Karakterl&#225;ncok </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Karakterl&#225;ncok ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="karakterláncok">Karakterláncok</h1>
+
+<p>A Python karakterláncait egy pár aposztróf vagy idézőjel veszi körül.  A program kódjában ilyen direkt módon megadott karaktersorozat az úgynevezett <em>literál</em> (angol kifejezés: &quot;szó szerinti&quot;).</p>
+<p>A <code>&quot;hello&quot;</code> ugyanaz, mint a <code>'hello'</code>.</p>
+<pre><code class="lang-python">print(&quot;Hello világ&quot;)
+print('Hello világ')
+</code></pre>
+<p>A megfelelő jelölést alkalmazva így a megjelenített szövegbe is tehetünk idézőjelet.</p>
+<pre><code class="lang-python">print(&quot;D'Artagnan nem a három testőr egyike&quot;)
+</code></pre>
+<p>A kettő azonban nem helyettesítheti egymást, az &quot;idézetet&quot; ugyanazzal a jelöléssel kell zárni, amivel megnyitottuk.
+Az alábbi utasítás hatására azért keletkezik hiba, mert a rendszer a szöveg végén lévő aposztrófot (valamint a záró zárójelet) is a szöveg részének tekinti, és a sor végét (EOL = End Of Line) elérve sem találja a szöveg literál zárását.</p>
+<pre><code class="lang-python">print(&quot;Hello világ')
+</code></pre>
+<pre><code> File &quot;&lt;ipython-input-3-ce149e5da16b&gt;&quot;, line 1
+ print(&quot;Hello világ')
+                        ^
+SyntaxError: EOL while scanning string literal
+</code></pre>
+<p>Előfordulhat, hogy egy hosszabb szöveg megjelenítésére van szükség. Ilyenkor a kód olvashatósága érdekében három idézőjel használatával többsoros karakterláncot rendelhetünk egy változóhoz.</p>
+<pre><code class="lang-python">l = &quot;&quot;&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Morbi convallis ante et turpis congue feugiat. 
+Fusce scelerisque nulla sed orci ultricies, nec vulputate felis finibus. 
+Integer nec odio ut nisi venenatis suscipit eu ut nibh. 
+Nullam velit ex, cursus ac posuere et, faucibus vel magna. 
+In posuere vitae velit vel accumsan.&quot;&quot;&quot;
+</code></pre>
+<p>Fontos megjegyezni, hogy ettől a megjelenített szöveg még ugyanúgy egy soros lesz. Ez csak magát a kódot teszi szebbé (az ajánlás az, hogy a kódsorok ne legyenek 79 karakternél hosszabbak).</p>
+<h2 id="karakterek">Karakterek</h2>
+<p>A karakterlánc úgy működik mint egy <a href="/python_basic/list/">lista</a>: bármelyik elemére hivatkozhatunk. A legtöbb programnyelvhez hasonlóan a karakterláncok Pythonban is nullától indexelnek. A Pythonnak azonban nincs külön karakter adattípusa, az egyetlen karakter egyszerűen egy egy betűből álló karakterlánc.</p>
+<pre><code class="lang-python">x = &quot;Helló :)&quot;
+y = x[0]
+
+print(x)
+print(type(x))
+
+print(y)
+print(type(y))
+</code></pre>
+<pre><code>Helló :)
+&lt;class 'str'&gt;
+H
+&lt;class 'str'&gt;
+</code></pre>
+<h3 id="rész-karakterlánc-keresése">Rész karakterlánc keresése</h3>
+<p>Egy karakterláncban egy karakter meglétét az <code>in</code> paranccsal ellenőrizhetjük, a visszatérési érték logikai típusú.</p>
+<pre><code class="lang-python">x = &quot;Budapesti Corvinus Egyetem&quot;
+print(&quot;Corvinus&quot; in x)
+</code></pre>
+<pre><code>True
+</code></pre>
+<p>Gyakran szükséges lehet a rész karakterlánc pontos pozíciójának ismerete is, ezt a <code>find</code> függvénnyel kereshetjük ki.</p>
+<pre><code class="lang-python">x = &quot;Budapesti Corvinus Egyetem&quot;
+kezdet = x.find(&quot;Corvinus&quot;)
+print(kezdet)
+</code></pre>
+<pre><code>10
+</code></pre>
+<p>Nullától kezdődő számozással, a Corvinus &quot;C&quot; betűje a 10. karakter.</p>
+<h3 id="darabolás">Darabolás</h3>
+<p>A karakterláncok darabolása <code>string[start:end:step]</code> formulával valósítható meg.</p>
+<ul>
+<li><code>start</code>: a kinyerni kívánt rész karakterlánc első karakterének pozícója. Alapértéke 0, amely a karakterlánc első betűje.</li>
+<li><code>end</code>: a kinyerni kívánt rész karakterlánc utolsó utáni karakterének pozíciója. Alapértéke az adott karakterlánc hossza.</li>
+<li><code>step</code>: Minden <code>step</code>-edik karakter kerül be a rész karakterláncba a <code>start</code> és az <code>end</code> között. Alapértéke 1.</li>
+</ul>
+<pre><code class="lang-python">x = &quot;Budapesti Corvinus Egyetem&quot;
+print(x[:])
+print(x[:1])
+print(x[::2])
+kezdet = x.find(&quot;Corvinus&quot;)
+print(x[kezdet:kezdet+8])
+</code></pre>
+<pre><code>Budapesti Corvinus Egyetem
+B
+BdpsiCriu gee
+Corvinus
+</code></pre>
+<h2 id="szövegekkel-kapcsolatos-függvények">Szövegekkel kapcsolatos függvények</h2>
+<p>A karakterlánc -- és általában minden adattípus -- hosszúságának meghatározásához a <code>len()</code> függvény használható. Ennek a függvénynek a bemenő paramétere egy változó, a kimeneti értéke pedig egy szám.</p>
+<pre><code class="lang-python">a = &quot;Hello világ!&quot;
+print(len(a))
+</code></pre>
+<pre><code>12
+</code></pre>
+<p>Figyelj oda, hogy a következőkben felsorolt függvényeket a korábbiaktól eltérő módon kell meghívni!
+Vannak általános függvények, mint a <code>len()</code>, <code>type()</code> vagy a <code>print()</code>, amik bármikor meghívhatók, ezért a fenti formában kell használni őket. Az adott adattípusra (pontosabban <i>osztályra</i>, de erről majd később) specifikus függvények hívása viszont kicsit eltér ettől. Az ilyenek esetén egy pontot kell írni a megfelelő típusú változó neve után, és ezután következik a függvény neve, utána zárójelben pedig a bemeneti paramétereinek felsorolása. Ilyenkor a változónk maga is egy rejtett bemeneti paraméter, amit nem kell még egyszer felsorolni. Emiatt viszont gyakori, hogy az ilyen függvényeknek nincs más bemenő paramétere, ezért a zárójelek üresen maradnak (de mindenképp ki kell írni őket).</p>
+<p>A <code>strip()</code> a felesleges szóközök eltávolítása szolgál a karakterlánc elejéről illetve végéről</p>
+<pre><code class="lang-python">x = &quot; Budapesti Corvinus Egyetem &quot;
+print(x.strip())
+</code></pre>
+<pre><code>Budapesti Corvinus Egyetem
+</code></pre>
+<p>Az <code>upper()</code> és a <code>lower()</code> függvény csupa kis- vagy nagybetűssé alakítja a szöveget:</p>
+<pre><code class="lang-python">x = &quot;Budapesti Corvinus Egyetem&quot;
+print(x.upper())
+print(x.lower())
+</code></pre>
+<pre><code>BUDAPESTI CORVINUS EGYETEM
+budapesti corvinus egyetem
+</code></pre>
+<p>A <code>title()</code> függvény pedig a szavak kezdőbetűit nagybetűre változtatja, a többit pedig kicsire alakítja. Ez értelemszerűen a nevek kezelése kapcsán tud hasznos lenni.</p>
+<pre><code class="lang-python">x = &quot;KIS pista&quot;
+print(x.title())
+</code></pre>
+<pre><code>Kis Pista
+</code></pre>
+<p>A <code>replace()</code> függvénnyel egy adott szövegrészlet cserélhető ki:</p>
+<pre><code class="lang-python">x = &quot;Budapesti Corvinus Egyetem&quot;
+print(x.replace(&quot;Budapesti&quot;, &quot;Székesfehérvári&quot;))
+</code></pre>
+<pre><code>Székesfehérvári Corvinus Egyetem
+</code></pre>
+<p>Fontos megjegyezni, hogy a szövegfüggvények használatához nincs szükség változóra, közvetlenül a szövegen keresztül is meghívhatók.</p>
+<pre><code class="lang-python">print(&quot;Budapesti Corvinus Egyetem&quot;.upper())
+</code></pre>
+<pre><code>BUDAPESTI CORVINUS EGYETEM
+</code></pre>
+<h2 id="szövegek-formázott-megjelenítése">Szövegek formázott megjelenítése</h2>
+<p>A <code>+</code> operátor segítségével fűzhetők össze szövegrészletek:</p>
+<pre><code class="lang-python">x = &quot;Budapesti&quot;
+y = &quot;Corvinus&quot;
+z = &quot;Egyetem&quot;
+print(x + &quot; &quot; + y + &quot; &quot; + z)
+</code></pre>
+<pre><code>Budapesti Corvinus Egyetem
+</code></pre>
+<h3 id="strformat">str.format()</h3>
+<p>Bár a <code>+</code> jelek alkalmazása kényelmes a változók szövegbe történő beszúrására, már a fenti példából is látszik, hogy kissé nehézkes az utolsó sor olvasása. Ennél olvashatóbb, ha előre elkészítjük a szöveg vázát. A <code>format</code> szövegfüggvény segítségével pedig a paraméterként átadott változókat beszúrhatjuk a szövegünkben kapcsos jelekkel megadott helyőrzőkkel jelölt részekre.</p>
+<p>További előny a <code>+</code> jelekkel szemben, hogy így akár más típusú adatok (tipikusan számok) is összefűzhetők a szöveggel anélkül, hogy <a href="/python_basic/type_conversion/">típuskonverziót</a> kellene alkalmazni.</p>
+<pre><code class="lang-python">s = &quot;My name is {}. {} {}.&quot;
+print(s.format(&quot;Bond&quot;,&quot;James&quot;,&quot;Bond&quot;))
+</code></pre>
+<pre><code>My name is Bond. James Bond.
+</code></pre>
+<p>A beszúrás helyei számozhatók, így elkerülhető, hogy ismételni kelljen a  beszúrandó szövegrészleteket.</p>
+<pre><code class="lang-python">s = &quot;My name is {0}. {1} {0}.&quot;
+print(s.format(&quot;Bond&quot;,&quot;James&quot;))
+</code></pre>
+<pre><code>My name is Bond. James Bond.
+</code></pre>
+<p>De a formázás használható akár szöveges indexekkel is.</p>
+<pre><code class="lang-python">print(&quot;My name is {vezeteknev}. {keresztnev} {vezeteknev}.&quot;
+	.format(vezeteknev=&quot;Bond&quot;,keresztnev=&quot;James&quot;))
+</code></pre>
+<pre><code>My name is Bond. James Bond.
+</code></pre>
+<h3 id="f-string">f-string</h3>
+<p>A Python 3.6-os verziója óta elérhető a szövegek összeállításának egy új módja, az úgynevezett <strong>f-string</strong>, vagy <strong>formázott string literál</strong>. A működési elve ugyanaz, mint a <code>format</code> függvényé, de nem kell minden egyes változót egy függvény paramétereként felsorolni, közvetlen beírhatók a szövegbe. És még függvényhívásra sincs szükség, csak az <code>f</code> vagy <code>F</code> betűt kell az idézőjel elé írni.</p>
+<pre><code class="lang-python">keresztnev = &quot;James&quot;
+vezeteknev = &quot;Bond&quot;
+print(f&quot;My name is {vezeteknev}. {keresztnev} {vezeteknev}.&quot;)
+</code></pre>
+<pre><code>My name is Bond. James Bond.
+</code></pre>
+<h3 id="formázás-paraméterek">Formázás paraméterek</h3>
+<p>A fent leírt két megközelítés még számos különböző módon paraméterezhető, különösen a számok vagy a dátumok formázása terén. Alapvetően a változóra való hivatkozás után kell írni a megfelelő karaktereket a kívánt formátum megjelenítéséhez, függetlenül attól, hogy melyik megközelítést választjuk.</p>
+<pre><code class="lang-python">szam = 5
+szoveg = &quot;Egész szám: {0}&quot;
+print(szoveg.format(szam))
+print(&quot;Rövid tizedes tört: {0:.2f}&quot;.format(szam))
+print(f&quot;Hosszú tizedes tört: {szam:.10f}&quot;)
+</code></pre>
+<pre><code>Egész szám: 5
+Rövid tizedes tört: 5.00
+Hosszú tizedes tört: 5.0000000000
+</code></pre>
+<p>Nem elvárás az összes formázási paraméter ismerete. Ha valakinek szüksége van rá, vagy csak érdeklődik, akkor a például a <a href="https://wiki.python.org/moin/Py3kStringFormatting">Python megfelelő wiki oldalán</a> megtalálhatja a részletes leírásukat.</p>
+<h3 id="escape-karakter">Escape karakter</h3>
+<p>Korábban felmerült, hogy a kétfajta idézőjel alkalmazása kapcsán lehet játszani a szöveg körüli idézőjelekkel annak érdekében, hogy a szövegben aposztrófot vagy idézőjelet jelenítsünk meg. Előfordulhat azonban, hogy egyszerre mindkettőre szükségünk van, vagy más speciális szerepet betöltő karaktert szeretnénk kiírni.</p>
+<p>A <code>\</code> karakter (backslash, visszaperjel) az úgynevezett <em>escape</em> karakter. Ez a karakter normál esetben nem jelenik meg. Azt jelzi, hogy az utána következő karaktert különleges módon kell kezelni. A legtöbb programozási nyelv alkalmaz <em>escape</em> karaktert, és általában ugyanerre a karakterre esik a választás.</p>
+<p>Az <em>escape</em> karakter után írt idézőjelek egyszerű karakterként lesznek számon tartva, nem a szöveg nyitó vagy lezáró elemeként.</p>
+<pre><code class="lang-python">print(&quot;D\'Artagnan a \&quot;Három testőr\&quot; című könyv egyik főszereplője.&quot;)
+</code></pre>
+<pre><code>D'Artagnan a &quot;Három testőr&quot; című könyv egyik főszereplője.
+</code></pre>
+<p>Ha pedig magát az <em>escape</em> karaktert szeretnénk leírni, akkor duplán kell használni.</p>
+<pre><code class="lang-python">print(&quot;c:\\temp\\valami.txt&quot;)
+</code></pre>
+<pre><code>c:\temp\valami.txt
+</code></pre>
+<p>Ezen felül pedig létezik még néhány speciális karakter. A két leggyakrabban használt a sortörést jelölő <code>\n</code>, és a tabulátort jelölő <code>\t</code> .</p>
+<pre><code class="lang-python">keresztnev = &quot;James&quot;
+vezeteknev = &quot;Bond&quot;
+print(f&quot;My name is {vezeteknev}. \n\t{keresztnev} {vezeteknev}.&quot;)
+</code></pre>
+<pre><code>My name is Bond. 
+	James Bond.
+</code></pre>
+<p>Az <em>escape</em> karakter nagyon hasznos, de kifejezetten zavaró is lehet, ha például sok <code>\</code> jelet akarunk írni egy fájl útvonal megadása során. Ilyenkor egy az idézőjel elé írt <code>r</code> vagy <code>R</code> karakter segítségével kikapcsolhatjuk a szövegben az <em>escape</em> karakter funkcionalitását. (Az <code>r</code> a &quot;raw&quot; azaz &quot;nyers&quot; rövidítése.)</p>
+<pre><code class="lang-python">print(r&quot;c:\\temp\\valami.txt&quot;)
+</code></pre>
+<pre><code>c:\\temp\\valami.txt
+</code></pre>
+<p>Az f-string és az <code>r</code> jelölés egyszerre is alkalmazható tetszőleges sorrendben.</p>
+<pre><code class="lang-python">keresztnev = &quot;James&quot;
+vezeteknev = &quot;Bond&quot;
+print(fR&quot;My name is {vezeteknev}. \n\t{keresztnev} {vezeteknev}.&quot;)
+</code></pre>
+<pre><code>My name is Bond. \n\tJames Bond.
+</code></pre>
+<h1 id="ellenőrző-kérdések-feladatok">Ellenőrző kérdések, feladatok:</h1>
+<ol>
+<li>Adott az alábbi karakterlánc. Módosítsd úgy, hogy a <code>print</code>-el kiíratva a két verssor külön sorba kerüljön:
+&quot;Ég a napmelegtől a kopár szík sarja Tikkadt szöcskenyájak legelésznek rajta&quot;</li>
+<li>Mit jelent egy karakterlánc literál előtt az <code>r</code> karakter?</li>
+<li>Milyen típus alkalmas Pythonban egyetlen karakter tárolására?</li>
+<li>Tárold le két különböző változóban csupa kisbetűvel a vezeték- és az utónevedet, majd egyetlen <code>print</code> utasítással írasd ki a teljes neved.</li>
+<li>Készíts programot, amely egy két szóból álló, egyetlen szóközzel határolt karakterlánc szavait megcseréli.</li>
+<li>Készíts programot, amely egy karakterláncot megfordít, például az ABC stringből CBA-t alakít. Tipp: a részkarakterláncok kinyerésére szolgáló formulában esetén a léptetés (step) lehet negatív is!</li>
+<li>Készíts programot, amely egy két szóból álló, egyetlen szóközzel határolt névben az első szót nagybetűssé alakítja, például Gipsz Jakab esetén a kívánt eredmény GIPSZ Jakab.</li>
+<li>Készíts programot, amely kinyeri egy két tagú, szóközzel határolt névből a monogramot, például Gipsz Jakab esetén a kívánt eredmény GJ.</li>
+<li>Készíts programot, amely egy két szóból álló, egyetlen szóközzel határolt, kisbetűs nevet javít ki: nemecsek ernő -&gt; Nemecsek Ernő. Próbáld meg úgy is, hogy nem használod a függvényt, ami dedikáltan erre szolgál!</li>
+<li>Készíts programot, amely előbb eltávolítja egy adott karakterlánc elejéről és végéről a szóközöket, majd kiírja a kapott eredmény hosszát! A feladatot próbáld minél kevesebb kódsorból megvalósítani! Próbáld meg úgy is, hogy nem használod a függvényt, ami dedikáltan erre szolgál!</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_basic/variables_text/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

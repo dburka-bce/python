@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Help </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Help ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="help">Help</h1>
+
+<p>Ahogy egy fejlesztő egyre több modult kezd használni, egyre nehezebbé válik a lehetséges funkciók és azok pontos működésének az észben tartása. Egy jól megírt modul általában egyben jól dokumentált is, és a csomag a kapcsolódó dokumentációt is tartalmazza, így a telepítése után könnyen elérhető. A Python modulok kapcsán is több lehetőségünk van az egyes funkciókkal kapcsolatos segítségek és dokumentációk lekérdezésére.</p>
+<h2 id="help-1">help()</h2>
+<p>A <code>help()</code> függvény segítségével részletes leírást kaphatunk a kiválasztott funkció vagy modul kapcsán.</p>
+<pre><code class="lang-python">help(max)
+</code></pre>
+<pre><code>Help on built-in function max in module builtins:
+
+max(...)
+    max(iterable, *[, default=obj, key=func]) -&gt; value
+    max(arg1, arg2, *args, *[, key=func]) -&gt; value
+    
+    With a single iterable argument, return its biggest item. The
+    default keyword-only argument specifies an object to return if
+    the provided iterable is empty.
+    With two or more arguments, return the largest argument.
+</code></pre>
+<p>A függvény hasonlóan működik, mint a <code>print()</code>, tehát rögtön a kimenetre írja az eredményét. A fenti példában a <code>max()</code> függvénnyel kapcsolatos segítséget kértük le, de a függvény működik komplett modulokkal, osztályokkal és azok elemeivel is.</p>
+<blockquote>
+<p>Figyeld meg, hogy a segítség lekérésekor nem írtuk ki a <code>max</code> függvény neve után a zárójeleket!</p>
+</blockquote>
+<pre><code class="lang-python">import numpy as np
+help(np.arange)
+</code></pre>
+<pre><code>Help on built-in function arange in module numpy:
+
+arange(...)
+    arange([start,] stop[, step,], dtype=None, *, like=None)
+    
+    Return evenly spaced values within a given interval.
+    
+    Values are generated within the half-open interval ``[start, stop)``
+    (in other words, the interval including `start` but excluding `stop`).
+    For integer arguments the function is equivalent to the Python built-in
+    `range` function, but returns an ndarray rather than a list.
+    
+    When using a non-integer step, such as 0.1, the results will often not
+    be consistent.  It is better to use `numpy.linspace` for these cases.
+    
+    Parameters
+    ----------
+    start : integer or real, optional
+        Start of interval.  The interval includes this value.  The default
+        start value is 0.
+    stop : integer or real
+        End of interval.  The interval does not include this value, except
+        in some cases where `step` is not an integer and floating point
+        round-off affects the length of `out`.
+    step : integer or real, optional
+        Spacing between values.  For any output `out`, this is the distance
+        between two adjacent values, ``out[i+1] - out[i]``.  The default
+        step size is 1.  If `step` is specified as a position argument,
+        `start` must also be given.
+    dtype : dtype
+        The type of the output array.  If `dtype` is not given, infer the data
+        type from the other input arguments.
+    like : array_like
+        Reference object to allow the creation of arrays which are not
+        NumPy arrays. If an array-like passed in as ``like`` supports
+        the ``__array_function__`` protocol, the result will be defined
+        by it. In this case, it ensures the creation of an array object
+        compatible with that passed in via this argument.
+    
+        .. versionadded:: 1.20.0
+    
+    Returns
+    -------
+    arange : ndarray
+        Array of evenly spaced values.
+    
+        For floating point arguments, the length of the result is
+        ``ceil((stop - start)/step)``.  Because of floating point overflow,
+        this rule may result in the last element of `out` being greater
+        than `stop`.
+    
+    See Also
+    --------
+    numpy.linspace : Evenly spaced numbers with careful handling of endpoints.
+    numpy.ogrid: Arrays of evenly spaced numbers in N-dimensions.
+    numpy.mgrid: Grid-shaped arrays of evenly spaced numbers in N-dimensions.
+    
+    Examples
+    --------
+    &gt;&gt;&gt; np.arange(3)
+    array([0, 1, 2])
+    &gt;&gt;&gt; np.arange(3.0)
+    array([ 0.,  1.,  2.])
+    &gt;&gt;&gt; np.arange(3,7)
+    array([3, 4, 5, 6])
+    &gt;&gt;&gt; np.arange(3,7,2)
+    array([3, 5])
+</code></pre>
+<p>Sajnos nincs arra garancia, hogy ez a fajta súgó megfelelően legyen kitöltve minden modulban, de a széles körben használt funkciókhoz biztosan elérhető lesz. Sőt, gyakran még a felhasználással kapcsolatos példakódokat is tartalmaz.</p>
+<h2 id="__doc__">__doc__</h2>
+<p>A standard súgó mellett általában egy külön dokumentáció is elérhető az egyes elemekhez. Ennek a kitöltését sem kényszeríti ki a nyelv, de a gyakran használt elemekhez többnyire elérhető. A legtöbb esetben egy rövidebb, tömörebb leírást tartalmaz, mint a <code>help()</code> segítségével lekért súgó.</p>
+<p>Ezt a leírást az elemek <code>__doc__</code> tulajdonsága tartalmazza. Az értékét a <code>print()</code> utasítással érdemes megjeleníteni, mert pusztán az outputra írva elveszik a formázása.</p>
+<pre><code class="lang-python">print(max.__doc__)
+</code></pre>
+<pre><code>max(iterable, *[, default=obj, key=func]) -&gt; value
+max(arg1, arg2, *args, *[, key=func]) -&gt; value
+
+With a single iterable argument, return its biggest item. The
+default keyword-only argument specifies an object to return if
+the provided iterable is empty.
+With two or more arguments, return the largest argument.
+</code></pre>
+<p>A <code>max()</code> függvény dokumentációja jó példa arra, hogy egyszerű elemek esetén a súgó és a dokumentáció szinte teljesen megegyezik. De egy komplexebb modul esetén már lényeges eltérések lehetnek.</p>
+<p>A dokumentáció egyik előnye a súgóval szemben a másodlagos szintaxisának működése. A dokumentáció lekérdezhető még az elem után írt <code>?</code> karakterrel is. Ilyenkor nincs szükség külön <code>print</code> metódusra, mert egy külön ablakban nyílik meg a dokumentáció. Így könnyen áttekinthető egyszerre a dokumentáció és az aktuális kódunk is.</p>
+<pre><code class="lang-python">import numpy as np
+np?
+</code></pre>
+<blockquote>
+<p>A kérdőjel szintaxis nem minden Python verzióban érhető el, és vannak olyan fejlesztőkörnyezetek is, amik nem támogatják.</p>
+</blockquote>
+<h2 id="dir">dir()</h2>
+<p>A segítség és a dokumentáció lekérése hasznos funkció, de nem sokat érünk vele, ha nem ismerjük az elérhető funkciókat egy adott modulban. A <code>dir()</code> függvény segítségével lekérdezhető egy modul vagy egy osztály elérhető funkcióinak listája.</p>
+<pre><code class="lang-python">import math
+dir(math)
+</code></pre>
+<pre><code>['__doc__',
+ '__loader__',
+ '__name__',
+ '__package__',
+ '__spec__',
+ 'acos',
+ 'acosh',
+ 'asin',
+ 'asinh',
+ 'atan',
+ 'atan2',
+ 'atanh',
+ 'ceil',
+ 'comb',
+ 'copysign',
+ 'cos',
+ 'cosh',
+ 'degrees',
+ 'dist',
+ 'e',
+ 'erf',
+ 'erfc',
+ 'exp',
+ 'expm1',
+ 'fabs',
+ 'factorial',
+ 'floor',
+ 'fmod',
+ 'frexp',
+ 'fsum',
+ 'gamma',
+ 'gcd',
+ 'hypot',
+ 'inf',
+ 'isclose',
+ 'isfinite',
+ 'isinf',
+ 'isnan',
+ 'isqrt',
+ 'lcm',
+ 'ldexp',
+ 'lgamma',
+ 'log',
+ 'log10',
+ 'log1p',
+ 'log2',
+ 'modf',
+ 'nan',
+ 'nextafter',
+ 'perm',
+ 'pi',
+ 'pow',
+ 'prod',
+ 'radians',
+ 'remainder',
+ 'sin',
+ 'sinh',
+ 'sqrt',
+ 'tan',
+ 'tanh',
+ 'tau',
+ 'trunc',
+ 'ulp']
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/help/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

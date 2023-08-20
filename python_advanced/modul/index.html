@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Modulok </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Modulok ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="modulok">Modulok</h1>
+
+<p>Ahogy egyre hosszabbá válik a kód, előbb utóbb elkerülhetetlen a kód több fájlba történő szervezése. Az áttekinthetetlenül hosszú forrásfájlokat <strong>spagetti kód</strong>nak csúfolják a fejlesztők. Python környezetben ezt a célt szolgálják a modulok. A modulok egyszerű .py kiterjesztésű fájlok, azonosításuk fájlnév alapján történik. Az <code>import</code> kulcsszó után adhatók meg az importálandó modulok nevei -- a .py kiterjesztés nem kell beírni.</p>
+<p>A moduláris programozás egy nagy, nehézkes programozási feladatot különálló, kisebb, jobban kezelhető részfeladatokká vagy modulokra való bontásának folyamatát jelenti. Számos előnye van a modulok használatának az alkalmazásfejlesztés során:</p>
+<ul>
+<li><strong>Egyszerűség</strong>: Ahelyett, hogy a teljes problémára összpontosítana, egy modul jellemzően a probléma egy viszonylag kis részére összpontosít, így kisebb a hibalehetőség.</li>
+<li><strong>Karbantarthatóság</strong>: A modulokat általában úgy tervezték, hogy logikai határokat érvényesítsenek a különböző problématerületek között. Ha a modulok úgy íródnak, hogy minimálisra csökkentsék az egymásrautaltságot, csökken annak valószínűsége, hogy egyetlen modul módosításai hatással lesznek a program más részeire.</li>
+<li><strong>Láthatóság/scoping</strong>: A modulok általában külön névteret határoznak meg, amely segít elkerülni a névütközést.</li>
+<li><strong>Újrafelhasználhatóság</strong>: Az egyetlen modulban meghatározott funkcionalitást az alkalmazás más részei könnyen újra felhasználhatják (egy megfelelően meghatározott interfészen keresztül). Ez kiküszöböli a kód ismétlődésének szükségességét.</li>
+</ul>
+<p>A Pythonhoz több mint százezer, modulokat tartalmazó csomag érhető el, melyek a disztribúcióhoz tartozó parancssoros csomagkezelőn keresztül egyszerűen telepíthetők (pl.: pip, conda). A csomagkezelő azért nagyon fontos, mert a csomagok használhatnak más csomagokban lévő modulokat is, és ezeknek a függőségeknek a kézzel történő feloldása fáradságos és idegőrlő feladat lenne.</p>
+<h2 id="modul-importálása----az--import-kulcsszó">Modul importálása -- az  <code>import</code> kulcsszó</h2>
+<p>Az <code>import</code>utasítás segítségével tölthetünk be a programunkba külső kódrészleteket. Az utasítás használatának azonban számos változata van annak függvényében, hogy pontosan mire is van szükségünk.</p>
+<p>Egy vagy több modul importálása:</p>
+<pre><code>import &lt;osztály neve&gt;[, &lt;osztály neve&gt; ...]
+</code></pre>
+<p>Egy modulból egy objektum importálása:</p>
+<pre><code>from &lt;modul neve&gt; import &lt;név&gt;
+</code></pre>
+<p>Egy modul importálása más néven:</p>
+<pre><code>import &lt;modul neve&gt; as &lt;név&gt;
+</code></pre>
+<p>Egy objektum importálása egy modulból más néven:</p>
+<pre><code>from &lt;modul neve&gt; import &lt;név&gt; as &lt;név&gt;
+</code></pre>
+<p>Egy modul objektumainak listázása:</p>
+<pre><code>dir(modul)
+</code></pre>
+<h3 id="import-példák">Import példák</h3>
+<p>Egyszerűen importálhatunk egy modult az <code>import</code>utasítás segítségével,  a modul nevét is meg kell adni ponttal elválasztva ahhoz, hogy hozzáférjünk a benne található definíciókhoz:</p>
+<pre><code class="lang-python">import math
+print(&quot;A pi értéke&quot;, math.pi)
+</code></pre>
+<pre><code>A pi értéke 3,141592653589793
+</code></pre>
+<p>Importálhatunk egy modult az alábbiak szerint átnevezve:</p>
+<pre><code class="lang-python">import math as m
+print(&quot;A pi értéke&quot;, m.pi)
+</code></pre>
+<p>Innentől a <code>math.pi</code>érvénytelen, és az <code>m.pi</code>a helyes írásmód.</p>
+<p>Importálhatunk bizonyos neveket egy modulból anélkül, hogy a modult egészben importálnánk:</p>
+<pre><code class="lang-python">from math import pi
+print(&quot;A pi értéke&quot;, pi)
+</code></pre>
+<p>Itt csak az <code>pi</code>-t importáltuk a <code>math</code>modulból. Ilyen esetekben nem használjuk a <code>.</code> operátort.</p>
+<pre><code class="lang-python">from math import pi, e
+print(pi)
+print(e)
+</code></pre>
+<pre><code>3.141592653589793
+2.718281828459045
+</code></pre>
+<h3 id="az-összes-név-importálása">Az összes név importálása</h3>
+<p>Az összes nevet (és definíciót) is importálhatjuk egy modulból  a következő konstrukcióval:</p>
+<pre><code class="lang-python">from math import *
+print(&quot;A pi értéke&quot;, pi)
+</code></pre>
+<p>A fenti példában importáltuk az összes definíciót a <code>math</code> modulból. Ez magában foglalja az összes nevet, amely a hatókörünkben látható, kivéve azokat, amelyek aláhúzással kezdődnek (ezek a privát definíciók).</p>
+<p>Csillaggal  mindent importálni (<code>import * from ...</code>) nem jó programozási gyakorlat. Elképzelhető, hogy a másik modulban is használták ugyanazt a változónevet. Az automatikus kódkiegészítő pedig áttekinthetetlenül sok lehetőséget kínálhat fel.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/modul/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Logikai t&#237;pus </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Logikai t&#237;pus ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="logikai-típus">Logikai típus</h1>
+
+<p>A logikai adattípusú vagy más néven <code>bool</code> változó csak <code>True</code> (igaz) vagy <code>False</code> (hamis) értékeket vehet fel. (A Python csak a nagybetűvel kezdődő szintaxist fogadja el.)</p>
+<h2 id="aritmetikai-operátorok">Aritmetikai operátorok</h2>
+<p>A logikai típusú értékek általában valamilyen aritmetikai művelet -- vagy ezeket alkalmazó függvények visszatérési értéke -- kapcsán keletkeznek. Az aritmetikai operátorok írásmódját az alábbi táblázat tartalmazza:</p>
+<table>
+<thead>
+<tr>
+<th>jelentés</th>
+<th>jelölés</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Egyenlő</td>
+<td><code>a == b</code></td>
+</tr>
+<tr>
+<td>Nem egyenlő</td>
+<td><code>a != b</code></td>
+</tr>
+<tr>
+<td>Kevesebb, mint</td>
+<td><code>a &lt; b</code></td>
+</tr>
+<tr>
+<td>Kevesebb vagy egyenlő</td>
+<td><code>a &lt;= b</code></td>
+</tr>
+<tr>
+<td>Nagyobb, mint</td>
+<td><code>a &gt; b</code></td>
+</tr>
+<tr>
+<td>Nagyobb vagy egyenlő</td>
+<td><code>a &gt;= b</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ahol <code>a</code> és <code>b</code> két azonos típusú változó. Fontos megjegyezni, hogy nem csak a számok, de például a szövegek (ABC sorrend) vagy a dátumok között is értelmezhetők ezek a műveletek.</p>
+<p>Az egyenlőség ellenőrzése során azért van szükség a dupla (<code>==</code>) írásjelre, mert az egyenlőségjelnek más funkcionalitása van a kódban. A szimpla egyenlőség az értékadás jele, míg a dupla az összehasonlítás. Ezért, ha például egy <a href="/content/python_basic/if_statement">elágazásban</a> lefelejtjük a dupla jelölést, akkor az <code>a = b</code> eredménye az lesz, hogy <code>a</code>-t felülírjuk <code>b</code> értékével, és az elágazás <code>a</code> új értékét próbálja majd kiértékelni. Ha <code>b</code> nem egy logikai típus volt, akkor ez hibához vezet majd.</p>
+<p>A fenti operátorokat a legtöbb programnyelven ugyanilyen formában kell használni. Kivétel ez alól néhány esetben a &quot;Nem egyenlő&quot; jelölés, mely helyett egyes nyelvek a <code>&lt;&gt;</code> karaktereket használják (pl.: VBA).</p>
+<h2 id="logikai-operátorok">Logikai operátorok</h2>
+<p>A logikai operátorok egy vagy több logikai adatot értékelnek ki, és egy logikai értéket adnak eredményül.</p>
+<table>
+<thead>
+<tr>
+<th>operátor</th>
+<th>jelentés</th>
+<th>példa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>and</code></td>
+<td>Igaz, ha mindkét állítás igaz</td>
+<td><code>x &lt; 5 and x &lt; 10</code></td>
+</tr>
+<tr>
+<td><code>or</code></td>
+<td>Igaz, ha legalább az egyik állítás igaz</td>
+<td><code>x &gt; 50 or x &lt; 10</code></td>
+</tr>
+<tr>
+<td><code>not</code></td>
+<td>Az eredmény megfordítása: hamis eredményt ad, ha az eredmény igaz és fordítva</td>
+<td><code>not(x &gt; 50 and x &lt; 10)</code></td>
+</tr>
+</tbody>
+</table>
+<p>A feltételek értékelésénél a Python erőforrás takarékos megközelítést használ: ha a <strong>VAGY</strong> kapcsolatban álló feltétel részek közül az egyik teljesül, biztosak lehetünk abban, hogy a teljes feltétel teljesül, így a kiértékelést nem kell folytatni.</p>
+<p>Hasonlóképpen: ha az egymással <strong>ÉS</strong> kapcsolatban lévő feltétel részek közül akár egy nem teljesül, biztosak lehetünk abban, hogy a teljes kifejezés értéke hamis.</p>
+<p>Ha a Python már biztos lehet a végeredményben, nem folytatja a feltétel részek kiértékelését. Ennek akkor van jelentősége, amikor a feltételben függvény hívások is szerepelnek. Ha nem szükséges akkor ezek nem kerülnek hívásra.</p>
+<pre><code class="lang-python">a, b = 10, 15
+
+x = a &gt; b
+y = a &gt; 0 and a &lt; 100 # 0 &lt; a &lt; 100
+z = x or y
+
+print(x)
+print(y)
+print(z)
+</code></pre>
+<pre><code>False
+True
+True
+</code></pre>
+<h1 id="ellenőrző-kérdések-feladatok">Ellenőrző kérdések, feladatok:</h1>
+<ol>
+<li>Kérj be két értéket a felhasználótól, majd ellenőrizd, hogy egyenlőek-e!</li>
+<li>Kérj be három karakterláncot a felhasználótól, majd írd ki a kimenetre, hogy mind azonos-e, vagy bármelyik kettő azonos-e. A vizsgálatot összetett logikai kifejezésekkel végezd.</li>
+<li>Mi lesz az alábbi kifejezések értéke?
+not(True and True)
+True or False
+not(False and True)
+False and False</li>
+<li>Kérj be a felhasználótól egy évszámot, majd írd ki, hosgy szökőév-e vagy sem. Ellenőrizd, hogy a megadott érték valóban szám legyen, és négy karakter hosszú. A kiértékelést összetett logikai kifejezéssel végezd.</li>
+<li>Valósítsd meg a „kizáró vagy” műveletet az alábbi példán keresztül: kérd be két lépcsőházi alternatív villanykapcsoló állását (csak két érték fogadható el, szabadon választhatsz, hogy 0/1, igen/nem, stb, bármely más értékre kérd be újra az értéket), majd írd ki, hogy ég-e a villany! Próbáld meg minél tömörebben megfogalmazni a kifejezést!</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_basic/variables_bool/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

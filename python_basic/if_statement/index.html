@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Felt&#233;teles el&#225;gaz&#225;s </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Felt&#233;teles el&#225;gaz&#225;s ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="feltételes-elágazás">Feltételes elágazás</h1>
+
+<p>A programozás során gyakran felmerül, hogy meg kell vizsgálni bizonyos feltételeket és ezen feltételek függvényében kell az utasításokat végrehajtani. A programnyelvek számára ezeket a feltételeket eldöntendő állítások formájában kell megfogalmazni. Ezen állítások eredménye a <a href="/python_basic/variables_bool/">logikai adattípus (bool)</a>, melynek értéke Igaz (<code>True</code>) vagy Hamis (<code>False</code>) lehet.</p>
+<h2 id="if">if</h2>
+<p>A feltételek függvényében történő elágaztatás a programkódok egyik alapvető vezérlési szerkezete. Az elágazásokat szinte minden programnyelv az <code>if</code> kulcsszó után írt állítás segítségével valósítja meg. Az ezt követő kódrészlet csak akkor fut le, ha az állítás igaz volt. A nyelvek között eltérés elsősorban a szintaktikában és az elágazás hatókörének -- vagyis az érintett kódsorok számának -- a meghatározásában van. A legtöbb nyelv (pl.: C, C#, JavaScript, Java) kapcsos zárójelekkel jelöli a hatókört, a Python azonban a behúzásra támaszkodik (szóköz vagy tab a sor elején, bár a legtöbb keretrendszer automatikusan 4 szóközt tesz be, még a tab lenyomásra is, figyelni kell rá, hogy a kettőt nem szabad keverni).  Ez kétségkívül tömörebb kódhoz vezet, de figyelni kell a kód szerkezetére.</p>
+<pre><code class="lang-python">a = 7
+b = 13
+if b &gt; a:
+    print(&quot;b nagyobb, mint a&quot;)
+</code></pre>
+<pre><code>b nagyobb, mint a
+</code></pre>
+<p>Rövid írásmód: ha csak egy végrehajtandó utasítás van, akkor ugyanabba a sorba tehetjük, mint az <code>if</code> utasítást.</p>
+<pre><code class="lang-python">a, b = 7, 13  #itt is lehet rövidíteni
+if b &gt; a: print(&quot;b nagyobb, mint a&quot;)
+</code></pre>
+<pre><code>b nagyobb, mint a
+</code></pre>
+<p>Az <code>if</code> utáni részre egy olyan kódrészlet kell kerüljön, aminek az eredménye egy logikai változó. Egy reláció, több, <a href="/python_basic/variables_bool/">logikai operátorokkal</a> összekapcsolt állítás, de akár egy komplex kódrészletet tartalmazó függvény hívása is kerülhet erre a részre. A lényeg, hogy az eredmény igaz vagy hamis legyen. A műveleti sorrend befolyásolására zárójeleket használhatunk.</p>
+<h2 id="else">else</h2>
+<p>Abban az esetben, ha a hamis ágon is szeretnénk kódot futtatni, az <code>else</code> utasítást kell használni. A hatókör meghatározása ebben az esetben is behúzással történik.</p>
+<pre><code class="lang-python">a, b = 17, 13
+if b &gt; a:
+    print(&quot;b nagyobb, mint a&quot;)
+else:
+    print(&quot;b kisebb vagy egyenlő, mint a&quot;)
+</code></pre>
+<pre><code>b kisebb vagy egyenlő, mint a
+</code></pre>
+<h2 id="elif">elif</h2>
+<p>A nem bináris jellegű feltételeket a megfelelő ág(ak)ba írt újabb elágazás(ok) segítségével kezelhetjük.</p>
+<pre><code class="lang-python">a, b = 13, 13
+if b &gt; a:
+    print(&quot;b nagyobb, mint a&quot;)
+else:
+    if b == a:
+        print(&quot;b egyenlő a&quot;)
+    else:
+        print(&quot;b kisebb, mint a&quot;)
+</code></pre>
+<pre><code>b egyenlő a
+</code></pre>
+<p>Könnyen belátható, hogy bonyolultabb feltételrendszer esetén hamar nagyra nőnének a behúzások. Ezen tud részben segíteni az <code>elif</code> szintaxis használata. A fenti példa egyszerűbben írt változata:</p>
+<pre><code class="lang-python">a, b = 13, 13
+if b &gt; a:
+    print(&quot;b nagyobb, mint a&quot;)
+elif b == a:
+    print(&quot;b egyenlő a&quot;)
+else:
+    print(&quot;b kisebb, mint a&quot;)
+</code></pre>
+<pre><code>b egyenlő a
+</code></pre>
+<h2 id="pass">pass</h2>
+<p>A programkódot nem úgy írjuk, mint egy regényt, hanem folyamatosan építjük. Ezért a fejlesztés során gyakran előfordul, hogy az elágazásnak nem egyszerre akarjuk kitölteni minden ágát (pl.: ha menet közben akarunk tesztelni), de már építkezéskor tudjuk, hogy műveleteket szeretnénk majd végrehajtani az ágon, így a vezérlési szerkezetet megvalósítjuk. Azonban a nyelvnek elvárása, hogy legalább egy utasítás legyen az adott blokkban.  Ilyenkor ideiglenesen a <code>pass</code> kulcsszóval kerülhető el a programhiba.</p>
+<pre><code class="lang-python">a, b = 17, 13
+if b &gt; a:
+    pass
+else:
+    print(&quot;b kisebb vagy egyenlő, mint a&quot;)
+</code></pre>
+<pre><code>b kisebb vagy egyenlő, mint a
+</code></pre>
+<h2 id="bemenet-ellenőrzése">Bemenet ellenőrzése</h2>
+<p>Az alábbi példában a bemenet értéke megfelelően van konvertálva, így meg tudjuk jeleníteni annak négyzetét.</p>
+<pre><code class="lang-python">x = input(&quot;Mondj egy számot és megmondom a négyzetét: &quot;)
+x = int(x)
+print(x ** 2)
+</code></pre>
+<pre><code>Mondj egy számot és megmondom a négyzetét: [10]
+100
+</code></pre>
+<p>Arra viszont egyáltalán nem készültünk a kódban, hogy a felhasználó esetleg hibásan tölti ki a beviteli mezőt.</p>
+<pre><code>Mondj egy számot és megmondom a négyzetét: [tíz]
+
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+&lt;ipython-input-10-46287843a758&gt; in &lt;module&gt;
+ 1 x = input(&quot;Mondj egy számot és megmondom a négyzetét: &quot;)
+----&gt; 2  x = int(x)
+ 3 print(x ** 2)
+
+ValueError: invalid literal for int() with base 10: 'tíz'
+</code></pre>
+<p>Az <code>isnumeric</code> függvény képes eldönteni egy szöveges változóról, hogy numerikus értéket tartalmaz-e. Egy logikai értéket ad vissza, így egy egyszerű elágazással orvosolhatjuk a problémát.</p>
+<pre><code class="lang-python">x = input(&quot;Mondj egy számot és megmondom a négyzetét: &quot;)
+if x.isnumeric():
+    x = int(x)
+    print(x ** 2)
+else:
+    print(&quot;Nem megfelelő bemenet!\nCsak numerikus érték adható meg.&quot;)
+</code></pre>
+<pre><code>Mondj egy számot és megmondom a négyzetét: [tíz]
+Nem megfelelő bemenet!
+Csak numerikus érték adható meg.
+</code></pre>
+<h1 id="ellenőrző-kérdések-feladatok">Ellenőrző kérdések, feladatok:</h1>
+<ol>
+<li>Készítsünk programot, amely bekér egy nullától különböző egész számot, és kiírja az előjelét (Pozitív vagy Negatív)</li>
+<li>Készítsünk programot, amely bekér két különböző valós számot, és kiírja közülük a nagyobbat!</li>
+<li>Készítsünk programot, amely bekér 3 egész számot, és kiírja közülük a legnagyobbat! A számok nem feltétlenül különbözőek.</li>
+<li>Kérd be a felhasználótól a nevét és az életkorát. Ha az életkora 20 alatti, üdvözöld a keresztnevén tegeződve, ha 20 feletti, a teljes nevét magázódva!</li>
+<li>Kérd be a felhasználótól egy kör sugarát és írd ki a területét. Ha a megadott érték nem szám, írd ki, hogy helytelen értéket adott meg!</li>
+<li>Kérj be a felhasználótól egy számot. Ha számmá konvertálható a megadott input, írd ki, hogy nulla, páros-e vagy páratlan! Ha nem, írd ki hogy helytelen értéket adott meg!</li>
+<li>Kérj be a felhasználótól egy hőmérsékletet leíró számértéket, majd hogy az Celsius vagy Fahrenheit (C/F) skálán van-e megadva. Írd ki az ellentétes skála szerinti értéket. Nem megfelelő inputra (nem számérték, vagy nem C vagy F) írd ki, hogy nem megfelelő a bemenet!</li>
+<li>Kérj be a felhasználótól egy karakterláncot, majd ellenőrizd, hogy csupa kisbetűvel van-e írva. Írd ki a vizsgálat eredményét a kimenetre</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_basic/if_statement/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

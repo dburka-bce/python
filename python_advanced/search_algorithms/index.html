@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Keres&#337; algoritmusok </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Keres&#337; algoritmusok ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="kereső-algoritmusok">Kereső algoritmusok</h1>
+
+<p>Az adatok feldolgozásának első része a rendelkezésre álló értékek közül a számunkra relevánsak lekérdezése. A legtöbb művelethez szükségünk van újabb adatokra, és ezek ritkán érkeznek közvetlenül a felhasználótól, általában összetett adatbázisokban találhatók. A keresés tehát nem feltétlenül egyszerű feladat, viszont rendkívül gyakran van rá szükség, ezért különösen fontos a kereső funkciók hatékony működése. Ezért most áttekintjük a két legalapvetőbb kereső algoritmus működését.</p>
+<h2 id="lineáris-keresés">Lineáris keresés</h2>
+<p>A lineáris keresés működését már a nevéből is lehet sejteni. Egyszerűen végigmegyünk a listánkon, és minden érték esetén megvizsgáljuk, hogy egyezik-e a keresett értékünkkel. Sajnos, ha nincs semmilyen információnk a lista tartalmáról, akkor nem igazán tudunk ennél hatékonyabbak lenni.</p>
+<pre><code class="lang-python">def lin_ker(lista, keresett_ertek):
+    for i in range(0, len(lista)):
+        if(lista[i] == keresett_ertek):
+            return (i, True)
+    return (None, False)
+        
+x = [5, 3, 6, 17, 2, 8]
+y = int(input(&quot;Keresett érték: &quot;))
+
+eredmeny = lin_ker(x, y)
+
+if(eredmeny[1]):
+    print(f&quot;A keresett érték indexe: {eredmeny[0]}&quot;)
+else:
+    print(f&quot;A keresett érték nem található&quot;)
+</code></pre>
+<pre><code>Keresett érték: 6
+A keresett érték indexe: 2
+</code></pre>
+<p>A példában függvényként valósítottuk meg a kereső funkciót, de a kimenetét különleges módon kezeltük. A keresés eredménye kettős lehet: vagy megtaláljuk az értéket, és visszaadjuk az indexét, vagy nem találtuk meg. Ilyenkor a találat hiányát a <code>None</code> érték visszaadásával szokás jelezni, de ez a megoldás nem teljes. Ugyanis előfordulhat, hogy a listában szerepel egy <code>None</code> érték, és akkor nem tudunk rá keresni. Ezért illik egy második értéket is visszaadni (<a href="/python_basic/tuple/">Tuple</a> segítségével), amely valamilyen módon jelzi, hogy volt-e találat. A példában erre egy logikai értéket használtunk.</p>
+<p>A gép számára az alapműveletek közül az összehasonlítások (feltételek) eredményének meghatározása a leginkább erőforrás igényes, ezért ezek minimalizálása a cél. Tehát mindenképp szükség van arra, hogy amint megtaláltuk a keresett értéket, mindenképp hagyjuk abba a felesleges összehasonlításokat. Ezt egy megfelelő <code>return</code> parancs alkalmazásával érhetjük el (mely egy függvényben található ciklus törzsében a <code>break</code>-hez hasonló szerepet tölt be).</p>
+<h2 id="logaritmikus-keresés">Logaritmikus keresés</h2>
+<p>Az adatbázisok tartalma azonban általában rendezett. (Nem maguk az adatsorok, hanem a hozzájuk tartozó indextáblák értékei vannak sorban.) Amennyiben tudjuk egy lista elemeiről, hogy azok nem csökkenő sorban követik egymást, lehetőségünk van a lineárisnál hatékonyabb megoldás alkalmazására.</p>
+<p>A logaritmikus- vagy bináris keresés lényege, hogy egy rendezett listában a keresett érték lehetséges pozícióinak számát minden ciklus iterációban elfelezzük. Minden lépésben a fennmaradt lista középső elemét vizsgáljuk meg. Ha az érték egyezik, akkor találatot értünk el, ha nagyobb, mint a keresett érték, akkor a továbbiakban elég csak a lista első felére fókuszálni, ha pedig nagyobb, akkor a másodikra. Ezt ismételve a lineáris megközelítésnél jelentősen gyorsabban találhatjuk meg a keresett értéket.</p>
+<pre><code class="lang-python">def log_ker(lista, keresett_ertek):
+    start = 0
+    end = len(lista) - 1    
+    while start &lt;= end:
+        m = int((start + end) / 2) # középső index
+        if(lista[m] == keresett_ertek):
+            return (m, True)
+        elif(lista[m] &lt; keresett_ertek):
+            start = m + 1
+        else:
+            end = m - 1
+    return (None, False)
+        
+x = [2, 3, 5, 6, 8, 17]
+y = int(input(&quot;Keresett érték: &quot;))
+
+eredmeny = log_ker(x, y)
+
+if(eredmeny[1]):
+    print(f&quot;A keresett érték indexe: {eredmeny[0]}&quot;)
+else:
+    print(f&quot;A keresett érték nem található&quot;)    
+</code></pre>
+<pre><code>Keresett érték: 6
+A keresett érték indexe: 3
+</code></pre>
+<h2 id="feladatok">Feladatok</h2>
+<ol>
+<li>Valósíts meg egy maximum kereső függvényt, ami változó számú paramétert, és listát is elfogad bemenetként. A bemenet feldolgozásakor figyelj arra, hogy ne rontsa el a feldolgozást néhány hibás adat. A programnak csak számokra kell működnie.</li>
+<li>Az előző feladat módosított változata: A szimpla és listában megadott bemenetek keverékét és egymásba ágyazott listákat is tudjon kezelni a függvény! (Ez a tárgy szintjéhez képest nagyon nehéz feladat. Azoknak szól, akik szeretik a kihívást.)</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/search_algorithms/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

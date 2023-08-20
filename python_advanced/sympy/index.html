@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>SymPy </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="SymPy ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="sympy">SymPy</h1>
+
+<p>A <a href="https://sympy.org">SymPy</a> egy ingyenes Python modul szimbolikus számítások elvégzésére.</p>
+<p>Telepítése: <em>pip install sympy</em></p>
+<pre><code class="lang-python">import sympy
+</code></pre>
+<p>A SymPy a hagyományos numerikus megközelítés helyett az eredeti változókkal számolja végig az utasításokat, és a megfelelő egyszerűsített formát adja eredményül.</p>
+<pre><code class="lang-python">import sympy
+
+sympy.sqrt(8)
+</code></pre>
+<p>$2\sqrt2$</p>
+<p>A szimbólumok segítségével definiálhatunk kifejezéseket. A változóba mentett kifejezések tovább bővíthetők újabb értékekkel vagy más kifejezésekkel is.</p>
+<pre><code class="lang-python">from sympy import symbols
+
+x, y = symbols('x y')
+expr = x + 2 * y
+
+print(expr)
+print(expr + 1)
+print(expr - x)
+print(x * expr)
+</code></pre>
+<pre><code>x + 2*y
+x + 2*y + 1
+2*y
+x*(x + 2*y)
+</code></pre>
+<p>A kifejezések az <code>expand</code> függvény segítségével hozhatók a legegyszerűbb alakra.</p>
+<pre><code class="lang-python">from sympy import symbols, expand
+
+x, y = symbols('x y')
+expr = x * (x + 2 * y)
+
+expand(expr)
+</code></pre>
+<p>$x^2 + 2xy$</p>
+<blockquote>
+<p>Emlékeztető: a dupla csillag a hatványozás jele.</p>
+</blockquote>
+<p>Ezzel szemben a <code>factor</code> függvény a közös elemeket emeli ki.</p>
+<pre><code class="lang-python">from sympy import symbols, factor
+
+x, y = symbols('x y')
+expr = x ** 2 + 2 * x * y
+
+factor(expr)
+</code></pre>
+<p>$x(x+2y)$</p>
+<p>A <code>diff</code> a megadott kifejezés deriváltját, az <code>integrate</code> pedig az integrálját adja eredményül. A deriválás esetén opcionális annak megadása, hogy melyik szimbólum mentén végezzük a műveletet, az integrálás esetén viszont kötelező. Az integrálás esetén a szimbólum megadása mellett megadható még egy intervallum is. Ilyenkor az eredmény az eredeti függvény adott intervalluma alá eső terület (ami az integrálba történő megfelelő behelyettesítéssel áll elő).</p>
+<pre><code class="lang-python">from sympy import *
+
+x, y = symbols('x y')
+
+display(diff(sin(x)))
+display(diff(sin(x)*exp(x), x))
+display(integrate(exp(x)*sin(x) + exp(x)*cos(x), x))
+display(integrate(sin(x**2), (x, -oo, oo)))
+</code></pre>
+<p>$cos(x)$
+$e^xsin(x) + e^xcos(x)$
+$e^xsin(x)$
+$\dfrac{\sqrt{2}\sqrt{\pi}}{2}$</p>
+<blockquote>
+<p>A <code>display</code> parancs hasonló a <code>print</code>-hez, de nem feltétlenül konvertál szöveggé, így jupyter-ben megmarad kifejezések formázása.
+A &quot;oo&quot; jelölés értelemszerűen a végtelent jelöli</p>
+</blockquote>
+<p>Hasonlóan működik a határérték számítása is.
+$\lim_{x\to0} \dfrac{sin(x)}{x}$
+$\lim_{x\to\infty} \dfrac{sin(x)}{x}$</p>
+<p>A fenti határértékek meghatározása az alábbi kóddal történik:</p>
+<pre><code class="lang-python">from sympy import *
+
+x = symbols('x')
+
+print(limit(sin(x)/x, x, 0))
+print(limit(sin(x)/x, x, oo))
+</code></pre>
+<pre><code>1
+0
+</code></pre>
+<p>A <code>solve</code> két kifejezést vár paraméterként, és a kettő egyenlősége esetén próbálja megtalálni a szimbólumok lehetséges értékeit.</p>
+<pre><code class="lang-python">from sympy import *
+
+x = symbols('x')
+
+print(solve(x**2-2, x))
+</code></pre>
+<pre><code>[-sqrt(2), sqrt(2)]
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/sympy/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

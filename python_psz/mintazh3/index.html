@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>3. Minta ZH </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="3. Minta ZH ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="3-minta-zh">3. Minta ZH</h1>
+
+<p>A feladat egy összetett ábra generálása a megadott fájlban található IMDB adatsorokból. Egy három alábrából álló ábrát kell összerakni, melynek minden eleméhez más-más módon kell felgyűjteni az adatokat.</p>
+<p>A feladatban a legtöbb több részből álló adatszűrési feladat egy sorban is megoldható, de tökéletesen megfelel, ha több sorban, segédváltozókkal oldod meg (akár az eredeti változót többször felülírva).</p>
+<p>Ez a ZH sor hosszabb, mint a tényleges számonkérés során várható!</p>
+<ol>
+<li><p>Alapadatok</p>
+<ol>
+<li>Töltsd le az &quot;imdb.csv&quot; állományt és helyezd el a kód fájlod mellé, majd olvasd be a tartalmát egy <code>DataFrame</code>-be a Pandas modul segítségével. A betöltés során gondoskodj róla, hogy az indexek a cím (Title) oszlopból jöjjenek.</li>
+<li>Mentsd el egy <strong>directors</strong> nevű változóba a rendezők alábbiak szerint szűrt listáját.
+<ol>
+<li>Rendezd az adattáblát a rendezők neve (&quot;Director&quot;) szerint.</li>
+<li>Kérd le csak a rendezők oszlopát.</li>
+<li>Minden rendező csak egyszer szerepeljen a listában.</li>
+<li>Vedd a lista minden 140. elemét.
+(Az eredmény 5 rendező neve kell legyen egy listában.)</li>
+</ol>
+</li>
+<li>Hozz létre egy üres ábrát 15x15 inch méretben.</li>
+</ol>
+</li>
+<li><p>Rendezők filmjei</p>
+<ol>
+<li>Mentsd el egy <strong>ratings</strong> nevű változóba az adattábla alábbiak szerint szűrt sorait.
+<ol>
+<li>Határozd meg azokat a sorokat, amelyeknek a rendezője szerepel a <em>directors</em> listában.</li>
+<li>Kérd le a meghatározott indexű sorokat az eredeti adattáblából.</li>
+</ol>
+</li>
+<li>Hozd létre egy 2x2-es elrendezésű ábra első elemét, melyre majd egy oszlopdiagram lesz megjelenítve.</li>
+<li>A <em>ratings</em> felhasználásával állítsd össze az X tengely feliratait az alábbiak szerint.
+<ol>
+<li>A felirat eleje a film címe (&quot;Title&quot;).</li>
+<li>A cím után egy szóközzel következik az év (&quot;Year&quot;). Az összefűzéshez az oszlop lekérdezése után a <code>.map(str)</code> függvényt alkalmazva az egészekből álló adatsor karakterláncokból állóvá konvertálható.</li>
+<li>Az évet egy sortörés követi, majd a rendező neve (&quot;Director&quot;).</li>
+</ol>
+</li>
+<li>Az Y tengely az adott sorok Metascore értékelése (&quot;Metascore&quot;) legyen.</li>
+<li>Jelenítsd meg az ábrát horizontális oszlopdiagramként (<code>barh</code>).</li>
+</ol>
+</li>
+<li><p>Filmek eloszlása</p>
+<ol>
+<li>Hozz létre egy üres listát <strong>movies</strong> néven.</li>
+<li>Menj végig egy ciklussal a <em>directors</em> lista sorain.</li>
+<li>A ciklus minden iterációjára végezd el a következőket.
+<ol>
+<li>Határozd meg az eredeti tábla azon sorait, melyben a rendező (&quot;Director&quot;) oszlop értéke egyezik az éppen a ciklusváltozóban szereplő rendezővel.</li>
+<li>Számold meg az így kapott sorokat.</li>
+<li>A kapott számot add a <em>movies</em> listához.</li>
+</ol>
+</li>
+<li>A ciklus után a <em>movies</em> lista felhasználásával hozz létre egy Numpy tömböt, amivel írd felül a <em>movies</em> változó értékét.</li>
+<li>Hozz létre egy <strong>explode</strong> nevű, egy a <em>directors</em> listával egyező számú nullákból álló Numpy tömböt.</li>
+<li>Vizsgáld meg, hogy a <em>movies</em> tömb melyik elemei egyeznek a <em>movies</em> tömb maximális értékével, és írd át az <em>explode</em> ezen elemeknek megfelelő értékeit 0.1-re. (A <em>movies</em> és az <em>expand</em> egyforma hosszú. Ha a <em>movies</em> 1. és 3. eleme egyezik a <em>movies</em> maximumával, akkor az <em>expand</em> 1. és 3. elemének az értékét kell felülírni.)</li>
+<li>Hozd létre a 2x2-es ábra második alábráját, melyen jelenítsd meg a <em>movies</em> tömb értékeit, és használd a <em>directors</em>-t címkéknek. Továbbá emeld ki a legnagyobb érték(ek)et az <em>explode</em> tömb segítségével.</li>
+</ol>
+</li>
+<li><p>Éves Metascore-ok alakulása</p>
+<ol>
+<li>Mentsd le egy <strong>years</strong> nevű változóba az eredeti adattábla évek (&quot;Year&quot;) ÉS Metascore (&quot;Metascore&quot;) alapján rendezett változatát.</li>
+<li>Írd felül a <em>years</em> változó értékét úgy, hogy az eredeti adattartalmából csak azok a sorok kerüljenek bele, amelyek esetén a Metascore értéke nem üres (null). (A tagadáshoz a <code>~</code> karaktert kell használni a feltétel előtt.)</li>
+<li>Mentsd le egy <strong>best_yearly</strong> nevű változóba a <em>years</em> tartalmát úgy, hogy kiszűröd az évek (&quot;Years&quot;) szerinti duplikátumokat és mindig az ELSŐ elemeket tartod meg.</li>
+<li>Mentsd le egy <strong>worst_yearly</strong> nevű változóba a <em>years</em> tartalmát úgy, hogy kiszűröd az évek (&quot;Years&quot;) szerinti duplikátumokat és mindig az UTOLSÓ elemeket tartod meg.</li>
+<li>Hozd létre a 2x2-es elrendezés alsó sorát kitöltő alábrát.</li>
+<li>Az ábrára rajzold ki a <em>best_yearly</em> és a <em>worst_yearly</em> adathalmazok Metascore értékeit vonaldiagramként. Az X tengely mindkét esetben a különböző évek rendezet listája legyen. (Ezt érdemes a <em>years</em>-ből meghatározni, mert az már eleve rendezve van.)</li>
+<li>A <code>show</code> függvény használatával jelenítsd meg az elkészült ábrát. (Lásd a képet az ellenőrzéshez.)
+<img src="megoldas.png" alt="megoldas.png"></li>
+</ol>
+</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_psz/mintazh3/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

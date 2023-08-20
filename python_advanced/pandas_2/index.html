@@ -1,0 +1,717 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Pandas II. </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Pandas II. ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="pandas-ii">Pandas II.</h1>
+
+<h2 id="adattipus-specifikus-függvények">Adattipus specifikus függvények</h2>
+<p>A <code>dtypes</code> tulajdonság megmutatja, hogy melyik oszlopban milyen adattípus található. Fontos adalék, hogy amikor beolvassuk az adatokat, akkor a Pandas az első néhány sor alapján eldönti, hogy milyen adattípus van az oszlopban (egy oszlop egy típus). Ez sokszor vezethet hibákhoz a beolvasásnál, vagy pl. előfordul, hogy számok szövegként vannak tárolva.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+display(df.head())
+display(df.dtypes)
+</code></pre>
+<p><img src="index.png" alt="index.png">
+Az általános függvény az adattípus megváltoztatására az <code>astype()</code> függvény.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df['Year'].astype('int')
+</code></pre>
+<pre><code>0         1992
+1         2012
+2         1920
+3         1900
+4         1988
+          ... 
+271111    1976
+271112    2014
+271113    2014
+271114    1998
+271115    2002
+Name: Year, Length: 271116, dtype: int32
+</code></pre>
+<h3 id="dátum-típus">Dátum típus</h3>
+<p>A dátum adatípus speciális kezelést igényel, a lentebbi függvény akkor műdödne jól, ha ÉÉÉÉ-HH-NN ÓÓ:PP:MM formátumban lenne megadva az adat.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df['Year'].astype('datetime64[s]')
+</code></pre>
+<pre><code>0        1970-01-01 00:33:12
+1        1970-01-01 00:33:32
+2        1970-01-01 00:32:00
+3        1970-01-01 00:31:40
+4        1970-01-01 00:33:08
+                 ...        
+271111   1970-01-01 00:32:56
+271112   1970-01-01 00:33:34
+271113   1970-01-01 00:33:34
+271114   1970-01-01 00:33:18
+271115   1970-01-01 00:33:22
+Name: Year, Length: 271116, dtype: datetime64[ns]
+</code></pre>
+<p>Az eredmény valóban dátum típusú, de a függvény megfelelő konverzió nélkül nem ismerte fel, hogy az adott szám az évet jelölte, ezért a legkisebb egységgel, a századmásodperccel számolt. A Pandas saját konvertálófüggvénye a <code>to_datetime()</code>, melyben paraméterként meg tudjuk adni a formátumot is.
+A dárumformátumban megadott adatokból pedig a <code>dt</code> utótaggal kinyerhető külön a dátum és az idő rész is, valamint olyan adatok, mint a hét sorszáma (<code>dt.isocalendar().week</code>) vagy az, hogy az adott év szökőév-e (<code>dt.is_leap_year</code>).</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df['Year'] = pd.to_datetime(df['Year'], format='%Y')
+
+display(df['Year'])
+display(df['Year'].dt.date)
+display(df['Year'].dt.time)
+display(df['Year'].dt.isocalendar().week)
+display(df['Year'].dt.is_leap_year)
+</code></pre>
+<pre><code>0        1992-01-01
+1        2012-01-01
+2        1920-01-01
+3        1900-01-01
+4        1988-01-01
+            ...    
+271111   1976-01-01
+271112   2014-01-01
+271113   2014-01-01
+271114   1998-01-01
+271115   2002-01-01
+Name: Year, Length: 271116, dtype: datetime64[ns]
+
+0         1992-01-01
+1         2012-01-01
+2         1920-01-01
+3         1900-01-01
+4         1988-01-01
+             ...    
+271111    1976-01-01
+271112    2014-01-01
+271113    2014-01-01
+271114    1998-01-01
+271115    2002-01-01
+Name: Year, Length: 271116, dtype: object
+
+0         00:00:00
+1         00:00:00
+2         00:00:00
+3         00:00:00
+4         00:00:00
+            ...   
+271111    00:00:00
+271112    00:00:00
+271113    00:00:00
+271114    00:00:00
+271115    00:00:00
+Name: Year, Length: 271116, dtype: object
+
+0          1
+1         52
+2          1
+3          1
+4         53
+          ..
+271111     1
+271112     1
+271113     1
+271114     1
+271115     1
+Name: week, Length: 271116, dtype: UInt32
+
+0          True
+1          True
+2          True
+3         False
+4          True
+          ...  
+271111     True
+271112    False
+271113    False
+271114    False
+271115    False
+Name: Year, Length: 271116, dtype: bool
+</code></pre>
+<h3 id="szöveges-típus">Szöveges típus</h3>
+<p>A szöveges típus utótagja az <code>str</code>, amelyre meghívhatunk rengeteg további függvényt. A teljesség igénye nélkül néhány példa:</p>
+<ul>
+<li><code>lower()</code> / <code>upper()</code> - a szöveg kis és nagybetűs változatai</li>
+<li><code>zfill()</code> - 0-kal egészíti ki a szöveget. Ez akkor jöhet jól ha pl. unique azonosítót akarunk készíteni</li>
+<li><code>startswith()</code> - segítségével rákereshetünk bizonyos kezdettel rendelkező szövegekre (az eredmény a megfelelő indexek halmaza)</li>
+<li><code>contains()</code> - segítségével rákereshetünk egy szövegrészletet tartalmazó szövegekre (az eredmény a megfelelő indexek halmaza)</li>
+</ul>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+print('LOWER')
+display(df['Event'].str.lower())
+print('ZFILL')
+display(df['Event'].str.zfill(width=30))
+print('STARTSWITH')
+display(df.loc[df['Event'].str.startswith('Basket')])
+print('CONTAINS')
+print(len(df.loc[df['Event'].str.contains('Men')])) # Csak a darabszámot írjuk ki
+</code></pre>
+<p>A <code>contains</code> függvény képes kezelni úgynevezett reguláris kifejezéseket. A reguláris kifejezés (rövidítve: regexp vagy regex az angol regular expression után) egy olyan, bizonyos szintaktikai szabályok szerint leírt string, amivel meghatározható stringek egy halmaza.</p>
+<p>Az ilyen kifejezés valamilyen minta szerinti szöveg keresésére, cseréjére, illetve a szöveges adatok ellenőrzésére használható.</p>
+<p>Például egy érvényes (nem feltétlenül még élő személyt jelölő) személyi szám biztosan a következő elemekből áll:</p>
+<ol>
+<li>egy 1 és 8 közötti számjegy;</li>
+<li>egy szóköz;</li>
+<li>19 vagy 20 vagy 21 és még két számjegy (év);</li>
+<li>utána</li>
+<li>egy 0 és egy 1-9 közötti számjegy vagy</li>
+<li>egy 1 és egy 0-2 közötti számjegy (hónap);</li>
+<li>egy 0-2 közötti számjegy és egy 0-9 közötti számjegy vagy</li>
+<li>egy 3, amit 0 vagy 1 követ (nap)</li>
+<li>egy szóköz</li>
+<li>és még négy számjegy.</li>
+</ol>
+<p>A <a href="https://pythex.org/">pythex</a> oldalon interaktívan lehet tesztelni a regex kifejezésünk. Az alábbiakban még néhány példa található a speciális regex kifejezésekre.</p>
+<p><img src="regex.png" alt="regex.png">
+A következő regex-et is tartalmazó lekérdezésben például egy regex alapján kerestünk (<code>regex=True</code>), figyelmen kívül hagytuk a kis és nagybetűket (<code>case=False</code>), és csak olyan sorokat választottunk ki, amelyben szerepel &quot;women&quot; és utána a &quot;ball&quot; kifejezés úgy, hogy a kettő között tetszőleges számú másik karakter is lehet.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df.loc[df['Event'].str.contains('women.*ball', regex=True, case=False)]
+</code></pre>
+<p>A <code>split()</code> függvény a Python verziójához hasonlóan a megadott karakter alapján bontja szét a szöveget. Az <code>expand</code> paraméterrel egyből az elemeket tartalmazó külön oszlopokba rakja az eredményt.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df['Games'].str.split(' ', expand=True)
+</code></pre>
+<h3 id="szám-típus">Szám típus</h3>
+<p>Pandasban megtalálható a két alap szám típus (<code>int</code>, <code>float</code>), de ezen túl szofisztikáltabb <code>numpy</code> számformátumokat is tud kezelni. Az alap <code>astype()</code> funkcióval az a probléma, hogy int konvertálás esetén nem tudja kezelni a hiányzó elemeket. Az ilyen értékeket alapesetben a Pandas <code>nan</code> értékkel helyettesíti amely valójában egy <code>numpy</code> alapú <code>np.nan</code> érték. Amikor kiíratjuk a tálcára, akkor <code>NaN</code>-ként jelenik meg egységesen.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df['Age'].astype('int')
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+IntCastingNaNError                        Traceback (most recent call last)
+~\AppData\Local\Temp/ipykernel_13808/3409152218.py in &lt;module&gt;
+ 2 df = pd.read_csv('source/olimpia.csv')
+ 3 
+----&gt; 4  df['Age'].astype('int')
+
+c:\users\dburk\appdata\local\programs\python\python39\lib\site-packages\pandas\core\generic.py in astype(self, dtype, copy, errors)
+ 5813         else:
+ 5814             # else, only a single dtype is given
+-&gt; 5815  new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+ 5816             return self._constructor(new_data).__finalize__(self, method=&quot;astype&quot;)
+ 5817 
+
+c:\users\dburk\appdata\local\programs\python\python39\lib\site-packages\pandas\core\internals\managers.py in astype(self, dtype, copy, errors)
+ 416 
+ 417     def astype(self: T, dtype, copy: bool = False, errors: str = &quot;raise&quot;) -&gt; T:
+--&gt; 418  return self.apply(&quot;astype&quot;, dtype=dtype, copy=copy, errors=errors)
+ 419 
+ 420     def convert(
+
+c:\users\dburk\appdata\local\programs\python\python39\lib\site-packages\pandas\core\internals\managers.py in apply(self, f, align_keys, ignore_failures, **kwargs)
+ 325                     applied = b.apply(f, **kwargs)
+ 326                 else:
+--&gt; 327  applied = getattr(b, f)(**kwargs)
+ 328             except (TypeError, NotImplementedError):
+ 329                 if not ignore_failures:
+
+c:\users\dburk\appdata\local\programs\python\python39\lib\site-packages\pandas\core\internals\blocks.py in astype(self, dtype, copy, errors)
+ 590         values = self.values
+ 591 
+--&gt; 592  new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+ 593 
+ 594         new_values = maybe_coerce_values(new_values)
+
+c:\users\dburk\appdata\local\programs\python\python39\lib\site-packages\pandas\core\dtypes\cast.py in astype_array_safe(values, dtype, copy, errors)
+ 1307 
+ 1308     try:
+-&gt; 1309  new_values = astype_array(values, dtype, copy=copy)
+ 1310     except (ValueError, TypeError):
+ 1311         # e.g. astype_nansafe can fail on object-dtype of strings
+
+c:\users\dburk\appdata\local\programs\python\python39\lib\site-packages\pandas\core\dtypes\cast.py in astype_array(values, dtype, copy)
+ 1255 
+ 1256     else:
+-&gt; 1257  values = astype_nansafe(values, dtype, copy=copy)
+ 1258 
+ 1259     # in pandas we don't store numpy str dtypes, so convert to object
+
+c:\users\dburk\appdata\local\programs\python\python39\lib\site-packages\pandas\core\dtypes\cast.py in astype_nansafe(arr, dtype, copy, skipna)
+ 1166 
+ 1167     elif np.issubdtype(arr.dtype, np.floating) and np.issubdtype(dtype, np.integer):
+-&gt; 1168  return astype_float_to_int_nansafe(arr, dtype, copy)
+ 1169 
+ 1170     elif is_object_dtype(arr):
+
+c:\users\dburk\appdata\local\programs\python\python39\lib\site-packages\pandas\core\dtypes\cast.py in astype_float_to_int_nansafe(values, dtype, copy)
+ 1211     &quot;&quot;&quot;
+ 1212     if not np.isfinite(values).all():
+-&gt; 1213 raise IntCastingNaNError( 1214             &quot;Cannot convert non-finite values (NA or inf) to integer&quot;
+ 1215         )
+
+IntCastingNaNError: Cannot convert non-finite values (NA or inf) to integer
+</code></pre>
+<p>A korábbról már ismert <code>isnull()</code>, vagy <code>isna()</code> függvényekkel lehet rákeresni a hiányzó értékekre. Fontos, hogy az <code>nan</code> értékek nem fognak megegyezni összehasonlítás esetén.</p>
+<pre><code class="lang-python">import pandas as pd
+import numpy as np
+df = pd.read_csv('source/olimpia.csv')
+
+print(np.nan == np.nan)
+df.loc[df['Age'].isna()]
+</code></pre>
+<p>A helyes konvertálási mód a <code>to_numeric()</code> függvény, amellyel kezelni lehet a hibás értékeket is, egyéb funkciók mellett.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+pd.to_numeric(df['Age'])
+</code></pre>
+<pre><code>0         24.0
+1         23.0
+2         24.0
+3         34.0
+4         21.0
+          ... 
+271111    29.0
+271112    27.0
+271113    27.0
+271114    30.0
+271115    34.0
+Name: Age, Length: 271116, dtype: float64
+</code></pre>
+<h3 id="kategórikus-típus">Kategórikus típus</h3>
+<p>A kategórikus tipus statisztikai elemzéseknél jön jól illetve memóriát lehet megtakarítani vele. Pl. ilyen formátumban érdemes tárolni a nemet.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df['Medal'] = df['Medal'].fillna('Participation').astype('category')
+display(df['Medal'])
+</code></pre>
+<pre><code>0         Participation
+1         Participation
+2         Participation
+3                  Gold
+4         Participation
+              ...      
+271111    Participation
+271112    Participation
+271113    Participation
+271114    Participation
+271115    Participation
+Name: Medal, Length: 271116, dtype: category
+Categories (4, object): ['Bronze', 'Gold', 'Participation', 'Silver']
+</code></pre>
+<p>A <code>cat</code> utótaggal érhetőek el a speciális kategórikus függvények. A <code>categories</code> tulajdonság például megmutatja a létező kategóriákat. Egy kategórikus típus lehet sorba rendezett. Ez alkalmas pl. a nem, kicsit nem, kicsit igen, igen válaszok tárolására.</p>
+<h2 id="adattáblák-átformálása">Adattáblák átformálása</h2>
+<h3 id="grouping">Grouping</h3>
+<p>A <code>groupby(['csoportosító_oszlopnév')['oszlopnév'].függvény()</code> szintaktikával lehet egyik oszlop értékei alapján csoportosítani. Jelen esetben az országrövidítések alapján megszámoljuk, hogy hány érték van a <code>name</code> oszlopban.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df.groupby(['NOC'])['Name'].count()
+</code></pre>
+<pre><code>NOC
+AFG     126
+AHO      79
+ALB      70
+ALG     551
+AND     169
+       ... 
+YEM      32
+YMD       5
+YUG    2583
+ZAM     183
+ZIM     311
+Name: Name, Length: 230, dtype: int64
+</code></pre>
+<p>A kapott eredményre további függvényeket lehet fűzni. Jelen esetben az olimpikonok átlagéletkorát néztük meg majd rendeztük sorba országrövidítésenként.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df.groupby(['NOC'])['Age'].mean().sort_values()
+</code></pre>
+<pre><code>NOC
+TUV    20.142857
+MHL    20.285714
+MDV    20.918367
+NFL    21.000000
+YEM    21.093750
+         ...    
+IRL    27.473727
+NAM    27.857143
+MON    30.047120
+CRT          NaN
+UNK          NaN
+Name: Age, Length: 230, dtype: float64
+</code></pre>
+<p>A csoportosítás lehet több oszlop alapján is (egy listaként átadva). A <code>nunique()</code> függvény az különböző értékek számát mutatja.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df.groupby(['NOC', 'Sex'])['Name'].nunique()
+</code></pre>
+<pre><code>NOC  Sex
+AFG  F         4
+     M        99
+AHO  F        10
+     M        45
+ALB  F        16
+            ... 
+YUG  M      1100
+ZAM  F        13
+     M       132
+ZIM  F        72
+     M       124
+Name: Name, Length: 452, dtype: int64
+</code></pre>
+<p>A <code>groupby</code> függvénnyel kombinálható <code>transform()</code> függvény nem csak hogy csoportosítja B oszlop értékeit az A oszlop alapján hanem vissza is helyettesíti a kapott értékeket a B oszlopba. Az alábbi példában a sima <code>mean()</code> függvény eredménye annyi elemű, ahány ország van. A <code>transform(mean)</code> függvény ezzel szemben annyi sort ad eredményül, ahány sor az eredeti, csoportosítás nélküli táblázatban volt, és minden sor mellé odaírja a <code>mean</code> által kiszámított értékek közül a megfelelőt.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+display(df.groupby(['NOC'])['Age'].mean())
+display(df.groupby(['NOC'])['Age'].transform('mean'))
+</code></pre>
+<pre><code>NOC
+AFG    23.538462
+AHO    26.589744
+ALB    25.342857
+ALG    24.370642
+AND    23.065089
+         ...    
+YEM    21.093750
+YMD    23.600000
+YUG    24.745721
+ZAM    23.461039
+ZIM    25.200647
+Name: Age, Length: 230, dtype: float64
+
+0         23.000977
+1         23.000977
+2         27.351488
+3         27.351488
+4         26.633870
+            ...    
+271111    25.683794
+271112    25.683794
+271113    25.683794
+271114    25.683794
+271115    25.683794
+Name: Age, Length: 271116, dtype: float64
+</code></pre>
+<p>A szintén <code>groupby</code> után használható <code>agg()</code> függvény egy Python szótárat kap bemenetként és segítségével egy sorra több vagy több sorra egy aggregálási módot is meg lehet adni. Az alábbi példában az országrövidítés alapján az életkor oszlopnak nézzük az átlag és medián értékét, a magasság oszlopnak a minimum és maximum értékét, és végül a játékok oszlopra lefuttattunk egy lambda függvényt (erről a függvénytípusról később még lesz szó).</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df.groupby(['NOC']).agg({
+    'Age': ['mean', 'median'], 
+    'Height': ['min', 'max'], 
+    'Games': lambda x: set(x)})
+</code></pre>
+<h3 id="transpose">Transpose</h3>
+<p>A transpose <code>T</code> függvény átlósan tükrözi a táblánkat. Azaz minden sorból oszlop lesz és fordítva.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df.T
+</code></pre>
+<h3 id="pivot-tábla">Pivot tábla</h3>
+<p>A <code>pivot_table()</code> függvény az Excelben megtalálható pivot funkcióhoz hasonlóan pivotálja az adattáblát. Megadható az oszlopok, sorok, értékek és az aggregálási módszer.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+pivot = pd.pivot_table(df, index=['NOC'], values=['Age','Height', 'Weight'], columns=['Sex'], aggfunc='mean', margins=True)
+display(pivot)
+</code></pre>
+<h3 id="melt">Melt</h3>
+<p>A <code>melt()</code> függvény oszlopokból csinál sorokat azáltal, hogy berakja egy oszlopba több oszlop értékét.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+pd.melt(df, id_vars=['Team'], value_vars=['Medal', 'Games'], var_name='Olmypic team', value_name='Medal Type')
+</code></pre>
+<h3 id="stackunstack">Stack/unstack</h3>
+<p>Az <code>un/stack()</code> függvény demonstrálására létrehozunk egy összetett csoportosítást. A létrejövő tábla többszintű sorindexxel és többszintű oszlopindexxel rendelkezik. Az ilyen multindexek szintjeit csökkenti az <code>unstack()</code> függvény jelen esetben a nem sorindexből oszlopindexet csinálunk. A <code>stack()</code> ezzel ellentétesen oszlopindexből csinál sorindexet. Ha nem adunk meg neki paramétert akkor a legkülső indexet rakja át.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+stack_test = df.loc[(df['NOC'] == 'HUN') &amp; 
+                    (df['Games'].str.contains('Summer'))] \
+               .groupby(['NOC', 'Games', 'Sex']) \
+               .agg({'Age':['min','max','mean'], 
+                     'Height':['min','max','mean'], 
+                     'Weight':['min','max','mean']})
+display(stack_test)
+display(stack_test.unstack(level='Sex'))
+display(stack_test.stack())
+</code></pre>
+<h2 id="adattáblák-összekapcsolása">Adattáblák összekapcsolása</h2>
+<h3 id="append">Append</h3>
+<p>Az <code>append()</code> függvény egyszerűen az egyik adattábla végéhez hozzáfűzi a megadott adattábla sorait.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+print(df.shape)
+teszt_df = df.append(df)
+print(teszt_df.shape)
+</code></pre>
+<pre><code>(271116, 15)
+(542232, 15)
+</code></pre>
+<p>Természetesen csak akkor működik, ha mindkét adattáblának ugyanazok az oszlopai. Különböző adattáblák esetén ezért az összefűzés előtt szükség lehet a korábbi transzformációk alkalmazására.</p>
+<h3 id="concatenate">Concatenate</h3>
+<p>A <code>concat()</code> függvény egy listában található adattáblákat fűz össze vertikálisan (<code>axis=0</code>), vagy horizontálisan (<code>axis=1</code>). Például, ha először téli/nyári félre osztjuk az olimpiai táblát, akkor utána újra egyesíthetjük.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+summer = df.loc[df['Games'].str.contains('Summer')]
+winter = df.loc[df['Games'].str.contains('Winter')]
+pd.concat([summer, winter], axis=0)
+</code></pre>
+<p>A példából kiderül, hogy a vertikális összefűzés lényegében az <code>append</code> funkció működését reprodukálja. A horizontális opcióval azonban új oszlopokat fűzhetünk a táblánkhoz (de ilyenkor is fontos az illeszkedés, azaz mindkét táblának ugyanannyi sora kell, hogy legyen).</p>
+<h3 id="merge">Merge</h3>
+<p>A <code>merge()</code> függvény két vagy több adattáblát kapcsol össze egy közös érték alapján. A példához készítünk két átmeneti táblát. A <code>merge</code> egyrészt a <code>df1.merge(df2)</code>, vagy a <code>pd.merge(df1, df2)</code> szintaktikával hajtható végre. A jelen esetben a &quot;Games&quot; oszlopon végezzük el az összekapcsolást.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+summer_1 = summer.groupby(['Games']) \
+                 .agg({'NOC': 'nunique', 
+                       'Name': 'nunique', 
+                       'Age': 'mean', 
+                       'Height': 'mean', 
+                       'Weight': 'mean'}) \
+                 .reset_index() \
+                 .sample(15)
+
+summer_2 = summer.groupby(['Games']) \
+                 .agg({'Sport': 'nunique', 
+                       'City': 'first'}) \
+                 .reset_index() \
+                 .sample(15)
+
+merged = pd.merge(summer_1, summer_2, on='Games', how='left')
+
+display(summer_1)
+display(summer_2)
+display(merged)
+</code></pre>
+<p>A how paraméter segítségével tudjuk eldönteni, hogy mi legyen az egyik másik vagy mindkét adattáblában megtalálható adatokkal.</p>
+<blockquote>
+<p>A kifejezések ismerősek lehetnek azok számára, akik használtak már lekérdező nyelveket (SQL).
+<img src="how.png" alt="how.png">Hasznos funkció még a különböző oszlopok specifikálára használt left_on és right_on paraméter illetve a suffixes paraméter, amely az olyan oszlopok megkülönböztetésére való, amelyek mindkét táblában szerepelnek.</p>
+</blockquote>
+<h2 id="speciális-technikák">Speciális technikák</h2>
+<h3 id="list-comprehension">List comprehension</h3>
+<p>A list comprehension egy olyan hasznos Python technika, amely során egy lista elemeit módosítjuk egy soron belül. Lentebb például az adattáblánk oszlopait kisbetűsítjük.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+[col.lower() for col in df.columns]
+</code></pre>
+<pre><code>['id',
+ 'name',
+ 'sex',
+ 'age',
+ 'height',
+ 'weight',
+ 'team',
+ 'noc',
+ 'games',
+ 'year',
+ 'season',
+ 'city',
+ 'sport',
+ 'event',
+ 'medal']
+</code></pre>
+<p>Ez egy hasznos technika ha egy oszlop több elemét egyszerre szeretnénk módosítani egy logika alapján. Az első példában minden értéket megdupláztunk a magasság oszlopban, míg a második esetben már egy komplexebb feltételrendszer alapján jártunk el.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df['Height2'] = [x*2 for x in df['Height']]
+df['Height3'] = [x*2 if x &gt; 175 else x/2 for x in df['Height']]
+df[['Height', 'Height2', 'Height3']].dropna().head(5)
+</code></pre>
+<p>A list comprehension segíthet abban, hogy egy többszintű oszlopindex szintjeit egybefűzzük. A lenti kódrészlet a többszintű oszlop elemeit fűzi egybe '_' kifejezéssel. (A korábbi pivot táblából indulunk ki.)</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+pivot = pd.pivot_table(
+    df, 
+    index=['NOC'], 
+    values=['Age','Height', 'Weight'], 
+    columns=['Sex'], 
+    aggfunc='mean', 
+    margins=True)
+display(pivot.head()) # Eredeti pivot
+
+pivot.columns = ['_'.join(col).strip() for col in pivot.columns.values]
+display(pivot.head()) # Összefűzött pivot
+</code></pre>
+<h2 id="apply-és-lambda-függvények">Apply és lambda függvények</h2>
+<p>Az <code>apply()</code> függvény használatával végre tudunk hajtani egy soron vagy az egész táblán egy megfelelő visszatérési értékkel rendelkező függvényt.</p>
+<pre><code class="lang-python">import pandas as pd
+
+def osztalyozo(x):
+    if x &gt;= 175:
+        return 'magas'
+    else:
+        return 'alacsony'
+        
+df = pd.read_csv('source/olimpia.csv')
+
+df['Height_cat'] = df['Height'].apply(osztalyozo)
+df.head()
+</code></pre>
+<blockquote>
+<p>Ez a kód egy új oszlopot fűz a táblához.</p>
+</blockquote>
+<p>Az <code>apply</code> képes kezelni az úgynevezett lambda függvényeket is. Azokat a függvényeket hívják lambda függvénynek, ahol egyszeri használatra, soron belül definiáljuk a függvényt. Név hiányában később nem lehet rá hivatkozni. Egy lambda függvény szintaktikája a következő: <code>lambda x: x*2</code> , ahol <code>x</code> az aktuális sort jelölő változó. Úgy működik, mintha a tábla elemein haladó <code>for</code> ciklusváltozója lenne.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df['Sex_category'] = df['Sex'].apply(lambda x: 'férfi' if x == 'M' else 'nő')
+df.sample(5)
+</code></pre>
+<p>A példában egy olyan lambda függvényt használunk az <code>apply</code>-al, amelyben egy logikai elágazás is van.</p>
+<h3 id="npwhere-és-feltételes-adatmódosítás">np.where és feltételes adatmódosítás</h3>
+<p>Ha szeretnénk egy új oszlopot egy meglévő oszlop bizonyos értékei szerint, akkor az egyik módszer, hogy létrehozunk egy új oszlopot egy alapértékkel, és a loc tulajdonsággal kijelöljük egy részét az eredeti oszlopnak. Ha a kijelölés feltétele után vesszővel berakunk egy oszlopnevet akkor csak a kijelölt oszlop leszűrt részénél módosítjuk az adatot.</p>
+<pre><code class="lang-python">import pandas as pd
+df = pd.read_csv('source/olimpia.csv')
+
+df['teniszező?'] = 'nem'
+df.loc[df['Sport'].str.contains('Tennis'), 'teniszező?'] = 'igen'
+df.groupby(['teniszező?'])['ID'].count()
+</code></pre>
+<pre><code>teniszező?
+igen      4817
+nem     266299
+Name: ID, dtype: int64
+</code></pre>
+<p>Az <code>np.where</code> hasonlóan működik, de itt egy sorban letudjuk az egész módosítást. A szintaktika az <code>np.where(feltétel, ha True, ha False)</code>.</p>
+<pre><code class="lang-python">import pandas as pd
+import numpy as np
+df = pd.read_csv('source/olimpia.csv')
+
+df['magyar?'] = np.where(df['NOC'] == 'HUN', 'igen', 'nem')
+df.groupby(['magyar?', 'Sex', 'Medal'])['ID'].count()
+</code></pre>
+<pre><code>magyar?  Sex  Medal 
+igen     F    Bronze     103
+              Gold        69
+              Silver      95
+         M    Bronze     268
+              Gold       363
+              Silver     237
+nem      F    Bronze    3668
+              Gold      3678
+              Silver    3640
+         M    Bronze    9256
+              Gold      9262
+              Silver    9144
+Name: ID, dtype: int64
+</code></pre>
+<h2 id="feladatok">Feladatok</h2>
+<ol>
+<li>Olvasd be a covid.csv fájlt. Nézd meg az első pár sorát és, hogy melyik oszlopnak mi a típusa.</li>
+<li>Konvertáld át a date oszlopot date típusra. Alakítsd át az iso_code oszlopot kategórikus típusra.</li>
+<li>Szűrd le az A-val kezdődő országokat. Csoportosítsd ezen országokat népesség alapján. Ellenőrizd, hogy jó népesség számok jöttek-e, ki. Ha nem akkor a csoportosítást után másik aggregálási módot válassz.</li>
+<li>Hozz létre egy új oszlopot, amely a szöveggé alakított év és hónap értékekből jön létre (pl.: 2021-05). Csoportosítsd az adatokat az újonnan létrejött oszlop és az ország oszlop alapján. Vedd a New_deaths értékek összegét.</li>
+<li>Készíts egy pivot táblát az így létrejött csoportosításból. A sorok az egyes országok legyen az oszlopok pedig az év_hónap oszlop. A pivot tábla többszintű oszlopindexét lapítsd ki a list comprehension módszer segítségével.</li>
+<li>Az így létrejött táblához mergeld hozzá az eredeti tábla iso_code értékeit. Figyelj arra, hogy az eredeti tábla minden országból csak egyet tartalmazzon.</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/pandas_2/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

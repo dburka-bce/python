@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>&#214;sszef&#233;s&#252;l&#337; rendez&#233;s </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="&#214;sszef&#233;s&#252;l&#337; rendez&#233;s ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="összefésülő-rendezés">Összefésülő rendezés</h1>
+
+<p>Az összefésülő rendezés egy nagyon hatékony algoritmus, mely az &quot;oszd meg és uralkodj&quot; elven működik. Első körben a listát megfelezzük a közepén oly módon, hogy a kapott rész listákat tovább felezzük, egészen addig, amíg egy elemű listákat nem kapunk. Ezt követően a részlistákat páronként összevonjuk (összefésüljük) úgy, hogy az eredményül kapott lista elemei sorban legyenek. Így mikor az utolsó összevonás is megtörténik, egy rendezett listát kapunk.</p>
+<p>A módszer lényege, hogy a két lista összevonásának pillanatában élhetünk azzal az előfeltevéssel, hogy mindkét lista már rendezett állapotban van, és így jelentősen felgyorsítható az összefésülés, és ezzel a sorba rendezés. (Annyira, hogy a &quot;feldarabolásra&quot; szánt idő bőven megtérül.)</p>
+<p>Ennek az algoritmusnak az implementálása lényegesen bonyolultabb, mint az előző példák. A rendezés során érdemes rekurzív függvényt alkalmazni, és külön függvénybe szervezni az összefésülés folyamatát.</p>
+<h3 id="fésül-merge-függvény">Fésül (merge) függvény</h3>
+<ol>
+<li>Hozz létre egy függvényt, aminek a bemenete a <code>bal</code> és <code>jobb</code> oldali lista. (Nincs különbség a két oldal között, de ilyen megnevezéssel könnyebb az értelmezés.)</li>
+<li>Ha a <code>bal</code> lista esetleg üres akkor térj vissza a <code>jobb</code> listával, és fordítva.</li>
+<li>Hozz létre 1-1 index változót 0 kezdőértékkel a két listához, valamint egy üres eredmény listát.</li>
+<li>Egy ciklus törzsét addig ismételd, amíg az eredmény lista mérete el nem éri a másik két lista méretének az összegét.</li>
+<li>A ciklustörzsben, ha a <code>bal</code> indexhez tartozó érték a <code>bal</code> listában kisebb, mint a <code>jobb</code> indexhez tartozó érték a <code>jobb</code> listában, akkor add hozzá a <code>bal</code> lista értékét az eredményhez, és növeld a <code>bal</code> indexet. (Mivel a listák rendezettek, így mindig a lehető legkisebb érték kerül következőnek az eredmény listába.)</li>
+<li>Amennyiben a ciklustörzsben a fenti feltétel után az egyik index eléri a megfelelő részlista hosszát, akkor a ciklust nem szabad tovább engedni, mert a következő iterációban a listán kívülre mutatna az index. Ezért ezen a ponton a másik lista tartalmát egyszerűen fűzd hozzá az eredménylistához, majd lépj ki a ciklusból.</li>
+<li>Végül térj vissza az eredmény lista tartalmával.</li>
+</ol>
+<h3 id="rendezés">Rendezés</h3>
+<ol start="8">
+<li>Amennyiben a bemeneti lista kevesebb, mint két elemű, térj vissza az eredeti listával. (A feltétel kissé fura lehet, de a rekurzív hívás miatt kell &quot;értelmesen&quot; kezelni a nulla elemű listát is.)</li>
+<li>Határozd meg a lista középső indexét. (Az <code>int</code> függvénnyel megkapható egy tört alsó egész része.)</li>
+<li>Vágd szét a kapott listát egy <code>bal</code> és <code>jobb</code> félre a középső index mentén.</li>
+<li>Hívd meg rekurzívan ezt a függvényt mindkét részlista bemenettel, és a hívások eredményeit tárold 1-1 változóban.</li>
+<li>A két -- immár rendezett -- részlistát bemenetként használva hívd meg a <code>Fésül</code> függvényt, és az eredményét add visszatérési értékként.</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/merge_sort/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

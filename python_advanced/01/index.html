@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>1. feladat - Olimpiai &#233;rmek </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="1. feladat - Olimpiai &#233;rmek ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="1-feladat---olimpiai-érmek">1. feladat - Olimpiai érmek</h1>
+
+<p>Ennek a feladatnak az a célja, hogy egy nagy példába sűrítve segítsen gyakorolni az eddig tanult ismereteket. A feladatban semmi újdonság nincs azon kívül, hogy lényegesen hosszabb, mint az eddig látott példák.</p>
+<p>A  <a href="https://www.kaggle.com/"><em>Kaggle</em></a> weboldala egy regisztrációt követően számos érdekes, különböző forrásból származó adatforráshoz ad hozzáférést. <a href="https://www.kaggle.com/ramontanoeiro/summer-olympic-medals-1986-2020">Innen</a> származik a mai gyakorlat során használt, olimpiai éremtáblázatokat tartalmazó <em>Summer olympic Medals.csv</em> is. A fájl pontos tartalmával kapcsolatban az eredeti weboldalon lehet tájékozódni, de viszonylag egyszerű a szerkezete.</p>
+<p>A mai feladat célja, hogy egy olyan szépen kidolgozott alkalmazást fejlesszünk a rendelkezésre álló adatforrás segítségével, ami az olimpia évének és a vizsgált országnak a megadása után kiszámolja, hogy az adott ország hányadikként végzett a kiválasztott olimpián az országok rangsorában. A hagyományos sorrend számítást vesszük alapul, tehát a több aranyérem automatikusan jobb helyet eredményez, az ezüstérmek száma csak akkor releváns, ha az aranyak száma megegyezik, és természetesen a bronzérmek számát is hasonlóan kell kezelni.</p>
+<p>A következő lépések megvalósításával építsd fel a programot. Próbáld a lehető legjobban követni az utasításokat: ha egy feladatrész (lásd 3.) azt kéri, hogy <strong>törölj</strong> egy sort a listádból, akkor ne írj feltételt a lista létrehozásához, hogy bele se kerüljön az érték, hanem valóban töröld. Ha valami nem egyértelmű, vagy esetleg elakadtál, akkor kérdezz nyugodtan a gyakorlatvezetőtől.</p>
+<h2 id="adatok-betöltése">Adatok betöltése</h2>
+<ol>
+<li>A program indulásakor jelenjen meg az &quot;OLIMPIAI HELYEZÉSEK&quot; felirat, hogy a felhasználó tudja mire való a program.</li>
+<li>Olvasd be a Moodle rendszerből letölthető <em>Summer olympic Medals.csv</em> fájl tartalmát és tárold le a sorait egy listában. Ne felejtsd el bezárni a fájlt!</li>
+<li>Töröld ki az első sort a beolvasott sorok közül. Ez a sor az oszlopfejléceket tartalmazza, a programban nincs rá szükségünk. Az eredeti fájlban viszont érdemes megnézni, mi is található az egyes oszlopokban.</li>
+<li>Hozz létre egy üres listát, amibe felgyűjtheted a beolvasott sorok letisztázott változatait. Egy ciklussal menj végig a korábban beolvasott listádon. Távolítsd el a sorok végéről a felesleges sortörést, majd darabold fel a sorokat az adatokat határoló karakter mentén. A sorokból így előálló listákat add hozzá az előbb létrehozott üres listához úgy, hogy a végeredmény egy listákból álló lista legyen.</li>
+</ol>
+<h2 id="évek">Évek</h2>
+<ol start="5">
+<li>Az előző ciklus létrehozása előtt hozz létre egy üres listát, amiben az évek lesznek tárolva. A ciklust egészítsd ki úgy, hogy a sorokból kiolvasható évek, egész számmá konvertálva bekerüljenek az új listába. De csak akkor adj hozzá egy évet a listához, ha az még nincs benne. Ebből a listából engedünk majd választani a felhasználónak.</li>
+<li>A ciklus után rendezd sorba az éveket tartalmazó listát.</li>
+<li>Kérd be a felhasználótól a kiválasztott évet.</li>
+<li>Ellenőrizd, hogy számot adott-e meg. Ha nem, akkor jeleníts meg egy hibaüzenetet, és kérd be újra az évet.</li>
+<li>Ha a felhasználónak sikerült számot megadnia, akkor ellenőrizd, hogy a szám szerepel-e az évek listájában (ne felejtsd el a típuskonverziót). Ha a szám nem szerepel az évek között, akkor írd ki számára, hogy az adott évben nem volt olimpia, és fűzd az üzenet végére, hogy az &quot;évek&quot; parancs megadásával lekérdezheti az olimpiai éveket. Ebben az esetben is kérdezd meg újra az évet.</li>
+<li>Egészítsd ki a korábbi feltételeket úgy, hogy az &quot;évek&quot; szó megadására jelenjen meg az éveket tartalmazó lista minden eleme valamilyen formában. Ebben az esetben se felejtsd el, hogy újra be kell kérni az évet a megjelenítés után.</li>
+</ol>
+<h2 id="országok">Országok</h2>
+<ol start="11">
+<li>Az év sikeres megadása után ( a bekérő ciklust követően) hozz létre egy üres listát az országok tárolására.</li>
+<li>Egy ciklus segítségével az évekhez hasonló módon gyűjtsd fel a különböző országokat a listába. Ebben az esetben viszont arra is figyelj, hogy csak a megadott évnek megfelelő sorokból gyűjts adatot. Így csak az adott évben valóban résztvevő országok kerülnek a listába.</li>
+<li>A ciklus után rendezd a listát név szerint.</li>
+<li>Az ország lista előállítása után kérd be a felhasználótól a kiválasztott országot. Itt nincs szükség típuskonverzióra, de az évekhez hasonlóan itt is csak az országok listában található bemeneteket fogadd el. Amennyiben a felhasználó nem megfelelő értéket ad meg, akkor az &quot;országok&quot; paranccsal tudja lekérdezni a résztvevő országok listáját.</li>
+</ol>
+<h2 id="helyezés-számítása">Helyezés számítása</h2>
+<ol start="15">
+<li>Az ország sikeres bekérése után egy ciklussal menj végig az adataidon, és keresd meg azt a sort, ami megfelel a kiválasztott évnek és országnak. A sor tartalmát tárold le egy változóba. (Lényegében csak az egyes érmek számára leszünk kíváncsiak, tehát a sor lista helyett letárolhatod azokat is 1-1 változóba, vagy egy rövidebb listába.)</li>
+<li>Hozz létre egy nulla értékű változót. Ebbe a változóba lesz majd összeszámolva a kiválasztott országnál jobban teljesítő országok száma.</li>
+<li>Egy ciklussal újból menj végig az adataidon, és növeld a számláló értékét, ha az aktuális ország az érmei alapján jobban teljesített, mint a kiválasztott ország. Az ehhez kapcsolódó szabályokat fent olvashatod. Az összehasonlítás során lehetőleg csak egy elágazást használj egy összetett feltétellel. Ne felejtsd el, hogy csak a kiválasztott évhez tartozó sorok esetén szabad növelni a számlálót.</li>
+<li>Jelenítsd meg az eredményt a felhasználó számára egy jól érthető üzenettel.</li>
+</ol>
+<p>Megjegyzés: A kiválasztott országgal holtversenyben levő országok nem befolyásolják a helyezést. Ennek köszönhetően nem jelent problémát, hogy az ország a pontszáma alapján saját magával is &quot;holtversenyben lenne&quot;. Ezért a ciklusban nem kell foglalkoznunk önmaga kiszűrésével.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/01/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>1. feladat </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="1. feladat ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="1-feladat">1. feladat</h1>
+
+<p>A szallitasok.txt UTF-8 kódolású szövegfájl egymással kereskedő (fiktív) országok kereskedelmi kapcsolatainak adatait tartalmazza. Minden egyes szállításnak egy sor felel meg. A sorok szóközzel elválasztva tartalmazzák az eladó ország nevét, a vevő ország nevét, a szállítás kezdetének és befejezésének napját, a szállított áru megnevezését, valamint a szállítás idejét napokban. Az országok és az áruk neve minden esetben egyetlen szóból áll.</p>
+<p>Mintaképpen a fájl első három sora a következő:</p>
+<pre><code>Kanatima Duncsek 2012.04.04 2012.04.18 farönk 14
+Bundország Lakózia 2012.04.05 2012.05.03 kukorica 28
+Kanatima Mereszász 2012.04.05 2012.04.16 szarvasmarha 11
+</code></pre>
+<p>Például az első sorban az eladó ország neve Kanatima, a vevő ország Duncsek, a szállítás kezdete 2012.04.04, befejezése 2012.04.18 és a szállított áru a farönk, a szállítás ideje 14 nap.</p>
+<p>Feladatok</p>
+<ol>
+<li>Listázzuk azon szállítások adatait, ahol Kanatima az eladó!</li>
+<li>Jelenítsük meg a leghosszabb ideig tartó szállítás adatait! (Ha több ilyen is van, akkor elég a sorrend szerint legelsőt megadni)</li>
+<li>Egy szállítás ideje gyors, ha 10 napnál rövidebb idő alatt lezajlik. Ha a szállítási idő 10 és 20 nap közé esik (a határokat is beleértve), akkor a szállítás ideje megfelelő. Egyéb esetben a szállítási idő lassú. Listázzuk minden szállítás esetén csak az eladó és a vevő nevét, valamint a szállítási idő minősítését (gyors, megfelelő vagy lassú)!</li>
+<li>Számítsuk ki és jelenítsük meg, hogy 2012. 6. hónapjában hány szállítás érkezett meg Bundországba!</li>
+<li>Jelenítsük meg az első olyan szállítás adatait, ahol a szállítás kezdete és vége külön évre esett!</li>
+</ol>
+<h1 id="2-feladat">2. feladat</h1>
+<p>Egy egyetem hallgatóinak tanulmányi eredményeit a következő adatszerkezet tartalmazza:</p>
+<pre><code>[
+[hallgató neve, neptun kódja,  [tantárgy neve, kredit érték, jegy], [tantárgy neve, kredit érték, jegy] ...],
+...
+
+[hallgató neve, neptun kódja, [tantárgy neve, kredit érték, jegy], [tantárgy neve, kredit érték, jegy]...]
+] 
+</code></pre>
+<p>Mintaadatok:</p>
+<pre><code>adatok = [
+['Kiss Béla','ABCDEF' ,  ['Matematika', 3, 'jeles'], ['Fizika', 4, 'jó']],
+['Nagy Ivett', 'AIAIAI', ['Programozás', 20, 'közepes'], ['Informatika alapjai', 7, 'jeles'], ['Adatbáziskezelés', 3, 'elégtelen']],
+['Budai Szilvia', 'XXXYYY', ['Matematika', 2, 'közepes'], ['Statisztika', 5, 'elégtelen'], ['Informatika alapjai', 7, 'elégséges'], ['Programozás II.', 4, 'jeles']]
+] 
+</code></pre>
+<p>A tantárgyak száma előre nem meghatározott, de minden hallgató tanul legalább egy tantárgyat.
+A hallgatók száma szintén nem rögzített, de legalább két hallgató adatai rendelkezésre állnak.</p>
+<p>Például Kiss Béla (ABCDEF) a 3 kreditet érő Matematikából jeles, a 4 kredites Fizikából jó,
+Nagy Ivett (AIAIAI) a 20 kredites Programozásból közepes, a 7 kredites Informatika alapjaiból jeles, és a 3 kredites Adatbáziskezelésból elégtelen.
+Budai Szilvia (XXXYYY) a 2 kredites Matematika tantárgyból közepes, az 5 kredites Statisztikából elégtelen, a 7 kredites Informatika alapjaiból elégséges, és a 4 kredites Programozás II. tantárgyból jeles.</p>
+<p>Feladatok (a fenti adatokat felhasználva):</p>
+<ol>
+<li>Listázzuk az egyes hallgatók nevét és osztályzatait!</li>
+<li>Listázzuk azon hallgatók nevét, akik minden tárgyukat sikeresen teljesítették (azaz nincs elégtelenjük)!</li>
+<li>A félév teljesítéséhez legalább 12 kreditet kell teljesíteni. Listázzuk a félévet sikeresen teljesítók nevét és az általuk megszerzett kreditek összegét!</li>
+<li>A tanulók átlagát a sikeresen teljesített tantárgyak eredményeiből számolják. Ha az átlag legalább 3.5, akkor a tanuló ösztöndíjat kap. Az ösztöndíj összegének képlete: ösztöndíj = 150000 - (5.0-átlag)*100000. Listázzuk az ösztöndíjas hallgatók nevét, átlagát és az ösztöndíj összegét!</li>
+<li>Technikai okok miatt a hallgatók Neptun-kódját megváltoztatják. Ezentúl a kód a következőképpen képződik (csupa nagybetűkkel): keresztnév első betűje + keresztnév hossza + keresztnév utolsó betűje + vezetéknév első betűje + vezetéknév hossza + vezetéknév utolsó betűje. Végezzük el a szükséges módosításokat, majd listázzuk a hallgatók nevét és az új Neptun-kódjukat! (feltehetjük, hogy a vezetéknév illetve a keresztnév mindig egy-egy szóból áll)</li>
+</ol>
+<p>+1. Rögzítsük a fenti adatszerkezetbe egy új tanuló eredményeit a megfelelő adatok bekérésével! A rögzítés után jelenítsük meg a lista tartalmát!</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_basic/practice/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

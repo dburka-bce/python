@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hibakezel&#233;s </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Hibakezel&#233;s ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="hibakezelés">Hibakezelés</h1>
+
+<p>Kezeletlen hiba:</p>
+<pre><code class="lang-python">10/0
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+ZeroDivisionError                         Traceback (most recent call last)
+~\AppData\Local\Temp/ipykernel_11236/530406163.py in &lt;module&gt;
+----&gt; 1  10/0
+
+ZeroDivisionError: division by zero
+</code></pre>
+<p>Megfelelően kezelt hiba:</p>
+<pre><code class="lang-python">try:
+    print(10/0)
+except ZeroDivisionError:
+    print(&quot;Véletlenül 0-val osztottunk&quot;)
+</code></pre>
+<pre><code>Véletlenül 0-val osztottunk
+</code></pre>
+<p>Szándékosan kiváltott hiba:</p>
+<pre><code class="lang-python">raise NameError('Hello')
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+~\AppData\Local\Temp/ipykernel_11236/2327143687.py in &lt;module&gt;
+----&gt; 1  raise NameError('Hello')
+
+NameError: Hello
+</code></pre>
+<p>Hibakezelés függvényben:</p>
+<pre><code class="lang-python">def divide(x, y):
+    try:
+        result = x / y
+    except ZeroDivisionError:
+        print(&quot;Nullával nem lehet osztani!&quot;)
+    else:
+        print(&quot;Az eredmény: &quot;, result)
+    finally:
+        print(&quot;Finally&quot;)
+
+divide(2, 1)
+divide(2, 0)
+divide(&quot;2&quot;, &quot;1&quot;)
+</code></pre>
+<pre><code>Az eredmény:  2.0
+Finally
+Nullával nem lehet osztani!
+Finally
+Finally
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+~\AppData\Local\Temp/ipykernel_11236/1759864827.py in &lt;module&gt;
+----&gt; 1  divide(&quot;2&quot;, &quot;1&quot;)
+
+~\AppData\Local\Temp/ipykernel_11236/2650830245.py in divide(x, y)
+ 1 def divide(x, y):
+ 2     try:
+----&gt; 3  result = x / y
+ 4     except ZeroDivisionError:
+ 5         print(&quot;Nullával nem lehet osztani!&quot;)
+
+TypeError: unsupported operand type(s) for /: 'str' and 'str'
+</code></pre>
+<h2 id="feladatok">Feladatok</h2>
+<ol>
+<li>Egészítsd ki a divide függvényt, hogy helytelen típusú input esetén is dobjon kivételt!</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_advanced/error_handling/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

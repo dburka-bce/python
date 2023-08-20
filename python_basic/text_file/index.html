@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Sz&#246;veges f&#225;jl olvas&#225;sa </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Sz&#246;veges f&#225;jl olvas&#225;sa ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="szöveges-fájl-olvasása">Szöveges fájl olvasása</h1>
+
+<p>A legtöbb programozási nyelvhez hasonlóan a Python is lehetővé teszi fájlok létrehozását, olvasását és írását. A fájl tartalmazhat normál szöveget (text fájl), vagy a számítógép számára értelmezhető byte sorozatot (bináris fájl).</p>
+<p>Ebben a pontban csak szöveges fájlok olvasásával foglalkozunk. Ennek során három tevékenységet végzünk:</p>
+<ul>
+<li>Megnyitjuk a fájlt</li>
+<li>Kiolvassuk a számunkra szükséges információt</li>
+<li>Lezárjuk a fájlt</li>
+</ul>
+<h2 id="szöveges-fájl-megnyitása">Szöveges fájl megnyitása</h2>
+<p>A szöveges fájl megnyitása az <a href="https://www.programiz.com/python-programming/methods/built-in/open"><strong>open()</strong></a> függvény segítségével történik, amelynek egyetlen kötelező paramétere a fájl neve. A függvény egy fájl objektumot ad vissza, amelyet egy változóban tárolhatunk, pl. a &quot;nevsor.txt&quot; nevű fájl megnyitása következő módon történik:</p>
+<pre><code class="lang-python">f = open(&quot;nevsor.txt&quot;)
+</code></pre>
+<p>Amennyiben a fájl nem az aktuális mappában van, akkor a névvel együtt az elérési utat is meg kell adni, mint ahogyan azt a következő példa is mutatja (a \ jelet speciális funkciója miatt ilyenkor duplán kell írni vagy a karaktersorozat elé egy r betűt kell tenni):</p>
+<pre><code class="lang-python">f = open(&quot;c:\\users\\user1\\proba.txt&quot;)
+</code></pre>
+<p>Az <a href="https://www.programiz.com/python-programming/methods/built-in/open"><strong>open()</strong></a> függvény számos opcionális paraméterrel rendelkezik. Ezek közül a legfontosabb a <em>fájl megnyitás módja</em> (mode), amely alapértelmezésben olvasás (&quot;r&quot;), de lehet szó írásról (&quot;w&quot;) és hozzáfűzésről (&quot;a&quot;) is. Ezek mellett léteznek <a href="python-file-and-file-modes.htm"><strong>egyéb fájl megnyitási módok</strong></a> is, de most csak az olvasásra való megnyitással foglalkozunk. Az előző utasítást írhattuk volna a következő formában is:</p>
+<pre><code class="lang-python">f = open(&quot;c:\\users\\user1\\nevsor.txt&quot;, &quot;r&quot;)
+</code></pre>
+<p>Az opcionális paraméterek közül fontos lehet a karakterkódolás megadása, amelyet az <em>encoding</em> paraméter segítségével lehet megadni. Erre akkor lehet szükség, ha a nem a Python alapértelmezett kódolását használjuk. Ez a legtöbbször <a href="https://hu.wikipedia.org/wiki/UTF-8">UTF-8</a>, de a következő példa szerint megnyithatunk <a href="https://hu.wikipedia.org/wiki/ASCII">ASCII</a> kódolású fájlt is:</p>
+<pre><code class="lang-python">f = open(&quot;c:\\users\\user1\nevsor.txt&quot;, mode=&quot;r&quot;, encoding = &quot;ascii&quot;)
+</code></pre>
+<h2 id="szöveges-fájl-tartalmának-olvasása">Szöveges fájl tartalmának olvasása</h2>
+<p>Egy szöveges fájl tartalmát csak <em>szekvenciálisan</em> érhetjük el. A fájl megnyitása után az aktuális pozíciót jelző fájlmutató a fájl elejére mutat, innen többféle módon is haladhatunk:</p>
+<ul>
+<li>Olvashatjuk a fájl teljes tartalmát egy lépésben is a fájl típusú objektum <a href="ref_file_read.asp"><strong>read()</strong></a>, illetve a <a href="ref_file_readlines.asp"><strong>readlines()</strong></a> metódusok meghívásával. Előbbi az egész tartalmat egyetlen karaktersorozatba teszi, utóbbi pedig egy listába, amely a sorokat (mint karaktersorokat) tartalmazza.</li>
+<li>Olvashatunk egyszerre 1 vagy több sort a <a href="file_readline.htm"><strong>readline(n)</strong></a> metódus segítségével, ahol n az olvasandó sorok száma.  A metódus minden sor végére (az utolsót kivéve) egy  EOL (end of line) karaktert (sorvég jel) helyez el, amely alapesetben az új sor (\n) karakter. Ha elértük a fájl végét, akkor a metódus üres karaktersorozatot (&quot;&quot;) ad vissza.</li>
+<li>Olvashatunk egyszerre 1 vagy több karaktert a <a href="ref_file_read.asp"><strong>read(n)</strong></a> metódus segítségével, ahol n az olvasandó karakterek száma</li>
+</ul>
+<p>Fontos megjegyezni, hogy minden olvasás után a fájlmutató a következő olvasandó egységre (pl. sorra) lép. Ez egészen addig tart, amíg el nem érjük a fájl végét.</p>
+<p>A fájlmutatót egyébként a <a href="file_seek.htm"><strong>seek()</strong></a> metódussal pozícionálhatjuk. Pl. a fájl objektum seek(0) metódushívásra a fájlmutató a fájl elejére áll:</p>
+<pre><code class="lang-python">f.seek(0)
+</code></pre>
+<p>Hasznos még a <a href="file_tell.htm"><strong>tell()</strong></a> metódus ismerete is, amely az a fájlmutató aktuális pozícióját adja vissza.</p>
+<pre><code class="lang-python">print(f.tell())
+</code></pre>
+<p>A <a href="file_seek.htm"><strong>seek()</strong></a> és a <a href="file_tell.htm"><strong>tell()</strong></a> metódusok használatakor vigyázni kell, mert byte egységekkel dolgoznak, amely <a href="http://people.ubuntu.com/%7Ekelemeng/.ufp3/files.html"><strong>nem mindig egyezik meg</strong></a> a <a href="ref_file_read.asp"><strong>read()</strong></a> által (szövegfájl esetén) olvasott karakterekkel. Pl. ha az 5. byte-ra ugrunk, az nem feltétlenül az 5. karaktert jelenti.</p>
+<h2 id="szöveges-fájl-lezárása">Szöveges fájl lezárása</h2>
+<p>A szöveges fájlok feldolgozása általában ciklus segítségével történik. A munka végén a fájlt javasolt a <a href="file_close.htm"><strong>close()</strong></a> metódus meghívásával lezárni (<a href="https://cmdlinetips.com/2016/01/opening-a-file-in-python-using-with-statement/"><strong>lehetőség van automatikus lezárásra is</strong></a>), pl:</p>
+<pre><code class="lang-python">f.close()
+</code></pre>
+<h2 id="példa">Példa</h2>
+<p>Nézzünk egy példát a fentiekre, amelyben megnyitjuk a nevsor.txt fájlt, tartalmát soronként kiiratjuk, majd a fájlt lezárjuk.</p>
+<pre><code class="lang-python">f = open(&quot;c:\\users\\user1\nevsor.txt&quot;, &quot;r&quot;)
+sorok = f.readlines()
+for s in sorok:
+   print(s)
+f.close()
+</code></pre>
+<p>Megjegyzés:
+A fájl műveletek sok esetben futási hibát okozhatnak, pl. ha nem létező fájlra hivatkozunk. Ezért a gyakorlatban a fájlok kezelését sokszor un. <a href="https://sajozsattila.home.blog/2020/02/26/kivetelkezeles-pythonban/"><strong>kivételkezelés</strong></a> segítségével oldják meg, ez nem képezi részét ezen kurzus tananyagának. A <a href="https://sajozsattila.home.blog/2020/02/26/kivetelkezeles-pythonban/"><strong>kivételkezelés</strong></a> lehetővé teszi a hasonló hibák kezelését anélkül, hogy a program &quot;elszállna&quot;.</p>
+<h2 id="tagolt-fájl-feldolgozása">Tagolt fájl feldolgozása</h2>
+<p>A szöveges állományok gyakran táblázatos formában tárolnak adatokat, és ilyen esetekben valamilyen tagoló karakter(sorozat) segítségével választják el az egyes oszlopok adatait. A tagoló lehet akár egy szóköz, egy tabulátor, de a leginkább elterjedt a <code>csv</code> (Comma Seperated Values) fájlformátumban használt vessző. Utóbbi eltérően működik magyar nyelven, ugyanis nálunk az angollal ellentétben a számok tizedes vesszőt tartalmaznak pont helyett. Így nyilván nem lehetne nem egész értékeket tárolni, hiszen beolvasáskor nehéz lenne meghatározni mi elválasztó vessző, ezért a magyar <code>csv</code> állományok pontosvesszőt használnak tagolásra.</p>
+<p>Pythonban (és a legtöbb nyelvben) a tagolt tartalmak beolvasását a <code>split</code> függvény segíti elő. Ez egy a karakterláncokhoz tartozó függvény, mely a paraméterként megadott (alapértelmezett szóköz) karakter mentén szétdarabolja az aktuális karakterláncot, és eredményül egy darabokból álló listát ad vissza.</p>
+<pre><code class="lang-python">f = open(&quot;c:\\users\\user1\nevsor.txt&quot;, &quot;r&quot;)
+sorok = f.readlines()
+for s in sorok:
+   sor = s.split(&quot; &quot;)
+   print(sor[0])
+f.close()
+</code></pre>
+<p>A fenti példa <code>nevsor.txt</code>-ben szereplő nevek közül az első sorban szereplő vezetéknevét jeleníti meg.</p>
+<h2 id="feladatok">Feladatok</h2>
+<p>A feladatok megoldásához a nevsort.txt fájl legyen az aktuális mappában.</p>
+<ol>
+<li>Készítsünk programot, amely listázza a fájl első két sorát! A nevek csupa nagybetűvel jelenjenek meg!</li>
+<li>Készítsünk programot, amely megszámolja és kiírja a fájlban található karakterek számát!</li>
+<li>Készítsünk programot, amely megmondja, hogy &quot;Tóth Ottó&quot; szerepel-e a névsorban! (Igen vagy Nem)</li>
+<li>Készítsünk programot, amely a fájlban lévő neveket névsor szerint sorba rendezve jeleníti meg!</li>
+<li>Készítsünk programot, amely a fájlban lévő neveket vesszővel elválasztva listázza!</li>
+<li>Készítsünk programot, amely a fájlban lévő nevek közül csak a vezetékneveket jeleníti meg, azok közül is csak minden másodikat! (Feltételezzük, hogy egy sorban csak egy név található, és ebből a vezetéknév az első szó)</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dburka-bce/python/blob/main/python_basic/text_file/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
