@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html>
+<head><link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107033484-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107033484-1');
+</script>
+
+
+  <script type="text/javascript" src="jquery-3.1.1.js"></script> 
+  <script type="text/javascript" src="highlight.pack.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/> 
+  <link rel="stylesheet" type="text/css" href="MyCss.css?version=15"/> 
+  <link href="vs2015.css" rel="stylesheet" type="text/css"/>  
+
+<meta charset="UTF-8" /> 
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<!--<script src="https://code.jquery.com/jquery-1.11.3.min.js"
+			  integrity="sha256-7LkWEzqTdpEfELxcZZlS6wAx5Ff13zZ83lYO2/ujj7g="
+			  crossorigin="anonymous"></script> -->
+			  
+		<!--<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+		
+
+
+
+<script type="text/javascript">
+    $(function() {
+        // this will get the full URL at the address bar
+        var url = window.location.href;
+
+        // passes on every "a" tag
+        $(".leftmenu a").each(function() 
+		{
+            // checks if its the same on the address bar
+            if (url == (this.href)) {
+			$(this).closest("li").addClass("active");
+			//for making parent of submenu active
+               $(this).closest("li").parent().parent().addClass("active");
+			//for making parent of submenu active and visible
+			   
+				$(this).parents().find("#menu72 li").css('display', 'block');
+				$(this).parents().find("#menu73 li").css('display', 'block');    
+				$(this).parents().find("#menu74 li").css('display', 'block'); 
+				$(this).parents().find("#menu75 li").css('display', 'block'); 
+				$(this).parents().find("#menu76 li").css('display', 'block');
+				$(this).parents().find("#menu77 li").css('display', 'block');
+				$(this).parents().find("#menu78 li").css('display', 'block');
+				$(this).parents().find("#menu79 li").css('display', 'block');
+            }
+			
+        });
+    });          
+</script>
+
+
+<title>Python - File and File Modes - Decodejava.com </title>
+<meta name="keywords" content="file in python, python file, how to open a file in python, file modes in python, python tutorials"/>
+<meta name="description" content="Python language allows us to perform important Disk input/output operations such as -
+Creating a new file on the disk,
+reading the file stored on the disk,
+writing data to the file stored on the disk,
+appending new data to the end of the file stored on the disk and modifying the content of the file stored on the disk. "/>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="logo2.png" />
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+  <script> 
+  (adsbygoogle = window.adsbygoogle || []).push({  
+   google_ad_client: "ca-pub-3491773579914667", 
+  enable_page_level_ads: true 
+  }); 
+  </script> 
+ </head> 
+ <body> 
+ <style> 
+ input[type=text] { 
+ width: 230px;
+ box-sizing: border-box; 
+ border: 2px solid #ccc; 
+  border-radius: 4px; 
+  font-size: 16px; 
+  background-color: white; 
+  <!--background-image: url('searchicon.png');--> 
+  background-position: 10px 10px; 
+  background-repeat: no-repeat; 
+  padding: 12px 20px 12px 40px; 
+  -webkit-transition: width 0.4s ease-in-out; 
+  transition: width 0.4s ease-in-out; 
+  float:right; 
+  } 
+  
+ input[type=text]:focus { 
+   width: 25%; 
+  }   
+  </style> 
+
+<div class="topHalf">
+
+<p class="websiteBanner1">
+<a href="index.html"><img src="new-logo.png" alt=""></img></a>
+<!--img src="Box2.png" alt=""-->
+</p>
+
+ 
+
+
+<form action="https://www.google.com/search" method="get" class="searchForm" target="_blank">
+<input   type="text" name="q" Placeholder="Search..." class="searchBox"/ >
+ <input type="hidden" name="sitesearch" value="www.decodejava.com"/>
+ </form>
+ </div>
+ 
+ 
+ <nav class="navbar navbar-default" id="top_bar" role="navigation">
+
+    <div class="container-fluid">
+        <!-- add header -->
+        <div class="navbar-header "> 
+ 
+ <div class="menu1"> 
+ <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#navbar">  
+  <span class="sr-only">Toggle navigation</span>  
+ <span class="icon-bar"></span>  
+  <span class="icon-bar"></span>  
+  <span class="icon-bar"></span>  
+  </button>  
+  <div class="scrollmenu"> 
+ <a href="index.html">Basic Java</a> 
+  <a href="java-string.htm">String</a> 
+  <a href="java-bytestream-classes.htm">File I/O</a>  
+  <a href="java-applet.htm">Applets</a> 
+  <a href="java-threads.htm">Threads</a> 
+  <a href="java-arraylist.htm">Collection</a>    
+  <a href="java-events.htm">Events and AWT</a> 
+  <a href="java-swing.htm" >Swing & JDBC</a >
+  <a href="features-of-jsp.htm">JSP</a> 
+  <a href="java-servlet.htm">Servlet</a> 
+  <a href="hibernate-architecture.htm">Hibernate</a> 
+  <a href="introduction-to-spring-framework.htm">Spring Framework</a>  
+  <a href="introduction-to-c-language.htm">C</a> 
+  <a href="introduction-to-c-plus-plus-language.htm">C++</a>   
+    <a href="introduction-to-csharp-language.htm">C#</a> 
+  <a href="introduction-to-python-language.htm" style="background-color:#e72469">Python</a> 
+  <a href="introduction-to-django-framework.htm">Django</a>  
+
+  </div> 
+ 
+ </div> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+  
+ 
+ 
+  
+ 
+ 
+ 
+		
+			
+		<!--<div class="form-class">-->
+			<!--<form class="navbar-form navbar-right" role="search"  id="navBarSearchForm">
+			<div class="input-group">
+            <input type="text" name="q" class="form-control"   placeholder="Search this site"/>
+ <input type="hidden" name="sitesearch" value="www.decodejava.com"/>
+            <span class="input-group-btn">
+				<button type="submit" class="btn btn-default">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</span>
+			</div>
+			</form>-->
+			
+			
+
+		
+		</div>
+		<!--</div>-->
+		
+		
+           
+        <!--</div> <!-- add header ends -->
+
+        <!-- add menu -->
+        <div class="navbar-collapse collapse" id="navbar" >
+            <ul class="nav navbar-nav">
+			
+			<form action="https://www.google.com/search" class="navbar-form navbar-right"  id="navBarSearchForm">
+			<div class="input-group">
+            <input type="text" name="q" class="form-control"   placeholder="Search this site"/>
+ <input type="hidden" name="sitesearch" value="www.decodejava.com"/>
+            <span class="input-group-btn">
+				<button type="submit" class="btn btn-default">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</span>
+			</div>
+			</form>
+			
+			
+	<li id="menu70"><a href="introduction-to-python-language.htm" class="l1">Beginning Python</a>
+  <ul>
+  <li class="Ch74Index"><a href="introduction-to-python-language.htm" class="l1">Introduction to Python</a></li>
+  <li class="Ch74Index"><a href="how-to-download-and-install-python.htm" class="l1">Download and Install Python</a></li>
+  <li class="Ch74Index"><a href="running-the-first-python-program-in-idle.htm" class="l1"><i>The First Python Program in IDLE</i></a></li>
+  <li class="Ch74Index"><a href="python-data-types.htm" class="l1"><i>Data Types in Python</i></a></li>
+  <li class="Ch74Index"><a href="python-identifiers-keywords.htm" class="l1">Python <i>Keywords</i> and <i>Identifiers</i></a></li>
+  <li class="Ch74Index"><a href="python-variables-constants.htm" class="l1">Python <i>Variables</i> and <i>Constants</i></a></li>
+  </ul>
+  </li>
+  
+  <li id="menu71"><a href="python-if-statement.htm" class="l1">Decision Control Statements</a>
+  <ul>
+  <li class="Ch75Index"><a href="python-if-statement.htm" class="l1">Python <i>If</i> Statement</a></li>
+  <li class="Ch75Index"><a href="python-if-else-statement.htm" class="l1">Python <i>If Else</i> Statement</a></li>
+  <li class="Ch75Index"><a href="python-elif-statement.htm" class="l1">Python <i>Elif</i> Statement</a></li>
+  <li class="Ch75Index"><a href="python-nested-if-statement.htm" class="l1">Python <i>Nested If</i> Statement</a></li>
+  <li class="Ch75Index"><a href="python-nested-if-else-statement.htm" class="l1">Python <i>Nested If Else</i> Statement</a></li>
+  <li class="Ch75Index"><a href="python-while-loop.htm" class="l1">Python <i>While</i> Loop</a></li>
+  <li class="Ch75Index"><a href="python-for-loop.htm" class="l1">Python <i>For</i> Loop</a></li>
+  <li class="Ch75Index"><a href="python-break-statement.htm" class="l1">Python <i>Break</i> Statement</a></li>
+  </ul>
+  </li>
+  
+  
+  <li id="menu72"><a href="python-arithmetic-operators.htm" class="l1">Operators in Python</a>
+  <ul>
+  <li class="Ch76Index"><a href="python-arithmetic-operators.htm" class="l1">Python <i>Arithmetic</i> Operators</a></li>
+  <li class="Ch76Index"><a href="python-compound-assignment-operators.htm" class="l1">Python <i>Compound Assignment</i> Operators</a></li>
+  <li class="Ch76Index"><a href="python-relational-operators.htm" class="l1">Python <i>Relational</i> Operators</a></li>
+  <li class="Ch76Index"><a href="python-logical-operators.htm" class="l1">Python <i>Logical</i> Operators</a></li>
+  <li class="Ch76Index"><a href="python-conditional-operator.htm" class="l1">Python <i> Conditional</i> Operator</a></li>
+  </ul>
+  </li>
+  
+   <li id="menu73"><a href="python-classes.htm" class="l1">OOPS and more</a>
+  <ul>
+  <li class="Ch77Index"><a href="python-classes.htm" class="l1">Python <i>Classes</i></a></li>
+  <li class="Ch77Index"><a href="python-constructors.htm" class="l1">Python <i>Constructors</i></a></li>
+  <li class="Ch77Index"><a href="python-static-variable.htm" class="l1">Python <i>Static</i> Variable</a></li>
+  <li class="Ch77Index"><a href="python-static-method.htm" class="l1">Python <i>Static</i> Method</a></li>
+  <li class="Ch77Index"><a href="python-class-method.htm" class="l1">Python <i>Class</i> Method</a></li>
+  <li class="Ch77Index"><a href="python-inheritance.htm" class="l1">Python <i>Inheritance</i></a></li>
+  <li class="Ch77Index"><a href="python-super-function.htm" class="l1">Python <i>Super()</i> Function</a></li>
+  <li class="Ch77Index"><a href="python-method-overriding.htm" class="l1">Python <i>Method Overriding</i></a></li>  	  
+  <li class="Ch77Index"><a href="python-polymorphism.htm" class="l1">Python <i>Polymorphism</i></a></li>
+  <li class="Ch77Index"><a href="python-garbage-collection.htm" class="l1">Python <i>Garbage Collection</i></a></li>
+  </ul>
+  </li>
+  
+  <li id="menu74"><a href="python-array.htm" class="l1">Arrays in Python</a>
+  <ul>
+  <li class="Ch78Index"><a href="python-array.htm" class="l1">Python Array from <i>Array</i> Module </a></li>
+  <li class="Ch78Index"><a href="python-array-numpy.htm" class="l1">Python Array from <i>Numpy</i> Module </a></li> 
+  <li class="Ch78Index"><a href="python-two-dimensional-array.htm" class="l1">Python <i>two-dimensional Array</i></a></li>  
+  </ul>
+  </li>
+  
+  
+  
+  
+  <li id="menu75"><a href="python-exception-handling.htm" class="l1">Exception Handling in Python</a>
+  <ul>
+  <li class="Ch79Index"><a href="python-exception-handling.htm" class="l1">Python <i>Exception Handling</i></a></li>
+  <li class="Ch79Index"><a href="python-exception-propagation.htm" class="l1">Python <i>Exception Propagation</i></a></li>
+  <li class="Ch79Index"><a href="python-try-except.htm" class="l1">Python <i>Try, Except</i> Block</a></li>
+  <li class="Ch79Index"><a href="python-multiple-except.htm" class="l1">Python <i>Multiple Except</i> Block</a></li>
+  <li class="Ch79Index"><a href="python-try-except-else.htm" class="l1">Python <i>Try, Except, Else</i> Block</a></li>
+  <li class="Ch79Index"><a href="python-finally.htm" class="l1">Python <i>Finally</i> Block</a></li>
+  <li class="Ch79Index"><a href="python-raise-keyword.htm" class="l1">Python <i>Raise</i> Keyword</a></li>
+  <li class="Ch79Index"><a href="python-user-defined-exception.htm" class="l1">Python <i>User-Defined Exception</i></a></li>
+  </ul>
+  </li>
+  
+  
+  <li id="menu76"><a href="python-functions.htm" class="l1">Functions and more</a>
+  <ul>
+  <li class="Ch80Index"><a href="python-functions.htm" class="l1">Python <i>Functions</i></a></li>
+  <li class="Ch80Index"><a href="python-functions-with-arguments.htm" class="l1">Python <i>Functions with Arguments</i></a></li>
+  <li class="Ch80Index"><a href="python-functions-with-default-arguments.htm" class="l1">Python <i>Functions with Default Arguments</i></a></li>
+  <li class="Ch80Index"><a href="python-recursive-function.htm" class="l1">Python <i>Recursive Function</i></a></li>
+  <li class="Ch80Index"><a href="python-local-variables.htm" class="l1">Python <i>Local</i> Variables</a></li>
+  <li class="Ch80Index"><a href="python-global-variables.htm" class="l1">Python <i>Global</i> Variables</a></li>
+  </ul>
+  </li>
+  
+  <li id="menu77"><a href="python-tuple.htm" class="l1">Collection Data Types</a>
+  <ul>
+  <li class="Ch81Index"><a href="python-tuple.htm" class="l1">Python <i>Tuple</i></a></li>
+  <li class="Ch81Index"><a href="python-list.htm" class="l1">Python <i>List</i></a></li>
+  <li class="Ch81Index"><a href="python-set.htm" class="l1">Python <i>Set</i></a></li>
+  <li class="Ch81Index"><a href="python-dictionary.htm" class="l1">Python <i>Dictionary</i></a></li>
+  </ul>
+  </li>
+  
+  
+  
+
+  <li id="menu78"><a href="python-string.htm" class="l1">Strings in Python</a>
+  <ul>
+  <li class="Ch82Index"><a href="python-string.htm" class="l1">Python - <i>String</i> </a></li>
+  <li class="Ch82Index"><a href="python-string-methods.htm" class="l1">Python - <i>String</i> Methods </a></li> 
+  <li class="Ch82Index"><a href="python-string-capitalize-method.htm" class="l1">Python - String <i>capitalize()</i> Method</a></li> 
+
+  <li class="Ch82Index"><a href="python-string-upper-method.htm" class="l1">Python - String <i>upper()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isupper-method.htm" class="l1">Python - String <i>isupper()</i> Method</a></li>
+   <li class="Ch82Index"><a href="python-string-casefold-method.htm" class="l1">Python - String <i>casefold()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-lower-method.htm" class="l1">Python - String <i>lower()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-islower-method.htm" class="l1">Python - String <i>islower()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-swapcase-method.htm" class="l1">Python - String <i>swapcase()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-title-method.htm" class="l1">Python - String <i>title()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-istitle-method.htm" class="l1">Python - String <i>istitle()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-strip-method.htm" class="l1">Python - String <i>strip()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-lstrip-method.htm" class="l1">Python - String <i>lstrip()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-rstrip-method.htm" class="l1">Python - String <i>rstrip()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isnumeric-method.htm" class="l1">Python - String <i>isnumeric()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isdigit-method.htm" class="l1">Python - String <i>isdigit()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isalpha-method.htm" class="l1">Python - String <i>isalpha()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isalnum-method.htm" class="l1">Python - String <i>isalnum()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isdecimal-method.htm" class="l1">Python - String <i>isdecimal()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isidentifier-method.htm" class="l1">Python - String <i>isidentifier()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isprintable-method.htm" class="l1">Python - String <i>isprintable()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-startswith-method.htm" class="l1">Python - String <i>startswith()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-endswith-method.htm" class="l1">Python - String <i>endswith()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-index-method.htm" class="l1">Python - String <i>index()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-find-method.htm" class="l1">Python - String <i>find()</i> Method</a></li> 
+ <li class="Ch82Index"><a href="python-string-rfind-method.htm" class="l1">Python - String <i>rfind()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-rindex-method.htm" class="l1">Python - String <i>rindex()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-center-method.htm" class="l1">Python - String <i>center()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-rjust-method.htm" class="l1">Python - String <i>rjust()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-ljust-method.htm" class="l1">Python - String <i>ljust()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-replace-method.htm" class="l1">Python - String <i>replace()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-count-method.htm" class="l1">Python - String <i>count()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-split-method.htm" class="l1">Python - String <i>split()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-rsplit-method.htm" class="l1">Python - String <i>rsplit()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-splitlines-method.htm" class="l1">Python - String <i>splitlines()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-partition-method.htm" class="l1">Python - String <i>partition()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-rpartition-method.htm" class="l1">Python - String <i>rpartition()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-zfill-method.htm" class="l1">Python - String <i>zfill()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-formatting.htm" class="l1">Python - <i>String</i> Formatting</a></li>
+  </ul>
+  </li>
+  
+  
+  <li id="menu79"><a href="python-input-output.htm" class="l1">File I/O in Python</a>
+  <ul>
+  <li class="Ch83Index"><a href="python-input-output.htm" class="l1">Python - <i>Input/Output</i> Functions</a></li>
+  <li class="Ch83Index"><a href="python-file-and-file-modes.htm" style="background-color:#e72469" class="l1">Python - <i>File</i> and <i>File Modes</i></i></a></li>
+  <li class="Ch83Index"><a href="python-how-to-read-a-file.htm" class="l1">Python - <i>Read</i> a File<i></i></a></li>
+  <li class="Ch83Index"><a href="python-how-to-write-a-file.htm" class="l1">Python - <i>Write</i> a File </a></li>
+  <li class="Ch83Index"><a href="python-how-to-append-to-a-file.htm" class="l1">Python - <i>Append</i> to a File </a></li>
+  <li class="Ch83Index"><a href="python-how-to-modify-a-file.htm" class="l1">Python - <i>Modify</i> a File </a></li>
+  </ul>
+  </li>
+</ul>
+									
+          <!-- add search form -->
+        </div>
+         
+</ul>
+    </div>
+	</div>
+</nav>	
+
+
+
+
+
+<div id ="navbar1"> 
+  <a href="index.html" class="topM">Basic Java</a>  
+   <a href="java-string.htm" class="topM">String</a>  
+   <a href="java-bytestream-classes.htm"class="topM">File I/O</a>  
+   <a href="java-threads.htm" class="topM">Threads</a> 
+   <a href="java-applet.htm"  class="topM">Applets</a> 
+  <a href="java-arraylist.htm" class="topM">Collections</a> 
+   <a href="java-events.htm" class="topM">Events and AWT</a> 
+   <a  href="java-swing.htm"class="topM">Swing & JDBC<font color="yellow" size="1"></font></a>   
+   <a href="features-of-jsp.htm"class="topM">JSP<font color="yellow" size="1"></font></a> 
+  <a href="java-servlet.htm"class="topM">Servlet<font color="yellow" size="1"></font></a> 
+  <a href="hibernate-architecture.htm"class="topM">Hibernate<font color="yellow" size="1"></font></a> 
+ 
+<a href="introduction-to-spring-framework.htm"class="topM">Spring<font color="yellow" size="1"></font></a>
+ <a href="introduction-to-c-language.htm"class="topM">C<font color="yellow" size="1"></font></a>
+<a  href="introduction-to-c-plus-plus-language.htm"class="topM">C++<font color="yellow" size="1"></font></a> 
+   <a  href="introduction-to-csharp-language.htm"class="topM">C#<font color="yellow" size="1"></font></a>  
+   <a  href="introduction-to-python-language.htm" class="topM">Python<font color="yellow" size="1"></font></a>  
+ <a  href="introduction-to-django-framework.htm" class="topM">Django<font color="yellow" size="1"></font></a> 
+ </div>
+
+
+
+<!-- <div class="centerBanner">  
+ <p> 
+  <!--<img src="mini.png" class="bannerImage" </img>-->  
+  <!--  </p> 
+  </div> -->
+
+
+
+ 
+<br/> 
+    <div class="middle">
+  <div class="leftmenu"> 
+ <ul>
+ 
+
+<div class="logo" align="center"> <img  src="python.logo.png" height="345" width="333" align="middle">
+ <br/>
+ </div>
+
+
+
+<li id="menu70"><a href="introduction-to-python-language.htm" class="l1">Beginning Python</a>
+  <ul>
+  <li class="Ch74Index"><a href="introduction-to-python-language.htm" class="l1">Introduction to Python</a></li>
+  <li class="Ch74Index"><a href="how-to-download-and-install-python.htm" class="l1">Download and Install Python</a></li>
+  <li class="Ch74Index"><a href="running-the-first-python-program-in-idle.htm" class="l1"><i>The First Python Program in IDLE</i></a></li>
+  <li class="Ch74Index"><a href="python-data-types.htm" class="l1"><i>Data Types in Python</i></a></li>
+  <li class="Ch74Index"><a href="python-identifiers-keywords.htm" class="l1">Python <i>Keywords</i> and <i>Identifiers</i></a></li>
+  <li class="Ch74Index"><a href="python-variables-constants.htm" class="l1">Python <i>Variables</i> and <i>Constants</i></a></li>
+  </ul>
+  </li>
+  
+  <li id="menu71"><a href="python-if-statement.htm" class="l1">Decision Control Statements</a>
+  <ul>
+  <li class="Ch75Index"><a href="python-if-statement.htm" class="l1">Python <i>If</i> Statement</a></li>
+  <li class="Ch75Index"><a href="python-if-else-statement.htm" class="l1">Python <i>If Else</i> Statement</a></li>
+  <li class="Ch75Index"><a href="python-elif-statement.htm" class="l1">Python <i>Elif</i> Statement</a></li>
+  <li class="Ch75Index"><a href="python-nested-if-statement.htm" class="l1">Python <i>Nested If</i> Statement</a></li>
+  <li class="Ch75Index"><a href="python-nested-if-else-statement.htm" class="l1">Python <i>Nested If Else</i> Statement</a></li>
+  <li class="Ch75Index"><a href="python-while-loop.htm" class="l1">Python <i>While</i> Loop</a></li>
+  <li class="Ch75Index"><a href="python-for-loop.htm" class="l1">Python <i>For</i> Loop</a></li>
+  <li class="Ch75Index"><a href="python-break-statement.htm" class="l1">Python <i>Break</i> Statement</a></li>
+  </ul>
+  </li>
+  
+  
+  <li id="menu72"><a href="python-arithmetic-operators.htm" class="l1">Operators in Python</a>
+  <ul>
+  <li class="Ch76Index"><a href="python-arithmetic-operators.htm" class="l1">Python <i>Arithmetic</i> Operators</a></li>
+  <li class="Ch76Index"><a href="python-compound-assignment-operators.htm" class="l1">Python <i>Compound Assignment</i> Operators</a></li>
+  <li class="Ch76Index"><a href="python-relational-operators.htm" class="l1">Python <i>Relational</i> Operators</a></li>
+  <li class="Ch76Index"><a href="python-logical-operators.htm" class="l1">Python <i>Logical</i> Operators</a></li>
+  <li class="Ch76Index"><a href="python-conditional-operator.htm" class="l1">Python <i> Conditional</i> Operator</a></li>
+  </ul>
+  </li>
+  
+   <li id="menu73"><a href="python-classes.htm" class="l1">OOPS and more</a>
+  <ul>
+  <li class="Ch77Index"><a href="python-classes.htm" class="l1">Python <i>Classes</i></a></li>
+  <li class="Ch77Index"><a href="python-constructors.htm" class="l1">Python <i>Constructors</i></a></li>
+  <li class="Ch77Index"><a href="python-static-variable.htm" class="l1">Python <i>Static</i> Variable</a></li>
+  <li class="Ch77Index"><a href="python-static-method.htm" class="l1">Python <i>Static</i> Method</a></li>
+  <li class="Ch77Index"><a href="python-class-method.htm" class="l1">Python <i>Class</i> Method</a></li>
+  <li class="Ch77Index"><a href="python-inheritance.htm" class="l1">Python <i>Inheritance</i></a></li>
+  <li class="Ch77Index"><a href="python-super-function.htm" class="l1">Python <i>Super()</i> Function</a></li>
+  <li class="Ch77Index"><a href="python-method-overriding.htm" class="l1">Python <i>Method Overriding</i></a></li>  	  
+  <li class="Ch77Index"><a href="python-polymorphism.htm" class="l1">Python <i>Polymorphism</i></a></li>
+  <li class="Ch77Index"><a href="python-garbage-collection.htm" class="l1">Python <i>Garbage Collection</i></a></li>
+  </ul>
+  </li>
+  
+  <li id="menu74"><a href="python-array.htm" class="l1">Arrays in Python</a>
+  <ul>
+  <li class="Ch78Index"><a href="python-array.htm" class="l1">Python Array from <i>Array</i> Module </a></li>
+  <li class="Ch78Index"><a href="python-array-numpy.htm" class="l1">Python Array from <i>Numpy</i> Module </a></li> 
+  <li class="Ch78Index"><a href="python-two-dimensional-array.htm" class="l1">Python <i>two-dimensional Array</i></a></li>  
+  </ul>
+  </li>
+  
+  
+  
+  
+  <li id="menu75"><a href="python-exception-handling.htm" class="l1">Exception Handling in Python</a>
+  <ul>
+  <li class="Ch79Index"><a href="python-exception-handling.htm" class="l1">Python <i>Exception Handling</i></a></li>
+  <li class="Ch79Index"><a href="python-exception-propagation.htm" class="l1">Python <i>Exception Propagation</i></a></li>
+  <li class="Ch79Index"><a href="python-try-except.htm" class="l1">Python <i>Try, Except</i> Block</a></li>
+  <li class="Ch79Index"><a href="python-multiple-except.htm" class="l1">Python <i>Multiple Except</i> Block</a></li>
+  <li class="Ch79Index"><a href="python-try-except-else.htm" class="l1">Python <i>Try, Except, Else</i> Block</a></li>
+  <li class="Ch79Index"><a href="python-finally.htm" class="l1">Python <i>Finally</i> Block</a></li>
+  <li class="Ch79Index"><a href="python-raise-keyword.htm" class="l1">Python <i>Raise</i> Keyword</a></li>
+  <li class="Ch79Index"><a href="python-user-defined-exception.htm" class="l1">Python <i>User-Defined Exception</i></a></li>
+  </ul>
+  </li>
+  
+  
+  <li id="menu76"><a href="python-functions.htm" class="l1">Functions and more</a>
+  <ul>
+  <li class="Ch80Index"><a href="python-functions.htm" class="l1">Python <i>Functions</i></a></li>
+  <li class="Ch80Index"><a href="python-functions-with-arguments.htm" class="l1">Python <i>Functions with Arguments</i></a></li>
+  <li class="Ch80Index"><a href="python-functions-with-default-arguments.htm" class="l1">Python <i>Functions with Default Arguments</i></a></li>
+  <li class="Ch80Index"><a href="python-recursive-function.htm" class="l1">Python <i>Recursive Function</i></a></li>
+  <li class="Ch80Index"><a href="python-local-variables.htm" class="l1">Python <i>Local</i> Variables</a></li>
+  <li class="Ch80Index"><a href="python-global-variables.htm" class="l1">Python <i>Global</i> Variables</a></li>
+  </ul>
+  </li>
+  
+  <li id="menu77"><a href="python-tuple.htm" class="l1">Collection Data Types</a>
+  <ul>
+  <li class="Ch81Index"><a href="python-tuple.htm" class="l1">Python <i>Tuple</i></a></li>
+  <li class="Ch81Index"><a href="python-list.htm" class="l1">Python <i>List</i></a></li>
+  <li class="Ch81Index"><a href="python-set.htm" class="l1">Python <i>Set</i></a></li>
+  <li class="Ch81Index"><a href="python-dictionary.htm" class="l1">Python <i>Dictionary</i></a></li>
+  </ul>
+  </li>
+  
+  
+  
+
+  <li id="menu78"><a href="python-string.htm" class="l1">Strings in Python</a>
+  <ul>
+  <li class="Ch82Index"><a href="python-string.htm" class="l1">Python - <i>String</i> </a></li>
+  <li class="Ch82Index"><a href="python-string-methods.htm" class="l1">Python - <i>String</i> Methods </a></li> 
+  <li class="Ch82Index"><a href="python-string-capitalize-method.htm" class="l1">Python - String <i>capitalize()</i> Method</a></li> 
+
+  <li class="Ch82Index"><a href="python-string-upper-method.htm" class="l1">Python - String <i>upper()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isupper-method.htm" class="l1">Python - String <i>isupper()</i> Method</a></li>
+   <li class="Ch82Index"><a href="python-string-casefold-method.htm" class="l1">Python - String <i>casefold()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-lower-method.htm" class="l1">Python - String <i>lower()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-islower-method.htm" class="l1">Python - String <i>islower()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-swapcase-method.htm" class="l1">Python - String <i>swapcase()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-title-method.htm" class="l1">Python - String <i>title()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-istitle-method.htm" class="l1">Python - String <i>istitle()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-strip-method.htm" class="l1">Python - String <i>strip()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-lstrip-method.htm" class="l1">Python - String <i>lstrip()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-rstrip-method.htm" class="l1">Python - String <i>rstrip()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isnumeric-method.htm" class="l1">Python - String <i>isnumeric()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isdigit-method.htm" class="l1">Python - String <i>isdigit()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isalpha-method.htm" class="l1">Python - String <i>isalpha()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isalnum-method.htm" class="l1">Python - String <i>isalnum()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isdecimal-method.htm" class="l1">Python - String <i>isdecimal()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isidentifier-method.htm" class="l1">Python - String <i>isidentifier()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-isprintable-method.htm" class="l1">Python - String <i>isprintable()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-startswith-method.htm" class="l1">Python - String <i>startswith()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-endswith-method.htm" class="l1">Python - String <i>endswith()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-index-method.htm" class="l1">Python - String <i>index()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-find-method.htm" class="l1">Python - String <i>find()</i> Method</a></li> 
+ <li class="Ch82Index"><a href="python-string-rfind-method.htm" class="l1">Python - String <i>rfind()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-rindex-method.htm" class="l1">Python - String <i>rindex()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-center-method.htm" class="l1">Python - String <i>center()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-rjust-method.htm" class="l1">Python - String <i>rjust()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-ljust-method.htm" class="l1">Python - String <i>ljust()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-replace-method.htm" class="l1">Python - String <i>replace()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-count-method.htm" class="l1">Python - String <i>count()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-split-method.htm" class="l1">Python - String <i>split()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-rsplit-method.htm" class="l1">Python - String <i>rsplit()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-splitlines-method.htm" class="l1">Python - String <i>splitlines()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-partition-method.htm" class="l1">Python - String <i>partition()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-rpartition-method.htm" class="l1">Python - String <i>rpartition()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-zfill-method.htm" class="l1">Python - String <i>zfill()</i> Method</a></li>
+  <li class="Ch82Index"><a href="python-string-formatting.htm" class="l1">Python - <i>String</i> Formatting</a></li>
+  </ul>
+  </li>
+  
+  
+  <li id="menu79"><a href="python-input-output.htm" class="l1">File I/O in Python</a>
+  <ul>
+  <li class="Ch83Index"><a href="python-input-output.htm" class="l1">Python - <i>Input/Output</i> Functions</a></li>
+  <li class="Ch83Index"><a href="python-file-and-file-modes.htm" class="l1">Python - <i>File</i> and <i>File Modes</i></i></a></li>
+  <li class="Ch83Index"><a href="python-how-to-read-a-file.htm" class="l1">Python - <i>Read</i> a File<i></i></a></li>
+  <li class="Ch83Index"><a href="python-how-to-write-a-file.htm" class="l1">Python - <i>Write</i> a File </a></li>
+  <li class="Ch83Index"><a href="python-how-to-append-to-a-file.htm" class="l1">Python - <i>Append</i> to a File </a></li>
+  <li class="Ch83Index"><a href="python-how-to-modify-a-file.htm" class="l1">Python - <i>Modify</i> a File </a></li>
+  </ul>
+  </li>
+  
+</div>
+
+
+
+
+<div class="centerMenuInterthreadComm">
+<p align="center"> Advertisement</p> 
+   <div> 
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+ <ins class="adsbygoogle" 
+      style="display:block; text-align:center;" 
+      data-ad-layout="in-article" 
+      data-ad-format="fluid" 
+     data-ad-client="ca-pub-3491773579914667" 
+data-ad-slot="5847530696"></ins> 
+  <script> 
+        (adsbygoogle = window.adsbygoogle || []).push({});  
+  </script> 
+  </div>  
+<hr/> 
+<br/> 
+ <button onclick="topFunction()" id="myBtn" title="Go top">Top</button> 
+  
+<span class="left2"><div align="right" style="color:#0000FF"><a href="python-input-output.htm" class="link">< Prev</a></div></span>
+<span class="right2"><div align="right" style="color:#0000FF"><a href="python-how-to-read-a-file.htm" class="link" >Next      ></a></div></span>
+<br/>
+ <br/>
+ <br/> <div class="topicH" align="center"><h1>Python - File and File Modes</h2></div><br/><br/> <br/>
+ 
+Python language allows us to perform important disk <i>input/output</i> operations such as - 
+<ul>
+<li class = "bullet"> <i>Creating</i> a new file on the disk. </li>
+<li class = "bullet"> <i>Reading</i> the file stored on the disk. </li>
+<li class = "bullet"> <i>Writing</i> data to the file stored on the disk.</li>
+<li class = "bullet"> <i>Appending</i> new data to the end of the file stored on the disk. </li>
+<li class = "bullet"> <i>Modifying</i> the content of the file stored on the disk. </li>
+</ul>
+<br/>
+<br/>
+<br/>
+<br/>
+<ul>
+<li class="bullet"><h2>How to create and open a file?</h2></li>
+<br/>
+In order to create and open a file, we could call the  <b><i>open()</i></b> function  of <b>io</b> module, 
+which is a default module for performing file operations.
+
+
+Using the <b><i>open()</i></b> function, we could provide location of the file stored on the disk
+ and in return(<i>if the file is found</i>), the <b>open()</b> function opens the file in a specific <i>mode</i> to let you perform a specific file operation and
+  returns the file object to the opened file.
+ <br/>
+ <br/>
+Let us take a look at a general syntax of <i><b>open()</b></i> function to open a file.<br/>
+<br/>
+<pre><code>open('filename', mode);</code></pre>
+<ul>
+<br/>
+<li class = "bullet"><i><b>filename</b></i>(<font color="green">a string</font>), is the name of file on which we are going to open and perform file operations.</li>
+<li class = "bullet"><i><b>mode</b></i>(<font color="green">a string</font>), is <i>single or multiple file modes</i> in which we are going to open a file.</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<li class="bullet"><h2>Calling the file constructor</h2></li>
+<br/>
+<b>Only for when you are working in Python version less than 3</b>:
+ An alternate way to create and open a file is by calling the file constructor i.e. <b>file()</b>.
+
+
+Using the <b><i>file()</i></b> constructor, we could provide location of the file stored on the disk
+ and in return(<i>if the file is found</i>), it opens the file in a specific <i>mode</i> to let you perform a specific file operation and 
+   returns the file object to the opened file.
+ <br/>
+ <br/>
+The syntax of <i><b>file()</b></i> constructor is the same as the <b>open</b> function.<br/>
+<br/>
+<pre><code>file(filename, mode);</code></pre>
+<ul>
+<br/>
+<li class = "bullet"><i><b>filename</b></i>, is the name(<font color="green">a string</font>) of file on which we are going to open and perform file operations.</li>
+<li class = "bullet"><i><b>mode</b></i>(<font color="green">a string</font>), is a <i>single or multiple file modes</i> in which we are going to open a file.</li>
+</ul>
+</li>
+</ul>
+<br/> 
+ <br/> 
+ <br/>  
+  <p align="center"> Advertisement</p> 
+  <div>
+ 
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+  <ins class="adsbygoogle" 
+  style="display:block; text-align:center;" 
+  data-ad-layout="in-article" 
+  data-ad-format="fluid" 
+  data-ad-client="ca-pub-3491773579914667" 
+  data-ad-slot="4107562630"></ins> 
+  <script> 
+(adsbygoogle = window.adsbygoogle || []).push({}); 
+  </script> 
+  </div>  
+ </br/> 
+ <br/> 
+ <br/>
+<h2>File Modes</h2>
+<br/>
+
+There is a specific <i>file mode</i> for every file operation.  These file modes
+ allow us to <i>create, read, write, append or modify</i> a file.
+ 
+ 
+Let's see all these different <b>modes</b> in which we could open a file on disk.
+<br/>
+<br/>
+<table style="width:100%">
+   <tr>
+	<th width=% align="center">File Modes</th>
+    <th align="center">Description</th>
+  </tr>
+  
+   <tr>
+	<td width=25% align="center"><b>r</b></td>
+	<td align="center"><br/>Searches for the file and opens it in <b>read</b> mode(<font color="green">default mode</font>), <i>if the file is found</i>. <br/><br/></td>
+  </tr> 
+  <tr>
+	<td width=25% align="center"><b>w</b></td>
+	<td align="center"><br/>Searches for the file and opens it in <b>write</b> mode. If the file is found, its content are overwritten. 
+	If file is not found, a new file is created. <i>Allows you to <b>write</b> to the file.</i> <br/> <br/></td>
+  </tr> 
+  <tr>
+	<td width=25% align="center"><b>a</b></td>
+	<td align="center"><br/>Searches for the file and opens it in <b>append</b> mode i.e. this mode allows you to <b>append</b> new data to the end of a file. 
+	If file is not found, a new file is created.<br/> <br/></td>
+  </tr> 
+  
+  <tr>
+	<td width=25% align="center"><b> <i>t</b></td>
+	<td align="center"><br/>Searches for the file and opens the file(if the file is found) in a <b>text mode</b>(<font color="green">default mode</font>) to perform text input/output file operations.</i><br/> <br/></td>
+  </tr> 
+  
+  <tr>
+	<td width=25% align="center"><b> <i>b</b></td>
+	<td align="center"><br/>Searches for the file and opens the file(if the file is found) in a <b>binary mode</b> to perform binary input/output file operations.</i><br/> <br/></td>
+  </tr> 
+   <tr>
+	<td width=25% align="center"><b> <i>+</b></td>
+	<td align="center"><br/>Searches for the file, opens it to modify the content of a file by allowing both input and output operations on a file.
+	Should be used in combination with either <b>r, w or a</b> mode.
+	<br/> <br/></td>
+  </tr> 
+</table> 
+ 
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<h2>Please share this article -</h2>
+<!-- Share buttons -->
+<div id="share-buttons">
+    
+
+    
+ 
+ 
+    <!-- Facebook -->
+    <a href="http://www.facebook.com/sharer.php?u=http://decodejava.com/python-file-and-file-modes.htm" target="_blank">
+        <img src="fb-41.png" alt="Facebook" class="link2" />
+    </a>
+    
+    <!-- Google+ -->
+    <a href="https://plus.google.com/share?url=http://decodejava.com/python-file-and-file-modes.htm" target="_blank">
+        <img src="gp.png" alt="Google" class="link2" />
+    </a>
+    
+    
+    <!-- Pinterest -->
+    <a  href="https://www.pinterest.com/pin/create/button/?url=http://decodejava.com/python-file-and-file-modes.htm&description=Python - File and File Modes - Decodejava.com">
+	<img src="P1.png" alt="Pinterest" class="link2"  />
+	</a>
+    
+    
+    
+    <!-- Reddit -->
+    <a href="http://reddit.com/submit?url=http://decodejava.com/python-file-and-file-modes.htm&amp;title=Python - File and File Modes - Decodejava.com" target="_blank">
+        <img src="R1.png" alt="Reddit" class="link2" />
+    </a>
+    
+   
+    
+    <!-- Tumblr-->
+    <a href="http://www.tumblr.com/share/link?url=http://decodejava.com/python-file-and-file-modes.htm&amp;title=Python - File and File Modes - Decodejava.com" target="_blank">
+        <img src="TL1.png" alt="Tumblr" class="link2" />
+    </a>
+     
+    <!-- Twitter -->
+    <a href="https://twitter.com/share?url=http://decodejava.com/python-file-and-file-modes.htm&amp;text=Python - File and File Modes - Decodejava.com&amp;hashtags=Python" target="_blank">
+        <img src="Twitter7.png" alt="Twitter" class="link2"/>
+    </a>
+    
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<span class="left1"><div align="right" style="color:#0000FF"><a href="python-input-output.htm" class="link">< Prev</a></div></span>
+<span class="right1"><div align="right" style="color:#0000FF"><a href="python-how-to-read-a-file.htm" class="link" >Next      ></a></div></span>
+<span class="left"><div align="right" style="color:#0000FF"><a href="python-input-output.htm" class="link"><  Python - <i>Input/Output</i> Functions</a></div></span>
+<span class="right"><div align="right" style="color:#0000FF"><a href="python-how-to-read-a-file.htm" class="link"> Python - <i>Read</i> a File > </a></div></span>
+
+
+
+<script> 
+  window.onscroll = function() {myFunction()};  
+  var navbar = document.getElementById("navbar1");  
+  var sticky = navbar.offsetTop;  
+  function myFunction() { 
+  if (window.pageYOffset >= sticky) { 
+  navbar.classList.add("sticky") 
+  } else { 
+  navbar.classList.remove("sticky");  
+   } 
+ }  </script> 
+ 
+ 
+ 
+
+<script> 
+ window.onscroll = function() {myFunction()};  
+  var navbar = document.getElementById("navbar1"); 
+  var sticky = navbar.offsetTop; 
+  function myFunction() {  
+  if (window.pageYOffset >= sticky) {  
+  navbar.classList.add("sticky") 
+  } else {  
+  navbar.classList.remove("sticky");   
+  } 
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) { 
+   document.getElementById("myBtn").style.display = "block"; 
+  } else { 
+  document.getElementById("myBtn").style.display = "none"; 
+  } 
+  } 
+ 
+  // When the user clicks on the button, scroll to the top of the document 
+  function topFunction() { 
+  document.body.scrollTop = 0; 
+  document.documentElement.scrollTop = 0; 
+  } 
+  </script> 
+  
+ 
+ 
+<p align="center"><br/> 
+  <br/>Advertisement <br/></p> 
+   <!-- Ad box on the right--> 
+  <div class="footer-ad" align="center"> 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+  <!-- square-footer-responsive-ad --> 
+  <ins class="adsbygoogle" 
+  style="display:block" 
+  data-ad-client="ca-pub-3491773579914667" 
+  data-ad-slot="9208911736" 
+  data-ad-format="auto" 
+  data-full-width-responsive="true"></ins> 
+  <script> 
+  (adsbygoogle = window.adsbygoogle || []).push({}); 
+  </script> 
+ </div>
+   </div>  
+ 
+   <div class="nextAd"> 
+<h2 align="center" class ="insert1">Please Subscribe</h2>
+  <p align="center"> 
+ Please subscribe to our social media channels for daily updates.
+ <br/> <br/>
+<br/> 
+  
+ 
+ <a href="https://www.facebook.com/decodejava/">
+  <img src="fb-41.png" alt="Decodejava Facebook Page" title="Decodejava Facebook Page" class="link2"></img> 
+ </a> 
+ 
+ <a href="https://twitter.com/DecodeJava">  
+ <img src="Twitter7.png" alt=" DecodeJava Twitter Page" title="Decodejava Twitter Page" class="link2"></img>  
+  </a> 
+  <a href="https://plus.google.com/u/0/110786153295216015507">  
+   <img src="gp.png" alt="Decodejava Google+ Page" title="Decodejava Google+ Page" class="link2"></img> 
+  </a>  
+ </p>
+ </div>
+
+<br/> 
+ <br/> 
+<div class="rt"> 
+ <p align="center"><br/>Advertisement<br/></p> 
+ </div>
+   <!-- Ad box on the right--> 
+  <div class="right-ad">  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+  <!-- right-side-ad --> 
+  <ins class="adsbygoogle" 
+  style="display:inline-block;width:300px;height:600px" 
+  data-ad-client="ca-pub-3491773579914667" 
+  data-ad-slot="7534412575"></ins> 
+  <script> 
+  (adsbygoogle = window.adsbygoogle || []).push({}); 
+  </script> 
+    </div>   
+ 
+ 
+<br/> 
+ <br/> 
+   <div class="nextAd2"> 
+ <h2 align="center" class ="insert1">Notifications</h2> 
+ 
+  <br/> 
+<br/> 
+<p align="center">Please check our latest addition<br/> <br/> 
+ <b> C#, PYTHON and DJANGO</b> </p> 
+  </div> 
+  
+ 
+ <div class="rt"> 
+ <p align="center"><br/>Advertisement<br/></p> 
+ </div> 
+  <!-- Ad box on the right-->  
+  <div class="right-ad"> 
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+  <!-- right-side-ad-fixed2 --> 
+  <ins class="adsbygoogle" 
+   style="display:inline-block;width:300px;height:600px" 
+  data-ad-client="ca-pub-3491773579914667" 
+  data-ad-slot="3354428756"></ins> 
+  <script> 
+  (adsbygoogle = window.adsbygoogle || []).push({}); 
+ </script>  </div>  
+ 
+ <!--this div closing tag is for middle--> 
+  </div>
+
+<div class="nextAd3"></div> 
+ </div>
+
+
+
+<div class="footer">
+ <a href="about-us.htm"> About us </a>  | <a href="contact-us.htm"> Contact us </a> | <a href="privacy-policy.htm"> Privacy-policy </a>  |  <a href="terms.htm"> Terms </a>  
+ <br/> 
+ <br/> 
+ <br/>  Please Subscribe <br/> <br/>
+ 
+  
+  
+ 
+  <a href="https://www.facebook.com/decodejava/"> 
+ <img src="fb-41.png" alt="Decodejava Facebook Page" title="Decodejava Facebook Page" class="link2"></img>
+  </a>
+  <a href="https://twitter.com/DecodeJava"> 
+ <img src="Twitter7.png" alt=" DecodeJava Twitter Page" title="Decodejava Twitter Page" class="link2"></img>  
+  </a> 
+  <a href="https://plus.google.com/u/0/110786153295216015507">  
+   <img src="gp.png" alt="Decodejava Google+ Page" title="Decodejava Google+ Page" class="link2"></img> 
+  </a>   
+ <br/> <br/> &copy; Copyright 2020 Decodejava.com.  All Rights Reserved. <br/>
+ </p> 
+ <script type="text/javascript" src="jquery-3.2.1.js"></script>  
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </div>
+
+
+<script type="text/javascript">
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar1");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");  
+ } 
+ } </script> 
+ 
+ <script type="text/javascript"> 
+ 
+  $('input.form-control').click(function(e) { e.stopPropagation(); }); 
+  
+   $(document).ready(function () { 
+  $(document).click(function (event) { 
+  var clickover = $(event.target); 
+  var _opened =true ;  
+ 
+  /*If collapse window is open*/ 
+  if($(".navbar-collapse").is(':visible')) { 
+  /*If someone has clicked but not clicked over toggle 3 bar button*/ 
+  /*alert("collapse window open");*/ 
+  if( (clickover.hasClass("navbar-toggle"))== false && !clickover.hasClass("dropdown-toggle") )  
+ { 
+  /*alert("hahaha");*/ 
+  $("button.navbar-toggle").click();  
+  } 
+ } 
+ 
+  }); 
+  });</script> 
+
+
+
+ 
+ 
+ <script type="text/javascript"> 
+ 
+  $('input.form-control').click(function(e) { e.stopPropagation(); }); 
+  
+   $(document).ready
+   (function () { 
+  $(document).click(function (event) { 
+  var clickover = $(event.target); 
+  var _opened =true ;  
+ 
+  /*If collapse window is open*/ 
+  if($(".navbar-collapse").is(':visible')) { 
+  /*If someone has clicked but not clicked over toggle 3 bar button*/ 
+  /*alert("collapse window open");*/ 
+  if( (clickover.hasClass("navbar-toggle"))== false && !clickover.hasClass("dropdown-toggle") )  
+ { 
+  /*alert("hahaha");*/ 
+  $("button.navbar-toggle").click();  
+  } 
+ } 
+ 
+  }); 
+  });</script>  
+  <script type="text/javascript"> 
+  $(window).scroll(function(){ 
+   var sticky = $('#top_bar'), 
+  scroll = $(window).scrollTop(); 
+ 
+  if (scroll >= 50) sticky.addClass('fixed'); 
+  else sticky.removeClass('fixed'); 
+  });   </script> 
+ </body> 
+  </html>
+
