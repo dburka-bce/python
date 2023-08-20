@@ -1,0 +1,6 @@
+# Buborék rendezés
+A buborék rendezés során az egymást követő párokat hasonlítjuk össze a listában. Ha a később szereplő érték kisebb, mint az előző, akkor felcseréljük az értékeket. A listán végigérve garantált, hogy a legnagyobb érték a lista végére került. Ezután elölről kezdjük a folyamatot, de már csak az utolsó előtti elemig, majd kettővel a lista vége előttig, és így tovább, egészen addig míg már csak egy elem marad. Ezen a ponton biztosan sorban lesznek az értékeink.
+
+1. Ciklussal menj végig egy olyan számsoron (`range`), ami a lista hosszánál eggyel kisebb értéktől folyamatosan csökken 1-ig. (Egy megoldás: [`reversed`](ref_func_reversed.asp) függvény)
+2. Az előző ciklus minden iterációjára egy újabb ciklussal menj végig a lista elemein, de csak a külső ciklus ciklusváltozójánál kisebb indexekig.
+3. A belső ciklusban hasonlítsd össze a lista aktuális elemét a soron következővel, és ha az első érték nagyobb, akkor cseréld fel a két értéket a listában. (Érdemes segédváltozót használni a cseréhez)
