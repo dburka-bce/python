@@ -1692,6 +1692,16 @@
       "version": ""
     },
     {
+      "type": "Toc",
+      "source_relative_path": "python_basic/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "python_basic/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "python_basic/tuple/index.md",
       "output": {
@@ -1860,6 +1870,16 @@
       "output": {
         ".html": {
           "relative_path": "python_psz/practice/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "python_psz/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "python_psz/toc.html"
         }
       },
       "version": ""

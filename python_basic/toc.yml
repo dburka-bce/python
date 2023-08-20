@@ -1,0 +1,30 @@
+---
+- name: Alapok
+  href: general\index.md
+- name: Jupyter 
+  href: jupyter\index.md
+- name: Változók
+  href: variables\index.md
+  items:
+    - name: Karakterláncok
+      href: variables_text\index.md
+    - name: Típuskonverzió
+      href: type_conversion\index.md
+- name: Input
+  href: variables\index.md
+- name: Feltételes elágazás
+  href: if_statement\index.md
+  items:
+    - name: Karakterláncok
+      href: variables_bool\index.md
+- name: Szekvencia típusok
+  href: sequence_types\index.md
+  items:
+    - name: Lista
+      href: list\index.md
+- name: Ciklusok
+  href: loops\index.md
+- name: Szöveges fájl olvasása 
+  href: text_file\index.md
+- name: Fejlesztői környezetek 
+  href: ..\python_advanced\environment\index.md

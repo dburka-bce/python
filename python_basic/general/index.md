@@ -11,7 +11,7 @@ A programnyelvek használata során algoritmusokat írunk le (**implementálás*
 
 ## Python
 
-A Python egy általános célú magas szintű programozási nyelv melyet Guido van Rossum holland programozó kezdett el fejleszteni és hozott nyilvánosságra 1991-ben ([The Early  Years of Python](https://www.youtube.com/watch?v=xLVxoz-mQFs&l)).  A nyelv a nevét a [Monty Python](https://hu.wikipedia.org/wiki/Monty_Python "Monty Python") társulatról kapta. A nyelv fejlesztése folyamatos, a kezdeti kiadást számos újabb követte, a 3.9-es verzió 2020 októberében jelent meg.
+A Python egy általános célú magas szintű programozási nyelv melyet Guido van Rossum holland programozó kezdett el fejleszteni és hozott nyilvánosságra 1991-ben (<a href="https://www.youtube.com/watch?v=xLVxoz-mQFs&l" target="_blank">The Early  Years of Python</a>).  A nyelv a nevét a <a href="https://hu.wikipedia.org/wiki/Monty_Python" alt="Monty Python" target="_blank">Monthy Python</a>) társulatról kapta. A nyelv fejlesztése folyamatos, a kezdeti kiadást számos újabb követte, a 3.9-es verzió 2020 októberében jelent meg.
 
 Az egyszerűségének és a természetes nyelvhez közeli szintaxisának köszönhetően széles körben elterjedt. Ennek ellenére rendkívül komplex feladatok megoldására alkalmas: a gépi tanulási feladatok megoldására például a Python az egyik leginkább ajánlott programnyelv. Számtalan oktatóanyag érhető el hozzá, és nagyon aktív a fejlesztői közösség, tehát még egyedi problémák esetén is hamar választ kaphatunk a kérdéseinkre a különböző online fórumokon.
 
