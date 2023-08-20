@@ -1,6 +1,6 @@
 - name: Programozás alapjai (Gazdaságinformatika)
-  href: python/
-  homepage: python/index.md
+  href: python_basic/
+  homepage: python_basic/index.md
 - name: Programozás alapjai (Pénzügy)
   href: python_psz/
   homepage: python_psz/index.md
